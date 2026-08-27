@@ -1,74 +1,16 @@
-# 📚 Ejemplo de Documentación del Proyecto
+# About me
 
-> Plantilla genérica para documentar proyectos académicos o de ingeniería.  
-> Copia y adapta las secciones según tu necesidad.
+## Quién soy
 
----
-
-## 1) Resumen
-
-- **Nombre del proyecto:** _Mi Proyecto_  
-- **Equipo / Autor(es):** _Nombre(s)_  
-- **Curso / Asignatura:** _Nombre del curso_  
-- **Fecha:** _DD/MM/AAAA_  
-- **Descripción breve:** _Una o dos líneas que expliquen qué hace y por qué._
-
-!!! tip "Consejo"
-    Mantén este resumen corto (máx. 5 líneas). Lo demás va en secciones específicas.
-
----
-
-## 2) Objetivos
-
-- **General:** _Qué se pretende lograr en términos amplios._
-- **Específicos:**
-  - _OE1…_
-  - _OE2…_
-  - _OE3…_
-
-## 3) Alcance y Exclusiones
-
-- **Incluye:** _Qué funcionalidades/entregables sí están en el proyecto._
-- **No incluye:** _Qué queda fuera para evitar malentendidos._
-
----
-
-## 4) Requisitos
-
-**Software**
-- _SO compatible (Windows/Linux/macOS)_
-- _Python 3.x / Node 18+ / Arduino IDE / etc._
-- _Dependencias (p. ej., pip/requirements, npm packages)_
-
-**Hardware (si aplica)**
-- _MCU / Sensores / Actuadores / Fuente de poder_
-- _Herramientas (multímetro, cautín, etc.)_
-
-**Conocimientos previos**
-- _Programación básica en X_
-- _Electrónica básica_
-- _Git/GitHub_
-
----
-
-## 5) Instalación
-
-```bash
-# 1) Clonar
-git clone https://github.com/<usuario>/<repo>.git
-cd <repo>
-
-# 2) (Opcional) Crear entorno virtual
-python -m venv .venv
-# macOS/Linux
-source .venv/bin/activate
-# Windows (PowerShell)
-.venv\Scripts\Activate.ps1
-
-# 3) Instalar dependencias (ejemplos)
-pip install -r requirements.txt
-# o, si es Node:
-npm install
+Mi nombre es Andrea Solano López y  actualmente soy estudiante de Ingeniería Mecatrónica, también soy políglota; aparte de hablar español hablo inglés, alemán y un poco de francés y actualmente tomo clases de alemán y francés.
+Me considero una persona muy curiosa y que e gusta mucho aprender sobre cualquier tema que me interese. Dentro de mis hobbies se encuentra la cocina, la cual aprendí desde niña, impulsada por mi mamá y abuela y ahora es algo que disfruto hacer con ellas sobretodo en vacaciones, me gusta mucho leer y a lo largo de mi vida siempre me han acompañado los libros, ya sea desde un libro por año, hasta mi record que fue 105 libros en un año. Me gusta mucho salir de viaje, sobretodo con mi hermana y mi mamá, me gusta salir con mis amigos, siempre me sirve para desestrezarme y me gusta hacer deportes como el gimnasio o la natación.
 
 
-```
+## Intereses
+
+Aparte de mis hobbies, siempre me ha interesado la ciencia y los nuevos descubrimiento, me gusta saber un poco de la historia y que se está haciendo. Además de esto me gusta mucho el séctor aeroespacial, desde la parte ingieneril hasta la ciencia y esta es un gusto mío desde niña que conforme los años ha ido creciendo.
+
+## Dentro de 5 años
+
+Dentro de 5 años me veo trabajando en alguna empresa, donde espero desarrollar un trabajo que me guste y me haga sentir feliz, aunque aún no sé con certeza que rama de la ingeniería mecatrónica me gustaría seguir, quisiera probar un poco en los primeros años antes de establecerme.
+
