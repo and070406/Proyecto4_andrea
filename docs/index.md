@@ -1,14 +1,4 @@
-# Semana 1
+# Portada
 
-Bienvenido 👋  
-Esta es una **plantilla** basada en [MkDocs](https://www.mkdocs.org/) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) para cursos y proyectos.
-
----
-
-## Empezar rápido (3 pasos)
-
-1. **Edita el nombre del sitio** en `mkdocs.yml`:
-   ```yaml
-   site_name: Proyecto de Ingenieria 4
-   theme:
-     name: material
+Esta página llevará toda la doumentación de la clase de Proyectos de ingeniería 4, tendrá reportes de clase semanales y el desarrollo del proyecto final de la materia.
+Esta página también tendrá las secciones de portada, about me, los enlaces a cada semana y el del proyecto final.
