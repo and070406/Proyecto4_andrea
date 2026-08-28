@@ -14,19 +14,6 @@ Lo más importante al crear un prompt correcto son los siguientes aspectos:
 # Ejercicio SCAMPER
 
 
-# Citas (blockquote)
-
-``` codigo
-> Esta es una cita destacada.
-> Puede tener múltiples líneas.
-```
-
-> Esta es una cita destacada.
-> Puede tener múltiples líneas.
-
----
-
-
 
 ---
 
