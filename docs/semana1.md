@@ -4,7 +4,7 @@ La primera semana vimos como hacer el mejor prompt para poder utilizar y ayudarn
 
 Lo más importante al crear un prompt correcto son los siguientes aspectos:
 - Definir el rol y nivel de expertise en el tema
--Para quien es el resultado
+- Para quien es el resultado
 - Restricciones reales (tiempo, presupuesto, tecnología, etc)
 - El "Para qué"
 - El contexto 
