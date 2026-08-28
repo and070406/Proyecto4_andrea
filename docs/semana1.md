@@ -11,6 +11,7 @@ Lo más importante al crear un prompt correcto son los siguientes aspectos:
 - Restricciones reales (tiempo, presupuesto, tecnología, etc)
 - El "Para qué"
 - El contexto 
+```
 ---
 
 # Ejercicio SCAMPER
@@ -25,6 +26,7 @@ El método SCAMPER consta de una técnica de creatividad e innovación. Sirve pa
 - Poner en otros usos
 - Eliminar
 - Revertir/Reorganizar
+```
 
 ---
 El ejercicio en clase consto de tirar un dado y de acuerdo a los números que te salieran era con lo que te tocaba trabajar en nuestro caso nos toco:
@@ -34,6 +36,7 @@ El ejercicio en clase consto de tirar un dado y de acuerdo a los números que te
 1. EL QUÉ (Formato/Entregable) : Un kit tangible o contenedor de Recursos (caja de herramientas, empaque inteligente, sistema de distribución física).
 2. EL CÓMO (Restricción/Enfoque): Automatizado con IA / Digital (El núcleo de la solución debe operar de forma digital o automática).
 3. EL PARA QUIÉN (Usuario/Contexto): Comunidad Rural / Migración Local (Zonas con intermitencia de servicios, familias separadas o migración constante).
+```
 ---
 
 ---
