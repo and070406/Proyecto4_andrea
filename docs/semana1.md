@@ -67,10 +67,8 @@ El factor Wow: Para un emprendedor o freelancer, permite prototipar rápido y cr
 # Enlace al chat
 Para ver el chat con la IA completo visita el siguiente enlace:
 
-``` codigo
 [Ver conversación en ChatGPT](https://chatgpt.com/share/6a8e2af4-1e60-83e8-aca1-1ecacd8a9226) 
 
-```
 
 [Descargar especificación (PDF)](recursos/archivos/Calendario.pdf)
 
