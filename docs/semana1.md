@@ -59,21 +59,15 @@ De ahí nos dió varias respuestas de las cuales nosotros escogimos 2 para reali
 
 ```
 
-
-# Imágenes
-
-``` codigo
-![Diagrama del sistema](recursos/imgs/ibero.jpeg)
-
-<!-- Control de tamaño usando HTML (cuando se requiera) -->
-<img src="../recursos/imgs/ibero.jpeg" alt="Diagrama del sistema" width="420">
-```
-
-![Diagrama del sistema](recursos/imgs/ibero.jpeg)
-
-<img src="../recursos/imgs/ibero.jpeg" alt="Diagrama del sistema" width="420">
-
 ---
+
+# Prototipo final
+Después de repetir el mismo proceso varias veces, pudimos llegar a un prototipo final que consta de: 
+
+### Pasaporte que Habla
+El remix, en 3 oraciones: Es una caja física con voz, botones y señalización simple que permite a personas migrantes registrar y consultar sus habilidades, experiencias y aprendizajes sin depender de una pantalla. Está pensada para comunidades rurales, familias con migración frecuente y personas con baja alfabetización digital o conectividad limitada. Lo inusual es que convierte saberes informales en un “pasaporte” de microcredenciales mediante IA, usando una interfaz casi totalmente física y audible.
+Descripción: El usuario responde preguntas habladas sobre lo que sabe hacer y la IA organiza esa información en competencias, experiencia y posibles oportunidades de empleo o capacitación. El perfil queda asociado a una tarjeta física con QR/NFC y puede funcionar offline, sincronizándose cuando exista conexión.
+El factor Wow: Para un emprendedor o freelancer, permite prototipar rápido y crear servicios de certificación, capacitación o vinculación laboral; para un funcionario, ayuda a identificar capacidades reales de la población y conectar personas con programas, empleos y recursos sin exigir infraestructura digital avanzada.
 
 # PDFs (enlace y embebido)
 
@@ -124,61 +118,5 @@ De ahí nos dió varias respuestas de las cuales nosotros escogimos 2 para reali
 
 ---
 
-# Código con resaltado
 
-``` codigo
-```python
-def medir(canal: int) -> dict:
-    # Simulación de lectura
-    return {"canal": canal, "valor": 523, "unidad": "mV"}
-
-print(medir(1))
-```
-```
-
-```python
-def medir(canal: int) -> dict:
-    # Simulación de lectura
-    return {"canal": canal, "valor": 523, "unidad": "mV"}
-
-print(medir(1))
-```
-
----
-
-# Separador horizontal
-
-``` codigo
----
-```
-
----
-
----
-
-# Listas anidadas con código y notas
-
-``` codigo
-- **Módulo A**
-  - Función: `procesar()`
-  - Entrada:
-    - `signal` (float)
-    - `freq` (Hz)
-  - Salida:
-    - JSON con `valor`, `unidad`
-  - !!! note
-        Documenta rangos válidos y casos borde.
-```
-
-- **Módulo A**
-  - Función: `procesar()`
-  - Entrada:
-    - `signal` (float)
-    - `freq` (Hz)
-  - Salida:
-    - JSON con `valor`, `unidad`
-  - !!! note
-        Documenta rangos válidos y casos borde.
-
----
 
