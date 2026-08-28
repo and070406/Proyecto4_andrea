@@ -13,13 +13,6 @@ Lo más importante al crear un prompt correcto son los siguientes aspectos:
 
 # Ejercicio SCAMPER
 
-``` codigo
-**negritas**, *cursivas*, ~~tachado~~, `código en línea`
-```
-
-**negritas**, *cursivas*, ~~tachado~~, `código en línea`
-
----
 
 # Citas (blockquote)
 
@@ -33,21 +26,7 @@ Lo más importante al crear un prompt correcto son los siguientes aspectos:
 
 ---
 
-# Enlaces
 
-``` codigo
-[Enlace directo](https://www.iberopuebla.mx/)
-
-[Texto del enlace de referencia][doc-ref]
-
-[doc-ref]: https://www.iberopuebla.mx//docs "Título opcional"
-```
-
-[Enlace directo](https://www.iberopuebla.mx/)
-
-[Texto del enlace de referencia][doc-ref]
-
-[doc-ref]: https://www.iberopuebla.mx//docs "Título opcional"
 
 ---
 
@@ -55,43 +34,14 @@ Lo más importante al crear un prompt correcto son los siguientes aspectos:
 
 ``` codigo
 
-- Item A
-    * Subitem A.1
-    * Subitem A.2
-- Item B
-    - Subitem B.1
-    - Subitem B.2
-
-1.  Paso 1
-    1.  Paso 1.1
-    2.  Paso 1.2
-        1.  Paso 1.2.1
-        2.  Paso 1.2.2
-        
-- [x] Hecho
-- [ ] Pendiente
+- Definir el rol y nivel de expertise en el tema
+- Para quien es el resultado
+- Restricciones reales (tiempo, presupuesto, tecnología, etc)
+- El "Para qué"
+- El contexto 
+    
 
 ```
-
-- Item A
-    * Subitem A.1
-    * Subitem A.2
-- Item B
-    - Subitem B.1
-    - Subitem B.2
-
----
-
-1.  Paso 1
-    1.  Paso 1.1
-    2.  Paso 1.2
-        1.  Paso 1.2.1
-        2.  Paso 1.2.2
-        
-- [x] Hecho
-- [ ] Pendiente
-
----
 
 # Tablas
 
