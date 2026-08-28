@@ -69,15 +69,12 @@ El remix, en 3 oraciones: Es una caja física con voz, botones y señalización 
 Descripción: El usuario responde preguntas habladas sobre lo que sabe hacer y la IA organiza esa información en competencias, experiencia y posibles oportunidades de empleo o capacitación. El perfil queda asociado a una tarjeta física con QR/NFC y puede funcionar offline, sincronizándose cuando exista conexión.
 El factor Wow: Para un emprendedor o freelancer, permite prototipar rápido y crear servicios de certificación, capacitación o vinculación laboral; para un funcionario, ayuda a identificar capacidades reales de la población y conectar personas con programas, empleos y recursos sin exigir infraestructura digital avanzada.
 
-# PDFs (enlace y embebido)
+# Enlace al chat
+Para ver el chat con la IA completo visita el siguiente enlace:
 
 ``` codigo
-[Descargar especificación (PDF)](recursos/archivos/Calendario.pdf)
+[Ver conversación en ChatGPT](https://chatgpt.com/share/6a8e2af4-1e60-83e8-aca1-1ecacd8a9226) 
 
-<!-- Embed (requiere navegador compatible) -->
-<object data="recursos/archivos/Calendario.pdf" type="application/pdf" width="100%" height="600">
-  <p>No se pudo mostrar el PDF. <a href="../recursos/archivos/Calendario.pdf">Descargar</a></p>
-</object>
 ```
 
 [Descargar especificación (PDF)](recursos/archivos/Calendario.pdf)
