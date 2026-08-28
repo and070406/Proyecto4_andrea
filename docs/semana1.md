@@ -3,21 +3,6 @@
 La primera semana vimos como hacer el mejor prompt para poder utilizar y ayudarnos de la inteligencia artificial con nuestro trabajo, Lo que buscamos es que sea una herramienta que nos ayude a pensar mejor y hacer mejores análisis no que realice todo el trabajo.
 
 Lo más importante al crear un prompt correcto son los siguientes aspectos:
-1.  Definir el rol y nivel de expertise en el tema
-2.  Para quien es el resultado
-3.  Restricciones reales (tiempo, presupuesto, tecnología, etc)
-4.  El "Para qué"
-5.  El contexto 
-
----
-
-# Ejercicio SCAMPER
-
-
-
----
-
-# Listas: viñetas, numeradas y de tareas
 
 ``` codigo
 
@@ -28,7 +13,30 @@ Lo más importante al crear un prompt correcto son los siguientes aspectos:
 - El contexto 
     
 
-```
+---
+
+# Ejercicio SCAMPER
+El método SCAMPER consta de una técnica de creatividad e innovación. Sirve para generar ideas nuevas o mejorar productos, servicios y procesos que ya existen. Funciona como una lista de preguntas basada en siete acciones:
+
+``` codigo
+
+- Sustituir
+- Combinar
+- Adaptar
+- Modificar/Magnificar
+- Poner en otros usos
+- Eliminar
+- Revertir/Reorganizar
+    
+
+---
+
+
+---
+
+# Listas: viñetas, numeradas y de tareas
+
+
 
 # Tablas
 
