@@ -1,18 +1,17 @@
 # Semana 1
 
-``` codigo
-# Título H1
-## Título H2
-### Título H3
-```
+La primera semana vimos como hacer el mejor prompt para poder utilizar y ayudarnos de la inteligencia artificial con nuestro trabajo, Lo que buscamos es que sea una herramienta que nos ayude a pensar mejor y hacer mejores análisis no que realice todo el trabajo.
 
-# Título H1
-## Título H2
-### Título H3
+Lo más importante al crear un prompt correcto son los siguientes aspectos:
+- Definir el rol y nivel de expertise en el tema
+-Para quien es el resultado
+- Restricciones reales (tiempo, presupuesto, tecnología, etc)
+- El "Para qué"
+- El contexto 
 
 ---
 
-# Énfasis y código en línea
+# Ejercicio SCAMPER
 
 ``` codigo
 **negritas**, *cursivas*, ~~tachado~~, `código en línea`
