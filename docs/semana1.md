@@ -45,19 +45,8 @@ El ejercicio en clase consto de tirar un dado y de acuerdo a los números que te
 
 # Prompt
 El primer prompt que utilizamos fue el siguiente:
-``` codigo
-| Componente | Cant. | Nota        |
-|-----------:|:-----:|-------------|
-| Sensor X   | 2     | I2C         |
-| MCU Y      | 1     | WiFi/BLE    |
-```
 
-| Componente | Cant. | Nota        |
-|-----------:|:-----:|-------------|
-| Sensor X   | 2     | I2C         |
-| MCU Y      | 1     | WiFi/BLE    |
-
----
+Actúa como un Consultor Senior en Innovación, Diseño de Servicios y Estrategia de Negocios. Tengo un desafío de co-creación lúdico y disruptivo. He tirado tres dados que me han arrojado tres variables obligatorias para diseñar un proyecto: 1. EL QUÉ (Formato/Entregable) : Un Kit Tangible o Contenedor de Recursos (Caja de herramientas, empaque inteligente, sistema de distribución física). 2. EL CÓMO (Restricción/Enfoque): Automatizado con IA / Digital (El núcleo de la solución debe operar de forma digital o automática). 3. EL PARA QUIÉN (Usuario/Contexto): Comunidad Rural / Migración Local (Zonas con intermitencia de servicios, familias separadas o migración constante). Antes de comenzar a idear soluciones específicas, necesito que me ayudes a enmarcar y entender el problema profundamente. Haz lo siguiente de forma concisa: 1. CONTEXTO Y DOLOR: Define brevemente cuál es el principal punto de dolor (pain point) de este Usuario específico cuando se enfrenta a este Formato bajo esa Restricción técnica. 2. LA PARADOJA: Si existe una contradicción o incompatibilidad aparente entre las tres variables (por ejemplo, digital vs. brecha digital, o cero presupuesto vs. infraestructura), explica brevemente cómo podemos transformarla en una oportunidad de diseño inteligente (tecnología invisible, interfaces alternativas, etc.). 3. LAS 3 PREGUNTAS HMW: Genera 3 variantes del formato estricto "¿Cómo podríamos...?" (How Might We) que unan estas tres variables. Cada opción debe enfocarse en un ángulo diferente (eficiencia, impacto social o experiencia emocional). Termina tu respuesta preguntándome cuál de las 3 opciones de "¿Cómo podríamos...?" quiero elegir para pasar a la fase de ideación SCAMPER. 
 
 # Imágenes
 
@@ -181,20 +170,3 @@ print(medir(1))
 
 ---
 
-# Bloques de cita con código (pseudo-logs)
-
-``` codigo
-> **Log:**
-> ```
-> [12:00:00] Init OK
-> [12:00:01] Conectando a I2C...
-> [12:00:02] Lectura: 523 mV
-> ```
-```
-
-> **Log:**
-> ```
-> [12:00:00] Init OK
-> [12:00:01] Conectando a I2C...
-> [12:00:02] Lectura: 523 mV
-> ```
