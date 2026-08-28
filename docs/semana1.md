@@ -70,43 +70,5 @@ Para ver el chat con la IA completo visita el siguiente enlace:
 [Ver conversación en ChatGPT](https://chatgpt.com/share/6a8e2af4-1e60-83e8-aca1-1ecacd8a9226) 
 
 
-[Descargar especificación (PDF)](recursos/archivos/Calendario.pdf)
-
-<object data="../recursos/archivos/Calendario.pdf" type="application/pdf" width="100%" height="600">
-  <p>No se pudo mostrar el PDF. <a href="../recursos/archivos/Calendario.pdf">Descargar</a></p>
-</object>
-
----
-
-# Admonitions (Material)
-
-``` codigo
-!!! note "Nota"
-    Esto es una nota informativa.
-
-!!! tip "Sugerencia"
-    Un consejo breve para el usuario.
-
-!!! warning "Advertencia"
-    Precauciones o riesgos a considerar.
-
-??? info "Más información (colapsable)"
-    Contenido adicional que se puede expandir.
-```
-
-!!! note "Nota"
-    Esto es una nota informativa.
-
-!!! tip "Sugerencia"
-    Un consejo breve para el usuario.
-
-!!! warning "Advertencia"
-    Precauciones o riesgos a considerar.
-
-??? info "Más información (colapsable)"
-    Contenido adicional que se puede expandir.
-
----
-
 
 
