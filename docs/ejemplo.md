@@ -1,9 +1,7 @@
 # About me
 
-![Diagrama del sistema](recursos/imgs/ibero.jpeg)
+![mi foto](recursos/imgs/andrea.jpeg)
 
-<!-- Control de tamaño usando HTML (cuando se requiera) -->
-<img src="../recursos/imgs/andrea.jpeg" alt="Diagrama del sistema" width="420">
 
 ## Quién soy
 
