@@ -320,6 +320,203 @@ Paso principalmente **analógico** (papel, marcadores, conversación de equipo).
 | **E**liminar | La complejidad heredada que nadie cuestionó | ¿Qué parte de la solución convencional podemos quitar y que el valor central no solo sobreviva sino que mejore? |
 | **R**eordenar | El orden "obvio" del flujo de valor | ¿Qué pasa si invertimos quién detecta el problema, quién actúa, quién paga, o cuándo ocurre la intervención? |
 
+---
+
+**Prompt 3 — Filtro DVN**
+ 
+```text
+Actúa como un evaluador crítico de conceptos de negocio con
+experiencia en filtrar ideas de producto digital-físico bajo
+criterios de mercado real en América Latina. Tu metodología es el
+filtro DVN: evalúas cada concepto bajo tres lentes simultáneos —
+deseable, novedoso y viable — y produces un veredicto honesto con
+justificación específica. No eres optimista por defecto: un ⚠️ o ❌
+bien justificado vale más que un ✅ que no resiste una pregunta de
+seguimiento.
+ 
+Somos emprendedores en México construyendo un negocio con tres
+componentes: una aplicación con IA, un artefacto físico inteligente
+y una página web de venta. Capacidades: desarrollo de software e
+IA, hardware conectado (ESP32, Raspberry Pi, sensores, PCB), diseño
+y manufactura de producto físico.
+ 
+Tenemos seis meses para MVP comercializable.
+ 
+Nuestro usuario / segmento: [DESCRIBE EL SEGMENTO]
+ 
+Los conceptos que queremos filtrar (pueden ser remixes de Claude,
+ideas propias, o ambos):
+ 
+CONCEPTO A — [nombre]:
+[descripción completa del concepto]
+ 
+CONCEPTO B — [nombre]:
+[descripción completa del concepto]
+ 
+CONCEPTO C — [nombre, si lo tienen]:
+[descripción completa del concepto]
+ 
+Evalúa cada concepto bajo los tres lentes DVN:
+ 
+🔴 DESEABLE: ¿El usuario lo querría de verdad — no solo lo
+aprobaría en una encuesta? ¿Resuelve el dolor ⭐ mejor que lo que
+existe hoy? ¿Hay razón para creer que pagaría por esto
+específicamente?
+ 
+🟣 NOVEDOSO: ¿Existe algo así en LATAM o en el mundo con esta
+combinación específica de usuario + problema + forma de entrega?
+No el problema genérico — este enfoque exacto.
+ 
+🟢 VIABLE: ¿Puede construirse una primera versión funcional con las
+capacidades descritas en seis meses? ¿Los tres componentes (app +
+artefacto + canal de venta) son realizables juntos en ese plazo?
+ 
+FORMATO DE SALIDA — entrega exactamente esto:
+ 
+═══════════════════════════════════════════════════════
+FILTRO DVN
+═══════════════════════════════════════════════════════
+ 
+CONCEPTO A — [nombre]
+🔴 Deseable: ✅/⚠️/❌
+Justificación: [por qué — 1–2 oraciones específicas, no genéricas]
+Pregunta que el equipo debe responder: [la duda clave]
+🟣 Novedoso: ✅/⚠️/❌
+Justificación: [referencia a qué existe similar o por qué no existe]
+Pregunta que el equipo debe responder: [la duda clave]
+🟢 Viable: ✅/⚠️/❌
+Justificación: [qué parte es más arriesgada técnicamente o en tiempo]
+Pregunta que el equipo debe responder: [la duda clave]
+Puntaje DVN: [✅ de 3]
+Veredicto: [llevar al Paso 5 / refinar antes / descartar]
+───────────────────────────────────────────────────────
+CONCEPTO B — [nombre]
+🔴 Deseable: ✅/⚠️/❌
+ Justificación: [1–2 oraciones]
+ Pregunta que el equipo debe responder: [la duda clave]
+🟣 Novedoso: ✅/⚠️/❌
+ Justificación: [1–2 oraciones]
+ Pregunta que el equipo debe responder: [la duda clave]
+🟢 Viable: ✅/⚠️/❌
+ Justificación: [1–2 oraciones]
+ Pregunta que el equipo debe responder: [la duda clave]
+Puntaje DVN: [✅ de 3]
+Veredicto: [llevar al Paso 5 / refinar antes / descartar]
+───────────────────────────────────────────────────────
+CONCEPTO C — [nombre] (si aplica)
+🔴 Deseable: ✅/⚠️/❌
+ Justificación: [1–2 oraciones]
+ Pregunta que el equipo debe responder: [la duda clave]
+🟣 Novedoso: ✅/⚠️/❌
+ Justificación: [1–2 oraciones]
+ Pregunta que el equipo debe responder: [la duda clave]
+🟢 Viable: ✅/⚠️/❌
+ Justificación: [1–2 oraciones]
+ Pregunta que el equipo debe responder: [la duda clave]
+Puntaje DVN: [✅ de 3]
+Veredicto: [llevar al Paso 5 / refinar antes / descartar]
+───────────────────────────────────────────────────────
+CONCEPTO RECOMENDADO PARA EL PASO 5
+Nombre: [el de mayor puntaje DVN o el más potente si hay empate]
+Por qué este: [2 oraciones]
+Riesgo principal a vigilar: [el lente más débil y cómo el Paso 5
+puede reducir esa incertidumbre]
+═══════════════════════════════════════════════════════
+```
+ 
+> **RESPUESTA DE LA IA (Claude) — Filtro DVN:**
+>
+> _CONCEPTO A — El Gemelo de Rutina
+
+🔴 Deseable: ✅
+
+Justificación: Ataca directamente el dolor ⭐ mejor que cualquier alternativa actual — no vende un dato aislado ("se movió/no se movió"), sino una respuesta a la pregunta emocional real del hijo ("¿fue un día normal?"). Es plausible que pague porque el precio percibido no es por un sensor, es por la sensación de conocer a su padre a distancia, algo que hoy no existe ni con llamadas diarias.
+
+Pregunta que el equipo debe responder: ¿Cuántos días de datos se necesitan para que el "gemelo de rutina" sea confiable, y qué le mostramos al hijo mientras tanto sin generar falsas alarmas o falsa calma?
+
+🟣 Novedoso: ⚠️
+
+Justificación: La detección de patrones de actividad en el hogar para adultos mayores existe (sensores de presencia tipo Essence SmartCare, CarePredict en EU, algunos pilotos con IMSS/ISSSTE) — el enfoque de "aprendizaje de rutina sin configuración" no es inédito a nivel mundial, aunque sí lo es en México con este nivel de accesibilidad y sin marco institucional/clínico.
+
+Pregunta que el equipo debe responder: ¿Cuál es la barrera de entrada real contra un jugador internacional (CarePredict, Essence) que decida entrar a México, y qué defensibilidad tenemos más allá de ser primeros?
+
+🟢 Viable: ⚠️
+
+Justificación: El hardware (sensor de movimiento/presencia en un objeto cotidiano) es construible en 6 meses con las capacidades descritas; lo arriesgado es la IA de "aprendizaje de patrón personal sin configuración" — requiere semanas de datos reales por hogar antes de ser confiable, lo cual complica un MVP demostrable rápido y una demo de venta convincente en el corto plazo.
+
+Pregunta que el equipo debe responder: ¿Podemos lanzar un MVP con reglas simples (umbrales, horarios básicos) que simule "aprendizaje" de forma creíble mientras la IA real de patrón madura con los primeros usuarios?
+
+Puntaje DVN: ✅✅ de 3 (1 ⚠️⚠️)
+
+Veredicto: refinar antes — el concepto es fuerte pero necesita simplificarse en el MVP para no depender de semanas de datos antes de mostrar valor.
+
+───────────────────────────────────────────────────────
+
+CONCEPTO B — El Seguro que se Olvida que Existe
+
+🔴 Deseable: ⚠️
+
+Justificación: El silencio total y la instalación sin fricción son atractivos, pero hay un riesgo real de deseabilidad: parte del dolor ⭐ no es solo "saber que está bien" sino el ritual mismo de sentirse conectado — un sistema que "desaparece por completo" podría generar ansiedad de "¿sigue funcionando?" en vez de tranquilidad, especialmente los primeros meses sin confianza establecida en el producto.
+
+Pregunta que el equipo debe responder: ¿Cómo confirmamos al hijo, sin romper el "silencio", que el sistema sigue activo y no simplemente dejó de funcionar (batería, señal, artefacto movido)?
+
+🟣 Novedoso: ✅
+
+Justificación: La combinación específica de conectividad celular/LoRa independiente + silencio por excepción para este segmento y este dolor emocional (no solo alerta de emergencia, sino ausencia de necesidad de checar) no tiene un competidor directo identificable en México — los productos de teleasistencia existentes (botones de pánico, pulseras SOS) son reactivos y requieren configuración de WiFi o app activa.
+
+Pregunta que el equipo debe responder: ¿Qué tan defendible es esta ventaja de "cero fricción de instalación" una vez que un competidor la copie — es una ventaja de producto o solo de time-to-market?
+
+🟢 Viable: ✅
+
+Justificación: Es el concepto más directamente construible en 6 meses — LoRa/celular de bajo consumo y detección de excepción son problemas técnicos bien acotados y dentro de las capacidades declaradas (ESP32, PCB, hardware conectado), sin depender de un modelo de IA que necesite madurar con datos.
+
+Pregunta que el equipo debe responder: ¿Qué costo real tiene la conectividad celular por dispositivo por mes en México, y ese costo es sostenible dentro del precio que el hijo está dispuesto a pagar?
+
+Puntaje DVN: ✅✅ de 3 (1 ⚠️)
+
+Veredicto: llevar al Paso 5 — es el más ejecutable, con un riesgo de deseabilidad claro y acotado que se puede resolver con diseño (ej. un "heartbeat" visual mínimo sin romper el silencio).
+
+───────────────────────────────────────────────────────
+
+CONCEPTO C — El Seguro que Paga Otro
+
+🔴 Deseable: ⚠️
+
+Justificación: Es muy deseable para la institución pagadora (ahorro de $250,000 por fractura evitada es un caso de negocio claro), pero es incierto si es deseable para el hijo — si el producto llega "gratis" vía la aseguradora del padre, el hijo pierde la sensación de agencia y regalo personal que hace tan fuerte al insight original ("yo cuido a mi papá"), y podría sentirse como un trámite de la aseguradora más que como un acto de cuidado propio.
+
+Pregunta que el equipo debe responder: ¿El hijo valora igual una señal de tranquilidad que vino de la aseguradora del padre vs. una que él mismo eligió y pagó?
+
+🟣 Novedoso: ✅
+
+Justificación: Modelos B2B2C de dispositivos de monitoreo pagados por aseguradoras existen en mercados desarrollados (EU, algunos programas de Medicare Advantage), pero en México, con aseguradoras de gastos médicos mayores o AFOREs subsidiando prevención de caídas vía hardware conectado, no hay un jugador establecido — es genuinamente poco explorado en este mercado.
+
+Pregunta que el equipo debe responder: ¿Existe ya alguna aseguradora o AFORE mexicana con apetito y presupuesto para pilotos de prevención, o habría que crear esa categoría desde cero con ellas?
+
+🟢 Viable: ❌
+
+Justificación: Un ciclo de venta B2B2C con aseguradoras o instituciones de salud en México toma típicamente 12–24 meses (comités de compra, pilotos, cumplimiento regulatorio, integración con sus sistemas) — es estructuralmente incompatible con un MVP comercializable en 6 meses, sin importar qué tan bien construidos estén los otros dos componentes.
+
+Pregunta que el equipo debe responder: ¿Podemos validar la hipótesis de pago institucional con una aseguradora de forma informal (carta de intención, piloto no vinculante) sin depender de cerrar venta real en los 6 meses?
+
+Puntaje DVN: ✅ de 3 (2 ⚠️/❌)
+
+Veredicto: descartar (para el MVP de 6 meses) — guardar como visión de escalamiento una vez que B o A tengan tracción con usuarios reales que sirvan de evidencia ante una aseguradora.
+
+───────────────────────────────────────────────────────
+
+CONCEPTO RECOMENDADO PARA EL PASO 5
+
+Nombre: El Seguro que se Olvida que Existe (Concepto B)
+
+Por qué este: Es el único con viabilidad clara en la ventana de 6 meses sin depender de meses de datos para entrenar un modelo (a diferencia de A) ni de un ciclo de venta institucional imposible en ese plazo (a diferencia de C), y su propuesta de "instala una vez, olvídate para siempre" es genuinamente novedosa frente a la teleasistencia reactiva que existe hoy en México.
+
+Riesgo principal a vigilar: el lente más débil es deseable — el riesgo de que el silencio total se perciba como "no sé si sigue funcionando" en vez de tranquilidad; el Paso 5 debería probar con usuarios reales una señal mínima de "estoy vivo y funcionando" (ej. un check semanal silencioso) que no rompa la promesa central de cero fricción._
+
+---
+
+
+
+
 
 
 
