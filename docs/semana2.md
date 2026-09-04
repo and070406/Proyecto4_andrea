@@ -607,10 +607,10 @@ comunidades o reportes.
  
 FORMATO DE SALIDA — entrega exactamente esto:
  
-═══════════════════════════════════════════════════════
+
 VERIFICACIÓN DE DESEABILIDAD
 Concepto: [nombre] · Segmento: [usuario]
-═══════════════════════════════════════════════════════
+
  
 SEÑAL 1 — Pago por soluciones imperfectas
 Evidencia encontrada: [descripción concreta con fuente]
@@ -637,12 +637,12 @@ Evidencia encontrada: [descripción del workaround más común]
 Dónde se documentó: [fuente]
 Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
  
-───────────────────────────────────────────────────────
+
 RESUMEN
 Señales confirmadas ✅: [número de 5]
 Señales parciales ⚠️: [número de 5]
 Señales ausentes ❌: [número de 5]
-═══════════════════════════════════════════════════════
+
 ```
 
 
@@ -767,6 +767,7 @@ VEREDICTO FINAL
 antes de continuar — y por qué]
 
 ```
+
 ---
 
 
@@ -832,8 +833,7 @@ entrevistas]
 ```
  
 > **Reporte de oportunidad — borrador del equipo:**
-
->  _[📎Reporte de oportunidad: [ver documento](https://docs.google.com/document/d/15BhTfX1qZM2KiuXkqKp_3LoqJ-T7gLd5kdJooJdQeZg/edit?usp=sharing)]_
+ _[📎Reporte de oportunidad: [ver documento](https://docs.google.com/document/d/15BhTfX1qZM2KiuXkqKp_3LoqJ-T7gLd5kdJooJdQeZg/edit?usp=sharing)]_
 
 
 
