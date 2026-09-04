@@ -833,7 +833,7 @@ entrevistas]
 ```
  
 > **Reporte de oportunidad — borrador del equipo:**
- _[📎Reporte de oportunidad: [ver documento](https://docs.google.com/document/d/15BhTfX1qZM2KiuXkqKp_3LoqJ-T7gLd5kdJooJdQeZg/edit?usp=sharing)]_
+ _📎Reporte de oportunidad: [ver documento](https://docs.google.com/document/d/15BhTfX1qZM2KiuXkqKp_3LoqJ-T7gLd5kdJooJdQeZg/edit?usp=sharing)_
 
 
 
