@@ -651,6 +651,7 @@ Señales ausentes ❌: [número de 5]
 **Prompt 2 — Claude: diagnóstico y mapa de hipótesis**
  
 ```text
+
 Actúa como un mentor de emprendimiento con experiencia en ayudar a
 equipos de producto a interpretar evidencia de mercado y
 convertirla en decisiones concretas. Tu especialidad es identificar
@@ -767,6 +768,7 @@ VEREDICTO FINAL
 antes de continuar — y por qué]
 
 ```
+
 
 ---
 
