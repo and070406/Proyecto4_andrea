@@ -789,8 +789,7 @@ antes de continuar — y por qué]
  
 - Puntaje de deseabilidad del Paso 5 (mínimo 3 de 5 señales ✅ para continuar con confianza): _[ ]_
 - Tamaño mínimo del mercado (≥ 50,000 personas o negocios en LATAM, plausible): _[ ]_
-📎 Matriz de selección: [ver documento](https://docs.google.com/document/d/1Utgpt-8D9et9gkGQEzuYE2uaUeAP9dXAgfThObecpQA/edit?usp=sharing)
- 
+
 > **Matriz de selección completada por el equipo:**
 >
 > _[📎 Matriz de selección: [ver documento](https://iberopuebla-my.sharepoint.com/:w:/g/personal/200759_iberopuebla_mx/IQCM_5G2FB-YTb1-ycLyWuBuAd6a7u2kCttx5f3XImo3Ruw?e=j923nh)]_
