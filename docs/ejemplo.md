@@ -1,5 +1,10 @@
 # About me
 
+![Diagrama del sistema](recursos/imgs/ibero.jpeg)
+
+<!-- Control de tamaño usando HTML (cuando se requiera) -->
+<img src="../recursos/imgs/andrea.jpeg" alt="Diagrama del sistema" width="420">
+
 ## Quién soy
 
 Mi nombre es Andrea Solano López y  actualmente soy estudiante de Ingeniería Mecatrónica, también soy políglota; aparte de hablar español hablo inglés, alemán y un poco de francés y actualmente tomo clases de alemán y francés.
