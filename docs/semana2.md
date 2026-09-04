@@ -515,7 +515,334 @@ Riesgo principal a vigilar: el lente más débil es deseable — el riesgo de qu
 ---
 
 
+## Paso 5 — Validación preliminar de deseabilidad
+ 
+!!! danger "El suicidio creativo"
+    Un equipo se enamora de una idea, invierte semanas o meses construyéndola, y al llegar al mercado descubre que nadie la quería, que ya existía algo mejor, o que técnicamente no era viable desde el principio.
+ 
+**Tres formas comunes en hardware + IA en LATAM:**
+ 
+1. **El producto sin dolor real** — el usuario dice "qué interesante" y no compra.
+2. **El producto que ya existe** — no lo encontraron porque buscaron en el espacio obvio, no en los adyacentes.
+3. **El producto que no puede construirse en el tiempo real** — la viabilidad técnica asumida no corresponde a seis meses.
+Este paso **no reemplaza las entrevistas** de semana 3 — identifica si hay suficientes señales públicas para justificar avanzar.
 
+
+**Las 5 señales de deseabilidad:**
+ 
+1. 🔴 Pago actual por soluciones imperfectas
+2. 🔴 Comunidades activas hablando del problema
+3. 🔴 Frecuencia alta del problema
+4. 🔴 Costo observable del problema
+5. 🔴 Workarounds existentes
+
+
+**Prompt 1 — Perplexity: verificar las 5 señales con evidencia real**
+ 
+```text
+Actúa como un investigador de mercado especializado en validar la
+deseabilidad de oportunidades de negocio en América Latina usando
+evidencia de comportamiento observable — no proyecciones ni
+opiniones de expertos. Tu metodología consiste en buscar señales
+concretas de que un problema existe y duele lo suficiente como para
+que alguien pague por resolverlo: pagos actuales a soluciones
+imperfectas, comunidades activas, frecuencia documentada, costo
+cuantificable y workarounds en uso. Si la evidencia no existe o es
+débil, lo dices directamente.
+ 
+Somos emprendedores en México construyendo un negocio con tres
+componentes: una aplicación con IA, un artefacto físico inteligente
+y una página web de venta. Desarrollamos el siguiente concepto a
+partir de un proceso de investigación de oportunidades y
+necesitamos verificar si tiene deseabilidad real antes de
+comprometer seis meses de desarrollo.
+ 
+NUESTRO CONCEPTO:
+Nombre: [nombre del Concepto Recomendado del Paso 4]
+Descripción: [2–3 oraciones del concepto]
+Usuario / segmento: [el segmento específico]
+Dolor que resuelve: [el dolor ⭐ del Pain-Gain Map]
+Ganancia que entrega: [la ganancia ⭐ del Pain-Gain Map]
+ 
+Verifica cada una de las 5 señales de deseabilidad con evidencia
+real y observable. Para cada señal busca en fuentes primarias:
+comunidades online, grupos de Facebook, foros especializados,
+canales de YouTube, reseñas de productos similares, reportes de
+industria, datos del INEGI, BID, CEPAL u organismos sectoriales
+relevantes.
+ 
+SEÑAL 1 — PAGO ACTUAL POR SOLUCIONES IMPERFECTAS
+¿Hay evidencia de que este segmento ya paga por algo que resuelve
+parcialmente este problema, aunque sea caro, incómodo o
+insuficiente?
+Busca: productos o servicios que el usuario contrata hoy, precios
+reales, frecuencia de contratación.
+ 
+SEÑAL 2 — COMUNIDADES ACTIVAS
+¿Existen comunidades online donde este segmento hable de este
+problema, busque soluciones o se queje de las alternativas
+actuales?
+Busca: grupos de Facebook, subreddits, foros, canales de YouTube,
+hashtags, con ejemplos concretos de publicaciones o conversaciones
+relacionadas.
+ 
+SEÑAL 3 — FRECUENCIA DEL PROBLEMA
+¿Con qué regularidad experimenta este usuario este problema
+específico? ¿Hay datos documentados de frecuencia?
+Busca: reportes operativos, estudios sectoriales, testimonios o
+cualquier fuente que indique periodicidad.
+ 
+SEÑAL 4 — COSTO OBSERVABLE
+¿Cuánto le cuesta al usuario NO resolver este problema?
+Busca: pérdidas documentadas, costos de workarounds actuales,
+seguros contratados por este riesgo, tiempo invertido con costo
+calculable.
+ 
+SEÑAL 5 — WORKAROUNDS EN USO
+¿Hay evidencia de que el usuario ya inventó soluciones caseras,
+adaptaciones o procesos manuales para lidiar con este problema?
+Busca: descripciones de procesos no estándar, productos adaptados
+de otras industrias, soluciones "artesanales" documentadas en
+comunidades o reportes.
+ 
+FORMATO DE SALIDA — entrega exactamente esto:
+ 
+═══════════════════════════════════════════════════════
+VERIFICACIÓN DE DESEABILIDAD
+Concepto: [nombre] · Segmento: [usuario]
+═══════════════════════════════════════════════════════
+ 
+SEÑAL 1 — Pago por soluciones imperfectas
+Evidencia encontrada: [descripción concreta con fuente]
+Ejemplo específico: [el más representativo]
+Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
+ 
+SEÑAL 2 — Comunidades activas
+Evidencia encontrada: [nombre de comunidades + ejemplo de post]
+Tamaño aproximado de la comunidad: [si está disponible]
+Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
+ 
+SEÑAL 3 — Frecuencia del problema
+Evidencia encontrada: [dato de frecuencia con fuente]
+Periodicidad: diaria / semanal / mensual / ocasional
+Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
+ 
+SEÑAL 4 — Costo observable
+Evidencia encontrada: [cifra o rango con fuente]
+Tipo de costo: dinero / tiempo / riesgo / calidad
+Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
+ 
+SEÑAL 5 — Workarounds en uso
+Evidencia encontrada: [descripción del workaround más común]
+Dónde se documentó: [fuente]
+Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
+ 
+───────────────────────────────────────────────────────
+RESUMEN
+Señales confirmadas ✅: [número de 5]
+Señales parciales ⚠️: [número de 5]
+Señales ausentes ❌: [número de 5]
+═══════════════════════════════════════════════════════
+```
+
+
+---
+ 
+**Prompt 2 — Claude: diagnóstico y mapa de hipótesis**
+ 
+```text
+Actúa como un mentor de emprendimiento con experiencia en ayudar a
+equipos de producto a interpretar evidencia de mercado y
+convertirla en decisiones concretas. Tu especialidad es identificar
+cuándo un concepto tiene deseabilidad real, cuándo está en zona de
+riesgo, y cuándo debe replantearse antes de invertir recursos. Eres
+directo: no suavizas un diagnóstico negativo ni inflas uno
+positivo. Si el concepto tiene riesgo de suicidio creativo, lo
+dices claramente.
+ 
+Somos emprendedores en México construyendo un negocio con tres
+componentes: una aplicación con IA, un artefacto físico inteligente
+y una página web de venta. Tenemos seis meses para MVP
+comercializable. Completamos una verificación de deseabilidad de
+nuestro concepto y necesitamos que la interpretes y nos digas qué
+hacer con ella.
+ 
+NUESTRO CONCEPTO:
+[pega el nombre y descripción del Concepto Recomendado]
+ 
+RESULTADO DE LA VERIFICACIÓN DE PERPLEXITY:
+[pega el output completo del Prompt 1]
+ 
+Necesito que hagas tres cosas en el formato exacto que se indica al
+final:
+ 
+1. DIAGNÓSTICO DE DESEABILIDAD: ¿Qué tan sólida es la deseabilidad
+   de nuestro concepto según la evidencia encontrada? ¿En qué
+   señal está el mayor riesgo? ¿Hay algún patrón en las señales
+   ausentes que sugiera que el problema existe pero no para el
+   segmento que elegimos, o que no duele lo suficiente para que
+   alguien pague por resolverlo?
+ 
+2. RIESGO DE SUICIDIO CREATIVO: Basándote en el patrón de señales,
+   ¿qué tan alto es el riesgo de que este equipo construya algo que
+   nadie quiere, que ya existe, o que no puede terminarse en seis
+   meses? ¿Cuál de los tres tipos de suicidio creativo es el más
+   probable para este concepto específico?
+ 
+3. MAPA DE HIPÓTESIS: Formula 3 hipótesis específicas que el
+   equipo debe probar con usuarios reales en las entrevistas de la
+   semana siguiente. Cada hipótesis debe ser falseable — redactada
+   de forma que una sola conversación con el usuario correcto pueda
+   confirmarla o refutarla. No preguntas abiertas — hipótesis
+   concretas del tipo "creemos que [usuario] experimenta
+   [situación] con frecuencia [X] y estaría dispuesto a pagar
+   [rango] porque [razón]."
+ 
+FORMATO DE SALIDA — entrega exactamente esto:
+ 
+═══════════════════════════════════════════════════════
+DIAGNÓSTICO DE DESEABILIDAD
+Concepto: [nombre]
+═══════════════════════════════════════════════════════
+ 
+NIVEL DE DESEABILIDAD ACTUAL:
+[Alto — evidencia sólida en 4–5 señales]
+[Medio — evidencia parcial, zona de riesgo controlable]
+[Bajo — evidencia insuficiente, replantear antes de avanzar]
+ 
+FORTALEZA PRINCIPAL:
+[La señal mejor fundamentada y qué significa para el concepto]
+ 
+RIESGO PRINCIPAL:
+[La señal más débil o ausente y por qué es importante]
+ 
+PATRÓN DE LAS SEÑALES:
+[¿Qué dice el conjunto — el problema existe para un segmento
+diferente al elegido / existe pero no duele suficiente / existe y
+duele pero el concepto no lo ataca correctamente?]
+ 
+───────────────────────────────────────────────────────
+RIESGO DE SUICIDIO CREATIVO
+ 
+Tipo más probable:
+[ ] Producto sin dolor real — el usuario lo aprobaría pero no
+    cambiaría su comportamiento para tenerlo
+[ ] Producto que ya existe — hay una solución similar que el
+    equipo no encontró porque no buscó en los adyacentes
+[ ] Producto que no puede construirse — la viabilidad técnica o el
+    tiempo requerido excede lo disponible en seis meses
+ 
+Nivel de riesgo: Alto / Medio / Bajo
+Por qué: [2 oraciones específicas basadas en la evidencia]
+Cómo reducirlo:
+[1 acción concreta que el equipo puede hacer esta semana sin
+construir nada — una búsqueda, una conversación, una verificación
+— que reduciría este riesgo significativamente]
+ 
+───────────────────────────────────────────────────────
+MAPA DE HIPÓTESIS
+ 
+HIPÓTESIS 1 — sobre el dolor
+"Creemos que [usuario específico] experimenta [situación concreta]
+con frecuencia [X veces por semana/mes] y le cuesta [rango de
+costo] porque [razón]. Si esto es falso, nuestro concepto necesita
+[qué cambiaría]."
+Cómo probarla: [la pregunta exacta o situación de observación que
+la confirmaría o refutaría en una entrevista de 20 min]
+ 
+HIPÓTESIS 2 — sobre la solución
+"Creemos que [usuario específico] preferiría [aspecto clave del
+concepto] sobre [la alternativa actual] porque [razón]. Si esto es
+falso, nuestro concepto necesita [qué cambiaría]."
+Cómo probarla: [la pregunta exacta o situación de observación]
+ 
+HIPÓTESIS 3 — sobre el pago
+"Creemos que [usuario específico] estaría dispuesto a pagar [rango]
+por [aspecto del concepto] porque [razón]. Si esto es falso,
+nuestro concepto necesita [qué cambiaría]."
+Cómo probarla: [la pregunta exacta o situación de observación]
+ 
+───────────────────────────────────────────────────────
+VEREDICTO FINAL
+[Una sola oración directa: el concepto está listo para entrevistas
+/ necesita ajuste antes de entrevistar / necesita replantearse
+antes de continuar — y por qué]
+═══════════════════════════════════════════════════════
+```
+---
+
+
+## Paso 6 — Criterios de selección de oportunidad
+ 
+*Sin IA en este paso.* La selección final la hace el equipo con su propio criterio.
+ 
+**Criterio 1 — Pasión genuina del equipo**
+ 
+- ¿Alguien del equipo ha vivido este problema, conoce a alguien que lo sufre, o tiene una razón personal para querer resolverlo? _[ ]_
+- ¿Estarían dispuestos a pasar una tarde entera visitando a 5 usuarios de este sector aunque no fuera un entregable? _[ ]_
+- Si el proyecto no tuviera calificación, ¿seguirían trabajando en él? _[ ]_
+**Criterio 2 — Habilidad técnica disponible**
+ 
+- ¿Pueden nombrar el tipo de sensor, actuador o modelo de IA que usaría el artefacto físico? _[ ]_
+- ¿El componente más difícil es algo que ya han hecho o algo completamente nuevo para todos? ¿Hay tiempo real para aprenderlo? _[ ]_
+- ¿Requiere integraciones o dependencias externas que podrían bloquear el desarrollo antes de semana 13? _[ ]_
+**Criterio 3 — Mercado existente con señales verificadas**
+ 
+- Puntaje de deseabilidad del Paso 5 (mínimo 3 de 5 señales ✅ para continuar con confianza): _[ ]_
+- Tamaño mínimo del mercado (≥ 50,000 personas o negocios en LATAM, plausible): _[ ]_
+📎 Matriz de selección: [ver documento](https://docs.google.com/document/d/1Utgpt-8D9et9gkGQEzuYE2uaUeAP9dXAgfThObecpQA/edit?usp=sharing)
+ 
+> **Matriz de selección completada por el equipo:**
+>
+> _[📎 Matriz de selección: [ver documento](https://iberopuebla-my.sharepoint.com/:w:/g/personal/200759_iberopuebla_mx/IQCM_5G2FB-YTb1-ycLyWuBuAd6a7u2kCttx5f3XImo3Ruw?e=j923nh)]_
+
+### Estructura del reporte de oportunidad
+ 
+```text
+REPORTE DE OPORTUNIDAD — Semana 2
+ 
+Equipo: [nombres]
+Concepto elegido: [nombre del Concepto Recomendado]
+ 
+1. EL PROBLEMA
+[Segmento específico + descripción del dolor ⭐ + workaround actual
+con costo observable]
+ 
+2. EVIDENCIA DE DESEABILIDAD
+[Mínimo 3 señales verificadas con fuente — no "creemos que", solo
+evidencia observable]
+ 
+3. PAIN-GAIN MAP (versión final)
+[Mínimo 5 dolores ordenados por intensidad y 5 ganancias ordenadas
+por deseo]
+ 
+4. CONCEPTO RECOMENDADO
+[Nombre + descripción en 3–4 oraciones + letras SCAMPER que lo
+originaron + puntaje DVN]
+ 
+5. LA OPORTUNIDAD EN UNA ORACIÓN
+"Existe una oportunidad para [quién] que necesita [qué resultado]
+porque hoy [por qué no lo tiene]."
+ 
+6. POR QUÉ ESTE EQUIPO
+[Razón personal — Criterio 1 + elemento técnico concreto —
+Criterio 2]
+ 
+7. HIPÓTESIS PARA SEMANA 3
+[Las 3 hipótesis falseables del Paso 5 — listas para probar en
+entrevistas]
+ 
+--- SOLO ESTRESORES ---
+ 
+8. LO QUE CAMBIÓ
+[El supuesto cuestionado o la arista encontrada + cómo modificó la
+dirección del concepto]
+Si aplica: Concepto B como oportunidad de expansión.
+```
+ 
+> **Reporte de oportunidad — borrador del equipo:**
+>
+> _[pega/completa aquí todo el reporte]_
 
 
 
