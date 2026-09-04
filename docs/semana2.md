@@ -829,18 +829,13 @@ Criterio 2]
 7. HIPÓTESIS PARA SEMANA 3
 [Las 3 hipótesis falseables del Paso 5 — listas para probar en
 entrevistas]
- 
---- SOLO ESTRESORES ---
- 
-8. LO QUE CAMBIÓ
-[El supuesto cuestionado o la arista encontrada + cómo modificó la
-dirección del concepto]
-Si aplica: Concepto B como oportunidad de expansión.
+
 ```
  
 > **Reporte de oportunidad — borrador del equipo:**
 >
-> _[pega/completa aquí todo el reporte]_
+> > _[📎Reporte de oportunidad: [ver documento](https://docs.google.com/document/d/15BhTfX1qZM2KiuXkqKp_3LoqJ-T7gLd5kdJooJdQeZg/edit?usp=sharing)]_
+
 
 
 
