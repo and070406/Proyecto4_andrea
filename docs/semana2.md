@@ -801,8 +801,8 @@ antes de continuar — y por qué]
 ```text
 REPORTE DE OPORTUNIDAD — Semana 2
  
-Equipo: [nombres]
-Concepto elegido: [nombre del Concepto Recomendado]
+Equipo: [Andrea Solano López y Jesús León Hernández Martínez]
+Concepto elegido: [El Seguro que se Olvida que Existe]
  
 1. EL PROBLEMA
 [Segmento específico + descripción del dolor ⭐ + workaround actual
