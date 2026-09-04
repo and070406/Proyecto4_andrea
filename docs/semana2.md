@@ -761,13 +761,12 @@ HIPÓTESIS 3 — sobre el pago
 por [aspecto del concepto] porque [razón]. Si esto es falso,
 nuestro concepto necesita [qué cambiaría]."
 Cómo probarla: [la pregunta exacta o situación de observación]
- 
-───────────────────────────────────────────────────────
+
 VEREDICTO FINAL
 [Una sola oración directa: el concepto está listo para entrevistas
 / necesita ajuste antes de entrevistar / necesita replantearse
 antes de continuar — y por qué]
-═══════════════════════════════════════════════════════
+
 ```
 ---
 
@@ -801,8 +800,8 @@ antes de continuar — y por qué]
 ```text
 REPORTE DE OPORTUNIDAD — Semana 2
  
-Equipo: [Andrea Solano López y Jesús León Hernández Martínez]
-Concepto elegido: [El Seguro que se Olvida que Existe]
+Equipo: [nombres]
+Concepto elegido: [nombre del Concepto Recomendado]
  
 1. EL PROBLEMA
 [Segmento específico + descripción del dolor ⭐ + workaround actual
