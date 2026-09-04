@@ -700,10 +700,10 @@ final:
  
 FORMATO DE SALIDA — entrega exactamente esto:
  
-═══════════════════════════════════════════════════════
+
 DIAGNÓSTICO DE DESEABILIDAD
 Concepto: [nombre]
-═══════════════════════════════════════════════════════
+
  
 NIVEL DE DESEABILIDAD ACTUAL:
 [Alto — evidencia sólida en 4–5 señales]
@@ -721,7 +721,7 @@ PATRÓN DE LAS SEÑALES:
 diferente al elegido / existe pero no duele suficiente / existe y
 duele pero el concepto no lo ataca correctamente?]
  
-───────────────────────────────────────────────────────
+
 RIESGO DE SUICIDIO CREATIVO
  
 Tipo más probable:
@@ -739,7 +739,6 @@ Cómo reducirlo:
 construir nada — una búsqueda, una conversación, una verificación
 — que reduciría este riesgo significativamente]
  
-───────────────────────────────────────────────────────
 MAPA DE HIPÓTESIS
  
 HIPÓTESIS 1 — sobre el dolor
