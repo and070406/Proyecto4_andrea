@@ -350,6 +350,7 @@ Responde:
    Veredicto: dentro ⚠️ / fuera ✅ / zona gris ❌
 4. Recomendación: ignorar / ajustar / asesoría legal / usar como guía
 
+
 ```
 
 --- 
