@@ -60,6 +60,7 @@ Tono y personalidad: ¿Cómo se siente la marca al pronunciarla?
 Sugerencia de Slogan cortísimo (opcional): Una frase de 3 a 5 palabras que refuerce el nombre.
 
 ```
+---
 
 > **IA usada:** _Perplexity_
 >
@@ -173,6 +174,8 @@ Da tu recomendación clara de cuál deberías elegir según el tipo de cliente o
 
 
 ```
+---
+
 > **RESPUESTA:**
 > _[Ver conversación con Perplexity](https://www.perplexity.ai/search/1228713b-8bdf-40da-9d99-3ef4f72a041a)_
 
@@ -227,6 +230,7 @@ Es un poco más frío/corporativo — suena a nombre de app de logística o tele
 ### Prompt 3 — Verificación digital de pertinencia
 
 ```text
+
 Actúa como un Especialista en Protección de Marca, SEO y Auditoría de Activos Digitales. Tu objetivo es ayudarme, en mi rol de emprendedor, a realizar una verificación digital de pertinencia, disponibilidad y viabilidad operativa para mis dos nombres finalistas: "SilencioActivo" y "DistanciaCero".
 
 1. CONTEXTO DE MI NEGOCIO
@@ -258,6 +262,7 @@ Concluye cuál de las dos marcas presenta un camino más limpio y eficiente para
 Presenta la respuesta estructurada en puntos clave y concluye con una tabla comparativa de viabilidad digital que resuma los hallazgos para rápida lectura.
 
 ```
+---
 
 > **IA usada:** _Claude_
 >
