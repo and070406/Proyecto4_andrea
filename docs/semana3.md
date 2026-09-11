@@ -6,12 +6,10 @@
 
 | Paso | Contenido | Tiempo |
 |---|---|---|
-| 1 | Defensas semana 2 | 15 min |
-| 2 | Propiedad intelectual (panorama) | 40 min |
-| 3 | Nombre de marca con IA | 20 min |
-| 4 | Búsqueda fonética IMPI | 10 min |
-| 5 | Vigilancia tecnológica | 20 min |
-| 6 | Mini-taller de entrevistas | 15 min |
+| 1 | Propiedad intelectual (panorama) | 40 min |
+| 2 | Nombre de marca con IA | 20 min |
+| 3 | Búsqueda fonética IMPI | 10 min |
+| 4 | Vigilancia tecnológica | 20 min |
 
 ---
 
