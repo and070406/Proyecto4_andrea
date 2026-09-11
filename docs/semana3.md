@@ -336,6 +336,7 @@ Entrega:
 ### Prompt 2 — Interpretar reclamos (Claude)
 
 ```text
+
 Actúa como analista de PI para equipos de ingeniería sin formación legal.
 
 Concepto: Distanciacero — [descripción técnica]
@@ -350,6 +351,7 @@ Responde:
 4. Recomendación: ignorar / ajustar / asesoría legal / usar como guía
 
 ```
+
 --- 
 
 ### Prompt 3 — Actores tecnológicos en LATAM (Perplexity)
