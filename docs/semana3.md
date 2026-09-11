@@ -60,7 +60,9 @@ Tono y personalidad: ¿Cómo se siente la marca al pronunciarla?
 Sugerencia de Slogan cortísimo (opcional): Una frase de 3 a 5 palabras que refuerce el nombre.
 
 ```
+
 ---
+
 
 > **IA usada:** _Perplexity_
 >
