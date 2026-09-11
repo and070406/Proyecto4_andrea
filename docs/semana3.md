@@ -39,30 +39,28 @@ Criterios: pronunciable ES/EN · corto (2–3 sílabas) · sin significado negat
 ```text
 Primer Prompt(Perplexity):
 	Actúa como un Experto Senior en Branding, Naming y Estrategia de Marca con más de 15 años de experiencia creando identidades memorables para startups y marcas globales. Tu objetivo es ayudarme, en mi rol de emprendedor, a conceptualizar y desarrollar nombres comerciales de alto impacto.
-1. CONTEXTO DE MI NEGOCIO
-¿Qué hace mi negocio / Producto o servicio?: Un sistema digital-físico que le da tranquilidad diaria a los hijos que viven lejos de un padre o madre mayor que vive solo. Un artefacto discreto (integrado en un objeto cotidiano como un bastón, un sillón o una taza) detecta pasivamente la rutina diaria del adulto mayor con conectividad celular/LoRa propia, sin depender de WiFi ni de que él haga nada. Una app guarda silencio total mientras todo esté normal y solo avisa al hijo/a por excepción, cuando algo se sale de lo habitual.
-Público objetivo: Hijos e hijas adultos de 35 a 55 años en México, con un padre o madre de 65+ años que vive solo(a) y lejos de ellos. Suelen tener ingresos estables, ya gastan en el bienestar de sus padres (llamadas, remesas, servicios de monitoreo), y viven con ansiedad y culpa constantes por no poder estar presentes físicamente.
-Propuesta única de valor / Diferencial: A diferencia de la teleasistencia reactiva que ya existe (botones de pánico, apps de check-in diario que hay que revisar), este producto no exige atención constante ni acción del adulto mayor. Se instala una sola vez, no depende de WiFi doméstico, y desaparece de la vida digital del hijo — solo se hace notar cuando realmente importa. Vende tranquilidad diaria comprobable a distancia, no vigilancia ni alarmas.
-Valores y personalidad de la marca: Confiable, discreto, cálido, silenciosamente presente, respetuoso de la dignidad y autonomía del adulto mayor, tecnológico pero humano — no clínico ni institucional.
-Industria / Sector: Tecnología para el cuidado familiar / eldertech / bienestar y salud a distancia (hardware conectado + IA + servicios digitales).
-2. TAREA A EJECUTAR
-Con base en el contexto provisto, genera 12 propuestas de nombres de marca únicos y originales, distribuidos equitativamente en 4 categorías creativas (3 nombres por categoría):
-Evocadores (3 nombres): Nombres sugerentes que transmiten la esencia, la emoción o la experiencia de la marca sin describirla literalmente.
-Compuestos (3 nombres): Nombres creados mediante la unión inteligente de dos palabras existentes en español o inglés que refieran al valor o actividad del negocio.
-Inventados / Neologismos (3 nombres): Palabras totalmente originales, fáciles de pronunciar y recordar, con una sonoridad moderna y atractiva.
-Disruptivos / Creativos (3 nombres): Nombres fuera de lo convencional, atrevidos, metafóricos o inesperados que rompan con las normas tradicionales de la industria.
-3. FORMATO DE ENTREGA
-Para cada uno de los 12 nombres, presenta la información de la siguiente manera:
-Nombre de la marca
-Tipo de nombre: [Evocador / Compuesto / Inventado / Disruptivo]
-Significado y concepto: Breve explicación del porqué del nombre y qué transmite.
-Tono y personalidad: ¿Cómo se siente la marca al pronunciarla?
-Sugerencia de Slogan cortísimo (opcional): Una frase de 3 a 5 palabras que refuerce el nombre.
-
+   1. CONTEXTO DE MI NEGOCIO
+   ¿Qué hace mi negocio / Producto o servicio?: Un sistema digital-físico que le da tranquilidad diaria a los hijos que viven lejos de un padre o madre mayor que vive solo. Un artefacto discreto (integrado en un objeto cotidiano como un bastón, un sillón o una taza) detecta pasivamente la rutina diaria del adulto mayor con conectividad celular/LoRa propia, sin depender de WiFi ni de que él haga nada. Una app guarda silencio total mientras todo esté normal y solo avisa al hijo/a por excepción, cuando algo se sale de lo habitual.
+   Público objetivo: Hijos e hijas adultos de 35 a 55 años en México, con un padre o madre de 65+ años que vive solo(a) y lejos de ellos. Suelen tener ingresos estables, ya gastan en el bienestar de sus padres (llamadas, remesas, servicios de monitoreo), y viven con ansiedad y culpa constantes por no poder estar presentes físicamente.
+   Propuesta única de valor / Diferencial: A diferencia de la teleasistencia reactiva que ya existe (botones de pánico, apps de check-in diario que hay que revisar), este producto no exige atención constante ni acción del adulto mayor. Se instala una sola vez, no depende de WiFi doméstico, y desaparece de la vida digital del hijo — solo se hace notar cuando realmente importa. Vende tranquilidad diaria comprobable a distancia, no vigilancia ni alarmas.
+   Valores y personalidad de la marca: Confiable, discreto, cálido, silenciosamente presente, respetuoso de la dignidad y autonomía del adulto mayor, tecnológico pero humano — no clínico ni institucional.
+   Industria / Sector: Tecnología para el cuidado familiar / eldertech / bienestar y salud a distancia (hardware conectado + IA + servicios digitales).
+   2. TAREA A EJECUTAR
+   Con base en el contexto provisto, genera 12 propuestas de nombres de marca únicos y originales, distribuidos equitativamente en 4 categorías creativas (3 nombres por categoría):
+   Evocadores (3 nombres): Nombres sugerentes que transmiten la esencia, la emoción o la experiencia de la marca sin describirla literalmente.
+   Compuestos (3 nombres): Nombres creados mediante la unión inteligente de dos palabras existentes en español o inglés que refieran al valor o actividad del negocio.
+   Inventados / Neologismos (3 nombres): Palabras totalmente originales, fáciles de pronunciar y recordar, con una sonoridad moderna y atractiva.
+   Disruptivos / Creativos (3 nombres): Nombres fuera de lo convencional, atrevidos, metafóricos o inesperados que rompan con las normas tradicionales de la industria.
+   3. FORMATO DE ENTREGA
+   Para cada uno de los 12 nombres, presenta la información de la siguiente manera:
+   Nombre de la marca
+   Tipo de nombre: [Evocador / Compuesto / Inventado / Disruptivo]
+   Significado y concepto: Breve explicación del porqué del nombre y qué transmite.
+   Tono y personalidad: ¿Cómo se siente la marca al pronunciarla?
+   Sugerencia de Slogan cortísimo (opcional): Una frase de 3 a 5 palabras que refuerce el nombre.
 ```
 
----
-
+--- 
 
 > **IA usada:** _Perplexity_
 >
@@ -364,6 +362,7 @@ Entrega:
 - 2–3 papers relevantes últimos 3 años
 - Conclusión: densidad MX/LATAM + implicación para el equipo
 ```
+--- 
 
 > **Nota:** al ejecutar este prompt, pide explícitamente que descarte del análisis a *distanciacero.co* (Colombia, co-creación educativa/ODS) por no ser un competidor real del espacio tecnológico — ya está identificado como antecedente de nombre, no de producto.
 >
