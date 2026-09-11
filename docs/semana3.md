@@ -314,7 +314,9 @@ DistanciaCero: Más corto (4 + 2 sílabas), más fácil de retener y dictar de c
 
 ### Prompt 1 — Términos de búsqueda (Claude)
 
+
 ```text
+
 Actúa como especialista en vigilancia tecnológica para startups
 de hardware + software en mercados emergentes.
 
@@ -328,6 +330,7 @@ Entrega:
 - Secuencia: IMPI → LATIPAT → Lens.org
 
 ```
+
 ---
 
 ### Prompt 2 — Interpretar reclamos (Claude)
@@ -352,6 +355,7 @@ Responde:
 ### Prompt 3 — Actores tecnológicos en LATAM (Perplexity)
 
 ```text
+
 Actúa como analista de inteligencia tecnológica en LATAM.
 Busca primero en MX y LATAM, luego global.
 
@@ -363,7 +367,10 @@ Entrega:
 - Actores globales con presencia en LATAM
 - 2–3 papers relevantes últimos 3 años
 - Conclusión: densidad MX/LATAM + implicación para el equipo
+
+
 ```
+
 --- 
 
 > **Nota:** al ejecutar este prompt, pide explícitamente que descarte del análisis a *distanciacero.co* (Colombia, co-creación educativa/ODS) por no ser un competidor real del espacio tecnológico — ya está identificado como antecedente de nombre, no de producto.
