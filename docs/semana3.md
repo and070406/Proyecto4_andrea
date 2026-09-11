@@ -137,7 +137,7 @@ Slogan sugerido: No ves, pero estás tranquilo.
 Tipo de nombre: Disruptivo
 Significado y concepto: Promete eliminar la distancia emocional aunque la física persista. Es una afirmación poderosa que resuena con la culpa y ansiedad del público objetivo. Tecnológico pero humano.
 Tono y personalidad: Aspiracional, tecnológico, emocional, contundente.
-Slogan sugerido: Lejos en km, cero en distancia._
+Slogan sugerido: Lejos en km, cero en distancia.
 >
 > **3 finalistas elegidos:** _calma, silencioActivo, distanciaCero_
 
@@ -182,7 +182,7 @@ Da tu recomendación clara de cuál deberías elegir según el tipo de cliente o
 > **IA usada:** _Claude_
 >
 > **RESPUESTA:**
-> _Evaluación Comparativa de Naming: SilencioActivo vs. DistanciaCero
+Evaluación Comparativa de Naming: SilencioActivo vs. DistanciaCero
 
 Antes de entrar en la matriz, un principio que va a guiar todo el análisis: el nombre de una marca no vende el producto, vende la promesa emocional central. Tu producto no vende sensores ni conectividad LoRa — vende la desaparición de la ansiedad de fondo. El nombre ganador es el que comunica esa desaparición de forma más visceral e inmediata.
 
@@ -220,7 +220,7 @@ Debilidades:
 Es una categoría de nombre más genérica dentro del espacio de "conexión familiar a distancia" — nombres con "distancia," "cerca," "presente" son comunes en telemedicina, videollamadas familiares, seguros, etc. Hay más riesgo de sonar parecido a otras marcas.
 No comunica la característica más disruptiva de tu producto: que es pasivo, silencioso, que NO requiere interacción. "Distancia Cero" podría malinterpretarse como una promesa de conexión constante/activa (como una videollamada permanente), que es justo lo contrario de tu propuesta de "desaparece de tu vida digital".
 Es un nombre más "prometedor" que puede generar expectativas de intervención inmediata en emergencias reales (tipo "cero distancia = te voy a avisar al instante de todo"), lo cual puede chocar si la tecnología tiene cualquier lag o falso negativo.
-Es un poco más frío/corporativo — suena a nombre de app de logística o telecom, no necesariamente a algo "cálido"._
+Es un poco más frío/corporativo — suena a nombre de app de logística o telecom, no necesariamente a algo "cálido".
 
 ---
 
