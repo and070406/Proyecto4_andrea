@@ -144,6 +144,8 @@ Slogan sugerido: Lejos en km, cero en distancia.
 >
 > **3 finalistas elegidos:** _calma, silencioActivo, distanciaCero_
 
+---
+
 ### Prompt 2 — Evaluación de los 3 finalistas
 
 ```text
@@ -176,6 +178,7 @@ Da tu recomendación clara de cuál deberías elegir según el tipo de cliente o
 
 
 ```
+
 ---
 
 > **RESPUESTA:**
@@ -232,36 +235,35 @@ Es un poco más frío/corporativo — suena a nombre de app de logística o tele
 ### Prompt 3 — Verificación digital de pertinencia
 
 ```text
+   Actúa como un Especialista en Protección de Marca, SEO y Auditoría de Activos Digitales. Tu objetivo es ayudarme, en mi rol de emprendedor, a realizar una verificación digital de pertinencia, disponibilidad y viabilidad operativa para mis dos nombres finalistas: "SilencioActivo" y "DistanciaCero".
 
-Actúa como un Especialista en Protección de Marca, SEO y Auditoría de Activos Digitales. Tu objetivo es ayudarme, en mi rol de emprendedor, a realizar una verificación digital de pertinencia, disponibilidad y viabilidad operativa para mis dos nombres finalistas: "SilencioActivo" y "DistanciaCero".
+   1. CONTEXTO DE MI NEGOCIO
 
-1. CONTEXTO DE MI NEGOCIO
+   Industria / Sector: Eldertech / tecnología para el cuidado familiar a distancia — hardware conectado (sensores, ESP32, conectividad celular/LoRa) + app con IA + servicio digital.
+   Mercado Objetivo Principal: México, con posibilidad de expansión a Hispanoamérica.
+   Producto o Servicio Principal: Un sistema digital-físico que le da tranquilidad diaria a los hijos que viven lejos de un padre o madre mayor que vive solo. Un artefacto discreto, integrado en un objeto cotidiano (bastón, sillón, taza), detecta pasivamente la rutina diaria del adulto mayor sin depender de WiFi ni de que él haga nada. La app guarda silencio total mientras todo esté normal y solo avisa al hijo/a por excepción, cuando algo se sale de lo habitual.
 
-Industria / Sector: Eldertech / tecnología para el cuidado familiar a distancia — hardware conectado (sensores, ESP32, conectividad celular/LoRa) + app con IA + servicio digital.
-Mercado Objetivo Principal: México, con posibilidad de expansión a Hispanoamérica.
-Producto o Servicio Principal: Un sistema digital-físico que le da tranquilidad diaria a los hijos que viven lejos de un padre o madre mayor que vive solo. Un artefacto discreto, integrado en un objeto cotidiano (bastón, sillón, taza), detecta pasivamente la rutina diaria del adulto mayor sin depender de WiFi ni de que él haga nada. La app guarda silencio total mientras todo esté normal y solo avisa al hijo/a por excepción, cuando algo se sale de lo habitual.
+   2. TAREA A EJECUTAR
 
-2. TAREA A EJECUTAR
+   Realiza un diagnóstico de viabilidad digital analizando los siguientes 5 pilares para ambos nombres:
 
-Realiza un diagnóstico de viabilidad digital analizando los siguientes 5 pilares para ambos nombres:
+   Intención de Búsqueda y Viabilidad SEO:
+   ¿Existen palabras clave muy competidas que bloqueen el posicionamiento orgánico de estos nombres?
+   ¿Qué tipo de contenido suele aparecer si un usuario busca literalmente "Silencio Activo" o "Distancia Cero" en Google?
+   Facilidad Fonética y "Radio Test":
+   Evalúa el riesgo de confusión al dictar el nombre oralmente (errores comunes de ortografía, tildes, uso de la 'C/S/Z' o palabras pegadas).
+   Determina la idoneidad de las variantes de dominio web sugeridas (ej. .com, .mx, .io, .app).
+   Huella Digital y Presencia en Redes:
+   Analiza la viabilidad de nombres de usuario (handles) para redes sociales principales (Instagram, LinkedIn, X, TikTok, YouTube).
+   Identificación de Riesgos de Posicionamiento:
+   ¿Existen significados negativos, asociaciones no deseadas o usos comunes en el lenguaje coloquial que puedan desviar la atención del producto?
+   Matriz de Riesgo Operativo y Veredicto Digital:
+   Asigna un nivel de riesgo digital (Bajo, Medio, Alto) para cada opción.
+   Concluye cuál de las dos marcas presenta un camino más limpio y eficiente para construir presencia digital desde cero.
 
-Intención de Búsqueda y Viabilidad SEO:
-¿Existen palabras clave muy competidas que bloqueen el posicionamiento orgánico de estos nombres?
-¿Qué tipo de contenido suele aparecer si un usuario busca literalmente "Silencio Activo" o "Distancia Cero" en Google?
-Facilidad Fonética y "Radio Test":
-Evalúa el riesgo de confusión al dictar el nombre oralmente (errores comunes de ortografía, tildes, uso de la 'C/S/Z' o palabras pegadas).
-Determina la idoneidad de las variantes de dominio web sugeridas (ej. .com, .mx, .io, .app).
-Huella Digital y Presencia en Redes:
-Analiza la viabilidad de nombres de usuario (handles) para redes sociales principales (Instagram, LinkedIn, X, TikTok, YouTube).
-Identificación de Riesgos de Posicionamiento:
-¿Existen significados negativos, asociaciones no deseadas o usos comunes en el lenguaje coloquial que puedan desviar la atención del producto?
-Matriz de Riesgo Operativo y Veredicto Digital:
-Asigna un nivel de riesgo digital (Bajo, Medio, Alto) para cada opción.
-Concluye cuál de las dos marcas presenta un camino más limpio y eficiente para construir presencia digital desde cero.
+   3. FORMATO DE ENTREGA
 
-3. FORMATO DE ENTREGA
-
-Presenta la respuesta estructurada en puntos clave y concluye con una tabla comparativa de viabilidad digital que resuma los hallazgos para rápida lectura.
+   Presenta la respuesta estructurada en puntos clave y concluye con una tabla comparativa de viabilidad digital que resuma los hallazgos para rápida lectura.
 
 ```
 ---
