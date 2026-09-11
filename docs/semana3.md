@@ -1,847 +1,358 @@
-# Semana 2
+# Semana 3
 
-En esta segunda semana el objetivo fue idntificar una oportunidad de producto concreta, arraigada en un problema observable en mercados latinoamericanos, usando IA como acelerador de búsqueda y síntesis y eligir la oportunidad que desarrollaremos durante el semestre.
-Los pasas que realizamos para encontrar un proyecto oportuno fueron los siguientes:
+**Blueprint:** Creación de valor · **DVF:** 🟢 Factible
 
-## Vista rápida de los 7 pasos
- 
-| # | Paso | Tiempo | IA |
-|---|------|--------|-----|
-| 1 | Búsqueda de oportunidades en LATAM con IA | 20 min | Perplexity + Claude / otra |
-| 2 | Síntesis de insights con IA | 25 min | Claude / otra → Perplexity |
-| 3 | Pain-Gain Map | 25 min | Claude / otra |
-| 4 | SCAMPER + Remix de ideas | 20 min | Claude / otra |
-| 5 | Validación preliminar de deseabilidad | 15 min | otra → Perplexity |
-| 6 | Criterios de selección de oportunidad | 10 min | Sin IA |
-| 7 | Elección y defensa de la oportunidad | 5 min / Tarea | Opcional |
- 
+> ¿Alguien ya protegió lo que quieren construir? ¿Pueden registrar su marca? ¿Qué tan libre es el espacio tecnológico donde van a operar? Y con la oportunidad clara — entrevistan usuarios reales.
+
+| Paso | Contenido | Tiempo |
+|---|---|---|
+| 1 | Defensas semana 2 | 15 min |
+| 2 | Propiedad intelectual (panorama) | 40 min |
+| 3 | Nombre de marca con IA | 20 min |
+| 4 | Búsqueda fonética IMPI | 10 min |
+| 5 | Vigilancia tecnológica | 20 min |
+| 6 | Mini-taller de entrevistas | 15 min |
+
 ---
 
+## Propiedad intelectual: instrumentos clave
 
-## Paso 1
-> "Vamos a buscar oportunidades con dos IAs en paralelo — no son intercambiables, cada una tiene un trabajo diferente. Perplexity para anclar en datos reales; Claude para romper el pensamiento obvio. Lean su tarjeta de modo y arranquen. Tienen 12 minutos de trabajo, luego compartimos hallazgos."
+| Instrumento | Protege | Duración | Costo aprox. |
+|---|---|---|---|
+| Marca registrada | Nombre/logo | 10 años renovables | $3,000–6,000 MXN/clase (IMPI) |
+| Patente de invención | Solución técnica nueva | 20 años | $15,000–80,000 MXN |
+| Modelo de utilidad | Mejora a objeto existente | 10 años | Tramitación más rápida |
+| Diseño industrial | Apariencia ornamental | 15 años | — |
+| Derechos de autor | Código, docs, diseños gráficos | Vida del autor + 100 años | Automático, ~$0 |
+| Secreto industrial | Algoritmos, datos de entrenamiento | Indefinida (si se mantiene en secreto) | — |
+
+**Licencias open source:** MIT / Apache 2.0 ✅ libres · LGPL ✅ se puede enlazar · GPL ⚠️ obliga a publicar tu código.
+
+**Estrategia:** 1º marca registrada (siempre) → 2º modelo de utilidad/diseño con tracción → 3º velocidad de ejecución como protección → NDA con colaboradores desde el día 1.
+
+---
+
+## Nombre de marca con IA
+
+Criterios: pronunciable ES/EN · corto (2–3 sílabas) · sin significado negativo · registrable · dominio disponible · coherente con la emoción.
+
+### Prompt 1 — 12 nombres (Evocadores / Compuestos / Inventados / Disruptivos)
 
 ```text
-Actúa como un analista senior de oportunidades de negocio con
-experiencia en mercados emergentes de América Latina, especializado
-en identificar problemas donde una solución digital-física integrada
-puede generar tracción comercial real. Tu metodología combina
-análisis de brechas de mercado, detección de comportamientos
-no atendidos y evaluación de disposición a pagar en contextos
-de recursos limitados.
- 
-Somos un equipo de emprendedores en México desarrollando un
-negocio basado en producto digital-físico. Nuestro stack incluye:
-desarrollo de aplicaciones móviles y web con IA integrada,
-hardware conectado (ESP32, Raspberry Pi, sensores, actuadores,
-comunicaciones BLE/MQTT/WiFi), diseño y manufactura de producto
-físico (CAD, impresión 3D, PCB), e integración de modelos de IA
-tanto en dispositivo como en la nube. El resultado que buscamos
-es un negocio con tres componentes articulados: una aplicación
-con IA, un artefacto físico inteligente y una página web de
-venta con propuesta de valor clara. Tenemos seis meses para
-llegar a un MVP comercializable y validado.
- 
-Identifica 4 oportunidades de negocio no resueltas o mal resueltas
-en el sector de *[ELIGE el área que hayas pensado o bien uno de estos
-que te atraiga: salud comunitaria / manufactura artesanal / logística
-urbana / agua y medio ambiente / seguridad física / educación técnica]*
-en México y América Latina que cumplan estas condiciones:
- 
-- El problema ocurre de forma frecuente (semanal o diaria) y
-  tiene un costo observable para el usuario
-- Existe evidencia de que la gente ya paga por soluciones
-  imperfectas o pierde tiempo y dinero por no tenerlas
-- La oportunidad se puede atacar con una solución que combine
-  inteligencia artificial, interfaz digital y componente físico
-- El mercado potencial en LATAM supera las 50,000 personas o
-  negocios con disposición real a pagar
- 
-Para cada oportunidad entrega:
- 
-1. El problema concreto: quién lo tiene, cuándo ocurre, cuánto
-   le cuesta no resolverlo
-2. La solución actual más usada y por qué sigue siendo insuficiente
-3. Por qué una solución que combine app con IA + artefacto físico
-   inteligente es el enfoque correcto para este problema
-4. Estimado del tamaño de mercado en LATAM con fuente
- 
-No propongas soluciones tecnológicas todavía. Solo problemas con
-contexto de mercado suficiente para evaluar su potencial.
+[Primer Prompt(Perplexity):
+	Actúa como un Experto Senior en Branding, Naming y Estrategia de Marca con más de 15 años de experiencia creando identidades memorables para startups y marcas globales. Tu objetivo es ayudarme, en mi rol de emprendedor, a conceptualizar y desarrollar nombres comerciales de alto impacto.
+1. CONTEXTO DE MI NEGOCIO
+¿Qué hace mi negocio / Producto o servicio?: Un sistema digital-físico que le da tranquilidad diaria a los hijos que viven lejos de un padre o madre mayor que vive solo. Un artefacto discreto (integrado en un objeto cotidiano como un bastón, un sillón o una taza) detecta pasivamente la rutina diaria del adulto mayor con conectividad celular/LoRa propia, sin depender de WiFi ni de que él haga nada. Una app guarda silencio total mientras todo esté normal y solo avisa al hijo/a por excepción, cuando algo se sale de lo habitual.
+Público objetivo: Hijos e hijas adultos de 35 a 55 años en México, con un padre o madre de 65+ años que vive solo(a) y lejos de ellos. Suelen tener ingresos estables, ya gastan en el bienestar de sus padres (llamadas, remesas, servicios de monitoreo), y viven con ansiedad y culpa constantes por no poder estar presentes físicamente.
+Propuesta única de valor / Diferencial: A diferencia de la teleasistencia reactiva que ya existe (botones de pánico, apps de check-in diario que hay que revisar), este producto no exige atención constante ni acción del adulto mayor. Se instala una sola vez, no depende de WiFi doméstico, y desaparece de la vida digital del hijo — solo se hace notar cuando realmente importa. Vende tranquilidad diaria comprobable a distancia, no vigilancia ni alarmas.
+Valores y personalidad de la marca: Confiable, discreto, cálido, silenciosamente presente, respetuoso de la dignidad y autonomía del adulto mayor, tecnológico pero humano — no clínico ni institucional.
+Industria / Sector: Tecnología para el cuidado familiar / eldertech / bienestar y salud a distancia (hardware conectado + IA + servicios digitales).
+2. TAREA A EJECUTAR
+Con base en el contexto provisto, genera 12 propuestas de nombres de marca únicos y originales, distribuidos equitativamente en 4 categorías creativas (3 nombres por categoría):
+Evocadores (3 nombres): Nombres sugerentes que transmiten la esencia, la emoción o la experiencia de la marca sin describirla literalmente.
+Compuestos (3 nombres): Nombres creados mediante la unión inteligente de dos palabras existentes en español o inglés que refieran al valor o actividad del negocio.
+Inventados / Neologismos (3 nombres): Palabras totalmente originales, fáciles de pronunciar y recordar, con una sonoridad moderna y atractiva.
+Disruptivos / Creativos (3 nombres): Nombres fuera de lo convencional, atrevidos, metafóricos o inesperados que rompan con las normas tradicionales de la industria.
+3. FORMATO DE ENTREGA
+Para cada uno de los 12 nombres, presenta la información de la siguiente manera:
+Nombre de la marca
+Tipo de nombre: [Evocador / Compuesto / Inventado / Disruptivo]
+Significado y concepto: Breve explicación del porqué del nombre y qué transmite.
+Tono y personalidad: ¿Cómo se siente la marca al pronunciarla?
+Sugerencia de Slogan cortísimo (opcional): Una frase de 3 a 5 palabras que refuerce el nombre.]
 ```
 
-> **RESPUESTA DE LA IA (Perplexity):**
-> Para que la página no se vuelva tan larga iré anexando todos los resultados con los chats completos de las IAs utilizadas
-> _[Para ver el chat con la IA completo visita el siguiente enlace:
+> **IA usada:** _[Perplexity]_
+>
+> **RESPUESTA:**
+> _[Ver conversación con Perplexity](https://www.perplexity.ai/search/7820f1ea-a8dc-46bc-a5dc-156025a9cc32)_
+> _[1. Calma
+Tipo de nombre: Evocador
+Significado y concepto: La palabra misma que tu cliente busca: calma mental, paz diaria, ausencia de ansiedad. Es directa pero no obvia, con una sonoridad suave en español que transmite serenidad inmediata.
+Tono y personalidad: Sereno, minimalista, confiable, reconfortante.
+Slogan sugerido: Respira, todo está bien.
 
-[Ver conversación en Perplexity](https://www.perplexity.ai/search/6c47b131-38b8-4b29-9a62-5d96c10e1ab0) 
+2. Refugio
+Tipo de nombre: Evocador
+Significado y concepto: Un refugio es un lugar seguro donde proteger a quienes amas. Evoca la idea de que el adulto mayor está resguardado, incluso a distancia. Tiene una connotación cálida y familiar muy arraigada en la cultura mexicana.
+Tono y personalidad: Protector, cálido, sólido, emocional.
+Slogan sugerido: Tu padre, siempre seguro.
+
+3. Latido
+Tipo de nombre: Evocador
+Significado y concepto: El latido representa vida, rutina, presencia constante. Mientras haya latido, hay tranquilidad. Es una metáfora poderosa de la vida diaria que continúa sin sobresaltos.
+Tono y personalidad: Humano, vital, emocional, íntimo.
+Slogan sugerido: Cada latido, tranquilidad.
+
+Nombres Compuestos
+4. BienCerca
+Tipo de nombre: Compuesto
+Significado y concepto: Combina "bien" (bienestar, que esté bien) con "cerca" (proximidad emocional). Transmite que aunque haya distancia física, el bienestar del padre está cerca del hijo. Fácil de pronunciar y recordar.
+Tono y personalidad: Cercano, positivo, confiable, familiar.
+Slogan sugerido: Su bienestar, cerca de ti.
+
+5. SinNovedad
+Tipo de nombre: Compuesto
+Significado y concepto: La frase que todo hijo quiere escuchar: "sin novedad". Convierte una expresión cotidiana en una promesa de marca. Es disruptivo dentro de lo compuesto y muy memorable.
+Tono y personalidad: Honestamente tranquilizador, directo, inteligente.
+Slogan sugerido: Sin novedad es buena señal.
+
+6. TranquiVida
+Tipo de nombre: Compuesto
+Significado y concepto: Fusión de "tranquilidad" y "vida". Sugiere una vida vivida con paz, sin sobresaltos. Tiene una sonoridad amigable y accesible que conecta con el público mexicano.
+Tono y personalidad: Amigable, optimista, confiable, cotidiano.
+Slogan sugerido: Vida en paz, distancia sin culpa.
+
+Nombres Inventados / Neologismos
+7. Cuidia
+Tipo de nombre: Inventado
+Significado y concepto: Neologismo que fusiona "cuidar" con la terminación "-ia" (como en armonía, calma). Evoca cuidado constante con una sonoridad suave y femenina que transmite calidez.
+Tono y personalidad: Cuidadoso, cálido, moderno, distintivo.
+Slogan sugerido: Cuidar sin estar encima.
+
+8. Presia
+Tipo de nombre: Inventado
+Significado y concepto: Inspirado en "presencia" y "esencia". Sugiere una presencia esencial que no necesita hacerse notar constantemente. Corto, elegante y fácil de recordar en español e inglés.
+Tono y personalidad: Esencial, elegante, discreto, sofisticado.
+Slogan sugerido: Presencia que no pesa.
+
+9. Tavita
+Tipo de nombre: Inventado
+Significado y concepto: Neologismo inspirado en "tranquilidad" y "vida". La terminación "-ita" le da un tono diminutivo cariñoso muy mexicano, como "tranquilita". Es único y emocionalmente resonante.
+Tono y personalidad: Cariñoso, cercano, mexicano, cálido.
+Slogan sugerido: Tranquilita, siempre.
+
+Nombres Disruptivos / Creativos
+10. NoPasaNada
+Tipo de nombre: Disruptivo
+Significado y concepto: La frase coloquial que resume exactamente lo que el hijo quiere escuchar. Es atrevido, memorable y convierte una expresión cotidiana en una promesa de marca poderosa. Rompe completamente con la industria.
+Tono y personalidad: Coloquial, honesto, refrescante, memorable.
+Slogan sugerido: Que no pase nada, es la noticia.
+
+11. OjoQueNoVe
+Tipo de nombre: Disruptivo
+Significado y concepto: Juega con el refrán "ojo que no ve, corazón que no siente", pero lo subvierte: aquí el ojo que no ve sí protege. Es provocador, culturalmente relevante y genera curiosidad inmediata.
+Tono y personalidad: Ingenioso, cultural, atrevido, inteligente.
+Slogan sugerido: No ves, pero estás tranquilo.
+
+12. DistanciaCero
+Tipo de nombre: Disruptivo
+Significado y concepto: Promete eliminar la distancia emocional aunque la física persista. Es una afirmación poderosa que resuena con la culpa y ansiedad del público objetivo. Tecnológico pero humano.
+Tono y personalidad: Aspiracional, tecnológico, emocional, contundente.
+Slogan sugerido: Lejos en km, cero en distancia.
+
 ]_
-
-
----
-
-
-**Ronda 2 — Claude / otra: romper el consenso (6 min)**
- 
-```text
-Actúa como un innovador con experiencia en detectar oportunidades de
-negocio que el mercado ignora porque parecen demasiado nicho,
-demasiado obvias o demasiado difíciles. Tu enfoque es el pensamiento
-lateral aplicado a mercados emergentes: buscas lo que todos ven pero
-nadie está atacando, y lo que nadie ve porque está demasiado cerca.
-Tienes especial habilidad para imaginar negocios donde la combinación
-de inteligencia artificial, interfaces digitales y objetos físicos
-inteligentes crea una propuesta de valor que ninguno de los tres
-componentes podría crear por separado.
- 
-Estamos construyendo un negocio en México con tres componentes
-articulados: una aplicación con IA, un artefacto físico inteligente
-y una página web de venta. Nuestras capacidades abarcan tanto el
-desarrollo de software e IA como el diseño y manufactura de hardware
-conectado. Tenemos seis meses para llegar a MVP comercializable.
- 
-Estas son las 4 oportunidades que identificamos a través de análisis
-de mercado:
- 
-*[PEGA AQUÍ los resultados de Perplexity]*
- 
-Necesito que hagas 3 cosas:
- 
-1. ROMPE EL CONSENSO: ¿Cuál de las 4 oportunidades está siendo
-   atacada de la forma más predecible? ¿Qué ángulo contraintuitivo
-   nadie está viendo porque todos asumen lo mismo sobre ese
-   problema? ¿Cómo cambiaría la propuesta de valor si el artefacto
-   físico, la app y la web de venta se articularan de una forma
-   no convencional?
- 
-2. ENCUENTRA EL PROBLEMA OCULTO: Debajo de estas 4 oportunidades
-   superficiales, ¿cuál es el problema raíz que, si se resolviera
-   con una solución digital-física integrada, haría innecesarios
-   2 o más de estos problemas al mismo tiempo? ¿Qué negocio
-   emerge de resolver ese problema raíz?
- 
-3. EL SEGMENTO IGNORADO: ¿Hay algún grupo de usuarios que tiene
-   estos problemas con el doble de intensidad pero que no aparece
-   en los análisis de mercado convencionales porque no tiene voz
-   digital — no escribe en foros, no da entrevistas, no aparece
-   en reportes — pero que claramente existe en la realidad
-   mexicana y tiene disposición real a pagar?
- 
-No me repitas lo que Perplexity ya encontró. Dame lo que el análisis
-de mercado convencional no puede ver.
-```
- 
-> **RESPUESTA DE LA IA (Claude / otra):**
 >
-> _[Ver conversación en Claude](https://claude.ai/share/633829b8-7260-453b-bc52-214fa529a1ca)_
- 
-**Qué anotar**
- 
-- De Perplexity: las 2 oportunidades con más evidencia de mercado.
-- De Claude: el ángulo no obvio más prometedor.
-> **Insumos para el Paso 2:**
+> **3 finalistas elegidos:** _[calma, silencioActivo, distanciaCero ]_
+
+### Prompt 2 — Evaluación de los 3 finalistas
+
+```text
+[Segundo Prompt(claude):
+	Actúa como un Consultor Senior en Estrategia de Marca, Branding y Posicionamiento de Mercado. Tu trabajo es asesorarme como emprendedor a tomar la decisión final de naming para mi proyecto, evaluando dos opciones finalistas: "SilencioActivo" y "DistanciaCero".
+
+1. CONTEXTO DE MI NEGOCIO
+
+Producto / Servicio: Un sistema digital-físico (app con IA + artefacto físico conectado) que le da tranquilidad diaria a los hijos que viven lejos de un padre o madre mayor que vive solo. Un artefacto discreto, integrado en un objeto cotidiano (bastón, sillón, taza), detecta pasivamente la rutina diaria del adulto mayor mediante conectividad celular/LoRa propia (sin depender de WiFi ni de que él haga nada). La app guarda silencio total mientras todo esté normal y solo avisa al hijo/a por excepción, cuando algo se sale de lo habitual.
+Público objetivo: Hijos e hijas adultos de 35 a 55 años en México, con un padre o madre de 65+ años que vive solo(a) y lejos de ellos. Ya gastan en el bienestar de sus padres (llamadas, remesas, servicios de monitoreo como Estoy Bien o Care 60+) y viven con ansiedad y culpa constantes por no poder estar presentes físicamente.
+Propuesta de valor y personalidad: El beneficio principal es la tranquilidad diaria comprobable a distancia, sin necesidad de preguntar, llamar ni sentir culpa. A diferencia de la teleasistencia reactiva (botones de pánico, apps que hay que revisar), este producto se instala una sola vez y desaparece de la vida digital del hijo — solo se hace notar cuando realmente importa. La personalidad de marca es confiable, discreta, cálida y silenciosamente presente; tecnológica pero humana, nunca clínica ni institucional.
+
+2. TAREA A EJECUTAR
+
+Realiza una evaluación comparativa rigurosa y crítica de ambos nombres para ayudarme a elegir el ganador definitivo. Tu análisis debe incluir:
+
+Análisis Individual:
+SilencioActivo: Fortalezas, debilidades, psicología del nombre y qué transmite a nivel perceptual.
+DistanciaCero: Fortalezas, debilidades, psicología del nombre y qué transmite a nivel perceptual.
+Criterios de Evaluación (Matriz Comparativa): Evalúa ambos nombres del 1 al 10 en:
+Memorabilidad y Sonoridad (Fácil de recordar y pronunciar).
+Claridad del Mensaje (Relación con el beneficio del producto/servicio).
+Versatilidad para el futuro (Si la marca se expande a otros productos).
+Diferenciación (Impacto frente a competidores).
+Asociación de Marca y Aplicabilidad:
+Sugiere cómo se verían en un slogan o tagline.
+Identifica posibles riesgos o malentendidos de cada opción.
+Veredicto y Recomendación Final:
+Da tu recomendación clara de cuál deberías elegir según el tipo de cliente o estrategia de posicionamiento que convenga seguir.
+]
+```
+> **RESPUESTA:**
+> _[Ver conversación con Perplexity](https://www.perplexity.ai/search/1228713b-8bdf-40da-9d99-3ef4f72a041a)_
+
+---
+
+
+> **IA usada:** _[Claude]_
 >
-> 1. _[oportunidad 1 con datos]_
-> 2. _[oportunidad 2 con datos]_
-> 3. _[ángulo no obvio]_
+> **RESPUESTA:**
+> _[Evaluación Comparativa de Naming: SilencioActivo vs. DistanciaCero
 
+Antes de entrar en la matriz, un principio que va a guiar todo el análisis: el nombre de una marca no vende el producto, vende la promesa emocional central. Tu producto no vende sensores ni conectividad LoRa — vende la desaparición de la ansiedad de fondo. El nombre ganador es el que comunica esa desaparición de forma más visceral e inmediata.
 
-## Paso 2 — Síntesis de insights con IA
- 
-!!! note "Insight"
-    Un insight de negocio no es un dato recopilado ni una observación general. Es una afirmación específica que revela por qué un problema persiste, quién lo sufre más, qué lo hace difícil de resolver, y qué tan caro le resulta al usuario seguir sin solución.
- 
- 
-**Ronda 1 — Claude: construir el insight**
- 
+1. Análisis Individual
+SilencioActivo
+
+Qué transmite a nivel perceptual: Es un oxímoron deliberado — "silencio" (ausencia, calma) chocando con "activo" (movimiento, vigilancia). Ese choque es exactamente la mecánica de tu producto: no pasa nada visible, pero por debajo algo está trabajando constantemente. Es un nombre que explica el mecanismo del producto (monitoreo pasivo por excepción) más que el beneficio final.
+
+Fortalezas:
+
+Es conceptualmente preciso: describe con exactitud cómo funciona el sistema (silencio = no te molesto; activo = pero estoy vigilando).
+El oxímoron genera curiosidad y "engancha" — es el tipo de nombre que invita a preguntar "¿cómo así?", lo cual es una oportunidad de storytelling en ventas.
+Se diferencia fuertemente de la categoría de teleasistencia, que se apoya en nombres de alerta/emergencia (botón, SOS, alarma). "Silencio" invierte esa lógica.
+Tiene una cualidad casi filosófica/zen que encaja con la personalidad "discreta, cálida, silenciosamente presente".
+
+Debilidades:
+
+Es un nombre que requiere explicación. Alguien que lo escucha por primera vez sin contexto no sabe qué hace el producto — solo intuye un tono.
+"Activo" introduce una connotación tecnológica/fitness (apps de actividad física, seguros de vida "activo") que puede generar ruido de categoría equivocada.
+Es más largo fonéticamente (5 sílabas) y ligeramente más difícil de pronunciar de corrido en español coloquial.
+El concepto de "silencio" podría, en un mal entendido, sugerir inacción o desconexión — lo opuesto a lo que quieres comunicar a un hijo ansioso.
+DistanciaCero
+
+Qué transmite a nivel perceptual: Es una promesa de resultado, no una descripción de mecanismo. "Distancia Cero" apunta directo a la herida emocional del cliente: la culpa y ansiedad de no poder estar físicamente presente. Es un nombre aspiracional — vende el efecto (sentirse cerca) más que el cómo (sensores pasivos).
+
+Fortalezas:
+
+Conexión emocional inmediata y sin necesidad de explicación: cualquier hijo que vive lejos de un padre mayor entiende instantáneamente la promesa.
+Es más corto, más fácil de pronunciar, y tiene un ritmo casi de eslogan por sí mismo.
+Comunica directamente el dolor central del cliente (la distancia física) y lo resuelve en el nombre mismo — esto es oro puro en términos de messaging-market fit.
+Tiene mayor potencial de "quedarse pegado" en la mente porque apela a una emoción universal (cercanía/lejanía), no a un concepto abstracto (silencio).
+
+Debilidades:
+
+Es una categoría de nombre más genérica dentro del espacio de "conexión familiar a distancia" — nombres con "distancia," "cerca," "presente" son comunes en telemedicina, videollamadas familiares, seguros, etc. Hay más riesgo de sonar parecido a otras marcas.
+No comunica la característica más disruptiva de tu producto: que es pasivo, silencioso, que NO requiere interacción. "Distancia Cero" podría malinterpretarse como una promesa de conexión constante/activa (como una videollamada permanente), que es justo lo contrario de tu propuesta de "desaparece de tu vida digital".
+Es un nombre más "prometedor" que puede generar expectativas de intervención inmediata en emergencias reales (tipo "cero distancia = te voy a avisar al instante de todo"), lo cual puede chocar si la tecnología tiene cualquier lag o falso negativo.
+Es un poco más frío/corporativo — suena a nombre de app de logística o telecom, no necesariamente a algo "cálido".]_
+
+### Prompt 3 — Verificación digital de pertinencia
+
 ```text
-Actúa como un estratega de innovación con experiencia en traducir
-hallazgos de mercado en insights de negocio accionables para
-emprendedores que construyen productos digitales-físicos. Tu
-especialidad es encontrar la formulación exacta que revela por qué
-un problema persiste y dónde está el espacio real de negocio — no
-el espacio teórico.
- 
-Somos un equipo de emprendedores en México desarrollando un negocio
-con tres componentes articulados: una aplicación con IA, un
-artefacto físico inteligente y una página web de venta. Nuestras
-capacidades abarcan desarrollo de software e IA, hardware conectado
-(ESP32, Raspberry Pi, sensores, PCB) y manufactura de producto
-físico. Tenemos seis meses para llegar a un MVP comercializable.
-Estamos en la etapa de selección de oportunidad — aún no hemos
-elegido en qué problema trabajar.
- 
-Estos son los hallazgos de nuestra búsqueda de mercado:
- 
-[PEGA AQUÍ los 3 insumos del Paso 1:
-- Las 2 oportunidades con datos de Perplexity
-- El ángulo no obvio de Claude]
- 
-Necesito que hagas lo siguiente:
- 
-1. SINTETIZA EN INSIGHTS: Convierte cada oportunidad en un insight
-   estructurado con este formato exacto:
-   - Quién específico tiene el problema (segmento concreto, no
-     "los usuarios" ni "las empresas")
-   - Qué les cuesta no resolverlo (tiempo, dinero, calidad, riesgo
-     — con cifra o estimado)
-   - Por qué las soluciones actuales no bastan (no "son caras" en
-     abstracto — cuál es la razón específica por la que fallan
-     para este usuario)
-   - Dónde está exactamente el espacio: la brecha entre lo que
-     existe y lo que se necesita
- 
-2. ELIGE Y JUSTIFICA:
-   - De los insights generados, ¿cuál tiene el espacio de negocio
-     más claro para una solución que combine app con IA +
-     artefacto físico + canal de venta digital?
-   - Justifica en función del usuario, el costo del problema y la
-     viabilidad de los tres componentes juntos.
- 
-3. FORMULA EL INSIGHT GANADOR: Redacta el insight elegido en 3–4
-   oraciones que cualquier persona pudiera leer y entender por qué
-   es una oportunidad real. Sin jerga. Sin abstracciones.
+[Actúa como un Especialista en Protección de Marca, SEO y Auditoría de Activos Digitales. Tu objetivo es ayudarme, en mi rol de emprendedor, a realizar una verificación digital de pertinencia, disponibilidad y viabilidad operativa para mis dos nombres finalistas: "SilencioActivo" y "DistanciaCero".
+
+1. CONTEXTO DE MI NEGOCIO
+
+Industria / Sector: Eldertech / tecnología para el cuidado familiar a distancia — hardware conectado (sensores, ESP32, conectividad celular/LoRa) + app con IA + servicio digital.
+Mercado Objetivo Principal: México, con posibilidad de expansión a Hispanoamérica.
+Producto o Servicio Principal: Un sistema digital-físico que le da tranquilidad diaria a los hijos que viven lejos de un padre o madre mayor que vive solo. Un artefacto discreto, integrado en un objeto cotidiano (bastón, sillón, taza), detecta pasivamente la rutina diaria del adulto mayor sin depender de WiFi ni de que él haga nada. La app guarda silencio total mientras todo esté normal y solo avisa al hijo/a por excepción, cuando algo se sale de lo habitual.
+
+2. TAREA A EJECUTAR
+
+Realiza un diagnóstico de viabilidad digital analizando los siguientes 5 pilares para ambos nombres:
+
+Intención de Búsqueda y Viabilidad SEO:
+¿Existen palabras clave muy competidas que bloqueen el posicionamiento orgánico de estos nombres?
+¿Qué tipo de contenido suele aparecer si un usuario busca literalmente "Silencio Activo" o "Distancia Cero" en Google?
+Facilidad Fonética y "Radio Test":
+Evalúa el riesgo de confusión al dictar el nombre oralmente (errores comunes de ortografía, tildes, uso de la 'C/S/Z' o palabras pegadas).
+Determina la idoneidad de las variantes de dominio web sugeridas (ej. .com, .mx, .io, .app).
+Huella Digital y Presencia en Redes:
+Analiza la viabilidad de nombres de usuario (handles) para redes sociales principales (Instagram, LinkedIn, X, TikTok, YouTube).
+Identificación de Riesgos de Posicionamiento:
+¿Existen significados negativos, asociaciones no deseadas o usos comunes en el lenguaje coloquial que puedan desviar la atención del producto?
+Matriz de Riesgo Operativo y Veredicto Digital:
+Asigna un nivel de riesgo digital (Bajo, Medio, Alto) para cada opción.
+Concluye cuál de las dos marcas presenta un camino más limpio y eficiente para construir presencia digital desde cero.
+
+3. FORMATO DE ENTREGA
+
+Presenta la respuesta estructurada en puntos clave y concluye con una tabla comparativa de viabilidad digital que resuma los hallazgos para rápida lectura.]
 ```
 
-
-**Ronda 2 — Perplexity: verificar los números**
- 
-```text
-Actúa como un analista de inteligencia de mercado especializado en
-validación de oportunidades de negocio en América Latina, con
-acceso a fuentes primarias y secundarias confiables: INEGI, BID,
-CEPAL, reportes sectoriales, bases de datos de startups y registros
-de comportamiento de mercado. Tu trabajo es separar los supuestos
-de los hechos verificables — no para destruir ideas, sino para que
-los emprendedores sepan exactamente en qué parte de su oportunidad
-están parados sobre roca y en qué parte están parados sobre arena.
- 
-Somos emprendedores en México construyendo un negocio con tres
-componentes: una aplicación con IA, un artefacto físico inteligente
-y una página web de venta. Identificamos una oportunidad de negocio
-a través de análisis de mercado y necesitamos verificar si sus
-afirmaciones clave tienen respaldo en datos reales antes de
-comprometer seis meses de desarrollo.
- 
-Este es el insight que necesitamos verificar:
- 
-*[PEGA AQUÍ el insight ganador que generó Claude]*
- 
-Verifica cada una de estas afirmaciones con fuentes citables:
- 
-1. SEGMENTO: ¿El usuario descrito existe con ese perfil y ese
-   problema en México o LATAM? ¿Cuántos son aproximadamente?
-   Busca en INEGI, reportes de organismos multilaterales (BID,
-   CEPAL, FAO, OPS según el sector), o estudios sectoriales
-   recientes. Si el dato exacto no existe, dame el proxy más
-   cercano con su fuente.
- 
-2. COSTO DEL PROBLEMA: ¿La cifra de pérdida o costo que menciona
-   el insight tiene respaldo en datos reales? Si no hay dato
-   exacto, ¿cuál es el rango documentado más cercano? ¿Hay
-   comportamiento observable que lo confirme — pagos actuales a
-   soluciones imperfectas, pérdidas documentadas, seguros
-   contratados, workarounds que tienen costo?
- 
-3. SOLUCIONES ACTUALES: ¿Las alternativas que el insight describe
-   como insuficientes existen realmente y tienen las
-   características y precios que se mencionan? Dame al menos 2
-   ejemplos concretos con precio real y limitación verificable.
- 
-4. DISPOSICIÓN A PAGAR: ¿Hay evidencia de que este mercado en
-   LATAM está dispuesto a pagar por una solución mejor? Busca
-   señales de comportamiento: ¿ya pagan por algo similar aunque
-   sea peor? ¿hay búsquedas activas documentadas? ¿comunidades
-   online donde buscan soluciones? ¿intentos de crowdfunding o
-   mercados informales activos?
- 
-Al terminar, dame un veredicto por afirmación:
- 
-✅ Verificada con fuente
-⚠️ Plausible pero sin dato directo — proxy usado
-❌ No encontré respaldo — el equipo necesita validar esto con
-   usuarios reales antes de continuar
- 
-Sé directo. Un insight mal fundamentado descubierto hoy vale más
-que uno descubierto en seis meses.
-```
-
-### Insight verificado — resultado final del Paso 2 (Explorador)
- 
-```text
-INSIGHT DE OPORTUNIDAD — [Nombre del equipo]
- 
-QUIÉN: [Segmento específico con tamaño estimado verificado]
-EL PROBLEMA: [Qué les ocurre, cuándo, con qué frecuencia]
-LO QUE LES CUESTA: [Cifra o rango verificado]
-POR QUÉ NO ESTÁ RESUELTO: [Razón específica]
-EL ESPACIO: [La brecha exacta]
-FUENTES: [Las 2–3 fuentes que verificó Perplexity]
-VEREDICTO DE VERIFICACIÓN: [✅ / ⚠️ / ❌ por afirmación]
-```
- 
-> _[Millones de adultos mayores mexicanos hacen ejercicio solos en su casa — o dejan de hacerlo — sin que nadie se entere, y eso, no la falta de fuerza o equilibrio, es lo que los lleva a la caída que cuesta $250,000 en el hospital. No necesitan otro programa de ejercicios ni otro sensor que detecte la caída cuando ya pasó: necesitan que alguien, todos los días, sepa si se movieron o no — típicamente un hijo que vive lejos y que ya paga, en tiempo y dinero, por la ansiedad de no poder verlo. Un artefacto que registre su movimiento diario en un objeto que ya usan (un bastón, un tapete, un sillón), conectado a una app que le muestra a ese hijo "hoy sí se movió" o "hoy no", convierte el ejercicio prescrito en un ritual social diario en vez de una tarea que se abandona sola. Eso es lo que nadie está vendiendo todavía: no prevención de caídas, sino tranquilidad diaria comprobable a distancia.]_
-
-
----
- 
-## Paso 3 — Pain-Gain Map
- 
-!!! warning
-    La oportunidad de negocio vive en el cruce entre el dolor más intenso y la ganancia más deseada que ninguna solución actual entrega. El Pain-Gain Map hace ese cruce visible y específico.
- 
-Paso principalmente **analógico** (papel, marcadores, conversación de equipo). La IA entra al final.
-
-
-📎 Plantilla: [Pain-Gain Map (Google Docs)](https://iberopuebla-my.sharepoint.com/:w:/g/personal/200759_iberopuebla_mx/IQAMlfs1Db3FSIWPFmpFiy3JARaOtnpuJVbxknumBnMAhPo?e=EhxcQo)
-
-
----
- 
-## Paso 4 — SCAMPER + Remix de ideas
- 
-| Momento | Herramienta | Qué produce |
-|---|---|---|
-| Prompt 1 — SCAMPER | Claude | 2 ideas por letra = 14 ideas exploradas |
-| Prompt 2 — Remix | Claude | Conceptos híbridos que cruzan las mejores ideas |
-| Prompt 3 — Filtro DVN | Claude | Evaluación bajo deseable / novedoso / viable |
- 
-**Regla del paso:** "Si al leer el output de Claude ya están pensando en cómo construirlo técnicamente, se adelantaron. En esta etapa imaginan — no ingenian todavía."
- 
-**Recordatorio de las 7 letras:**
- 
-| Letra | Lo que buscamos romper | La pregunta |
-|---|---|---|
-| **S**ustituir | Un elemento del proceso actual que todos asumen como necesario | ¿Qué componente tradicional podemos reemplazar por algo más simple, inteligente o inesperado? |
-| **C**ombinar | La separación artificial entre soluciones o componentes | ¿Qué pasa si fusionamos el artefacto, la app o el canal de venta con algo que ya existe en el entorno del usuario? |
-| **A**daptar | El supuesto de que el problema es único e irresuelto en todos lados | ¿Qué solución que funciona brillantemente en otro sector, país o industria podría trasplantarse aquí? |
-| **M**odificar | La solución "razonable" que nadie cuestiona | ¿Qué pasa si llevamos un atributo al extremo absoluto hasta que cambia cualitativamente? |
-| **P**onerlo en otro uso | La suposición de que resolver el problema requiere comprarle algo nuevo al usuario | ¿Qué tiene ya el usuario que podría usarse para resolver el problema sin que compre nada nuevo? |
-| **E**liminar | La complejidad heredada que nadie cuestionó | ¿Qué parte de la solución convencional podemos quitar y que el valor central no solo sobreviva sino que mejore? |
-| **R**eordenar | El orden "obvio" del flujo de valor | ¿Qué pasa si invertimos quién detecta el problema, quién actúa, quién paga, o cuándo ocurre la intervención? |
-
----
-
-**Prompt 3 — Filtro DVN**
- 
-```text
-Actúa como un evaluador crítico de conceptos de negocio con
-experiencia en filtrar ideas de producto digital-físico bajo
-criterios de mercado real en América Latina. Tu metodología es el
-filtro DVN: evalúas cada concepto bajo tres lentes simultáneos —
-deseable, novedoso y viable — y produces un veredicto honesto con
-justificación específica. No eres optimista por defecto: un ⚠️ o ❌
-bien justificado vale más que un ✅ que no resiste una pregunta de
-seguimiento.
- 
-Somos emprendedores en México construyendo un negocio con tres
-componentes: una aplicación con IA, un artefacto físico inteligente
-y una página web de venta. Capacidades: desarrollo de software e
-IA, hardware conectado (ESP32, Raspberry Pi, sensores, PCB), diseño
-y manufactura de producto físico.
- 
-Tenemos seis meses para MVP comercializable.
- 
-Nuestro usuario / segmento: [DESCRIBE EL SEGMENTO]
- 
-Los conceptos que queremos filtrar (pueden ser remixes de Claude,
-ideas propias, o ambos):
- 
-CONCEPTO A — [nombre]:
-[descripción completa del concepto]
- 
-CONCEPTO B — [nombre]:
-[descripción completa del concepto]
- 
-CONCEPTO C — [nombre, si lo tienen]:
-[descripción completa del concepto]
- 
-Evalúa cada concepto bajo los tres lentes DVN:
- 
-🔴 DESEABLE: ¿El usuario lo querría de verdad — no solo lo
-aprobaría en una encuesta? ¿Resuelve el dolor ⭐ mejor que lo que
-existe hoy? ¿Hay razón para creer que pagaría por esto
-específicamente?
- 
-🟣 NOVEDOSO: ¿Existe algo así en LATAM o en el mundo con esta
-combinación específica de usuario + problema + forma de entrega?
-No el problema genérico — este enfoque exacto.
- 
-🟢 VIABLE: ¿Puede construirse una primera versión funcional con las
-capacidades descritas en seis meses? ¿Los tres componentes (app +
-artefacto + canal de venta) son realizables juntos en ese plazo?
- 
-FORMATO DE SALIDA — entrega exactamente esto:
- 
-═══════════════════════════════════════════════════════
-FILTRO DVN
-═══════════════════════════════════════════════════════
- 
-CONCEPTO A — [nombre]
-🔴 Deseable: ✅/⚠️/❌
-Justificación: [por qué — 1–2 oraciones específicas, no genéricas]
-Pregunta que el equipo debe responder: [la duda clave]
-🟣 Novedoso: ✅/⚠️/❌
-Justificación: [referencia a qué existe similar o por qué no existe]
-Pregunta que el equipo debe responder: [la duda clave]
-🟢 Viable: ✅/⚠️/❌
-Justificación: [qué parte es más arriesgada técnicamente o en tiempo]
-Pregunta que el equipo debe responder: [la duda clave]
-Puntaje DVN: [✅ de 3]
-Veredicto: [llevar al Paso 5 / refinar antes / descartar]
-───────────────────────────────────────────────────────
-CONCEPTO B — [nombre]
-🔴 Deseable: ✅/⚠️/❌
- Justificación: [1–2 oraciones]
- Pregunta que el equipo debe responder: [la duda clave]
-🟣 Novedoso: ✅/⚠️/❌
- Justificación: [1–2 oraciones]
- Pregunta que el equipo debe responder: [la duda clave]
-🟢 Viable: ✅/⚠️/❌
- Justificación: [1–2 oraciones]
- Pregunta que el equipo debe responder: [la duda clave]
-Puntaje DVN: [✅ de 3]
-Veredicto: [llevar al Paso 5 / refinar antes / descartar]
-───────────────────────────────────────────────────────
-CONCEPTO C — [nombre] (si aplica)
-🔴 Deseable: ✅/⚠️/❌
- Justificación: [1–2 oraciones]
- Pregunta que el equipo debe responder: [la duda clave]
-🟣 Novedoso: ✅/⚠️/❌
- Justificación: [1–2 oraciones]
- Pregunta que el equipo debe responder: [la duda clave]
-🟢 Viable: ✅/⚠️/❌
- Justificación: [1–2 oraciones]
- Pregunta que el equipo debe responder: [la duda clave]
-Puntaje DVN: [✅ de 3]
-Veredicto: [llevar al Paso 5 / refinar antes / descartar]
-───────────────────────────────────────────────────────
-CONCEPTO RECOMENDADO PARA EL PASO 5
-Nombre: [el de mayor puntaje DVN o el más potente si hay empate]
-Por qué este: [2 oraciones]
-Riesgo principal a vigilar: [el lente más débil y cómo el Paso 5
-puede reducir esa incertidumbre]
-═══════════════════════════════════════════════════════
-```
- 
-> **RESPUESTA DE LA IA (Claude) — Filtro DVN:**
+> **IA usada:** _[Claude]_
 >
-> _CONCEPTO A — El Gemelo de Rutina
+> **RESPUESTA:**
+> _[Auditoría de Viabilidad Digital: SilencioActivo vs. DistanciaCero
 
-🔴 Deseable: ✅
+Hice una verificación activa en buscadores y registros de dominio para ambos nombres. Los hallazgos cambian el panorama respecto al análisis puramente conceptual — aquí hay señales concretas de colisión que debes conocer antes de registrar nada.
 
-Justificación: Ataca directamente el dolor ⭐ mejor que cualquier alternativa actual — no vende un dato aislado ("se movió/no se movió"), sino una respuesta a la pregunta emocional real del hijo ("¿fue un día normal?"). Es plausible que pague porque el precio percibido no es por un sensor, es por la sensación de conocer a su padre a distancia, algo que hoy no existe ni con llamadas diarias.
+1. Intención de Búsqueda y Viabilidad SEO
 
-Pregunta que el equipo debe responder: ¿Cuántos días de datos se necesitan para que el "gemelo de rutina" sea confiable, y qué le mostramos al hijo mientras tanto sin generar falsas alarmas o falsa calma?
+"Silencio Activo": Este es el hallazgo más importante de toda la auditoría. "Silencio activo" es un término clínico establecido en psicoterapia, descrito como una presencia clínica que transforma el proceso terapéutico y facilita la emergencia de material implícito en la relación terapéutica. También aparece como concepto en pedagogía, en guías de escucha activa/mindfulness, y como título de una canción de meditación en Spotify. Esto significa que buscar "silencio activo" en México hoy devuelve, en su mayoría, contenido de psicología, terapia y mindfulness — un océano de contenido con años de indexación que tu marca tendría que desplazar para aparecer en primera página. Es SEO cuesta arriba desde el día uno. 
+formacionpsicoterapia
 
-🟣 Novedoso: ⚠️
+"Distancia Cero": También está ocupado semánticamente, pero en un territorio distinto y menos denso: aparece como concepto de moda en artículos de recursos humanos y trabajo híbrido (reducir la distancia entre lo presencial y lo remoto en oficinas), así como el nombre de una banda de rock alternativo argentina con presencia activa en Spotify, Instagram, TikTok y YouTube. Es competencia real, pero más dispersa entre categorías —RRHH corporativo vs. banda de música— lo cual, paradójicamente, deja más espacio abierto para que "distancia cero" en el contexto de "cuidado familiar" gane relevancia si produces contenido específico y constante en ese nicho.
 
-Justificación: La detección de patrones de actividad en el hogar para adultos mayores existe (sensores de presencia tipo Essence SmartCare, CarePredict en EU, algunos pilotos con IMSS/ISSSTE) — el enfoque de "aprendizaje de rutina sin configuración" no es inédito a nivel mundial, aunque sí lo es en México con este nivel de accesibilidad y sin marco institucional/clínico.
+Veredicto SEO: Ninguno de los dos nombres está "limpio", pero SilencioActivo enfrenta competencia semántica más profesionalizada y directamente relacionada a bienestar/salud emocional, que es justo tu categoría adyacente — mayor riesgo de canibalización de intención de búsqueda.
 
-Pregunta que el equipo debe responder: ¿Cuál es la barrera de entrada real contra un jugador internacional (CarePredict, Essence) que decida entrar a México, y qué defensibilidad tenemos más allá de ser primeros?
+2. Facilidad Fonética y "Radio Test"
 
-🟢 Viable: ⚠️
+SilencioActivo: Palabra compuesta de 5 sílabas + 3 sílabas. Riesgo bajo-medio de error ortográfico (no tiene tildes conflictivas ni C/S/Z ambiguas más allá de la "c" de "activo", que es fonéticamente clara). El riesgo real es de segmentación: al dictarlo, la gente puede escribir "Silencio Activo" con espacio, "SilencioActivo" junto, o "Silencio-Activo" con guion — esto fragmenta tu tráfico de búsqueda y tus menciones en redes si no impones una sola convención desde el inicio.
 
-Justificación: El hardware (sensor de movimiento/presencia en un objeto cotidiano) es construible en 6 meses con las capacidades descritas; lo arriesgado es la IA de "aprendizaje de patrón personal sin configuración" — requiere semanas de datos reales por hogar antes de ser confiable, lo cual complica un MVP demostrable rápido y una demo de venta convincente en el corto plazo.
-
-Pregunta que el equipo debe responder: ¿Podemos lanzar un MVP con reglas simples (umbrales, horarios básicos) que simule "aprendizaje" de forma creíble mientras la IA real de patrón madura con los primeros usuarios?
-
-Puntaje DVN: ✅✅ de 3 (1 ⚠️⚠️)
-
-Veredicto: refinar antes — el concepto es fuerte pero necesita simplificarse en el MVP para no depender de semanas de datos antes de mostrar valor.
-
-───────────────────────────────────────────────────────
-
-CONCEPTO B — El Seguro que se Olvida que Existe
-
-🔴 Deseable: ⚠️
-
-Justificación: El silencio total y la instalación sin fricción son atractivos, pero hay un riesgo real de deseabilidad: parte del dolor ⭐ no es solo "saber que está bien" sino el ritual mismo de sentirse conectado — un sistema que "desaparece por completo" podría generar ansiedad de "¿sigue funcionando?" en vez de tranquilidad, especialmente los primeros meses sin confianza establecida en el producto.
-
-Pregunta que el equipo debe responder: ¿Cómo confirmamos al hijo, sin romper el "silencio", que el sistema sigue activo y no simplemente dejó de funcionar (batería, señal, artefacto movido)?
-
-🟣 Novedoso: ✅
-
-Justificación: La combinación específica de conectividad celular/LoRa independiente + silencio por excepción para este segmento y este dolor emocional (no solo alerta de emergencia, sino ausencia de necesidad de checar) no tiene un competidor directo identificable en México — los productos de teleasistencia existentes (botones de pánico, pulseras SOS) son reactivos y requieren configuración de WiFi o app activa.
-
-Pregunta que el equipo debe responder: ¿Qué tan defendible es esta ventaja de "cero fricción de instalación" una vez que un competidor la copie — es una ventaja de producto o solo de time-to-market?
-
-🟢 Viable: ✅
-
-Justificación: Es el concepto más directamente construible en 6 meses — LoRa/celular de bajo consumo y detección de excepción son problemas técnicos bien acotados y dentro de las capacidades declaradas (ESP32, PCB, hardware conectado), sin depender de un modelo de IA que necesite madurar con datos.
-
-Pregunta que el equipo debe responder: ¿Qué costo real tiene la conectividad celular por dispositivo por mes en México, y ese costo es sostenible dentro del precio que el hijo está dispuesto a pagar?
-
-Puntaje DVN: ✅✅ de 3 (1 ⚠️)
-
-Veredicto: llevar al Paso 5 — es el más ejecutable, con un riesgo de deseabilidad claro y acotado que se puede resolver con diseño (ej. un "heartbeat" visual mínimo sin romper el silencio).
-
-───────────────────────────────────────────────────────
-
-CONCEPTO C — El Seguro que Paga Otro
-
-🔴 Deseable: ⚠️
-
-Justificación: Es muy deseable para la institución pagadora (ahorro de $250,000 por fractura evitada es un caso de negocio claro), pero es incierto si es deseable para el hijo — si el producto llega "gratis" vía la aseguradora del padre, el hijo pierde la sensación de agencia y regalo personal que hace tan fuerte al insight original ("yo cuido a mi papá"), y podría sentirse como un trámite de la aseguradora más que como un acto de cuidado propio.
-
-Pregunta que el equipo debe responder: ¿El hijo valora igual una señal de tranquilidad que vino de la aseguradora del padre vs. una que él mismo eligió y pagó?
-
-🟣 Novedoso: ✅
-
-Justificación: Modelos B2B2C de dispositivos de monitoreo pagados por aseguradoras existen en mercados desarrollados (EU, algunos programas de Medicare Advantage), pero en México, con aseguradoras de gastos médicos mayores o AFOREs subsidiando prevención de caídas vía hardware conectado, no hay un jugador establecido — es genuinamente poco explorado en este mercado.
-
-Pregunta que el equipo debe responder: ¿Existe ya alguna aseguradora o AFORE mexicana con apetito y presupuesto para pilotos de prevención, o habría que crear esa categoría desde cero con ellas?
-
-🟢 Viable: ❌
-
-Justificación: Un ciclo de venta B2B2C con aseguradoras o instituciones de salud en México toma típicamente 12–24 meses (comités de compra, pilotos, cumplimiento regulatorio, integración con sus sistemas) — es estructuralmente incompatible con un MVP comercializable en 6 meses, sin importar qué tan bien construidos estén los otros dos componentes.
-
-Pregunta que el equipo debe responder: ¿Podemos validar la hipótesis de pago institucional con una aseguradora de forma informal (carta de intención, piloto no vinculante) sin depender de cerrar venta real en los 6 meses?
-
-Puntaje DVN: ✅ de 3 (2 ⚠️/❌)
-
-Veredicto: descartar (para el MVP de 6 meses) — guardar como visión de escalamiento una vez que B o A tengan tracción con usuarios reales que sirvan de evidencia ante una aseguradora.
-
-───────────────────────────────────────────────────────
-
-CONCEPTO RECOMENDADO PARA EL PASO 5
-
-Nombre: El Seguro que se Olvida que Existe (Concepto B)
-
-Por qué este: Es el único con viabilidad clara en la ventana de 6 meses sin depender de meses de datos para entrenar un modelo (a diferencia de A) ni de un ciclo de venta institucional imposible en ese plazo (a diferencia de C), y su propuesta de "instala una vez, olvídate para siempre" es genuinamente novedosa frente a la teleasistencia reactiva que existe hoy en México.
-
-Riesgo principal a vigilar: el lente más débil es deseable — el riesgo de que el silencio total se perciba como "no sé si sigue funcionando" en vez de tranquilidad; el Paso 5 debería probar con usuarios reales una señal mínima de "estoy vivo y funcionando" (ej. un check semanal silencioso) que no rompa la promesa central de cero fricción._
-
----
-
-
-## Paso 5 — Validación preliminar de deseabilidad
- 
-!!! danger "El suicidio creativo"
-    Un equipo se enamora de una idea, invierte semanas o meses construyéndola, y al llegar al mercado descubre que nadie la quería, que ya existía algo mejor, o que técnicamente no era viable desde el principio.
- 
-**Tres formas comunes en hardware + IA en LATAM:**
- 
-1. **El producto sin dolor real** — el usuario dice "qué interesante" y no compra.
-2. **El producto que ya existe** — no lo encontraron porque buscaron en el espacio obvio, no en los adyacentes.
-3. **El producto que no puede construirse en el tiempo real** — la viabilidad técnica asumida no corresponde a seis meses.
-Este paso **no reemplaza las entrevistas** de semana 3 — identifica si hay suficientes señales públicas para justificar avanzar.
-
-
-**Las 5 señales de deseabilidad:**
- 
-1. 🔴 Pago actual por soluciones imperfectas
-2. 🔴 Comunidades activas hablando del problema
-3. 🔴 Frecuencia alta del problema
-4. 🔴 Costo observable del problema
-5. 🔴 Workarounds existentes
-
-
-**Prompt 1 — Perplexity: verificar las 5 señales con evidencia real**
- 
-```text
-Actúa como un investigador de mercado especializado en validar la
-deseabilidad de oportunidades de negocio en América Latina usando
-evidencia de comportamiento observable — no proyecciones ni
-opiniones de expertos. Tu metodología consiste en buscar señales
-concretas de que un problema existe y duele lo suficiente como para
-que alguien pague por resolverlo: pagos actuales a soluciones
-imperfectas, comunidades activas, frecuencia documentada, costo
-cuantificable y workarounds en uso. Si la evidencia no existe o es
-débil, lo dices directamente.
- 
-Somos emprendedores en México construyendo un negocio con tres
-componentes: una aplicación con IA, un artefacto físico inteligente
-y una página web de venta. Desarrollamos el siguiente concepto a
-partir de un proceso de investigación de oportunidades y
-necesitamos verificar si tiene deseabilidad real antes de
-comprometer seis meses de desarrollo.
- 
-NUESTRO CONCEPTO:
-Nombre: [nombre del Concepto Recomendado del Paso 4]
-Descripción: [2–3 oraciones del concepto]
-Usuario / segmento: [el segmento específico]
-Dolor que resuelve: [el dolor ⭐ del Pain-Gain Map]
-Ganancia que entrega: [la ganancia ⭐ del Pain-Gain Map]
- 
-Verifica cada una de las 5 señales de deseabilidad con evidencia
-real y observable. Para cada señal busca en fuentes primarias:
-comunidades online, grupos de Facebook, foros especializados,
-canales de YouTube, reseñas de productos similares, reportes de
-industria, datos del INEGI, BID, CEPAL u organismos sectoriales
-relevantes.
- 
-SEÑAL 1 — PAGO ACTUAL POR SOLUCIONES IMPERFECTAS
-¿Hay evidencia de que este segmento ya paga por algo que resuelve
-parcialmente este problema, aunque sea caro, incómodo o
-insuficiente?
-Busca: productos o servicios que el usuario contrata hoy, precios
-reales, frecuencia de contratación.
- 
-SEÑAL 2 — COMUNIDADES ACTIVAS
-¿Existen comunidades online donde este segmento hable de este
-problema, busque soluciones o se queje de las alternativas
-actuales?
-Busca: grupos de Facebook, subreddits, foros, canales de YouTube,
-hashtags, con ejemplos concretos de publicaciones o conversaciones
-relacionadas.
- 
-SEÑAL 3 — FRECUENCIA DEL PROBLEMA
-¿Con qué regularidad experimenta este usuario este problema
-específico? ¿Hay datos documentados de frecuencia?
-Busca: reportes operativos, estudios sectoriales, testimonios o
-cualquier fuente que indique periodicidad.
- 
-SEÑAL 4 — COSTO OBSERVABLE
-¿Cuánto le cuesta al usuario NO resolver este problema?
-Busca: pérdidas documentadas, costos de workarounds actuales,
-seguros contratados por este riesgo, tiempo invertido con costo
-calculable.
- 
-SEÑAL 5 — WORKAROUNDS EN USO
-¿Hay evidencia de que el usuario ya inventó soluciones caseras,
-adaptaciones o procesos manuales para lidiar con este problema?
-Busca: descripciones de procesos no estándar, productos adaptados
-de otras industrias, soluciones "artesanales" documentadas en
-comunidades o reportes.
- 
-FORMATO DE SALIDA — entrega exactamente esto:
- 
-
-VERIFICACIÓN DE DESEABILIDAD
-Concepto: [nombre] · Segmento: [usuario]
-
- 
-SEÑAL 1 — Pago por soluciones imperfectas
-Evidencia encontrada: [descripción concreta con fuente]
-Ejemplo específico: [el más representativo]
-Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
- 
-SEÑAL 2 — Comunidades activas
-Evidencia encontrada: [nombre de comunidades + ejemplo de post]
-Tamaño aproximado de la comunidad: [si está disponible]
-Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
- 
-SEÑAL 3 — Frecuencia del problema
-Evidencia encontrada: [dato de frecuencia con fuente]
-Periodicidad: diaria / semanal / mensual / ocasional
-Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
- 
-SEÑAL 4 — Costo observable
-Evidencia encontrada: [cifra o rango con fuente]
-Tipo de costo: dinero / tiempo / riesgo / calidad
-Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
- 
-SEÑAL 5 — Workarounds en uso
-Evidencia encontrada: [descripción del workaround más común]
-Dónde se documentó: [fuente]
-Veredicto: ✅ confirmada / ⚠️ parcial / ❌ no encontrada
- 
-
-RESUMEN
-Señales confirmadas ✅: [número de 5]
-Señales parciales ⚠️: [número de 5]
-Señales ausentes ❌: [número de 5]
-
-```
-
-
----
- 
-**Prompt 2 — Claude: diagnóstico y mapa de hipótesis**
- 
-```text
-
-Actúa como un mentor de emprendimiento con experiencia en ayudar a
-equipos de producto a interpretar evidencia de mercado y
-convertirla en decisiones concretas. Tu especialidad es identificar
-cuándo un concepto tiene deseabilidad real, cuándo está en zona de
-riesgo, y cuándo debe replantearse antes de invertir recursos. Eres
-directo: no suavizas un diagnóstico negativo ni inflas uno
-positivo. Si el concepto tiene riesgo de suicidio creativo, lo
-dices claramente.
- 
-Somos emprendedores en México construyendo un negocio con tres
-componentes: una aplicación con IA, un artefacto físico inteligente
-y una página web de venta. Tenemos seis meses para MVP
-comercializable. Completamos una verificación de deseabilidad de
-nuestro concepto y necesitamos que la interpretes y nos digas qué
-hacer con ella.
- 
-NUESTRO CONCEPTO:
-[pega el nombre y descripción del Concepto Recomendado]
- 
-RESULTADO DE LA VERIFICACIÓN DE PERPLEXITY:
-[pega el output completo del Prompt 1]
- 
-Necesito que hagas tres cosas en el formato exacto que se indica al
-final:
- 
-1. DIAGNÓSTICO DE DESEABILIDAD: ¿Qué tan sólida es la deseabilidad
-   de nuestro concepto según la evidencia encontrada? ¿En qué
-   señal está el mayor riesgo? ¿Hay algún patrón en las señales
-   ausentes que sugiera que el problema existe pero no para el
-   segmento que elegimos, o que no duele lo suficiente para que
-   alguien pague por resolverlo?
- 
-2. RIESGO DE SUICIDIO CREATIVO: Basándote en el patrón de señales,
-   ¿qué tan alto es el riesgo de que este equipo construya algo que
-   nadie quiere, que ya existe, o que no puede terminarse en seis
-   meses? ¿Cuál de los tres tipos de suicidio creativo es el más
-   probable para este concepto específico?
- 
-3. MAPA DE HIPÓTESIS: Formula 3 hipótesis específicas que el
-   equipo debe probar con usuarios reales en las entrevistas de la
-   semana siguiente. Cada hipótesis debe ser falseable — redactada
-   de forma que una sola conversación con el usuario correcto pueda
-   confirmarla o refutarla. No preguntas abiertas — hipótesis
-   concretas del tipo "creemos que [usuario] experimenta
-   [situación] con frecuencia [X] y estaría dispuesto a pagar
-   [rango] porque [razón]."
- 
-FORMATO DE SALIDA — entrega exactamente esto:
- 
-
-DIAGNÓSTICO DE DESEABILIDAD
-Concepto: [nombre]
-
- 
-NIVEL DE DESEABILIDAD ACTUAL:
-[Alto — evidencia sólida en 4–5 señales]
-[Medio — evidencia parcial, zona de riesgo controlable]
-[Bajo — evidencia insuficiente, replantear antes de avanzar]
- 
-FORTALEZA PRINCIPAL:
-[La señal mejor fundamentada y qué significa para el concepto]
- 
-RIESGO PRINCIPAL:
-[La señal más débil o ausente y por qué es importante]
- 
-PATRÓN DE LAS SEÑALES:
-[¿Qué dice el conjunto — el problema existe para un segmento
-diferente al elegido / existe pero no duele suficiente / existe y
-duele pero el concepto no lo ataca correctamente?]
- 
-
-RIESGO DE SUICIDIO CREATIVO
- 
-Tipo más probable:
-[ ] Producto sin dolor real — el usuario lo aprobaría pero no
-    cambiaría su comportamiento para tenerlo
-[ ] Producto que ya existe — hay una solución similar que el
-    equipo no encontró porque no buscó en los adyacentes
-[ ] Producto que no puede construirse — la viabilidad técnica o el
-    tiempo requerido excede lo disponible en seis meses
- 
-Nivel de riesgo: Alto / Medio / Bajo
-Por qué: [2 oraciones específicas basadas en la evidencia]
-Cómo reducirlo:
-[1 acción concreta que el equipo puede hacer esta semana sin
-construir nada — una búsqueda, una conversación, una verificación
-— que reduciría este riesgo significativamente]
- 
-MAPA DE HIPÓTESIS
- 
-HIPÓTESIS 1 — sobre el dolor
-"Creemos que [usuario específico] experimenta [situación concreta]
-con frecuencia [X veces por semana/mes] y le cuesta [rango de
-costo] porque [razón]. Si esto es falso, nuestro concepto necesita
-[qué cambiaría]."
-Cómo probarla: [la pregunta exacta o situación de observación que
-la confirmaría o refutaría en una entrevista de 20 min]
- 
-HIPÓTESIS 2 — sobre la solución
-"Creemos que [usuario específico] preferiría [aspecto clave del
-concepto] sobre [la alternativa actual] porque [razón]. Si esto es
-falso, nuestro concepto necesita [qué cambiaría]."
-Cómo probarla: [la pregunta exacta o situación de observación]
- 
-HIPÓTESIS 3 — sobre el pago
-"Creemos que [usuario específico] estaría dispuesto a pagar [rango]
-por [aspecto del concepto] porque [razón]. Si esto es falso,
-nuestro concepto necesita [qué cambiaría]."
-Cómo probarla: [la pregunta exacta o situación de observación]
-
-VEREDICTO FINAL
-[Una sola oración directa: el concepto está listo para entrevistas
-/ necesita ajuste antes de entrevistar / necesita replantearse
-antes de continuar — y por qué]
-
-```
-
-
----
-
-
-## Paso 6 — Criterios de selección de oportunidad
- 
-*Sin IA en este paso.* La selección final la hace el equipo con su propio criterio.
- 
-**Criterio 1 — Pasión genuina del equipo**
- 
-- ¿Alguien del equipo ha vivido este problema, conoce a alguien que lo sufre, o tiene una razón personal para querer resolverlo? _[ ]_
-- ¿Estarían dispuestos a pasar una tarde entera visitando a 5 usuarios de este sector aunque no fuera un entregable? _[ ]_
-- Si el proyecto no tuviera calificación, ¿seguirían trabajando en él? _[ ]_
-**Criterio 2 — Habilidad técnica disponible**
- 
-- ¿Pueden nombrar el tipo de sensor, actuador o modelo de IA que usaría el artefacto físico? _[ ]_
-- ¿El componente más difícil es algo que ya han hecho o algo completamente nuevo para todos? ¿Hay tiempo real para aprenderlo? _[ ]_
-- ¿Requiere integraciones o dependencias externas que podrían bloquear el desarrollo antes de semana 13? _[ ]_
-**Criterio 3 — Mercado existente con señales verificadas**
- 
-- Puntaje de deseabilidad del Paso 5 (mínimo 3 de 5 señales ✅ para continuar con confianza): _[ ]_
-- Tamaño mínimo del mercado (≥ 50,000 personas o negocios en LATAM, plausible): _[ ]_
-
-> **Matriz de selección completada por el equipo:**
+DistanciaCero: Más corto (4 + 2 sílabas), más fácil de retener y dictar de corrido. Mismo riesgo de segmentación (junto vs. separado), pero al ser más corto el error es menos probable. No tiene tildes ni letras ambiguas problemáticas.]_
 >
-> _[📎 Matriz de selección: [ver documento](https://iberopuebla-my.sharepoint.com/:w:/g/personal/200759_iberopuebla_mx/IQCM_5G2FB-YTb1-ycLyWuBuAd6a7u2kCttx5f3XImo3Ruw?e=j923nh)]_
+> **Nombre elegido por el equipo:** _[ DistanciaCero ]_
 
-### Estructura del reporte de oportunidad
- 
-```text
-REPORTE DE OPORTUNIDAD — Semana 2
- 
-Equipo: [nombres]
-Concepto elegido: [nombre del Concepto Recomendado]
- 
-1. EL PROBLEMA
-[Segmento específico + descripción del dolor ⭐ + workaround actual
-con costo observable]
- 
-2. EVIDENCIA DE DESEABILIDAD
-[Mínimo 3 señales verificadas con fuente — no "creemos que", solo
-evidencia observable]
- 
-3. PAIN-GAIN MAP (versión final)
-[Mínimo 5 dolores ordenados por intensidad y 5 ganancias ordenadas
-por deseo]
- 
-4. CONCEPTO RECOMENDADO
-[Nombre + descripción en 3–4 oraciones + letras SCAMPER que lo
-originaron + puntaje DVN]
- 
-5. LA OPORTUNIDAD EN UNA ORACIÓN
-"Existe una oportunidad para [quién] que necesita [qué resultado]
-porque hoy [por qué no lo tiene]."
- 
-6. POR QUÉ ESTE EQUIPO
-[Razón personal — Criterio 1 + elemento técnico concreto —
-Criterio 2]
- 
-7. HIPÓTESIS PARA SEMANA 3
-[Las 3 hipótesis falseables del Paso 5 — listas para probar en
-entrevistas]
+---
 
-```
- 
-> **Reporte de oportunidad — borrador del equipo:**
- _📎Reporte de oportunidad: [ver documento](https://docs.google.com/document/d/15BhTfX1qZM2KiuXkqKp_3LoqJ-T7gLd5kdJooJdQeZg/edit?usp=sharing)_
+### Paso 4 — Búsqueda fonética IMPI
 
+🔗 [marcanet.impi.gob.mx](https://marcanet.impi.gob.mx) · backup: [tmdn.org](https://www.tmdn.org) · [tmsearch.uspto.gov](https://tmsearch.uspto.gov)
 
+> **Marca:** distanciacero · **Clase de Niza:** _[define según tu producto — ej. Clase 9 electrónica/software, Clase 42 servicios tecnológicos]_
+>
+> **Antecedente encontrado en búsqueda general (no oficial IMPI):** existe *distanciacero.co* — organización colombiana de co-creación/innovación social educativa (ODS, hackathons, ABR). Sector distinto al nuestro, no aparece registrada ante IMPI México. Riesgo bajo pero documentar.
+>
+> **Estado encontrado en IMPI (marcanet.impi.gob.mx):** _[pendiente — hacer la búsqueda fonética tú mismo en el portal y pegar aquí: vigente / caducada / en trámite / sin resultados]_
+>
+> **Decisión final de nombre:** distanciacero ✅ (pendiente de confirmar disponibilidad oficial en clase elegida)
+>
+> _[adjuntar aquí la captura de pantalla de marcanet.impi.gob.mx]_
 
+---
 
+## Paso 5 — Vigilancia tecnológica
 
+### Prompt 1 — Términos de búsqueda (Claude)
 
+\`\`\`text
+Actúa como especialista en vigilancia tecnológica para startups
+de hardware + software en mercados emergentes.
 
+Concepto: Distanciacero — [agrega aquí en 1 línea qué hace tu producto]
+Mecanismo técnico: [sensores, procesamiento, comunicación — completa]
+Componente de IA: [qué hace y dónde corre — completa]
 
+Entrega:
+- Términos en ES y EN (principales + sinónimos + combinaciones AND)
+- Códigos IPC relevantes (3–5 con descripción)
+- Secuencia: IMPI → LATIPAT → Lens.org
+\`\`\`
 
+### Prompt 2 — Interpretar reclamos (Claude)
+
+\`\`\`text
+Actúa como analista de PI para equipos de ingeniería sin formación legal.
+
+Concepto: Distanciacero — [descripción técnica]
+Patente: Título / Número / Titular / Estado en MX / Año
+Reclamos: [pega reivindicaciones 1–5]
+
+Responde:
+1. Qué protege (sin jerga legal)
+2. Qué NO protege
+3. ¿Nuestro concepto cae dentro o fuera?
+   Veredicto: dentro ⚠️ / fuera ✅ / zona gris ❌
+4. Recomendación: ignorar / ajustar / asesoría legal / usar como guía
+---
+
+### Prompt 3 — Actores tecnológicos en LATAM (Perplexity)
+
+\`\`\`text
+Actúa como analista de inteligencia tecnológica en LATAM.
+Busca primero en MX y LATAM, luego global.
+
+Concepto: Distanciacero — [descripción + sector]
+
+Entrega:
+- Actores en México: nombre, tipo, qué hace, nivel de actividad
+- Actores en LATAM (BR, CO, AR, CL, PE)
+- Actores globales con presencia en LATAM
+- 2–3 papers relevantes últimos 3 años
+- Conclusión: densidad MX/LATAM + implicación para el equipo
+\`\`\`
+
+> **Nota:** al ejecutar este prompt, pide explícitamente que descarte del análisis a *distanciacero.co* (Colombia, co-creación educativa/ODS) por no ser un competidor real del espacio tecnológico — ya está identificado como antecedente de nombre, no de producto.
+>
+> **RESPUESTA:**
+> _[Ver conversación en Claude](https://claude.ai/share/8d6230c2-8d26-4e3f-8494-94dfd8a93147)_
