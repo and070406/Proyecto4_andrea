@@ -37,7 +37,7 @@ Criterios: pronunciable ES/EN · corto (2–3 sílabas) · sin significado negat
 ### Prompt 1 — 12 nombres (Evocadores / Compuestos / Inventados / Disruptivos)
 
 ```text
-[Primer Prompt(Perplexity):
+Primer Prompt(Perplexity):
 	Actúa como un Experto Senior en Branding, Naming y Estrategia de Marca con más de 15 años de experiencia creando identidades memorables para startups y marcas globales. Tu objetivo es ayudarme, en mi rol de emprendedor, a conceptualizar y desarrollar nombres comerciales de alto impacto.
 1. CONTEXTO DE MI NEGOCIO
 ¿Qué hace mi negocio / Producto o servicio?: Un sistema digital-físico que le da tranquilidad diaria a los hijos que viven lejos de un padre o madre mayor que vive solo. Un artefacto discreto (integrado en un objeto cotidiano como un bastón, un sillón o una taza) detecta pasivamente la rutina diaria del adulto mayor con conectividad celular/LoRa propia, sin depender de WiFi ni de que él haga nada. Una app guarda silencio total mientras todo esté normal y solo avisa al hijo/a por excepción, cuando algo se sale de lo habitual.
@@ -57,15 +57,15 @@ Nombre de la marca
 Tipo de nombre: [Evocador / Compuesto / Inventado / Disruptivo]
 Significado y concepto: Breve explicación del porqué del nombre y qué transmite.
 Tono y personalidad: ¿Cómo se siente la marca al pronunciarla?
-Sugerencia de Slogan cortísimo (opcional): Una frase de 3 a 5 palabras que refuerce el nombre.]
+Sugerencia de Slogan cortísimo (opcional): Una frase de 3 a 5 palabras que refuerce el nombre.
+
 ```
 
-> **IA usada:** _[Perplexity]_
+> **IA usada:** _Perplexity_
 >
 > **RESPUESTA:**
 > _[Ver conversación con Perplexity](https://www.perplexity.ai/search/7820f1ea-a8dc-46bc-a5dc-156025a9cc32)_
-> _[1. Calma
-Tipo de nombre: Evocador
+>_1. Calma :Tipo de nombre: Evocador 
 Significado y concepto: La palabra misma que tu cliente busca: calma mental, paz diaria, ausencia de ansiedad. Es directa pero no obvia, con una sonoridad suave en español que transmite serenidad inmediata.
 Tono y personalidad: Sereno, minimalista, confiable, reconfortante.
 Slogan sugerido: Respira, todo está bien.
@@ -137,16 +137,14 @@ Slogan sugerido: No ves, pero estás tranquilo.
 Tipo de nombre: Disruptivo
 Significado y concepto: Promete eliminar la distancia emocional aunque la física persista. Es una afirmación poderosa que resuena con la culpa y ansiedad del público objetivo. Tecnológico pero humano.
 Tono y personalidad: Aspiracional, tecnológico, emocional, contundente.
-Slogan sugerido: Lejos en km, cero en distancia.
-
-]_
+Slogan sugerido: Lejos en km, cero en distancia._
 >
-> **3 finalistas elegidos:** _[calma, silencioActivo, distanciaCero ]_
+> **3 finalistas elegidos:** _calma, silencioActivo, distanciaCero_
 
 ### Prompt 2 — Evaluación de los 3 finalistas
 
 ```text
-[Segundo Prompt(claude):
+Segundo Prompt(claude):
 	Actúa como un Consultor Senior en Estrategia de Marca, Branding y Posicionamiento de Mercado. Tu trabajo es asesorarme como emprendedor a tomar la decisión final de naming para mi proyecto, evaluando dos opciones finalistas: "SilencioActivo" y "DistanciaCero".
 
 1. CONTEXTO DE MI NEGOCIO
@@ -172,7 +170,8 @@ Sugiere cómo se verían en un slogan o tagline.
 Identifica posibles riesgos o malentendidos de cada opción.
 Veredicto y Recomendación Final:
 Da tu recomendación clara de cuál deberías elegir según el tipo de cliente o estrategia de posicionamiento que convenga seguir.
-]
+
+
 ```
 > **RESPUESTA:**
 > _[Ver conversación con Perplexity](https://www.perplexity.ai/search/1228713b-8bdf-40da-9d99-3ef4f72a041a)_
@@ -180,10 +179,10 @@ Da tu recomendación clara de cuál deberías elegir según el tipo de cliente o
 ---
 
 
-> **IA usada:** _[Claude]_
+> **IA usada:** _Claude_
 >
 > **RESPUESTA:**
-> _[Evaluación Comparativa de Naming: SilencioActivo vs. DistanciaCero
+> _Evaluación Comparativa de Naming: SilencioActivo vs. DistanciaCero
 
 Antes de entrar en la matriz, un principio que va a guiar todo el análisis: el nombre de una marca no vende el producto, vende la promesa emocional central. Tu producto no vende sensores ni conectividad LoRa — vende la desaparición de la ansiedad de fondo. El nombre ganador es el que comunica esa desaparición de forma más visceral e inmediata.
 
@@ -221,12 +220,14 @@ Debilidades:
 Es una categoría de nombre más genérica dentro del espacio de "conexión familiar a distancia" — nombres con "distancia," "cerca," "presente" son comunes en telemedicina, videollamadas familiares, seguros, etc. Hay más riesgo de sonar parecido a otras marcas.
 No comunica la característica más disruptiva de tu producto: que es pasivo, silencioso, que NO requiere interacción. "Distancia Cero" podría malinterpretarse como una promesa de conexión constante/activa (como una videollamada permanente), que es justo lo contrario de tu propuesta de "desaparece de tu vida digital".
 Es un nombre más "prometedor" que puede generar expectativas de intervención inmediata en emergencias reales (tipo "cero distancia = te voy a avisar al instante de todo"), lo cual puede chocar si la tecnología tiene cualquier lag o falso negativo.
-Es un poco más frío/corporativo — suena a nombre de app de logística o telecom, no necesariamente a algo "cálido".]_
+Es un poco más frío/corporativo — suena a nombre de app de logística o telecom, no necesariamente a algo "cálido"._
+
+---
 
 ### Prompt 3 — Verificación digital de pertinencia
 
 ```text
-[Actúa como un Especialista en Protección de Marca, SEO y Auditoría de Activos Digitales. Tu objetivo es ayudarme, en mi rol de emprendedor, a realizar una verificación digital de pertinencia, disponibilidad y viabilidad operativa para mis dos nombres finalistas: "SilencioActivo" y "DistanciaCero".
+Actúa como un Especialista en Protección de Marca, SEO y Auditoría de Activos Digitales. Tu objetivo es ayudarme, en mi rol de emprendedor, a realizar una verificación digital de pertinencia, disponibilidad y viabilidad operativa para mis dos nombres finalistas: "SilencioActivo" y "DistanciaCero".
 
 1. CONTEXTO DE MI NEGOCIO
 
@@ -254,13 +255,14 @@ Concluye cuál de las dos marcas presenta un camino más limpio y eficiente para
 
 3. FORMATO DE ENTREGA
 
-Presenta la respuesta estructurada en puntos clave y concluye con una tabla comparativa de viabilidad digital que resuma los hallazgos para rápida lectura.]
+Presenta la respuesta estructurada en puntos clave y concluye con una tabla comparativa de viabilidad digital que resuma los hallazgos para rápida lectura.
+
 ```
 
-> **IA usada:** _[Claude]_
+> **IA usada:** _Claude_
 >
 > **RESPUESTA:**
-> _[Auditoría de Viabilidad Digital: SilencioActivo vs. DistanciaCero
+> _Auditoría de Viabilidad Digital: SilencioActivo vs. DistanciaCero
 
 Hice una verificación activa en buscadores y registros de dominio para ambos nombres. Los hallazgos cambian el panorama respecto al análisis puramente conceptual — aquí hay señales concretas de colisión que debes conocer antes de registrar nada.
 
@@ -277,9 +279,9 @@ Veredicto SEO: Ninguno de los dos nombres está "limpio", pero SilencioActivo en
 
 SilencioActivo: Palabra compuesta de 5 sílabas + 3 sílabas. Riesgo bajo-medio de error ortográfico (no tiene tildes conflictivas ni C/S/Z ambiguas más allá de la "c" de "activo", que es fonéticamente clara). El riesgo real es de segmentación: al dictarlo, la gente puede escribir "Silencio Activo" con espacio, "SilencioActivo" junto, o "Silencio-Activo" con guion — esto fragmenta tu tráfico de búsqueda y tus menciones en redes si no impones una sola convención desde el inicio.
 
-DistanciaCero: Más corto (4 + 2 sílabas), más fácil de retener y dictar de corrido. Mismo riesgo de segmentación (junto vs. separado), pero al ser más corto el error es menos probable. No tiene tildes ni letras ambiguas problemáticas.]_
+DistanciaCero: Más corto (4 + 2 sílabas), más fácil de retener y dictar de corrido. Mismo riesgo de segmentación (junto vs. separado), pero al ser más corto el error es menos probable. No tiene tildes ni letras ambiguas problemáticas._
 >
-> **Nombre elegido por el equipo:** _[ DistanciaCero ]_
+> **Nombre elegido por el equipo:** _DistanciaCero_
 
 ---
 
