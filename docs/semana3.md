@@ -285,7 +285,7 @@ DistanciaCero: Más corto (4 + 2 sílabas), más fácil de retener y dictar de c
 
 ### Paso 4 — Búsqueda fonética IMPI
 
-🔗 [marcanet.impi.gob.mx](https://marcanet.impi.gob.mx) · backup: [tmdn.org](https://www.tmdn.org) · [tmsearch.uspto.gov](https://tmsearch.uspto.gov)
+🔗 [marcanet.impi.gob.mx](https://acervomarcas.impi.gob.mx:8181/) · backup: [tmdn.org](https://www.tmdn.org) · [tmsearch.uspto.gov](https://tmsearch.uspto.gov)
 
 > **Marca:** distanciacero · **Clase de Niza:** _[define según tu producto — ej. Clase 9 electrónica/software, Clase 42 servicios tecnológicos]_
 >
