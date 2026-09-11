@@ -264,7 +264,9 @@ Es un poco más frío/corporativo — suena a nombre de app de logística o tele
    Presenta la respuesta estructurada en puntos clave y concluye con una tabla comparativa de viabilidad digital que resuma los hallazgos para rápida lectura.
 
 ```
+
 ---
+
 
 > **IA usada:** _Claude_
 >
