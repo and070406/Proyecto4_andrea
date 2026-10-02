@@ -1,340 +1,321 @@
+# Semana 6
+## Generación y Selección de Concepto de Diseño
 
-
----
-title: Semana 5 · PDS y Arquitectura del Sistema
----
-
-# Semana 5
-
-## Product Design Specification y Arquitectura del Sistema
-
-**Tema:** DistanciaCero — PDS completo (16 requisitos), decisión de arquitectura de IA, diseño de sistema en 3 capas y viabilidad de manufactura
-**Blueprint:** Creación de valor → Factible · **DVF:** 🟢 Factible (arquitectura definida) · ⚠️ Riesgo de costo identificado (componente celular)
+**Tema:** DistanciaCero — Tabla morfológica, analogías tecnológicas, 3 conceptos de diseño, Matriz de Pugh y crítica técnica del boceto
+**Blueprint:** Creación de valor · **DVF:** 🔴 Deseable · 🟢 Factible
 
 ---
 
 ## Objetivo
 
-Esta semana el enfoque cambia de mercado a diseño técnico: traducir todo lo validado hasta ahora (segmento, propuesta de valor, hueco Blue Ocean de semana 4) en un **Product Design Specification** formal — requisitos funcionales, de desempeño, de interfaz y de restricción, cada uno con criterio de verificación explícito — y en la **arquitectura del sistema** que hace posible cumplirlos: dónde corre el modelo de IA, cómo se comunican los tres componentes, y si el diseño es fabricable en el volumen que necesita una prueba de mercado real (5–10 unidades).
+Hasta semana 5 sabíamos **qué** debía hacer el sistema (el PDS) y **cómo se conectaban** sus componentes (la arquitectura). Esta semana fue para decidir **cómo se ve, cómo se toca y cómo se usa** — el concepto de diseño no es decoración, es la primera decisión que el usuario va a juzgar antes de entender cómo funciona el producto por dentro.
+
+El trabajo siguió un flujo de 6 prompts en secuencia: tabla morfológica → analogías tecnológicas → 3 conceptos de diseño completos (artefacto + app + landing) → prompts de render → Matriz de Pugh para elegir entre los 3 → crítica técnica del boceto del concepto ganador.
 
 ---
 
 ## Contexto del producto
 
-- **Punto de partida:** un PDS preliminar con 2 requisitos por categoría, construido a partir de la propuesta de valor y el Blue Ocean de semana 4.
-- **Lo que exige esta semana:** expandir a mínimo 4 requisitos por categoría con criterio de verificación explícito, tomar y justificar la decisión de arquitectura de IA (edge/cloud/híbrido), diseñar la arquitectura completa en 3 capas con protocolos específicos, y evaluar viabilidad de manufactura para 5–10 unidades — el mínimo que permite una prueba de mercado real, no un demo.
+- **Restricciones del PDS relevantes para el diseño:** uso en interior sin exigencia de IP alta; presupuesto de manufactura ~$800–1,100 MXN por unidad; instalación por el hijo/a en ≤10 min sin participación del adulto mayor (RI-03, RR-02); el componente más grande del hardware interno es el módulo celular SIM7600E-H + batería 18650, lo que impone un volumen mínimo a cualquier carcasa.
+- **Punto de partida:** desde semana 2 el producto se describía integrado en "un objeto cotidiano (bastón, sillón, taza)" sin haber decidido cuál ni cómo. Esta semana convertimos esa frase en tres conceptos concretos y elegimos uno con criterios explícitos, no por preferencia estética.
 
 ---
 
 ## Trabajo con IA
 
-### Prompt 1 — Arquitectura del sistema
+### Prompt 1 — Tabla morfológica
 
-**IA utilizada:** Claude (Anthropic) — rol de arquitecto de sistemas embebidos especializado en productos mecatrónicos con IA para mercados latinoamericanos
+**IA utilizada:** Claude (Anthropic) — rol de diseñador industrial especializado en productos de hardware conectado para mercados latinoamericanos, con sesgo hacia opciones construibles con medios universitarios
 
 ```text
-Actúa como un arquitecto de sistemas embebidos con experiencia
-en productos mecatrónicos con inteligencia artificial para
-mercados latinoamericanos. Tu especialidad es diseñar
-arquitecturas de sistema que equilibran capacidad técnica,
-restricciones de manufactura y viabilidad económica para
-equipos de desarrollo universitario con presupuesto limitado.
-No propones la arquitectura más sofisticada — propones la más
-adecuada para las capacidades del equipo y los requerimientos
-del producto.
+Actúa como diseñador industrial especializado en productos de
+hardware conectado para mercados latinoamericanos. Tu sesgo es
+hacia opciones construibles con medios universitarios — nada
+que no pueda salir de un laboratorio con impresora 3D, CNC
+básica y acceso a componentes en México.
 
-Somos un equipo de ingeniería en México desarrollando un
-producto mecatrónico con tres componentes: un artefacto físico
-inteligente, una aplicación móvil/web, y una página de venta.
-Tenemos 8 semanas de desarrollo efectivo para llegar a una
-primera versión funcional que un usuario real pueda usar sin
-que nosotros estemos presentes.
+Producto: DistanciaCero — sistema que detecta pasivamente la
+rutina diaria de un adulto mayor que vive solo, integrado en un
+objeto cotidiano, notificando al hijo/a solo por excepción.
+Usuario y contexto: adulto mayor 65+ en su propia casa (objeto
+anfitrión) + hijo/a 35-55 que instala y monitorea desde la app.
 
-Nuestras capacidades técnicas:
-- Hardware: ESP32, Raspberry Pi, diseño de PCB (2 capas),
-  impresión 3D para carcasas, soldadura SMD
-- Software: Python, C/C++, JavaScript/React, React Native
-- IA: TensorFlow Lite, PyTorch, APIs de modelos (OpenAI,
-  Anthropic, Google), bases de datos vectoriales básicas
-- Presupuesto de materiales: máximo $3,000 MXN para prototipo
+Restricciones del PDS relevantes:
+· Resistencia ambiental: interior, IP54 razonable
+· Presupuesto de manufactura: ~$800-1,100 MXN/unidad
+· Instalación: por el hijo/a en ≤10 min, sin participación del
+  adulto mayor
+· Dimensiones mínimas: deben alojar un módulo celular
+  SIM7600E-H (~30×30mm) + batería 18650 (18mm × 65mm)
 
-Nuestro producto:
-Nombre: DistanciaCero
-Descripción: sistema digital-físico que integra un artefacto en
-  un objeto cotidiano (bastón, sillón, taza) con conectividad
-  celular propia, sin depender de WiFi doméstico ni de que el
-  adulto mayor haga nada. Detecta pasivamente su rutina diaria y
-  notifica al hijo/a solo por excepción, cuando la IA detecta una
-  desviación significativa del patrón de rutina aprendido para
-  esa persona.
+Genera tabla morfológica con 7 parámetros, 3 variantes cada
+uno, cada variante fabricable con los medios del equipo.
+```
+
+**Resultado de la IA**
+
+> Se generaron 7 parámetros (objeto anfitrión, forma de carcasa, método de instalación, indicador de estado, material/acabado, interfaz física y fuente de energía), 3 variantes cada uno, cada variante anotada con su implicación de manufactura (impresión 3D, mecanizado, sobremoldeo). El parámetro "objeto anfitrión" no estaba en la plantilla original del prompt base — lo agregamos como séptimo parámetro porque era justo la decisión que el proyecto había dejado abierta desde semana 2 (bastón/sillón/taza, sin decidir cuál).
+
+| Parámetro | Variante A | Variante B | Variante C |
+|---|---|---|---|
+| Objeto anfitrión | Bastón (impresión 3D + inserto) | Sillón/silla (módulo adherido bajo cojín o brazo) | Taza/posavasos (cápsula removible) |
+| Forma de la carcasa | Cilíndrica integrada al eje | Placa delgada rectangular redondeada | Cápsula circular plana removible |
+| Método de instalación | Inserto deslizante dentro del bastón | Velcro industrial bajo el cojín | Adhesivo/magnético bajo la taza o posavasos |
+| Indicador de estado | LED tipo detector de humo (parpadeo breve periódico) | Sin indicador físico — todo en app | Anillo luminoso tenue en la base |
+| Material y acabado | ABS acabado "madera" mate | Silicona suave, textura de tapicería | Acabado "cerámico" satinado |
+| Interfaz física | Sin botones — automático | Botón único de reset recesado | Touch capacitivo oculto |
+| Fuente de energía | Batería 18650 removible, acceso por tapa inferior | Batería 18650, acceso por panel trasero | Batería sellada, reemplazo de cápsula completa |
+
+---
+
+### Prompt 2 — Analogías tecnológicas
+
+**IA utilizada:** Claude (Anthropic) — rol de consultor de innovación de diseño especializado en transferencia de soluciones entre sectores
+
+```text
+Actúa como consultor de innovación de diseño con experiencia
+en transferencia de soluciones entre sectores. No buscas
+inspiración estética — buscas mecanismos de interacción,
+formas de instalación y lógicas de feedback que ya funcionaron
+en otro contexto.
+
+Producto: DistanciaCero. Usuario: adulto mayor 65+ que no debe
+sentir vigilancia activa + hijo/a que sí necesita señal de que
+el aparato funciona.
+
+Tabla morfológica adjunta [Prompt 1].
+
+Parámetros donde quiero más inspiración:
+- Indicador de estado (evitar ansiedad, dar confirmación sin
+  sentirse como vigilancia)
+- Material y acabado (evitar que se sienta como dispositivo
+  médico)
+- Fuente de energía (cero acción del adulto mayor — RR-02)
+
+Para cada uno, encuentra 2 productos de sectores
+completamente distintos que resuelvan el mismo problema de
+experiencia, y cómo trasplantar la lógica.
+```
+
+**Resultado de la IA**
+
+> Para **indicador de estado**: el detector de humo doméstico (parpadeo casi imperceptible en uso normal, prominente solo ante falla real) y los wearables sin pantalla tipo anillo Oura (la confirmación vive 100% en el teléfono, nunca en el objeto).
+>
+> Para **material y acabado**: fabricantes de bastones de gama alta (acabados en madera que evitan la estética clínica) y electrodomésticos de cocina retro (curvas generosas, colores cálidos en vez de "gadget" técnico).
+>
+> Para **fuente de energía**: la base de carga por inducción de un cepillo eléctrico (recargar sin que el usuario conecte nada — trasplantada como carga por contacto magnético en el soporte donde el bastón siempre se guarda) y las cámaras de seguridad con batería de meses (mantenimiento espaciado vía visitas programadas, no carga diaria).
+
+**Variante que agregamos a la tabla a partir de estas analogías:** fuente de energía → "carga por contacto magnético en soporte fijo", inspirada en la base del cepillo eléctrico.
+
+---
+
+### Prompt 3 — Los 3 conceptos de diseño
+
+**IA utilizada:** Claude (Anthropic) — rol de diseñador industrial y UX designer, articulando el sistema completo de tres componentes (artefacto, app, landing page)
+
+```text
+Actúa como diseñador industrial y UX designer. Articula
+conceptos de diseño completos para los tres componentes del
+producto, de forma que cada uno refuerce la misma propuesta
+de valor.
+
+Producto: DistanciaCero
 Propuesta de valor: "Para hijos que viven lejos de su padre o
   madre mayor, DistanciaCero reemplaza el miedo a 'la llamada'
   por la certeza diaria de que todo está bien — sin preguntar,
   sin culpa."
 
-Requerimientos técnicos clave (del PDS preliminar):
-- El sistema debe generar alerta solo ante desviación
-  significativa del patrón individual aprendido (no regla
-  genérica fija)
-- El sistema debe permanecer en silencio en rutina normal, con
-  alerta en ≤10 min desde la detección
-- El artefacto debe operar sin recarga un mínimo de X días
-  (a definir según objeto y consumo real)
-- El diseño no puede requerir ninguna acción activa recurrente
-  del adulto mayor (login, botón, cargar dispositivo separado)
-- Comunicación exclusivamente celular/LoRa propia, no WiFi
-  doméstico
+Tabla morfológica final [con variantes de Prompt 1 y 2].
 
-Nuestra decisión de arquitectura de IA: Híbrido
-Justificación (3 puntos):
-1. Conectividad celular intermitente pero no nula en el punto de
-   uso — descarta un modelo 100% cloud.
-2. La detección personalizada de rutina individual, aprendida a
-   lo largo de semanas, no cabe en el cómputo sostenido de un
-   microcontrolador — ese trabajo pesado vive en la nube.
-3. La latencia tolerable del producto es de minutos, no
-   milisegundos — no exige inferencia en tiempo real en el
-   dispositivo.
+CONCEPTO 1 — Bastón: cilíndrico integrado, inserto deslizante,
+  LED tipo detector de humo, acabado madera, sin botones,
+  batería con carga por contacto magnético.
+CONCEPTO 2 — Sillón: placa delgada, velcro bajo cojín, sin
+  indicador físico, silicona neutra, botón único recesado,
+  batería con acceso por panel trasero.
+CONCEPTO 3 — Taza: cápsula removible, adhesivo/magnético,
+  anillo luminoso tenue, acabado cerámico, touch capacitivo
+  oculto, batería sellada.
 
-Entrega en 4 pasos: validación de la decisión de arquitectura de
-IA, arquitectura en 3 capas con componentes y protocolos
-específicos, flujo de datos extremo a extremo con latencias, y
-viabilidad de prototipo/primera tirada para 5-10 unidades.
+Desarrolla para cada uno: artefacto (instalación, uso
+cotidiano, principios activos), app (pantalla principal) y
+landing page (headline, visual, CTA).
 ```
 
 **Resultado de la IA**
 
-> **Validación de la decisión de IA:** confirmada ✅ — el enfoque híbrido está bien justificado dados los requisitos (el silencio tolera minutos, no milisegundos) y las capacidades del equipo (sin experiencia previa manteniendo modelos de aprendizaje continuo en un microcontrolador).
->
-> Se diseñó la arquitectura completa en 3 capas —física, datos y presentación— con componentes y protocolos específicos, incluyendo una desviación deliberada del protocolo por defecto del curso: **HTTPS REST en lugar de MQTT** entre el artefacto y el backend. La razón: el patrón de transmisión (reportes cada 15–30 min, no streaming continuo) hace que mantener una conexión MQTT persistente en un módulo celular gaste batería sin necesidad.
->
-> En la viabilidad de manufactura para 8 unidades se identificó que el componente celular (SIM7600E-H) es el que más presiona el costo, empujando el precio mínimo viable de hardware al extremo alto del rango ya estimado en semana 4 ($2,000–4,000 MXN) — se documentó como riesgo pendiente, no como problema resuelto.
+**Concepto 1 — "El Bastón Centinela"**
 
-*(El detalle completo de esta arquitectura —capas, componentes, flujo de datos y viabilidad de manufactura— está en las secciones de abajo.)*
+| | |
+|---|---|
+| Instalación | Insertar el módulo en la base hasta hacer clic → colocar en su soporte de carga → esperar luz verde breve → escanear QR en la app |
+| Uso cotidiano | Se usa como un bastón normal; el único cambio de hábito es guardarlo siempre en su soporte, que también lo carga |
+| Principios activos | Affordances (el soporte solo encaja en una orientación) · Contour bias (torneado sin aristas) · Confirmación (LED breve solo en instalación) |
+| App — normal | Ícono de bastón en verde + "Todo tranquilo hoy" |
+| App — alerta | Ícono en rojo + "Mamá no se ha movido en las últimas 3 horas" |
+| App — omisión deliberada | Sin gráficas de movimiento ni datos crudos |
+| Landing — headline | "El bastón de tu mamá ahora también cuida de ti." |
+
+**Concepto 2 — "El Reposabrazos Centinela"**
+
+| | |
+|---|---|
+| Instalación | Elegir el sillón de mayor uso → levantar cojín → adherir con velcro → recolocar cojín → confirmar detección de peso en la app |
+| Uso cotidiano | Completamente invisible — el adulto mayor se sienta como siempre, sin saber que el sensor está ahí |
+| Principios activos | Constraints (el velcro solo cabe en una posición) · Costo-beneficio (LED eliminado a propósito, refuerza discreción) · Consistencia (acabado imita la tapicería) |
+| App — normal | Check verde grande + "Todo bien, se ha movido normalmente hoy" |
+| App — alerta | Aviso rojo + "No detectamos actividad desde las 2:00pm" |
+| App — omisión deliberada | No revela bajo qué cojín específico está el sensor (privacidad) |
+| Landing — headline | "Sabrás que está bien sin tener que preguntarle." |
+
+**Concepto 3 — "El Posavasos Guardián"**
+
+| | |
+|---|---|
+| Instalación | Colocar el posavasos donde se toma café/té → tocar el centro una vez → confirmar anillo luminoso → vincular en la app |
+| Uso cotidiano | Se usa como cualquier posavasos; el anillo se ilumina tenue al detectar uso, sin delatar su función real |
+| Principios activos | Affordances (forma circular invita a poner la taza, sin instrucción) · Confirmación (anillo inmediato pero ambiguo a propósito) · Contour bias (completamente circular) |
+| App — normal | Taza llena en verde + "Desayunó esta mañana, como siempre" |
+| App — alerta | Taza vacía/gris + "Hoy no ha usado su posavasos todavía" |
+| App — omisión deliberada | No muestra conteo de usos en el día — solo el primero relevante |
+| Landing — headline | "Un café, una señal de que todo está bien." |
 
 ---
 
-### Prompt 2 — Validar y completar el PDS
+### Prompt 4 — Prompts de render (Midjourney / Imagen 3)
 
-**IA utilizada:** Claude (Anthropic) — rol de ingeniero de producto senior especializado en redactar Product Design Specifications para hardware + software en etapa de prototipo avanzado
+**IA utilizada:** Claude (Anthropic) — rol de director de arte especializado en prompts de render para diseño industrial, con conocimiento de la sintaxis de Midjourney v6 e Imagen 3
+
+**Resultado de la IA** (para el concepto que terminó ganando en la Matriz de Pugh — ver abajo)
+
+> **Midjourney:** `soft silicone rectangular sensor pad, neutral taupe color, seamless integration under armchair cushion fabric, no visible electronics, gentle rounded edges 4mm radius, warm living room lighting, three-quarter view, photorealistic product render, minimal, no text, no logos --ar 4:3 --style raw --v 6`
+>
+> **Imagen 3:** "A soft silicone pad in neutral grey, roughly the size of a hand, with gently rounded edges and a matte upholstery-like texture, photographed at a three-quarter angle as it would sit tucked under the cushion of a cozy armchair in a warm living room. No visible buttons, lights, or electronic ports. Soft natural daylight, shallow depth of field."
+>
+> Los renders todavía no se generaron a partir de estos prompts — quedan listos para la siguiente sesión.
+
+---
+
+### Prompt 5 — Matriz de Pugh
+
+**IA utilizada:** Claude (Anthropic) — rol de ingeniero de producto especializado en selección de concepto, asegurando balance entre deseabilidad (≥40% del peso) y factibilidad
 
 ```text
-Actúa como un ingeniero de producto senior con experiencia en
-redactar Product Design Specifications para productos de
-hardware + software en etapa de prototipo avanzado. Tu
-especialidad es identificar requerimientos mal redactados —
-demasiado vagos para verificarse, demasiado restrictivos para
-ser alcanzables, o que faltan y harán falta en el desarrollo.
+Actúa como ingeniero de producto con experiencia en Matriz de
+Pugh. No permitas que la matriz esté dominada por criterios
+técnicos.
 
-Somos un equipo de ingeniería en México desarrollando:
-DistanciaCero — sistema digital-físico (app con IA + artefacto
-conectado) que detecta pasivamente la rutina diaria de un
-adulto mayor que vive solo, sin que él haga ninguna acción ni
-dependa de WiFi doméstico, y notifica al hijo/a solo por
-excepción.
+3 conceptos [descripción de cada uno — ver Prompt 3].
+Datum: Concepto 1 (Bastón) — la opción descrita desde semana 2.
 
-Usuario final: hijos/as adultos de 35-55 años en México con un
-padre/madre de 65+ que vive solo(a) — segmento con tres perfiles
-identificados según si ya existe o no una red humana local de
-apoyo (semana 4).
+Usuario: hijo/a 35-55 que instala, adulto mayor 65+ que no
+debe sentir vigilancia.
+Restricciones de manufactura: JLCPCB+PCBA para 8 unidades,
+presupuesto ~$800-1,100 MXN/unidad.
 
-Primera iteración del producto: el sistema completo (artefacto +
-app + backend) funcionando de forma autónoma, instalado en la
-casa de un adulto mayor real durante varias semanas, sin que el
-equipo esté presente explicando cómo usarlo — no un demo ni un
-prototipo de laboratorio.
-
-Este es nuestro PDS preliminar:
-
-REQUERIMIENTOS FUNCIONALES:
-1. El sistema debe registrar los patrones de actividad diaria y
-   generar alerta solo ante desviación significativa del patrón
-   aprendido para esa persona específica.
-2. El sistema debe permanecer en silencio mientras la rutina sea
-   normal, y alertar en un tiempo máximo definido desde la
-   detección (a definir con dato real, ej. ≤10 min).
-
-REQUERIMIENTOS DE DESEMPEÑO:
-1. El artefacto debe operar sin recarga un mínimo de X días
-   (a definir según objeto elegido y consumo real).
-2. El algoritmo debe mantener tasa de falsos positivos menor a
-   Y% y tasa de falsos negativos menor a Z%.
-
-REQUERIMIENTOS DE INTERFAZ:
-1. La app debe mostrar, sin configuración técnica, un estado
-   claro "todo normal"/"alerta activa" y el historial reciente,
-   en lenguaje no clínico.
-2. El artefacto debe comunicarse con la nube exclusivamente vía
-   celular/LoRa propio (no WiFi doméstico), con datos cifrados.
-
-REQUERIMIENTOS DE RESTRICCIÓN:
-1. El costo recurrente no debe exceder el rango validado por el
-   mercado ($300-$600 MXN/mes).
-2. El diseño no puede requerir ninguna acción activa recurrente
-   del adulto mayor.
-
-Entrega diagnóstico por categoría, correcciones con criterio de
-verificación explícito, mínimo 2 requerimientos faltantes por
-categoría, y el PDS completo corregido.
+Construye la matriz con mínimo 3 criterios de deseabilidad y
+3 de factibilidad, deseabilidad ≥40% del peso total.
 ```
 
-**Resultado de la IA — diagnóstico por categoría**
+**Resultado de la IA**
 
-| Categoría | ✅ Bien redactados | ⚠️ Con problema | ❌ Faltantes (agregados) |
-|---|---|---|---|
-| Funcionales | El de detección de desviación (verificable con dataset de prueba) | El de alerta por excepción tenía una variable sin resolver ("tiempo a definir") | Periodo de aprendizaje inicial sin alertas · Historial accesible sin conexión |
-| Desempeño | — | Ambos (autonomía y tasa de error) tenían variables sin resolver, no verificables tal cual | Latencia máxima de transmisión · Disponibilidad del backend |
-| Interfaz | Ambos, ya verificables en principio | Faltaba profundidad en el criterio de verificación | Onboarding con tiempo límite · Redundancia de canal de notificación |
-| Restricción | Ambos, claros y verificables | — | Privacidad de datos (sin audio/video) · Volumen de manufactura (compatibilidad JLCPCB) |
+> **Criterios y pesos** — deseabilidad: facilidad de instalación (15%), discreción/no parecer dispositivo médico (15%), confianza del material (10%), tamaño apropiado (10%) → 50% total. Factibilidad: costo de manufactura (15%), complejidad de ensamble (10%), disponibilidad de materiales (10%), compatibilidad JLCPCB (10%), facilidad de mantenimiento (5%) → 50% total.
 
-**Correcciones aplicadas:** las variables sin resolver (tiempo de alerta, días de autonomía, tasas de falsos positivos/negativos) se fijaron con valores concretos, razonados a partir de las capacidades técnicas del equipo (capacidad de batería, consumo estimado del hardware elegido). Quedan marcadas como *supuestos de diseño a validar con el primer prototipo*, no como datos ya medidos.
+| Criterio (peso) | C1 — Bastón (datum) | C2 — Sillón | C3 — Taza |
+|---|:--:|:--:|:--:|
+| Instalación sin instrucciones (15%) | datum | + | + |
+| Discreción (15%) | datum | + | + |
+| Confianza del material (10%) | datum | S | S |
+| Tamaño — ¿cabe SIM7600+18650? (10%) | datum | + | – |
+| Costo de manufactura (15%) | datum | + | + |
+| Complejidad de ensamble (10%) | datum | + | + |
+| Disponibilidad de materiales (10%) | datum | S | S |
+| Compatibilidad JLCPCB (10%) | datum | + | + |
+| Facilidad de mantenimiento (5%) | datum | + | – |
 
----
+**Puntuación ponderada:** C2 (Sillón) = **+80** · C3 (Taza) = +60 · C1 (datum) = 0
 
-## PDS completo — DistanciaCero v1.0
-
-**REQUISITOS FUNCIONALES**
-
-| ID | Requisito | Verificación |
-|---|---|---|
-| RF-01 | Detectar desviación significativa del patrón de rutina aprendido por persona | Dataset simulado de 14 días + eventos anómalos inyectados |
-| RF-02 | Silencio mientras rutina es normal; alerta en ≤10 min desde detección | Medición de timestamp evento→notificación en 10 corridas |
-| RF-03 | Periodo de aprendizaje inicial (baseline) de 10–14 días sin alertas | Revisión de logs — cero alertas en los primeros 10 días |
-| RF-04 | Historial de 30 días accesible incluso sin conexión | Prueba en modo avión — historial visible (cache local) |
-
-**REQUISITOS DE DESEMPEÑO**
-
-| ID | Requisito | Criterio |
-|---|---|---|
-| RD-01 | Autonomía sin recarga ≥15 días | Batería 18650 (~3,000 mAh), consumo estimado 6–8 mA promedio |
-| RD-02 | Falsos positivos <5%, falsos negativos <2% | Set de prueba de 50 eventos simulados (25/25) |
-| RD-03 | Transmisión de reporte al backend en ≤30s (cobertura nominal) | Logs de timestamp del módulo celular, 20 transmisiones |
-| RD-04 | Disponibilidad de backend ≥99% mensual | Monitoreo de uptime del servicio en la nube |
-
-**REQUISITOS DE INTERFAZ**
-
-| ID | Requisito | Verificación |
-|---|---|---|
-| RI-01 | Estado claro "normal"/"alerta" sin configuración técnica, lenguaje no clínico | Prueba de usabilidad — interpretación correcta en <10s |
-| RI-02 | Comunicación exclusivamente celular (no WiFi doméstico), datos cifrados | Prueba de campo sin WiFi + inspección de tráfico TLS |
-| RI-03 | Onboarding guiado ≤10 min, sin participación activa del adulto mayor | Cronometraje del proceso con usuario de prueba |
-| RI-04 | Alerta por ≥2 canales (push + WhatsApp/SMS) | Simular fallo de un canal, confirmar llegada por el otro |
-
-**REQUISITOS DE RESTRICCIÓN**
-
-| ID | Requisito | Verificación |
-|---|---|---|
-| RR-01 | Costo recurrente dentro de $300–$600 MXN/mes | Revisión del modelo de precios contra este techo |
-| RR-02 | Ninguna acción activa recurrente requerida del adulto mayor | Checklist de revisión de diseño en cada feature nueva |
-| RR-03 | Sin transmisión ni almacenamiento de audio/video | Auditoría del esquema de datos del backend |
-| RR-04 | Compatible con JLCPCB+PCBA para 5–10 unidades, sin BGA ni pitch <0.5mm | DRC de JLCPCB sobre el diseño antes de fabricar |
+> **Concepto ganador: Concepto 2 — "El Reposabrazos Centinela"** — domina los dos criterios de deseabilidad de mayor peso y resuelve mejor la restricción física real del proyecto: el volumen del SIM7600E-H + batería 18650 cabe con holgura en un sillón, apretado en un bastón o un posavasos.
+>
+> **Riesgo principal señalado por la IA (fuera de la matriz):** el diseño asume que el adulto mayor se sienta siempre en el mismo sillón — si no es así, el periodo de aprendizaje de rutina (RF-03, semana 5) puede confundirse con falsos positivos.
+>
+> **Iteración recomendada:** adoptar del Concepto 1 el acabado cálido (imitar la tela del sillón en vez de silicona técnica) y del Concepto 3 el diseño de cápsula de batería fácilmente removible.
 
 ---
 
-## Decisión de arquitectura de IA
+### Prompt 6 — Crítica técnica del boceto
 
-**✓ HÍBRIDO — decisión tomada y justificada**
-
-| Pregunta guía | Respuesta para DistanciaCero |
-|---|---|
-| ¿Conectividad estable en el punto de uso? | Intermitente pero no nula — descarta cloud puro |
-| ¿Respuesta en <1s o puede esperar minutos? | Tolera minutos (RF-02: ≤10 min) — no exige edge puro |
-| ¿Los datos pueden salir del dispositivo? | Sí, con cifrado (RI-02) — no hay restricción de privacidad que fuerce todo a edge |
-
-**Justificación en 3 puntos:**
-
-1. **Conectividad intermitente pero no nula** — el dispositivo necesita acumular datos localmente durante huecos de señal cortos; un modelo 100% cloud fallaría en esos momentos.
-2. **La detección personalizada de rutina no cabe en el microcontrolador** — aprender el patrón individual a lo largo de semanas requiere más memoria y cómputo del que un ESP32/RP2350 puede sostener con actualizaciones continuas.
-3. **Latencia tolerable en minutos, no milisegundos** — RF-02 permite hasta 10 minutos entre evento y alerta, así que no hace falta inferencia en tiempo real en el dispositivo; el edge solo hace preprocesamiento simple.
-
----
-
-## Arquitectura del sistema
+**IA utilizada:** Claude (Anthropic) — rol de ingeniero de diseño industrial especializado en revisión de bocetos técnicos pre-CAD, priorizando los 3 problemas más importantes
 
 ```text
-┌─────────────────────────────────────────────────────────────────┐
-│                    CAPA FÍSICA (Hardware)                       │
-│                                                                 │
-│  [MPU6050 accel]──┐                                             │
-│  [PIR HC-SR501]───┼──[ESP32-S3]──[SIM7600E-H]──(red celular)    │
-│  [Batería 18650    │   preprocesamiento                         │
-│   + TP4056]────────┘   (agregación ventana 15-30min)            │
-└─────────────────────────────────┬───────────────────────────────┘
-                                  │ HTTPS POST (JSON, periódico)
-┌─────────────────────────────────▼───────────────────────────────┐
-│                    CAPA DE DATOS (Firebase)                     │
-│                                                                 │
-│  [Firestore]──trigger──[Cloud Function]──[Modelo anomalía]      │
-│  (guarda reporte)      (orquesta)         (z-score vs baseline) │
-│                              │                                  │
-│                    [FCM] + [Twilio/WhatsApp]                    │
-│                    (si hay anomalía → despacha alerta)          │
-└─────────────────────────────────┬───────────────────────────────┘
-                                  │ Firestore listeners (tiempo real)
-┌─────────────────────────────────▼───────────────────────────────┐
-│                    CAPA DE PRESENTACIÓN (App)                   │
-│                                                                 │
-│  [React Native]──3 vistas: Estado diario / Historial 30d /       │
-│                              Onboarding                          │
-│  Notificaciones: push (FCM) + WhatsApp (respaldo)                │
-└─────────────────────────────────────────────────────────────────┘
+Actúa como ingeniero de diseño industrial revisando bocetos
+pre-CAD. Prioriza los 3 problemas más importantes, no corrijas
+todo.
+
+Concepto elegido: "El Reposabrazos Centinela" (Matriz de Pugh).
+
+Boceto técnico: placa 90×60×15mm, ABS con sobremoldeo de
+silicona gris topo, radio de esquina 4mm, PCB interna 70×45mm
+(ESP32-S3 + MPU6050 + SIM7600E-H + 18650), instalación por
+velcro industrial bajo el cojín, acceso a batería por tapa
+trasera con 2 tornillos Torx de seguridad, sin LED visible.
+
+Wireframe: pantalla principal con check verde/alerta roja,
+botón único de acción, sin gráficas técnicas.
 ```
 
-**Decisiones de componente clave**
+**Resultado de la IA**
 
-| Componente | Elección | Por qué (y qué se descartó) |
+| Problema | Por qué es crítico | Solución |
 |---|---|---|
-| Microcontrolador | ESP32-S3 | Soporte más maduro de TFLite Micro que RP2350; conocimiento de GPIO del equipo (curso de Sistemas Embebidos) es transferible |
-| Conectividad | SIM7600E-H (4G, fallback 3G/2G) | LoRa se descartó — requeriría gateway propio cerca de cada casa, inviable por usuario. NB-IoT se descartó por cobertura incierta en México hoy |
-| Backend | Firebase (Firestore + Cloud Functions + FCM) | Menor complejidad operativa que AWS IoT Core para un equipo de 4 sin DevOps dedicado; FCM resuelve RI-04 directamente |
-| Protocolo hardware→backend | HTTPS REST | Se aparta del ejemplo del curso (MQTT) — justificado: transmisión poco frecuente (15–30 min), MQTT persistente gastaría batería innecesaria (RD-01) |
+| **Sin confirmación en instalación** — ningún indicador físico y el primer reporte tarda 15-30 min | Viola el principio de Confirmación — genera dudas y reinstalaciones innecesarias justo cuando más se necesita certeza | LED temporal que enciende solo los primeros 2 min tras el primer encendido, luego se apaga permanentemente |
+| **Asume un único sillón de uso consistente** — si el adulto mayor usa varios asientos, "ausencia" se marca como anomalía constantemente | Genera falsos positivos que violan RD-02 (<5%, semana 5) y erosiona la confianza en las alertas | Validar con observación real cuál es el mueble de uso más consistente antes de fabricar, o detectar "zona" en vez de peso en un cojín específico |
+| **Tornillos de seguridad dificultan el mantenimiento que sí debe ser fácil** — pensados contra el adulto mayor, estorban al hijo/a que abre cada 15-20 días | Contradice el objetivo de mantenimiento simple para quien sí necesita acceso frecuente | Mecanismo de apertura sin herramienta pero no obvio (pestaña a presión oculta) |
 
-**Flujo de datos — caso de uso principal (con anomalía detectada)**
+**Preguntas sin resolver:** ¿el velcro resiste movimiento si el sillón es reclinable o mecedora? ¿aguanta meses de fricción diaria sin despegarse? ¿cómo distingue el hijo/a cuál sillón tiene el sensor si hay varios similares en casa?
 
-| Paso | Componente | Mecanismo | Latencia est. |
-|---|---|---|---|
-| 1 | Sensores → ESP32-S3 | I2C/GPIO | ~10 ms |
-| 2 | ESP32-S3 → Firebase | HTTPS POST vía SIM7600 | ~2–5 s |
-| 3 | Firestore → Cloud Function | Trigger on write | ~200–500 ms |
-| 4 | Cloud Function → modelo | Inferencia estadística | ~50–100 ms |
-| 5 | Cloud Function → FCM/Twilio | Despacho de alerta | ~1–2 s |
-| 6 | App del hijo/a | Recepción push/WhatsApp | ~1–3 s |
+**Fortaleza del diseño:** eliminar el indicador LED permanente fue la decisión correcta — consistente con el posicionamiento del producto desde semana 4 ("silencio = tranquilidad") y evita que el objeto se sienta como vigilancia activa.
 
-**Latencia total extremo a extremo:** ~5–10 segundos — muy por debajo del margen de RF-02 (≤10 minutos).
-
-**Funcionamiento sin conexión:** el ESP32 sigue registrando en flash local durante huecos de señal y transmite en el siguiente ciclo disponible — no se pierden datos, solo se retrasa la sincronización.
+**Listo para CAD:** ⚠️ con ajustes — los tres problemas son resolubles sin rediseñar el concepto, pero deben resolverse antes de modelar.
 
 ---
 
-## Viabilidad de prototipo (5–10 unidades)
+## Entregable de la semana
 
-**Volumen objetivo:** 8 unidades
+**Concepto elegido:** El Reposabrazos Centinela
 
-| Componente crítico | Disponibilidad MX (≥10 uds) | En librería JLCPCB | Costo unitario (vol. 8–10) |
-|---|---|---|---|
-| SIM7600E-H (celular 4G) | ✅ Mouser/DigiKey, 10–15 días | ⚠️ integración manual | ~$350–450 MXN |
-| ESP32-S3 | ✅ MercadoLibre/Mouser, <1 sem | ✅ | ~$90–130 MXN |
-| MPU6050 + PIR HC-SR501 | ✅ MercadoLibre, <1 sem | ✅ / ⚠️ | ~$100–150 MXN |
-| Batería 18650 + TP4056 | ✅ MercadoLibre, <1 sem | N/A | ~$150–200 MXN |
+### Boceto técnico
 
-**Alternativa evaluada y descartada:** módulo SIM800C (2G) — más barato y más estándar en librería JLCPCB, pero Telcel y AT&T ya descontinuaron 2G en México; serviría para un prototipo de laboratorio, no para una prueba de mercado real con usuarios en sus casas.
-
-| Métrica | Valor |
+| Especificación | Valor |
 |---|---|
-| BOM estimado por unidad (vol. 8–10) | ~$800–1,100 MXN |
-| Precio de venta mínimo viable (BOM ÷ 30%) | ~$2,700–3,700 MXN |
-| ¿Cae dentro del rango ya estimado en semana 4 ($2,000–4,000 MXN)? | ⚠️ Sí, pero en el extremo alto |
-| Proceso recomendado | JLCPCB + PCBA para PCB principal; SIM7600 y PIR integrados manualmente por conector |
+| Dimensiones | 90 × 60 × 15 mm |
+| Material exterior | ABS con sobremoldeo de silicona, gris topo |
+| Radio de esquina | 4 mm (contour bias) |
+| PCB interna | 70 × 45 mm — ESP32-S3, MPU6050, SIM7600E-H, batería 18650 |
+| Instalación | Velcro industrial bajo el cojín del sillón de mayor uso |
+| Acceso a batería | Panel trasero — pendiente rediseño de apertura (ver Problema 3) |
+| Indicador | Ninguno permanente — LED temporal de confirmación pendiente de agregar (ver Problema 1) |
+
+### Wireframe de la app
+
+| Pantalla | Estado normal | Estado de alerta |
+|---|---|---|
+| Principal | Check verde + "Todo bien, se ha movido normalmente hoy" | Aviso rojo + "No detectamos actividad desde las 2:00pm" |
+| Acción principal | "Ver detalle" | "Ver detalle" / "Llamar ahora" |
+| Flujo de instalación | Elegir sillón → adherir módulo → confirmar detección en la app (3 pasos) | — |
 
 ---
 
-## ¿Qué aprendí?
+## Veredicto de la semana
 
-Lo que más me quedó de esta semana es que un PDS no es una lista de buenas intenciones — es solo tan útil como su criterio de verificación. Los primeros dos requisitos por categoría que ya teníamos sonaban bien, pero al pasarlos por el diagnóstico formal varios necesitaron números concretos que antes no teníamos (los 15 días de batería, el ≤30s de transmisión, el ≥99% de uptime). Lo más útil fue notar que esos números, aunque son supuestos de diseño y no datos de mercado verificados, sí tienen que estar razonados — no pusimos "15 días" porque sonaba bien, sino porque salió de una cuenta real de capacidad de batería contra consumo estimado, algo que podemos defender y, más importante, corregir con medición real.
+**QUEDA RESUELTO:** 3 conceptos genuinamente distintos (difieren en objeto anfitrión, forma, instalación, indicador, material e interfaz) evaluados con una Matriz de Pugh balanceada (50% deseabilidad / 50% factibilidad) · concepto ganador elegido con criterios defendibles, no por preferencia estética · boceto técnico con dimensiones, materiales y ubicación de componentes definidos.
 
-En la arquitectura, lo que más nos hizo pensar fue la decisión de protocolo HTTPS en vez de MQTT — el ejemplo del curso usa MQTT por default, y tuvimos que justificar explícitamente por qué nuestro caso es diferente. Buen recordatorio de que las plantillas del curso son puntos de partida, no respuestas automáticas para cualquier producto. Y la viabilidad de manufactura fue la parte más incómoda pero más valiosa: ver el número del BOM empujando el precio al límite de lo que el mercado pagaría no es un resultado "malo" del ejercicio — es exactamente la señal que esta semana está diseñada para sacar a la luz antes de fabricar, no después.
+**QUEDA PENDIENTE:** los 3 problemas críticos señalados en la crítica del boceto (confirmación de instalación, consistencia del mueble de uso, mecanismo de apertura para mantenimiento) deben resolverse antes de pasar a CAD — el estado es "con ajustes", no "listo". El render visual (Midjourney/Imagen 3) está en prompt listo pero no generado todavía.
+
+**Próximo paso:** generar los renders con los prompts del Prompt 4, resolver los 3 problemas del boceto, y validar con observación real cuál es el mueble de mayor uso consistente del adulto mayor antes de comprometernos con el diseño final en CAD.
+
+---
 
 ## Reflexión personal
 
-> Lo que más me quedó de esta actividad es lo distinto que se siente diseñar cuando ya tienes contra qué medir cada decisión. Antes de escribir el PDS a 4 capas, elegir el módulo celular o el protocolo de comunicación se sentía como una decisión más de "qué tecnología conozco o me late", y esta semana entendí que en realidad cada elección debería poder rastrearse hasta un requisito específico — el HTTPS en vez de MQTT existe porque RD-01 (batería) lo exige, no porque nos pareciera más simple. También fue revelador ver que la viabilidad de manufactura empuja el precio del hardware justo al límite superior de lo que ya habíamos estimado que el segmento pagaría — eso no es un problema resuelto, es una tensión real que el proyecto va a tener que negociar en las próximas semanas, probablemente optimizando el componente celular. Preferimos verlo así, con el número incómodo puesto sobre la mesa, que descubrirlo hasta que ya tengamos 8 unidades fabricadas.
-
+> Antes de esta semana, "diseño" era para mí básicamente "elegir cómo se ve la caja" — una decisión casi cosmética, al final del proceso técnico. Construir la tabla morfológica y después forzar tres conceptos genuinamente distintos me hizo ver que el diseño está tan amarrado a las restricciones técnicas como cualquier decisión de arquitectura: no pudimos elegir el bastón como ganador aunque fue la primera idea del proyecto desde semana 2, porque al compararlo en serio contra el sillón, el espacio físico real para el hardware simplemente no alcanzaba igual de bien. Lo más incómodo — y más útil — fue la crítica del boceto: encontrar que nuestra propia decisión de "sin indicador, todo discreto" generaba un problema real de confirmación en el momento de instalación. Es el mismo patrón que ya habíamos visto en semanas anteriores: cada vez que el análisis es honesto sobre dónde hay una debilidad, en vez de maquillarla, es cuando el trabajo realmente avanza.
