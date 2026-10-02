@@ -1,9 +1,3 @@
-
-
----
-title: Semana 5 · PDS y Arquitectura del Sistema
----
-
 # Semana 5
 
 ## Product Design Specification y Arquitectura del Sistema
