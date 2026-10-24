@@ -170,7 +170,7 @@ Trabajé con una sola IA, **Claude**. Abajo está cada prompt tal como lo usé y
     **Variante nueva:** carga por contacto magnético en soporte fijo (manufactura: soporte impreso en 3D con pines pogo y imán de neodimio)
     **Viene de:** la base de carga del cepillo eléctrico
     ════════════════════════════════════════════════════════
-
+    
 
 ---
 
