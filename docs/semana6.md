@@ -747,7 +747,7 @@ Hice dos intentos. El primero fue un prompt de render en estilo Midjourney, pega
 
 #### Concepto 1 — "El Bastón Centinela"
 
-<div style="margin:1rem 0"><img src="../assets/semana6/render-baston.png" alt="Render realista del Bastón Centinela en su soporte de carga" style="width:100%;max-width:560px;height:auto;border-radius:6px;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/assets/semana6/render-baston.png</code><br><em>Render realista del Bastón Centinela en su soporte de carga</em></div></div>
+<div style="margin:1rem 0"><img src="../docs/recursos/imgs/baston_centinela.jpeg" alt="Render realista del Bastón Centinela en su soporte de carga" style="width:100%;max-width:560px;height:auto;border-radius:6px;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/assets/semana6/render-baston.png</code><br><em>Render realista del Bastón Centinela en su soporte de carga</em></div></div>
 *Figura 1. Render conceptual del Bastón Centinela en su soporte de carga: madera mate, módulo insertable en la base y luz verde breve de instalación. Las proporciones del bastón y del soporte son supuestas.*
 
 | | |
@@ -767,7 +767,7 @@ Hice dos intentos. El primero fue un prompt de render en estilo Midjourney, pega
 
 #### Concepto 2 — "El Reposabrazos Centinela" ✅ *(elegido — ver Matriz de Pugh)*
 
-<div style="margin:1rem 0"><img src="../assets/semana6/render-reposabrazos.png" alt="Render realista del Reposabrazos Centinela: placa de silicona bajo el cojín levantado de un sillón" style="width:100%;max-width:900px;height:auto;border-radius:6px;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/assets/semana6/render-reposabrazos.png</code><br><em>Render realista del Reposabrazos Centinela: placa de silicona bajo el cojín levantado de un sillón</em></div></div>
+<div style="margin:1rem 0"><img src="../docs/recursos/imgs/sillon_centinela.jpeg" alt="Render realista del Reposabrazos Centinela: placa de silicona bajo el cojín levantado de un sillón" style="width:100%;max-width:900px;height:auto;border-radius:6px;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/assets/semana6/render-reposabrazos.png</code><br><em>Render realista del Reposabrazos Centinela: placa de silicona bajo el cojín levantado de un sillón</em></div></div>
 *Figura 2. Render conceptual del Reposabrazos Centinela: placa de silicona gris topo de 90 × 60 mm sobre la base del asiento. El cojín se muestra levantado solo para que se vea la placa; en uso real queda oculta. El sillón es supuesto.*
 
 | | |
@@ -787,7 +787,7 @@ Hice dos intentos. El primero fue un prompt de render en estilo Midjourney, pega
 
 #### Concepto 3 — "El Posavasos Guardián"
 
-<div style="margin:1rem 0"><img src="../recursos/imgs/posavasos_guardian.jpeg" alt="Render realista del Posavasos Guardián con anillo luminoso tenue" style="width:100%;max-width:900px;height:auto;border-radius:6px;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/assets/semana6/render-posavasos.png</code><br><em>Render realista del Posavasos Guardián con anillo luminoso tenue</em></div></div>
+<div style="margin:1rem 0"><img src="../docs/recursos/imgs/posavasos_guardian.jpeg" alt="Render realista del Posavasos Guardián con anillo luminoso tenue" style="width:100%;max-width:900px;height:auto;border-radius:6px;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/assets/semana6/render-posavasos.png</code><br><em>Render realista del Posavasos Guardián con anillo luminoso tenue</em></div></div>
 *Figura 3. Render conceptual del Posavasos Guardián: cerámica satinada con anillo luminoso tenue en la base. El diámetro (≈10 cm) y la taza son supuestos.*
 
 | | |
