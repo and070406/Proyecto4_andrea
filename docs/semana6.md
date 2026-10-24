@@ -1,6 +1,5 @@
 # Semana 6
 ## Generación y Selección de Concepto de Diseño
-# Semana 6 — Generación y Selección de Concepto de Diseño
 
 **Tema:** DistanciaCero — Tabla morfológica, analogías tecnológicas, 3 conceptos de diseño, Matriz de Pugh y boceto técnico crítico
 **Fecha:** 01/10/2026 · Actualizado 22/10/2026 (prompts y respuestas completos en la página, más imágenes de los tres prototipos)
