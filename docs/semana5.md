@@ -1,4 +1,5 @@
-# Semana 5 — Product Design Specification y Arquitectura del Sistema
+# Semana 5
+## Product Design Specification y Arquitectura del Sistema
 
 **Tema:** DistanciaCero — PDS completo (16 requisitos), decisión de arquitectura de IA, diseño de sistema en 3 capas y viabilidad de manufactura
 **Fecha:** 24/09/2026 · Actualizado 22/10/2026 (prompts y respuestas completos en la página)
