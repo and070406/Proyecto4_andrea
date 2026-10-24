@@ -746,7 +746,7 @@ Hice dos intentos. El primero fue un prompt de render en estilo Midjourney, pega
 
 #### Concepto 1 — "El Bastón Centinela"
 
-<div style="margin:1rem 0"><img src="../docs/recursos/imgs/baston_centinela.jpeg" alt="Render realista del Bastón Centinela en su soporte de carga" style="width:100%;max-width:560px;height:auto;border-radius:6px;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/assets/semana6/render-baston.png</code><br><em>Render realista del Bastón Centinela en su soporte de carga</em></div></div>
+<div style="margin:1rem 0"><img src="../docs/recursos/imgs/baston_centinela.jpeg" alt="Render realista del Bastón Centinela en su soporte de carga" style="width:100%;max-width:560px;height:auto;border-radius:6px;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem"><br><em>Render realista del Bastón Centinela en su soporte de carga</em></div></div>
 *Figura 1. Render conceptual del Bastón Centinela en su soporte de carga: madera mate, módulo insertable en la base y luz verde breve de instalación. Las proporciones del bastón y del soporte son supuestas.*
 
 | | |
