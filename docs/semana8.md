@@ -1,4 +1,5 @@
-# Semana 8 — Prototipado y Diseño para Manufactura
+# Semana 8
+## Prototipado y Diseño para Manufactura
 
 **Tema:** DistanciaCero — Plan de prototipado (Pregunta → Prototipa → Evidencia), prototipo de negocio (landing page), prototipo de forma (carcasa en dos variantes, con planos y archivos STL), revisión DFM, efecto sobre el modelo financiero de la semana 7 y circularidad (Ley General de Economía Circular)
 **Fecha:** 05/11/2026
