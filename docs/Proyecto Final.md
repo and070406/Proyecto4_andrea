@@ -24,30 +24,28 @@
 | Riesgos | §22 |
 
 ---
-
+ 
 ## 0. Resumen ejecutivo
-
+ 
 *Se redacta al final con lo que esté demostrado en §1–§22. Esta es la versión borrador de la Semana 9.*
-
+ 
 - **Versión y fecha:** v9.1 · 24/11/2026 (borrador; la versión final se cierra en la Semana B)
 - **Decisión:** presentar DistanciaCero como un **servicio de tranquilidad por excepción** para hijos e hijas de personas mayores que viven solas: hardware de $4,490 más suscripción de $449 al mes, validado primero con un piloto de 10 familias.
 - **Evidencia:** 3 entrevistas con disposición de pago entre $450 y $700 al mes (§3); economía unitaria ESTIMADA (§15); pruebas T1–T6 `[PENDIENTES]` (§17).
 - **Qué cambió:** el módulo pasa a SIM7600SA-H (bandas de México), el reporte pasa a cada 30 min (autonomía) y el consentimiento queda como un acto único (Semana 9).
 - **Qué falta:** sistema integrado medido, 5 sesiones con usuarios, landing publicada y video del pitch.
-
 | Campo | Contenido |
 |---|---|
-| Nombre y logo | **DistanciaCero** `[IMAGEN: logo]` |
+| Nombre y logo | ![](/Proyecto4_andrea/docs/recursos/imgs/logo-simbolo.png){ width="40" } **DistanciaCero** · lema: *"Cerca, sin invadir."* |
 | Propuesta de valor (≤ 25 palabras) | *"Para hijos lejos de su padre o madre mayor: la certeza diaria de que todo está bien, sin preguntar y sin que ella haga nada."* (25 palabras) |
 | Imagen del producto | `[IMAGEN: render del sillón con la placa; Actividad 6, Prompt 7]` |
 | Mercado alcanzable | SOM: **850 familias** en los años 1–2 (**SUPUESTO**, §4) |
 | Precio | **$4,490** el equipo + **$449/mes** (IVA por confirmar, §16 R8) |
 | Economía unitaria | Contribución de **$342.70/mes**; LTV ÷ inversión de **13.8** (paga el hardware) o **3.72** (comodato con DFM), **ESTIMADO** (§15) |
-| Enlaces | [App (prototipo)](https://jesushernandez2005.github.io/Proyecto4/app/) · Landing `[URL_PENDIENTE: https://jesushernandez2005.github.io/Proyecto4/landing/]` · [Repositorio](https://and070406.github.io/Proyecto4_andrea/) · Video del pitch `[URL_PENDIENTE]` · Demo de respaldo `[URL_PENDIENTE]` |
+| Enlaces | [App (prototipo)](https://jesushernandez2005.github.io/Proyecto4/app/) · Landing `[URL_PENDIENTE: https://jesushernandez2005.github.io/Proyecto4/landing/]` · [Repositorio](https://github.com/jesushernandez2005/proyecto4) · Video del pitch `[URL_PENDIENTE]` · Demo de respaldo `[URL_PENDIENTE]` |
 | Estado honesto (1 línea) | **Diseño completo y documentado. Integración y pruebas con usuarios en curso: todavía no hay mediciones del sistema completo ni clientes.** `[ACTUALIZAR al cierre]` |
-
+ 
 ---
-
 # Parte I · Oportunidad y mercado
 
 ## 1. Equipo
