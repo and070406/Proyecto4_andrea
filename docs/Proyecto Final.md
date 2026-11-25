@@ -7,19 +7,6 @@
 >
 > **Plantilla de cada sección:** *Versión y fecha* · *Decisión* · *Evidencia* · *Qué cambió* · *Qué falta*. El detalle largo va en los Anexos A–F.
 
-## Cómo evaluar esta página
-
-**Ruta rápida de 10 minutos:** [§0 Resumen](#0-resumen-ejecutivo) → [§5 Propuesta de valor](#5-propuesta-de-valor-y-oferta) → [§13 Business Blueprint](#13-business-blueprint) → [§17 Integración y pruebas](#17-integracion-y-pruebas-del-sistema) → [§18 Pruebas con usuarios](#18-pruebas-con-usuarios) → [§21 Uso de IA](#21-uso-de-ia-en-el-proyecto) → [§20 Pitch y demo](#20-pitch-y-demo)
-
-| Criterio de la rúbrica | Peso | Se muestra en | Secciones que lo respaldan |
-|---|---|---|---|
-| Producto físico funcionando con IA | **30 %** | Demo de 7 min | 7, 8, 9, 10, 11, 17, 21 |
-| App conectada al producto | **25 %** | Demo de 7 min | 8, 12, 17, 18 |
-| Landing de lanzamiento | **15 %** | Demo, tramo de compra | 19 |
-| Pitch | **15 %** | Pitch de 3 min y retroalimentación | 0, 2, 5, 13, 15, 20 |
-| Documentación técnica y BOM | **10 %** | Esta página | 3, 4, 6, 7, 8, 11, 13–16, 18 |
-| Entregables semanales y proceso | **5 %** | Página y repositorio | 1, 10, 21, 22, Anexo B |
-
 **Mapa para inversionistas:**
 
 | Busca | Sección |
@@ -56,7 +43,7 @@
 | Mercado alcanzable | SOM: **850 familias** en los años 1–2 (**SUPUESTO**, §4) |
 | Precio | **$4,490** el equipo + **$449/mes** (IVA por confirmar, §16 R8) |
 | Economía unitaria | Contribución de **$342.70/mes**; LTV ÷ inversión de **13.8** (paga el hardware) o **3.72** (comodato con DFM), **ESTIMADO** (§15) |
-| Enlaces | [App (prototipo)](https://jesushernandez2005.github.io/Proyecto4/app/) · Landing `[URL_PENDIENTE: https://jesushernandez2005.github.io/Proyecto4/landing/]` · [Repositorio](https://github.com/jesushernandez2005/proyecto4) · Video del pitch `[URL_PENDIENTE]` · Demo de respaldo `[URL_PENDIENTE]` |
+| Enlaces | [App (prototipo)](https://jesushernandez2005.github.io/Proyecto4/app/) · Landing `[URL_PENDIENTE: https://jesushernandez2005.github.io/Proyecto4/landing/]` · [Repositorio](https://and070406.github.io/Proyecto4_andrea/) · Video del pitch `[URL_PENDIENTE]` · Demo de respaldo `[URL_PENDIENTE]` |
 | Estado honesto (1 línea) | **Diseño completo y documentado. Integración y pruebas con usuarios en curso: todavía no hay mediciones del sistema completo ni clientes.** `[ACTUALIZAR al cierre]` |
 
 ---
@@ -75,16 +62,14 @@
 |---|---|---|
 | Jesús León Hernández Martínez | `[ROL]` | Autor del sitio con las Actividades 1–9; coautor de la app web ([/app/](https://jesushernandez2005.github.io/Proyecto4/app/)) |
 | Andrea Solano López | `[ROL]` | Coautora (con Jesús) de la matriz de selección (Semana 2), el PDS (Semana 5), los conceptos (Semana 6) y la app web |
-| Mauro David Sánchez Arenas | `[ROL]` | Memoria del proyecto final, paquete de la Semana 9 y landings (sillón, bastón y portavasos) `[ENLACE: commits]` |
-| `[NOMBRE 4]` | `[ROL]` | `[ ]` |
 
-**Acuerdo de colaboración:** documento Word con roles, reuniones, reglas del repositorio, uso de IA, decisiones, conflictos y firmas → `[ENLACE: acuerdo firmado]`.
+**Acuerdo de colaboración:** documento Word con roles, reuniones, reglas del repositorio, uso de IA, decisiones, conflictos y firmas → `[ENLACE: https://iberopuebla-my.sharepoint.com/:w:/r/personal/200759_iberopuebla_mx/Documents/Acuerdo_de_colaboracion_DistanciaCero.docx?d=wdcb74f8283d441acbadc58c29ca22a3f&csf=1&web=1&e=UWMnA4]`.
 
 ## 2. Problema y oportunidad
 
 - **Versión y fecha:** v1 · Semana 2 (02/09/2026) → v9.1 · 24/11/2026
 - **Decisión:** atacar el **miedo a "la llamada"** de los hijos e hijas, no el riesgo médico de la persona mayor. El valor es la **certeza sin fricción**.
-- **Evidencia:** [Actividad 2](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-02/): 10 prompts (Perplexity y Claude), Pain-Gain en dos versiones, filtro DVN y matriz de selección; 3 entrevistas (§3).
+- **Evidencia:** [Actividad 2](https://and070406.github.io/Proyecto4_andrea/semana2/): 10 prompts (Perplexity y Claude), Pain-Gain en dos versiones, filtro DVN y matriz de selección; 3 entrevistas (§3).
 - **Qué cambió:** el dolor principal pasó de "la caída" (v1 del Pain-Gain) a "el miedo a la llamada" (v2). En la Semana 4 el problema se precisó otra vez: no depende de la **distancia**, sino de que **no haya una red humana local**.
 - **Qué falta:** medir la frecuencia del dolor (llamadas al día, minutos) en las sesiones de la §18.
 
@@ -112,7 +97,7 @@
 
 - **Versión y fecha:** v1 · Semana 3 (09/09/2026) → v2 · Semana 4 (17/09/2026) → v9.1 · 24/11/2026
 - **Decisión:** el comprador es el **hijo o hija de 35 a 55 años**, pero no es un solo segmento: son **tres perfiles** según si hay una red humana local. El usuario pasivo es su papá o mamá de 65 años o más que vive solo.
-- **Evidencia:** 3 entrevistas con citas textuales ([Actividad 4](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-04/), sección de metodología); hipótesis H1, H2 y H3.
+- **Evidencia:** 3 entrevistas con citas textuales ([Actividad 4](https://and070406.github.io/Proyecto4_andrea/semana4/), sección de metodología); hipótesis H1, H2 y H3.
 - **Qué cambió:** la capa psicográfica pasó de HIPÓTESIS a **CONFIRMADA CON MATIZ**. Apareció un tercer actor con poder de veto: **el cuidador local** (Sonia, la hermana de Ricardo).
 - **Qué falta:** entrevistar a personas mayores sobre su aceptación (S2), llegar a ≥ 5 entrevistas y registrar el consentimiento de las entrevistas en el Anexo D.
 
@@ -186,7 +171,7 @@
 
 - **Versión y fecha:** v3 · Semana 4 → v9.1 · 24/11/2026
 - **Decisión:** *"Para hijos que viven lejos de su padre o madre mayor, DistanciaCero reemplaza el miedo a 'la llamada' por la certeza diaria de que todo está bien, sin preguntar y sin culpa."*
-- **Evidencia:** 3 entrevistas (§3); evaluación IDEO: Insightful ✅, Unique ✅, Targeted ✅ con matiz ([Actividad 4](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-04/)).
+- **Evidencia:** 3 entrevistas (§3); evaluación IDEO: Insightful ✅, Unique ✅, Targeted ✅ con matiz ([Actividad 4](https://and070406.github.io/Proyecto4_andrea/semana4/)).
 - **Qué cambió:** de la v1 (segmento definido por la distancia) a la v3 (red local), con variantes por perfil.
 - **Qué falta:** probar el mensaje en la landing (§19): ¿lo explican con sus palabras en < 30 s?
 
@@ -279,15 +264,15 @@
 | Elemento | Contenido |
 |---|---|
 | Principio rector | "Silencio = tranquilidad". Además: affordances, contour bias, constraints y consistencia |
-| Tabla morfológica | 7 parámetros × 3 variantes ([Actividad 6](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-06/)) |
+| Tabla morfológica | 7 parámetros × 3 variantes ([Actividad 6](https://and070406.github.io/Proyecto4_andrea/semana6/)) |
 | Tres conceptos | Bastón Centinela · **Reposabrazos Centinela** · Posavasos Guardián. Los otros dos siguen vivos como **landings de lista de espera** para medir qué objeto prefieren las familias (§19) |
-| Render y boceto con cotas | `[IMAGEN: render, Actividad 6 Prompt 7]` · `[IMAGEN: boceto con cotas, Actividad 6]` · planos y STL en la [Actividad 8](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/) |
+| Render y boceto con cotas | `[IMAGEN: render, Actividad 6 Prompt 7]` · `[IMAGEN: boceto con cotas, Actividad 6]` · planos y STL en la [Actividad 8](https://and070406.github.io/Proyecto4_andrea/semana8/) |
 
 ## 10. Prototipos y evidencia
 
 - **Versión y fecha:** v1 · Semana 8 → v9.1 · 24/11/2026
 - **Decisión:** cada prototipo responde **una** pregunta; el prototipo de función (sensado) tiene la prioridad más alta.
-- **Evidencia:** carcasa en 3D con 4 archivos STL ([Actividad 8](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/)), app en Figma Make (Semana 6), [app web](https://jesushernandez2005.github.io/Proyecto4/app/) (23/11) y landings (24/11).
+- **Evidencia:** carcasa en 3D con 4 archivos STL ([Actividad 8](https://and070406.github.io/Proyecto4_andrea/semana8/)), app en Figma Make (Semana 6), [app web](https://jesushernandez2005.github.io/Proyecto4/app/) (23/11) y landings (24/11).
 - **Qué cambió:** el primer acomodo de la carcasa chocaba (el USB-C quedaba sobre el ESP32); se reacomodaron los componentes.
 - **Qué falta:** el prototipo de función, el impreso de la carcasa y la hoja de observación de la landing (está vacía).
 
@@ -295,7 +280,7 @@
 |---|---|---|---|---|---|
 | Landing estática | ¿El hijo o hija explica el producto y decide con el precio? | Negocio, baja | HTML de un archivo | **PENDIENTE** (hoja vacía) | — |
 | Carcasa en 2 variantes | ¿Caben el PCB, el módulo y la batería en una placa que cierra sin herramientas? | Forma, alta (digital) | Blender, planos y 4 STL | Modelo 3D | Se reacomodaron componentes; el JST se movió 1 mm |
-| App en Figma Make | ¿Los estados se entienden? | Interfaz, media | Pantallas con datos de ejemplo | [Actividad 6](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-06/), Prompt 8 | Se agregaron el círculo de cuidado y la vista para el cuidador local |
+| App en Figma Make | ¿Los estados se entienden? | Interfaz, media | Pantallas con datos de ejemplo | [Actividad 6](https://and070406.github.io/Proyecto4_andrea/semana6/), Prompt 8 | Se agregaron el círculo de cuidado y la vista para el cuidador local |
 | App web (23/11/2026) | ¿El flujo completo (onboarding → estado → alerta → pausa) se entiende y se conecta a un dispositivo? | Interfaz y función, media | HTML de un archivo con modo demo y modo "dispositivo real" por MQTT | [Prototipo](https://jesushernandez2005.github.io/Proyecto4/app/) | Se agregó "Sin conexión" distinto de "Alerta"; el modo de aviso es configurable (H2) |
 | Landings (24/11/2026) | ¿Cuál de los tres objetos piden más las familias? | Negocio, media | 3 landings con formulario que guarda el campo `producto` | `[URL_PENDIENTE]` · `[MEDIR: registros por producto]` | — |
 | **Función (sensado)** | ¿El acelerómetro bajo el cojín distingue sentarse de un golpe? | Función, alta | `[POR CONSTRUIR]` | `[MEDIR: F1]` | — |
