@@ -1,0 +1,3646 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://and070406.github.io/Proyecto4_andrea/Proyecto%20Final/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Semana9/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Proyecto final: DistanciaCero - Proyecto de Ingeniería 4</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="aqua" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#proyecto-final-distanciacero" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Proyecto de Ingeniería 4" class="md-header__button md-logo" aria-label="Proyecto de Ingeniería 4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Proyecto de Ingeniería 4
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Proyecto final: DistanciaCero
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="aqua" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Proyecto de Ingeniería 4" class="md-nav__button md-logo" aria-label="Proyecto de Ingeniería 4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Proyecto de Ingeniería 4
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyecto final: DistanciaCero
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyecto final: DistanciaCero
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-resumen-ejecutivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. Resumen ejecutivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-i-oportunidad-y-mercado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte I. Oportunidad y mercado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-equipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Equipo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-problema-y-oportunidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Problema y oportunidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-usuario-y-evidencia-de-campo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Usuario y evidencia de campo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mercado-y-competencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mercado y competencia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-propuesta-de-valor-y-oferta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Propuesta de valor y oferta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-propiedad-intelectual-marca-y-vigilancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Propiedad intelectual, marca y vigilancia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-ii-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte II. Producto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-especificacion-del-producto-pds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Especificación del producto (PDS)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-arquitectura-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Arquitectura del sistema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-diseno-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Diseño del producto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-prototipos-y-evidencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Prototipos y evidencia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-manufactura-dfm-y-circularidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Manufactura, DFM y circularidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-aplicacion-conectada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Aplicación conectada
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-iii-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte III. Negocio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-modelo-de-negocio-business-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Modelo de negocio (Business Blueprint)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-costos-precio-y-viabilidad-financiera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Costos, precio y viabilidad financiera
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-go-to-market-y-economia-unitaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Go-to-market y economía unitaria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-regulacion-y-aspectos-legales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Regulación y aspectos legales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-iv-validacion-y-lanzamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte IV. Validación y lanzamiento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-integracion-y-pruebas-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Integración y pruebas del sistema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-pruebas-con-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Pruebas con usuarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. Pruebas con usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encuesta-en-linea-25112026-n-47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encuesta en línea (25/11/2026, n = 47)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-landing-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Landing page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-pitch-y-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Pitch y demo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-v-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte V. Cierre
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-uso-de-ia-en-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. Uso de IA en el proyecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-reflexion-y-siguientes-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. Reflexión y siguientes pasos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anexos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-bom-completo-con-cotizaciones-y-proveedores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. BOM completo con cotizaciones y proveedores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-repositorio-readme-y-bitacoras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Repositorio, README y bitácoras
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-archivos-de-diseno-cad-esquematicos-y-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Archivos de diseño: CAD, esquemáticos y firmware
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-datos-crudos-de-entrevistas-y-pruebas-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Datos crudos de entrevistas y pruebas de usuario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-hojas-de-calculo-del-modelo-financiero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. Hojas de cálculo del modelo financiero
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-bibliografia-y-fuentes-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F. Bibliografía y fuentes de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Semana9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejemplo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semana1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semana2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semana3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semana4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semana5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semana6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semana7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../semana8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-resumen-ejecutivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. Resumen ejecutivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-i-oportunidad-y-mercado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte I. Oportunidad y mercado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-equipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Equipo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-problema-y-oportunidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Problema y oportunidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-usuario-y-evidencia-de-campo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Usuario y evidencia de campo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mercado-y-competencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mercado y competencia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-propuesta-de-valor-y-oferta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Propuesta de valor y oferta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-propiedad-intelectual-marca-y-vigilancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Propiedad intelectual, marca y vigilancia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-ii-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte II. Producto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-especificacion-del-producto-pds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Especificación del producto (PDS)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-arquitectura-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Arquitectura del sistema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-diseno-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Diseño del producto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-prototipos-y-evidencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Prototipos y evidencia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-manufactura-dfm-y-circularidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Manufactura, DFM y circularidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-aplicacion-conectada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Aplicación conectada
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-iii-negocio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte III. Negocio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-modelo-de-negocio-business-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Modelo de negocio (Business Blueprint)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-costos-precio-y-viabilidad-financiera" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Costos, precio y viabilidad financiera
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-go-to-market-y-economia-unitaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Go-to-market y economía unitaria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-regulacion-y-aspectos-legales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Regulación y aspectos legales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-iv-validacion-y-lanzamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte IV. Validación y lanzamiento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-integracion-y-pruebas-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Integración y pruebas del sistema
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-pruebas-con-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Pruebas con usuarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. Pruebas con usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encuesta-en-linea-25112026-n-47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encuesta en línea (25/11/2026, n = 47)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-landing-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Landing page
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-pitch-y-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Pitch y demo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-v-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parte V. Cierre
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-uso-de-ia-en-el-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. Uso de IA en el proyecto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-reflexion-y-siguientes-pasos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. Reflexión y siguientes pasos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anexos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anexos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-bom-completo-con-cotizaciones-y-proveedores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. BOM completo con cotizaciones y proveedores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-repositorio-readme-y-bitacoras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Repositorio, README y bitácoras
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-archivos-de-diseno-cad-esquematicos-y-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Archivos de diseño: CAD, esquemáticos y firmware
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-datos-crudos-de-entrevistas-y-pruebas-de-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Datos crudos de entrevistas y pruebas de usuario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-hojas-de-calculo-del-modelo-financiero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E. Hojas de cálculo del modelo financiero
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-bibliografia-y-fuentes-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        F. Bibliografía y fuentes de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="proyecto-final-distanciacero">Proyecto final: DistanciaCero</h1>
+<div style="display:flex;align-items:center;gap:14px;margin:6px 0 18px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/DistanciaCero/logo/logo-simbolo.png" alt="Logotipo de DistanciaCero" style="height:52px;width:auto">
+<div><strong style="font-size:1.3rem">DistanciaCero</strong><br><span style="color:#555">Jesús León Hernández Martínez y Andrea Solano López · Proyectos 4 · IBERO Puebla · 2026</span></div>
+</div>
+
+<p>Esta página es la memoria del proyecto final. Cada sección sigue la misma plantilla (<strong>versión y fecha · decisión · evidencia · qué cambió · qué falta</strong>). Lo que no tiene evidencia dice <strong>HIPÓTESIS</strong>; cada número tiene fuente o dice <strong>SUPUESTO</strong>. El detalle vive en las <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-01/">actividades semanales</a> y en los <a href="#anexos">anexos</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Entregable</th>
+<th>Enlace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Landing (los tres productos)</td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/">landing/</a></td>
+</tr>
+<tr>
+<td>App de la familia (demo y dispositivo real)</td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/app/">jesushernandez2005.github.io/Proyecto4/app/</a></td>
+</tr>
+<tr>
+<td>Excel de costos y cálculos (fórmulas visibles)</td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">DistanciaCero_costos_y_calculos.xlsx</a></td>
+</tr>
+<tr>
+<td>Repositorio</td>
+<td><a href="https://github.com/jesushernandez2005/Proyecto4">github.com/jesushernandez2005/Proyecto4</a></td>
+</tr>
+<tr>
+<td>Guion de pitch y demo</td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_guion_pitch_y_demo.pdf">PDF</a></td>
+</tr>
+<tr>
+<td>Anexos A–F</td>
+<td><a href="#anexos">anexos.md</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="0-resumen-ejecutivo">0. Resumen ejecutivo</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.0 · 24/11/2026 (se escribe al final, regla 7)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Lanzar un piloto de 10 familias en Puebla con los tres objetos (sillón, bastón y portavasos) y un prototipo WiFi.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td>Secciones 3, 4, 14 y 15; <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">Excel</a>, hojas Resumen y Landing.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>Hardware: sin PCB y sin módulo celular en el prototipo. Pasamos de un objeto a tres. Precio del equipo: $3,990.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Videos del pitch y de la demo; probar el flujo completo; sesiones con usuarios.</td>
+</tr>
+</tbody>
+</table>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:10px 0">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/render-sillon.jpg" alt="Render del sensor bajo el cojín de un sillón" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/render-baston.jpg" alt="Render del bastón con sensor" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/render-portavasos.jpg" alt="Render del portavasos con sensor" style="width:100%;border-radius:6px">
+</div>
+<p><em>Renders conceptuales de la semana 6, no fotos del prototipo.</em></p>
+<p><strong>Propuesta de valor (23 palabras):</strong> DistanciaCero le da al hijo que vive lejos la certeza diaria de que su mamá o papá está bien, sin preguntar, sin culpa.</p>
+<table>
+<thead>
+<tr>
+<th>Mercado alcanzable (SOM)</th>
+<th>Precio</th>
+<th>Economía unitaria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>850 familias</strong> en años 1–2 · $4.59 M MXN al año (<a href="#4-mercado-y-competencia">sección 4</a>)</td>
+<td><strong>$3,990</strong> el equipo + <strong>$449</strong> al mes</td>
+<td><strong>$343</strong> de contribución al mes; se recupera la inversión por familia ($1,312) en <strong>3.8 meses</strong> (CAC de $1,000: SUPUESTO)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Enlaces:</strong> <a href="https://github.com/jesushernandez2005/Proyecto4">repositorio</a> · <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/">landing</a> · video del pitch: <strong>PENDIENTE</strong> · video de respaldo de la demo: <strong>PENDIENTE</strong>.</p>
+<p><strong>Estado en una oración:</strong> el sensor ya leyó movimiento real, la app está publicada y la landing está lista para publicarse, pero todavía no hemos probado el flujo completo de punta a punta ni lo ha usado ninguna familia.</p>
+<hr />
+<h2 id="parte-i-oportunidad-y-mercado">Parte I. Oportunidad y mercado</h2>
+<h2 id="1-equipo">1. Equipo</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.0 · 24/11/2026 (origen: semana 1)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Dos integrantes; el operador de la demo es Jesús (hardware) y la narradora, Andrea (sugerencia del guion).</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-02/">Actividad 2, matriz de selección</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_guion_pitch_y_demo.pdf">guion</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>La ruta de la semana 9 pedía cuatro roles; somos dos, así que cada quien lleva dos.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Acuerdo de colaboración firmado y roles confirmados.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Integrante</th>
+<th>Rol</th>
+<th>Área de interés</th>
+<th>Quién hizo qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jesús León Hernández Martínez</td>
+<td><strong>PENDIENTE</strong> (el guion sugiere: operador de la demo, hardware)</td>
+<td>Sistemas embebidos, electrónica, programación</td>
+<td><strong>PENDIENTE</strong></td>
+</tr>
+<tr>
+<td>Andrea Solano López</td>
+<td><strong>PENDIENTE</strong> (el guion sugiere: narradora)</td>
+<td><strong>PENDIENTE</strong></td>
+<td><strong>PENDIENTE</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Lo único documentado del reparto es la frase del guion: "entre los dos hicimos el circuito, las entrevistas y el modelo financiero".</p>
+<p><strong>Acuerdo de colaboración:</strong> <strong>PENDIENTE.</strong> Debe decir cómo se deciden las cosas, cómo se reparte el trabajo y qué pasa si alguien no entrega. <strong>Razón del equipo:</strong> nuestros abuelos, que han ido perdiendo movilidad al envejecer (Actividad 2).</p>
+<hr />
+<h2 id="2-problema-y-oportunidad">2. Problema y oportunidad</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.0 · 24/11/2026 (origen: semana 2)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>El dolor principal no es "la caída": es <strong>el miedo constante a "la llamada"</strong>.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-02/">Pain-Gain Map y reporte de oportunidad (Actividad 2)</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/PAIN-GAIN_Chuy.pdf">PDF del Pain-Gain</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/REPORTE_DE_OPORTUNIDAD.pdf">reporte</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>Al cuestionar el primer mapa con la IA, el dolor pasó de "no hay quién avise de una caída" a "no saber si está bien entre llamadas".</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Medir con más de tres personas si el patrón se sostiene.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cruce más poderoso del Pain-Gain Map:</strong> dolor D1, el miedo a "la llamada" × ganancia G1, confirmación diaria de que está bien y activo.</p>
+<p><strong>La oportunidad en una oración:</strong> existe una oportunidad para el hijo o hija que vive lejos de un padre mayor que vive solo, que necesita una señal diaria y confiable de que está bien, sin preguntar, llamar ni sentirse culpable.</p>
+<table>
+<thead>
+<tr>
+<th>Criterio de selección</th>
+<th>Concepto elegido: "El Seguro que se Olvida que Existe"</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pasión</td>
+<td>Sí: la razón son nuestros abuelos</td>
+</tr>
+<tr>
+<td>Habilidad</td>
+<td>Parcial: lo más riesgoso era la conectividad celular</td>
+</tr>
+<tr>
+<td>Mercado</td>
+<td>5 de 5 señales de deseabilidad</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Alternativas descartadas:</strong> sarcopenia, osteoartrosis de rodilla y ejercicio en enfermedades crónicas (menor claridad del comprador), y el pago vía aseguradoras (inviable en el plazo de 6 meses).</p>
+<p><strong>Evidencia de deseabilidad:</strong> ya se paga por soluciones imperfectas (Estoy Bien, $299–399 al mes); el IMSS atiende más de 250,000 lesiones por caídas de adultos mayores al año; las familias ya inventan <em>workarounds</em> (mensajes diarios, vecinos que revisan, cámaras). Las fuentes están en la Actividad 2.</p>
+<hr />
+<h2 id="3-usuario-y-evidencia-de-campo">3. Usuario y evidencia de campo</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.0 · 24/11/2026 (origen: semanas 3 y 4)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>No es un segmento: son <strong>tres perfiles</strong> según si existe una red humana cerca del adulto mayor. El modo de aviso debe ser configurable.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/resultados_validacion_semana3.pdf">Resultados de validación, semana 3 (PDF)</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-04/">Actividad 4, sección 5</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">Excel, hoja Entrevistas</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>La app pregunta "¿Alguien más lo visita seguido?" y con eso ajusta el aviso: solo excepción, o excepción más confirmación diaria.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Más entrevistas, separando familias con red local y sin ella.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tres entrevistas (citas textuales):</strong></p>
+<ul>
+<li>Mariana, 42, Puebla: <em>"Si tarda mucho en contestar sí ya se me acelera el corazón."</em></li>
+<li>Lupita, 37, Chicago: <em>"Vivir en otro país te pone en un estado de alerta constante."</em></li>
+<li>Ricardo, 51, CDMX: <em>"El silencio no me pondría nervioso… ya confío en el sistema humano que tengo con Sonia."</em></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Hipótesis</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1. Se preocupan seguido, fuera de las llamadas</td>
+<td><strong>Confirmada con matiz:</strong> depende de si hay alguien cerca, no de la distancia</td>
+</tr>
+<tr>
+<td>H2. Prefieren el silencio a una confirmación diaria</td>
+<td><strong>Ajustada:</strong> depende del perfil; debe ser configurable</td>
+</tr>
+<tr>
+<td>H3. Pagarían $300–600 al mes</td>
+<td><strong>Confirmada:</strong> $450 a $700 al mes, sin pensarlo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Segmento en cuatro capas:</strong> <em>Demográfica:</em> 1.7 millones de personas de 60+ viven solas en México (<strong>VERIFICADO</strong>, INEGI, ENADID 2018); hijo o hija de 35–55 años (<strong>HIPÓTESIS</strong>). <em>Conductual:</em> llamada casi diaria; 1 de 3 ya abandonó un botón SOS (<strong>VERIFICADO</strong>, n = 3). <em>Psicográfica:</em> alerta constante cuando no hay red local (<strong>VERIFICADO</strong>, n = 3). <em>Económica:</em> $450–700 al mes (<strong>VERIFICADO</strong>, n = 3); quién paga entre hermanos (<strong>HIPÓTESIS</strong>).</p>
+<p><strong>Hipótesis críticas pendientes:</strong> cómo avisar cuando no hay quien llegue rápido; cómo obtener el consentimiento del adulto mayor sin que se sienta vigilado; y el del cuidador local, que puede vetar la compra.</p>
+<hr />
+<h2 id="4-mercado-y-competencia">4. Mercado y competencia</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.0 · 24/11/2026 (origen: semana 4)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Empezar con venta directa en CDMX, Guadalajara, Monterrey y Puebla. El competidor más peligroso es <strong>llamar + la red informal</strong>, no otra app.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-04/">Actividad 4, prompts 2–5</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">Excel, hoja Mercado</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>Las entrevistas sumaron un actor de decisión: el cuidador local, que puede bloquear la compra.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Validar los porcentajes de filtro, que son supuestos del equipo.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th style="text-align: right;">Valor</th>
+<th>Fuente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hogares en México</td>
+<td style="text-align: right;">38.8 M</td>
+<td>ENIGH 2024</td>
+</tr>
+<tr>
+<td>× con integrante de 65+ (10.9 %) × unipersonales (17.5 %)</td>
+<td style="text-align: right;">740,000</td>
+<td>ENIGH 2024; Coneval 2020</td>
+</tr>
+<tr>
+<td>× con hijo vivo (85 %) × hijo lejos (60 %) × dispuesto a pagar (25 %)</td>
+<td style="text-align: right;"><strong>94,350 (TAM)</strong> · $509.5 M/año</td>
+<td><strong>SUPUESTOS</strong> del equipo</td>
+</tr>
+<tr>
+<td>× 4 zonas metropolitanas (45 %) × canal digital (60 %) × deciles 6–10 (70 %)</td>
+<td style="text-align: right;"><strong>17,832 (SAM)</strong> · $96.3 M/año</td>
+<td>ENIGH 2024 + <strong>SUPUESTOS</strong></td>
+</tr>
+<tr>
+<td>Meta de años 1–2</td>
+<td style="text-align: right;"><strong>850 (SOM)</strong> · $4.59 M/año</td>
+<td>Plan de go-to-market (Actividad 4)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Competencia.</strong> <em>Directos:</em> Estoy Bien ($299/mes), Cuida Más ($800–928/mes), Care 60+ (desde $6,588/año). <em>Indirectos:</em> Life360, Google Family Link, sensores y cámaras DIY. <em>Sustitutos:</em> llamadas diarias + red informal (<strong>el más peligroso</strong>: cuesta $0 y ya está en la rutina), cuidador por horas.</p>
+<p><svg viewBox="0 0 420 250" width="100%" style="max-width:520px" role="img" aria-label="Mapa de posicionamiento">
+<rect x="50" y="10" width="350" height="200" fill="#F5F6F2" stroke="#ccc"/>
+<line x1="50" y1="110" x2="400" y2="110" stroke="#ddd"/><line x1="225" y1="10" x2="225" y2="210" stroke="#ddd"/>
+<text x="225" y="240" font-size="11" text-anchor="middle" fill="#333">← exige que el adulto mayor haga algo · no le exige nada →</text>
+<text x="18" y="110" font-size="11" fill="#333" transform="rotate(-90 18 110)" text-anchor="middle">interrumpe al hijo · silencio →</text>
+<circle cx="120" cy="150" r="6" fill="#888"/><text x="128" y="154" font-size="11">Estoy Bien</text>
+<circle cx="225" cy="150" r="6" fill="#888"/><text x="233" y="154" font-size="11">Cuida Más</text>
+<circle cx="155" cy="168" r="6" fill="#888"/><text x="163" y="182" font-size="11">Sensores DIY</text>
+<circle cx="295" cy="122" r="6" fill="#C7922F"/><text x="303" y="126" font-size="11">Llamadas + red</text>
+<circle cx="380" cy="32" r="8" fill="#3E7C5B"/><text x="372" y="56" font-size="12" font-weight="bold" text-anchor="end">DistanciaCero</text>
+</svg></p>
+<p><em>Posiciones tomadas del lienzo estratégico de la Actividad 4 (puntuaciones de 1 a 5).</em></p>
+<p><strong>Cuatro acciones.</strong> <em>Eliminar:</em> que el adulto mayor tenga que hacer algo. <em>Reducir:</em> el call center 24/7. <em>Incrementar:</em> el silencio cuando todo va bien. <em>Crear:</em> detección de su rutina y un sensor dentro de un objeto que ya usa.</p>
+<hr />
+<h2 id="5-propuesta-de-valor-y-oferta">5. Propuesta de valor y oferta</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.0 · 24/11/2026 (origen: semana 4)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Hablar del miedo que se quita, no del aparato.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-04/">Actividad 4, Prompt 6</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>La versión 3 de la Actividad 4 tenía 31 palabras; se recortó a 23 para cumplir el máximo de 25.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Probar los tres mensajes por perfil con usuarios.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Propuesta de valor (≤ 25 palabras)</th>
+<th>Oferta técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DistanciaCero le da al hijo que vive lejos la certeza diaria de que su mamá o papá está bien, sin preguntar, sin culpa.</td>
+<td>Un sensor de movimiento (ESP32-S3 + MPU6050) dentro de un sillón, bastón o portavasos, más una app que avisa solo si su rutina cambia. $3,990 + $449/mes.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pirámide de Bain:</strong> hoy es <em>funcional</em> (detecta y avisa); el mensaje sube a <em>emocional</em> (quita el miedo a "la llamada"). Subir a <em>transformador</em> sería prematuro sin evidencia.</p>
+<p><strong>Insightful ✅</strong> da una señal entre llamadas que nadie más da · <strong>Unique ✅</strong> sensor integrado en un objeto que ya usa · <strong>Targeted ✅ con matiz</strong> hace falta un mensaje por perfil (con red local, sin red local, local).</p>
+<p><strong>Error de la primera versión:</strong> describía qué hace el objeto, no qué deja de sentir el hijo.</p>
+<hr />
+<h2 id="6-propiedad-intelectual-marca-y-vigilancia">6. Propiedad intelectual, marca y vigilancia</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.0 · 24/11/2026 (origen: semana 3)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Nombre <strong>DistanciaCero</strong> (sobre SilencioActivo). FTO <strong>alta</strong>.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-03/">Actividad 3</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/distanciacero_fto.pdf">presentación de nombre y FTO (PDF)</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>El nombre que sonaba mejor (SilencioActivo) tenía más riesgo digital.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td><strong>La búsqueda fonética en el IMPI no se ha hecho.</strong> Analizar 3–5 patentes más.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Búsqueda fonética en IMPI:</strong> <strong>PENDIENTE</strong> en marcanet.impi.gob.mx. Riesgo digital: <strong>medio</strong> (el .com está estacionado y hay una banda con @distancia.cero).</li>
+<li><strong>Vigilancia:</strong> IMPI/SIGA → LATIPAT → Lens.org, con los códigos IPC G08B21/0423 (desviación de un patrón) y G08B21/0461 (sensor en un objeto no portado).</li>
+<li><strong>Patente más cercana:</strong> MX 351729 B (piso con sensores de presión). <strong>Fuera:</strong> ningún elemento coincide con nuestra arquitectura.</li>
+<li><strong>Ajuste:</strong> no hizo falta (FTO alta).</li>
+<li><strong>Estrategia de protección:</strong> registrar la marca en el IMPI, clases 9 y 42 (Actividad 3, <strong>pendiente</strong>). Propuesta por decidir: proteger el firmware y la app como derechos de autor, y no buscar patente hasta tener un método de detección propio.</li>
+</ul>
+<hr />
+<h2 id="parte-ii-producto">Parte II. Producto</h2>
+<h2 id="7-especificacion-del-producto-pds">7. Especificación del producto (PDS)</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.1 · 24/11/2026 (origen: semanas 5 y 9)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Mantener los 16 requisitos y marcar con honestidad cuáles <strong>no cumple</strong> el prototipo WiFi.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-05/">Actividad 5, sección 12</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/firmware/DistanciaCero_Sensor.ino">firmware</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/app/">app</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>El prototipo usa WiFi (incumple RI-02) y no tiene PCB (RR-04 no aplica).</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Correr las pruebas T1–T6 (sección 17) para pasar de "pendiente" a "cumple" o "no cumple".</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requisito</th>
+<th>Verificación</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RF-01</td>
+<td>Alertar solo ante desviación de <strong>su</strong> patrón</td>
+<td>14 días simulados + eventos inyectados</td>
+<td>❌ Hoy es un umbral fijo de inactividad (4 h)</td>
+</tr>
+<tr>
+<td>RF-02</td>
+<td>Silencio en rutina normal; aviso ≤ 10 min</td>
+<td>10 corridas, T4</td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>RF-03</td>
+<td>10–14 días de aprendizaje sin alertas</td>
+<td>Registros del servidor</td>
+<td>❌ No implementado</td>
+</tr>
+<tr>
+<td>RF-04</td>
+<td>Historial de 30 días sin conexión</td>
+<td>Modo avión</td>
+<td>❌ La app guarda los últimos 40 eventos</td>
+</tr>
+<tr>
+<td>RD-01</td>
+<td>≥ 15 días sin recargar</td>
+<td>Medición, T5</td>
+<td>❌ Probable: el WiFi siempre encendido gasta mucho</td>
+</tr>
+<tr>
+<td>RD-02</td>
+<td>Falsos positivos &lt; 5 %, falsos negativos &lt; 2 %</td>
+<td>50 eventos simulados</td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>RD-03</td>
+<td>Reporte en ≤ 30 s</td>
+<td>20 transmisiones</td>
+<td>⏳ El firmware publica estado cada 30 s</td>
+</tr>
+<tr>
+<td>RD-04</td>
+<td>Servidor disponible ≥ 99 %</td>
+<td>Monitoreo</td>
+<td>⏳ Broker público, sin garantía</td>
+</tr>
+<tr>
+<td>RI-01</td>
+<td>Estado claro en &lt; 10 s, sin lenguaje clínico</td>
+<td>Prueba con usuario</td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>RI-02</td>
+<td>Solo celular, cifrado</td>
+<td>Prueba sin WiFi</td>
+<td>❌ El prototipo usa WiFi</td>
+</tr>
+<tr>
+<td>RI-03</td>
+<td>Instalación guiada ≤ 10 min</td>
+<td>Cronómetro, T3</td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>RI-04</td>
+<td>Alerta por dos canales</td>
+<td>Simular falla, T1</td>
+<td>⚠️ Parcial: app + ntfy opcional; sin WhatsApp</td>
+</tr>
+<tr>
+<td>RR-01</td>
+<td>≤ $600 al mes</td>
+<td>Modelo de precios</td>
+<td>✅ $449</td>
+</tr>
+<tr>
+<td>RR-02</td>
+<td>Ninguna acción del adulto mayor</td>
+<td>Revisión de diseño</td>
+<td>✅ En diseño; la recarga la hace la familia</td>
+</tr>
+<tr>
+<td>RR-03</td>
+<td>Sin audio ni video</td>
+<td>Esquema de datos</td>
+<td>✅ El JSON solo lleva movimiento, batería y señal</td>
+</tr>
+<tr>
+<td>RR-04</td>
+<td>PCB apta para JLCPCB</td>
+<td>DRC</td>
+<td>— No aplica al prototipo (sin PCB)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>First-iteration product:</strong> un objeto (sillón, bastón o portavasos) con ESP32-S3 Super Mini + MPU6050 + LiPo que publica su actividad por MQTT, y una app web que avisa a la familia si pasa más tiempo del umbral sin movimiento. Sin módulo celular y sin aprendizaje de rutina.</p>
+<hr />
+<h2 id="8-arquitectura-del-sistema">8. Arquitectura del sistema</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v2.0 · 24/11/2026 (origen: semana 5)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td><strong>Híbrida:</strong> el ESP32 detecta el movimiento y cuenta la inactividad (edge); la app decide el estado y lo comparte con el círculo.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/firmware/DistanciaCero_Sensor.ino">Firmware</a>; <a href="#c-archivos-de-diseno-cad-esquematicos-y-firmware">protocolo MQTT en anexos</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/">Actividad 9, fronteras</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>Ver la tabla de abajo.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Un servidor propio: hoy, si nadie tiene la app abierta, solo avisa el ESP32 (por ntfy).</td>
+</tr>
+</tbody>
+</table>
+<p><svg viewBox="0 0 760 170" width="100%" role="img" aria-label="Diagrama de bloques">
+<g font-size="12" font-family="sans-serif">
+<rect x="5" y="40" width="150" height="80" rx="8" fill="#FFF7E6" stroke="#C7922F"/><text x="80" y="62" text-anchor="middle" font-weight="bold">Objeto</text><text x="80" y="80" text-anchor="middle">MPU6050 → ESP32-S3</text><text x="80" y="96" text-anchor="middle">LiPo 3.7 V · 50 Hz</text><text x="80" y="112" text-anchor="middle" font-size="10">I²C (GPIO 5/6)</text>
+<rect x="215" y="40" width="150" height="80" rx="8" fill="#EEF3F8" stroke="#21303B"/><text x="290" y="62" text-anchor="middle" font-weight="bold">Broker MQTT</text><text x="290" y="80" text-anchor="middle">HiveMQ público</text><text x="290" y="96" text-anchor="middle" font-size="10">distanciacero/&lt;ID&gt;/…</text>
+<rect x="425" y="40" width="150" height="80" rx="8" fill="#E3EDE6" stroke="#3E7C5B"/><text x="500" y="62" text-anchor="middle" font-weight="bold">App web</text><text x="500" y="80" text-anchor="middle">estado: normal /</text><text x="500" y="96" text-anchor="middle">atención / crítico</text>
+<rect x="625" y="20" width="130" height="50" rx="8" fill="#fff" stroke="#999"/><text x="690" y="42" text-anchor="middle">Hijo/a</text><text x="690" y="58" text-anchor="middle" font-size="10">y cuidador local</text>
+<rect x="625" y="95" width="130" height="50" rx="8" fill="#fff" stroke="#999"/><text x="690" y="117" text-anchor="middle">Adulto mayor</text><text x="690" y="133" text-anchor="middle" font-size="10">3 botones (opcional)</text>
+<line x1="155" y1="80" x2="215" y2="80" stroke="#333" marker-end="url(#a)"/><text x="185" y="72" text-anchor="middle" font-size="10">WiFi · MQTT</text><text x="185" y="98" text-anchor="middle" font-size="10">cada 30 s</text>
+<line x1="365" y1="80" x2="425" y2="80" stroke="#333" marker-end="url(#a)"/><text x="395" y="72" text-anchor="middle" font-size="10">WSS</text>
+<line x1="575" y1="65" x2="625" y2="48" stroke="#333" marker-end="url(#a)"/><line x1="625" y1="118" x2="575" y2="98" stroke="#333" marker-end="url(#a)"/>
+<path d="M80 120 C 80 165, 690 165, 690 147" fill="none" stroke="#999" stroke-dasharray="4 3"/><text x="380" y="164" text-anchor="middle" font-size="10">HTTPS → ntfy (push opcional, sin app abierta)</text>
+</g>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#333"/></marker></defs>
+</svg></p>
+<p><strong>Por qué híbrida.</strong> (1) El movimiento se detecta a 50 Hz en el ESP32 y solo se envía un resumen, así que viaja poco dato. (2) El ESP32 puede avisar por su cuenta (ntfy) aunque nadie tenga la app abierta. (3) La app comparte el estado y las respuestas entre familiar, cuidador y adulto mayor. <strong>Consecuencia:</strong> sin un servidor propio no se detecta que el sensor dejó de reportar si nadie tiene la app abierta.</p>
+<p><strong>Protocolos.</strong> <em>I²C:</em> el MPU6050 lo trae y bastan dos cables. <em>MQTT:</em> mensajes chicos y "última voluntad", que avisa sola cuando el sensor se desconecta. <em>WebSocket seguro (wss):</em> el navegador no abre MQTT directo. <em>HTTPS a ntfy:</em> push gratis sin publicar una app en tiendas.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Semana 5</th>
+<th>Versión final (noviembre)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Red</td>
+<td>Celular (SIM7600E-H), sin WiFi</td>
+<td>WiFi 2.4 GHz (hotspot en la demo)</td>
+</tr>
+<tr>
+<td>Sensores</td>
+<td>MPU6050 + PIR</td>
+<td>MPU6050</td>
+</tr>
+<tr>
+<td>Nube</td>
+<td>HTTPS POST → Firebase + Cloud Function</td>
+<td>Broker MQTT público</td>
+</tr>
+<tr>
+<td>Detección</td>
+<td>z-score contra su patrón por hora</td>
+<td>Umbral de inactividad ajustable (4 h o 3 h)</td>
+</tr>
+<tr>
+<td>Avisos</td>
+<td>Push (FCM) + WhatsApp</td>
+<td>En la app + ntfy opcional</td>
+</tr>
+<tr>
+<td>Electrónica</td>
+<td>PCB 70 × 45 mm, JLCPCB</td>
+<td>ESP32-S3 Super Mini con jumpers, sin PCB</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-diseno-del-producto">9. Diseño del producto</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.1 · 24/11/2026 (origen: semana 6)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>El sillón ganó la Matriz de Pugh; hoy se ofrecen <strong>los tres objetos</strong>.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-06/">Actividad 6: tabla morfológica, conceptos, Pugh y boceto</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/">Actividad 8: planos con cotas</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>El sillón ganó porque era el único donde cabían el SIM7600 y la 18650. Sin esas piezas, ese criterio (tamaño, 10 %) ya no descarta al bastón ni al portavasos.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Fotos del prototipo en los tres objetos; repetir la matriz con el hardware nuevo.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Principios aplicados y dónde se ven:</strong> <em>affordances</em> (el portavasos invita a poner la taza) · <em>constraints</em> (el velcro solo cabe en una posición) · <em>contour bias</em> (sin aristas, radio de 4 mm) · <em>consistencia</em> (el acabado imita la tapicería) · <em>confirmación</em> (un LED solo durante la instalación) · <em>costo-beneficio</em> (sin LED permanente, para que no se note).</p>
+<table>
+<thead>
+<tr>
+<th>Matriz de Pugh (deseabilidad 50 %, factibilidad 50 %)</th>
+<th style="text-align: center;">Bastón (datum)</th>
+<th style="text-align: center;"><strong>Sillón</strong></th>
+<th style="text-align: center;">Portavasos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puntuación ponderada</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>+80</strong></td>
+<td style="text-align: center;">+50</td>
+</tr>
+</tbody>
+</table>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/plano-variante-a.jpg" alt="Plano con cotas de la carcasa variante A" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/carcasa-a-explosionada.jpg" alt="Carcasa variante A en vista explosionada" style="width:100%;border-radius:6px">
+</div>
+<p><em>Boceto técnico con cotas (variante A, 90 × 60 × 21 mm, PETG) y vista explosionada. Modelo 3D, no pieza impresa.</em></p>
+<p><strong>Evolución:</strong> boceto de 90 × 60 × 15 mm (semana 6) → la 18650 no cabía → carcasa de dos piezas en PETG, variantes A y B (semana 8) → prototipo con ESP32-S3 Super Mini y jumpers dentro de los tres objetos (noviembre).</p>
+<hr />
+<h2 id="10-prototipos-y-evidencia">10. Prototipos y evidencia</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.1 · 24/11/2026 (origen: semana 8)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Lo primero que se probó fue el precio (una landing), no la carcasa.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/">Actividad 8, plan de prototipado</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_presentacion_final.pptx">presentación final</a> (diapositiva "Qué funciona hoy").</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>El precio de la landing bajó de $4,490 a $3,990, igual que el modelo financiero.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Imprimir la carcasa; sesiones con usuarios; <strong>fotos reales</strong> de cada prototipo.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Prototipo</th>
+<th>Pregunta</th>
+<th>Tipo · resolución</th>
+<th>Qué se construyó</th>
+<th>Evidencia</th>
+<th>Aprendizaje → cambio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Landing (semana 8 → hoy)</td>
+<td>¿Alguien reserva viendo el precio real?</td>
+<td>Negocio · baja</td>
+<td>Landing de 4 páginas</td>
+<td><strong>0 sesiones</strong></td>
+<td>Hay que conectar el formulario para medir</td>
+</tr>
+<tr>
+<td>Carcasa A/B</td>
+<td>¿Cabe y cierra sin herramientas?</td>
+<td>Forma · alta (digital)</td>
+<td>Modelo 3D, planos y 4 STL</td>
+<td>Mallas cerradas; <strong>sin imprimir</strong></td>
+<td>La 18650 no cabía → LiPo plana</td>
+</tr>
+<tr>
+<td>Circuito</td>
+<td>¿El MPU6050 lee movimiento real?</td>
+<td>Funcional · media</td>
+<td>ESP32 + MPU6050 por USB</td>
+<td>|a| = 1.00 g en reposo</td>
+<td>Sí lee; falta probar el aviso</td>
+</tr>
+<tr>
+<td>App web</td>
+<td>¿Se entiende el estado y el aviso?</td>
+<td>Interacción · alta</td>
+<td>16 pantallas, modo demo y modo real</td>
+<td>Publicada en este sitio</td>
+<td>Del Figma Make a una app real</td>
+</tr>
+<tr>
+<td>Tres objetos</td>
+<td>¿Funciona en sillón, bastón y portavasos?</td>
+<td>Integración · alta</td>
+<td>Super Mini + MPU6050 + LiPo con jumpers</td>
+<td><strong>PENDIENTE</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Línea de tiempo:</strong> semana 6, renders y app en Figma · semana 8, landing y carcasa · semana 9, plan de pruebas · 23/11, app web, firmware y simulador · 24/11, landing con los tres productos. <strong>Fotos: PENDIENTE.</strong></p>
+<hr />
+<h2 id="11-manufactura-dfm-y-circularidad">11. Manufactura, DFM y circularidad</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.1 · 24/11/2026 (origen: semanas 5, 7 y 8)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>10 unidades el año 1 (impresión 3D en PETG + ensamble manual) y 100 el año 2.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">Excel: hojas BOM_final, DFM y Costos</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/">Actividad 8, DFM y circularidad</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>El prototipo no lleva PCB ni módulo celular; su BOM se registra aparte del BOM del modelo.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Llenar el precio real del prototipo (hoja BOM_final, celdas amarillas) y cotizar el resto del BOM.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>BOM del modelo (por unidad)</th>
+<th style="text-align: right;">Precio</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Módulo celular SIM7600E-H</td>
+<td style="text-align: right;">$2,100</td>
+<td>Cotizado (US$129)</td>
+</tr>
+<tr>
+<td>ESP32-S3 · MPU6050 + PIR · batería · PCB · carcasa</td>
+<td style="text-align: right;">$870</td>
+<td>Estimados</td>
+</tr>
+<tr>
+<td><strong>BOM</strong> → <strong>costo unitario</strong> (+ 15 % overhead + 25 % contingencia)</td>
+<td style="text-align: right;"><strong>$2,970 → $4,158</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>DFM (Actividad 8):</strong> costo unitario de <strong>$3,491 → $1,723</strong> (−50.7 %), casi todo por usar el chip celular LCC sobre un PCB propio. ⚠️ El ensamble no está cronometrado.</p>
+<p><strong>Circularidad:</strong> ¿se abre sin destruirla? ✅ cierre a presión · ¿módulos reemplazables? ⚠️ la batería sí (JST), el ESP32 no · ¿materiales identificables? ⚠️ un solo plástico, falta el código de reciclaje · ¿se actualiza sin reemplazarse? ✅ firmware por USB-C.</p>
+<p><strong>Reproducir una unidad:</strong> ver <a href="#c-archivos-de-diseno-cad-esquematicos-y-firmware">Anexo C</a>.</p>
+<hr />
+<h2 id="12-aplicacion-conectada">12. Aplicación conectada</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v2.0 · 24/11/2026 (origen: semanas 6 y 9)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>App web de un solo archivo, abierta por link y sin tienda de apps, con modo <strong>Demo</strong> y modo <strong>Dispositivo real</strong> (MQTT).</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/app/">App publicada</a>; <a href="https://github.com/jesushernandez2005/Proyecto4/tree/main/docs/app">código en el repositorio</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-06/">Actividad 6, wireframes</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>Del prototipo de Figma Make con datos de ejemplo a una app que escucha al ESP32.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Servidor propio con usuario y contraseña; historial de 30 días; WhatsApp.</td>
+</tr>
+</tbody>
+</table>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/app-onboarding-qr.jpg" alt="Onboarding: escanear el código y elegir el objeto" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/app-normal.jpg" alt="Estado normal" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/app-alerta.jpg" alt="Alerta activa" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/app-circulo.jpg" alt="Círculo de cuidado" style="width:100%;border-radius:6px">
+</div>
+
+<p><strong>Flujo:</strong> 5 pasos de bienvenida (quién eres → ¿alguien lo visita? → código del sensor y objeto → detección → consentimiento) → inicio → alerta → "Ya lo revisé".</p>
+<p><strong>Estados:</strong> <em>cargando</em> "Esperando al sensor" · <em>normal</em> "Todo bien" · <em>atención</em> "Un día más tranquilo" · <em>crítico/alerta</em> · <em>sin conexión</em> "Perdimos contacto con el sensor" (sin señal por más de 3 min) · <em>error</em> "No se pudo conectar con el servidor MQTT" · <em>pausa</em> "Avisos en pausa".</p>
+<p><strong>Conexión:</strong> MQTT en <code>distanciacero/&lt;CÓDIGO&gt;/estado</code> (retenido, cada 30 s). Formato: <code>{"id","obj","fw","bat","rssi","inactivoSeg","huboActividad","umbralMin","alerta","sensor","t"}</code>.</p>
+<p><strong>Cómo ejecutarla:</strong> abrir la URL; para probar sin hardware, <code>python sim_dispositivo.py --id DC-SIM1</code> (<a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/firmware/sim_dispositivo.py">simulador</a>).</p>
+<p><strong>Limitaciones:</strong> el broker público lo puede leer cualquiera que conozca el código; si nadie tiene la app abierta, el estado no se calcula; teléfonos, tarjeta y correo de la app son ficticios. <strong>Los commits del repositorio no siguen las sesiones de trabajo</strong> (mensajes como "actualiza"; ver <a href="#b-repositorio-readme-y-bitacoras">Anexo B</a>).</p>
+<hr />
+<h2 id="parte-iii-negocio">Parte III. Negocio</h2>
+<h2 id="13-modelo-de-negocio-business-blueprint">13. Modelo de negocio (Business Blueprint)</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.0 · 24/11/2026 (origen: semanas 4 y 7)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Equipo + suscripción mensual. El equipo se vende $168 por debajo de su costo y lo recupera la suscripción.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-07/">Actividad 7, benchmarking</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">Excel, hojas Resumen y Economia_unitaria</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>El precio del equipo bajó de $4,490 (Actividad 7) a $3,990 (modelo final).</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Validar que alguien paga el equipo.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Caja</th>
+<th>Contenido</th>
+<th>Sustento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clientes</td>
+<td>Hijo/a de 35–55 años que vive lejos de su mamá o papá de 65+</td>
+<td><a href="#3-usuario-y-evidencia-de-campo">§3</a></td>
+</tr>
+<tr>
+<td>Oferta</td>
+<td>Sensor en sillón, bastón o portavasos + app</td>
+<td><a href="#7-especificacion-del-producto-pds">§7</a></td>
+</tr>
+<tr>
+<td>Modelo de ingresos y precio</td>
+<td>$3,990 + $449/mes</td>
+<td><a href="#14-costos-precio-y-viabilidad-financiera">§14</a></td>
+</tr>
+<tr>
+<td>Canales</td>
+<td>Meta y Google Ads; piloto en Puebla</td>
+<td><a href="#15-go-to-market-y-economia-unitaria">§15</a></td>
+</tr>
+<tr>
+<td>Propuesta de valor</td>
+<td>Certeza diaria, sin preguntar, sin culpa</td>
+<td><a href="#5-propuesta-de-valor-y-oferta">§5</a></td>
+</tr>
+<tr>
+<td>Costos</td>
+<td>$4,158 por equipo; $90.14 al mes por suscriptor</td>
+<td><a href="#14-costos-precio-y-viabilidad-financiera">§14</a></td>
+</tr>
+<tr>
+<td>Socios</td>
+<td>Proveedores (LCSC, JLCPCB, MercadoLibre); broker y notificaciones</td>
+<td><a href="#11-manufactura-dfm-y-circularidad">§11</a></td>
+</tr>
+<tr>
+<td>Equipo y recursos</td>
+<td>Dos integrantes, hardware y firmware propios</td>
+<td><a href="#1-equipo">§1</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Benchmarking:</strong> Medical Guardian (equipo US$149.95–199.95 + US$31.95–49.95/mes) · Ring (hardware + planes de US$4.99–19.99/mes) · CarePredict (hardware + servicio, pagado por agencias públicas). Los tres cobran equipo + cuota.</p>
+<p><strong>Desafío de diseño:</strong> si el equipo se tuviera que regalar, el modelo no cierra con el costo actual.</p>
+<hr />
+<h2 id="14-costos-precio-y-viabilidad-financiera">14. Costos, precio y viabilidad financiera</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.1 · 24/11/2026 (origen: semana 7)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>$3,990 por el equipo (por debajo del piso de $4,158) y $449/mes (59 % del camino entre el piso y el techo).</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">Excel</a>: Costos_DFS, IA_costo, Desarrollo, Precio_rango, Flujo_24m, Resumen.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>Se unificó el precio en la landing, el Excel y la presentación.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td><strong>Medir el costo de la IA con tokens reales</strong>; cotizar 5 de las 6 líneas del BOM.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Indicador</th>
+<th>Valor</th>
+<th>Hoja</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Costos D / F / S</td>
+<td>17 costos: 5 D, 6 F, 6 S</td>
+<td>Costos_DFS</td>
+</tr>
+<tr>
+<td>Costo de la IA por usuario</td>
+<td>≈ $0.02/mes (Haiku 5.5); el modelo usa $0.14 como cota. <strong>No medido</strong></td>
+<td>IA_costo</td>
+</tr>
+<tr>
+<td>Desarrollo (3 / 5 / 8 ciclos)</td>
+<td>$42,921 / <strong>$71,536</strong> / $114,457</td>
+<td>Desarrollo</td>
+</tr>
+<tr>
+<td>Precio cost-plus del equipo (+40 %)</td>
+<td>$5,821</td>
+<td>Precio_rango</td>
+</tr>
+<tr>
+<td>Equipo: piso (costo) / techo (semana 4, HIPÓTESIS)</td>
+<td>$4,158 / $4,000 → hay que subsidiar</td>
+<td>Precio_rango</td>
+</tr>
+<tr>
+<td>Suscripción: piso / techo (lo más alto que dijeron)</td>
+<td>$93.51 / $700</td>
+<td>Precio_rango</td>
+</tr>
+<tr>
+<td>Punto de equilibrio del desarrollo</td>
+<td>25.5 familias (si se quedan 12 meses) · 10.3 (24 meses)</td>
+<td>Economia_unitaria</td>
+</tr>
+<tr>
+<td>Flujo acumulado a 12 meses</td>
+<td>−$72,319</td>
+<td>Flujo_24m</td>
+</tr>
+<tr>
+<td>VPN a 12 / 24 meses (15 % anual)</td>
+<td>−$72,414 / <strong>+$3,175</strong></td>
+<td>Resumen</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tasa del 15 %:</strong> la que fija la guía de la Actividad 7 para un proyecto en etapa temprana. <strong>Lectura:</strong> el VPN a 24 meses es casi cero y el modelo no incluye <em>churn</em>.</p>
+<hr />
+<h2 id="15-go-to-market-y-economia-unitaria">15. Go-to-market y economía unitaria</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.1 · 24/11/2026 (origen: semana 9)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Empezar con un piloto sin costo de 10 familias en Puebla (unos 60 días) para medir <em>churn</em>, instalación y disposición a pagar el equipo.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/">Actividad 9, sección 4.3</a>; <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">Excel, hojas Economia_unitaria, Churn y Sensibilidad</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>Con $3,990 el payback pasa de 2.4 a 3.8 meses.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Medir CAC y <em>churn</em>; conectar el formulario de la landing.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cliente número 1 (HIPÓTESIS, n = 1):</strong> hija o hijo que vive fuera de Puebla, con su mamá o papá de 65+ que vive solo en Puebla y sin un cuidador que pase a diario (perfil de Lupita).</p>
+<p><strong>Canales:</strong> venta directa con Meta y Google Ads segmentados a hijos de 35–55 años (Actividad 4), más la landing con pre-registro. Se eligen porque el comprador está en línea y lejos del adulto mayor.</p>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th style="text-align: right;">Valor</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAC</td>
+<td style="text-align: right;">$1,000</td>
+<td><strong>SUPUESTO</strong> (5 demos × 1.5 h × $80 + $400 en anuncios)</td>
+</tr>
+<tr>
+<td>Churn mensual</td>
+<td style="text-align: right;">0 % en el caso base; 3 %, 5 % y 8 % en escenarios</td>
+<td><strong>SUPUESTO</strong></td>
+</tr>
+<tr>
+<td>Contribución mensual</td>
+<td style="text-align: right;">$342.70</td>
+<td>Cálculo</td>
+</tr>
+<tr>
+<td>Inversión por familia</td>
+<td style="text-align: right;">$1,311.64</td>
+<td>Cálculo (CAC + pérdida del equipo)</td>
+</tr>
+<tr>
+<td>Payback</td>
+<td style="text-align: right;"><strong>3.8 meses</strong></td>
+<td>Cálculo</td>
+</tr>
+<tr>
+<td>LTV (churn 3 %) · LTV ÷ inversión</td>
+<td style="text-align: right;">$11,423 · <strong>8.7×</strong></td>
+<td>Cálculo con SUPUESTO; con churn de 10 % baja a 2.6×</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Palancas (acumulado a 24 meses):</strong> base +$26,123 · suscripción de $549 → +$94,181 · equipo de $4,990 → +$132,163 · CAC de $1,200 → +$4,123 · churn de 3 % → −$2,013 · churn de 8 % → −$38,739.</p>
+<hr />
+<h2 id="16-regulacion-y-aspectos-legales">16. Regulación y aspectos legales</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.1 · 24/11/2026 (origen: semanas 8 y 9)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>No vender a terceros hasta resolver los temas POR VERIFICAR. El piloto es sin costo y con consentimiento escrito.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/">Actividad 9, checklist regulatorio (Prompt 4)</a>; aviso de privacidad en la <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/">landing</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>El prototipo WiFi con un broker público añade un riesgo de datos.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Confirmar con la CRT o un organismo de certificación; términos de uso de la app.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Estatus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Radio y homologación</td>
+<td>VERIFICADO el alcance; <strong>POR VERIFICAR</strong> el trámite. La ESP32-S3 Super Mini puede no tener certificación</td>
+</tr>
+<tr>
+<td>Datos personales (ley de 2025)</td>
+<td>VERIFICADO en fuente secundaria; <strong>POR VERIFICAR</strong> cómo da su consentimiento la persona monitoreada</td>
+</tr>
+<tr>
+<td>Seguridad y etiquetado (NOM-001-SCFI-2018)</td>
+<td>VERIFICADO el alcance general en fuente secundaria; <strong>POR VERIFICAR</strong> si aplica</td>
+</tr>
+<tr>
+<td>Baterías LiPo</td>
+<td><strong>POR VERIFICAR</strong> (no se consultaron fuentes)</td>
+</tr>
+<tr>
+<td>Licencias de software y del modelo de IA</td>
+<td><strong>POR VERIFICAR</strong> (bibliotecas de Arduino, MQTT.js, términos de la API de Claude)</td>
+</tr>
+<tr>
+<td>Términos de venta (LFPC, precio con IVA)</td>
+<td><strong>POR VERIFICAR</strong>; el Excel ya calcula $4,628.40 con IVA</td>
+</tr>
+<tr>
+<td>Economía circular</td>
+<td>VERIFICADO en fuente secundaria: ley vigente desde el 20/01/2026, sin reglamento</td>
+</tr>
+<tr>
+<td>Exportación</td>
+<td>No aplica</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aviso de privacidad:</strong> la landing tiene uno simplificado y la app una pantalla "Qué ve y qué NO ve". <strong>Términos de la app: PENDIENTE.</strong></p>
+<p><strong>Antes de vender a un tercero:</strong> broker propio con usuario y contraseña · consentimiento del adulto mayor (y del cuidador local) · homologación · precio con IVA · términos de servicio.</p>
+<hr />
+<h2 id="parte-iv-validacion-y-lanzamiento">Parte IV. Validación y lanzamiento</h2>
+<h2 id="17-integracion-y-pruebas-del-sistema">17. Integración y pruebas del sistema</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.1 · 24/11/2026 (origen: semana 9)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Cada frontera guarda un registro para que una falla en la demo se pueda diagnosticar.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/">Actividad 9, sección 4.1</a>; monitor serie del firmware; simulador.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>Las fronteras se redefinieron para la arquitectura WiFi + MQTT.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Correr T1–T6 y subir los registros.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/fronteras.jpg" alt="Las cuatro fronteras de la semana 9" style="max-width:560px;width:100%;border-radius:6px"></p>
+<p><em>Fronteras de la semana 9 (versión celular). Abajo, la versión actual.</em></p>
+<table>
+<thead>
+<tr>
+<th>Frontera</th>
+<th>Registro</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1 · MPU6050 → ESP32 (I²C)</td>
+<td>Monitor serie (<code>DEBUG_MOV</code>)</td>
+<td>✅ Lee |a| = 1.00 g en reposo</td>
+</tr>
+<tr>
+<td>F2 · ESP32 → broker (WiFi/MQTT)</td>
+<td>Monitor serie + LED de estado</td>
+<td>⏳ Firmware escrito; sin registro</td>
+</tr>
+<tr>
+<td>F3 · Broker → app (WSS)</td>
+<td>Pantalla Conexión + historial</td>
+<td>⏳ Se puede probar con el simulador; <strong>sin registro guardado</strong></td>
+</tr>
+<tr>
+<td>F4 · App → persona</td>
+<td>Historial de eventos</td>
+<td>⏳</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Prueba</th>
+<th>Aprobado si</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1 · Falla de un canal</td>
+<td>Llega por el otro</td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>T2 · Desconexión 10 min</td>
+<td>La app dice "sin conexión" y no da el dato viejo por actual</td>
+<td>⏳ Implementado en la app; sin prueba</td>
+</tr>
+<tr>
+<td>T3 · Instalación sin ayuda</td>
+<td>≤ 10 min</td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>T4 · Latencia</td>
+<td>Aviso ≤ 10 min en 10 corridas</td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>T5 · Autonomía</td>
+<td>≥ 15 días</td>
+<td>⏳</td>
+</tr>
+<tr>
+<td>T6 · 48 h continuas</td>
+<td>Sin reinicios</td>
+<td>⏳</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fallas documentadas:</strong> (1) <strong>F3</strong>: el visor de Claude bloquea conexiones externas, así que el modo real solo funciona desde GitHub Pages (se encontró al probar la app). (2) <strong>F2</strong>: la red de la universidad pide usuario y contraseña, y el ESP32 no se conecta; se usa el hotspot del celular (README). (3) <strong>F2, versión celular</strong>: el SIM7600E-H no trae las bandas LTE de México (se encontró al llenar el checklist regulatorio). (4) <strong>Diseño</strong>: el USB-C chocaba con el ESP32 en el modelo 3D (revisión en planta).</p>
+<p><strong>Todavía no funciona:</strong> aprendizaje de rutina, historial de 30 días, WhatsApp, servidor propio. Falta tiempo y un backend.</p>
+<p><strong>Checklist de "listo":</strong> hardware sin laptop ⏳ · app desplegada ✅ · landing publicada ⏳ (al hacer push de esta carpeta) · flujo completo sin intervención ⏳</p>
+<hr />
+<h2 id="18-pruebas-con-usuarios">18. Pruebas con usuarios</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.1 · 25/11/2026 (origen: semana 9)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Probar con hijos e hijas adultos, no con personas mayores. Se graba solo con consentimiento.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/">Actividad 9, sección 4.2 (protocolo y hoja)</a>; <a href="https://docs.google.com/spreadsheets/d/1eeBf3EU33XPdDGuRwuHZk6xZu-9kGYs7PMgu7OJc9qk/edit?usp=sharing">encuesta en línea, 47 respuestas (Google Sheets)</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>Se hizo una encuesta en línea (25/11/2026, n = 47) sobre el producto, el precio, la landing y la app. Las sesiones moderadas <strong>siguen sin hacerse.</strong></td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Las 5 sesiones (3 del segmento y 2 de otros equipos); repetir la encuesta solo con hijos de 35–55 años que tengan un papá o mamá que vive solo.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Protocolo de 30 min:</strong> guion fijo (0–3) · T1, instalar y vincular (3–10) · T2, interpretar una alerta (10–20) · T3, encontrar el precio y pre-registrarse en la landing (20–25) · entrevista de cierre (25–30).</p>
+<table>
+<thead>
+<tr>
+<th>Usuario</th>
+<th>T1 sin ayuda · tiempo · SEQ</th>
+<th>T2 sin ayuda · SEQ</th>
+<th>T3 pre-registro</th>
+<th>Cita</th>
+<th>Hallazgo y severidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–3 (segmento)</td>
+<td>pendiente</td>
+<td>pendiente</td>
+<td>pendiente</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>4–5 (otro equipo)</td>
+<td>pendiente</td>
+<td>pendiente</td>
+<td>pendiente</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="encuesta-en-linea-25112026-n-47">Encuesta en línea (25/11/2026, n = 47)</h3>
+<p>Google Forms anónimo con 33 preguntas de opción múltiple y un comentario opcional, en seis bloques: perfil, producto, precio, landing, app y cierre. <a href="https://docs.google.com/spreadsheets/d/1eeBf3EU33XPdDGuRwuHZk6xZu-9kGYs7PMgu7OJc9qk/edit?usp=sharing">Respuestas completas</a>.</p>
+<p><strong>Quién respondió:</strong> 27 de 47 tienen menos de 25 años y solo 7 tienen entre 35 y 55 (el segmento). 15 tienen un familiar de 65+ que vive solo y 16 viven en otra ciudad o en otro país. <strong>La muestra no es el segmento:</strong> sirve para encontrar problemas, no para validar la demanda.</p>
+<table>
+<thead>
+<tr>
+<th>Pregunta</th>
+<th>Resultado (de 47)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preocupación por una caída (1–5)</td>
+<td><strong>4.38</strong> en promedio; 29 eligieron 5</td>
+</tr>
+<tr>
+<td>Qué usan hoy para saber que está bien</td>
+<td>Solo llamadas o mensajes 36 · cuidador o vecino 7 · otro 3 · cámaras 1</td>
+</tr>
+<tr>
+<td>¿Se entendió la descripción?</td>
+<td>Muy claro 30 · más o menos 13 · poco claro 3 · no 1</td>
+</tr>
+<tr>
+<td>Utilidad de la idea (1–5)</td>
+<td><strong>4.53</strong> en promedio</td>
+</tr>
+<tr>
+<td>Objeto más útil (varias respuestas)</td>
+<td>Bastón <strong>34</strong> · sillón 24 · portavasos 10 · ninguno 6</td>
+</tr>
+<tr>
+<td>Cómo recibir los avisos</td>
+<td>Resumen diario 15 · elegir el modo 15 · solo si algo está mal 9 · avisos frecuentes 8</td>
+</tr>
+<tr>
+<td>Lo que más preocupa (varias respuestas)</td>
+<td><strong>Que falle o no avise 33</strong> · precio 17 · batería 15 · que el familiar no lo use 15 · privacidad 11 · instalación 10 · nada 3</td>
+</tr>
+<tr>
+<td>¿Qué tan invasivo es?</td>
+<td>Nada 17 · poco 26 · algo 4 · muy 0</td>
+</tr>
+<tr>
+<td>¿Lo aceptaría el familiar?</td>
+<td>Sí 15 · probablemente 21 · no estoy seguro 11</td>
+</tr>
+<tr>
+<td>¿Pagarías?</td>
+<td>Sí 20 · probablemente 20 · no estoy seguro 6 · no 1</td>
+</tr>
+<tr>
+<td>$3,990 + $449/mes</td>
+<td>Justo 15 · <strong>un poco caro 26</strong> · muy caro 6</td>
+</tr>
+<tr>
+<td>Kit, pago único</td>
+<td>&lt; $2,000: 14 · $2,000–3,000: 17 · $3,000–4,000: 15 · $4,000–5,000: 1</td>
+</tr>
+<tr>
+<td>Mensualidad</td>
+<td>&lt; $200: <strong>22</strong> · $200–350: 13 · $350–500: 5 · no pagaría: 7</td>
+</tr>
+<tr>
+<td>Forma de pago</td>
+<td>Pago único sin mensualidad 17 · kit + mensualidad 13 · anual con descuento 11 · kit rentado 6</td>
+</tr>
+<tr>
+<td>Recomendación (0–10)</td>
+<td><strong>8.15</strong> en promedio · NPS <strong>+38</strong> (24 promotores, 17 pasivos, 6 detractores)</td>
+</tr>
+<tr>
+<td>¿Lo probarías cuando esté listo?</td>
+<td>Sí 29 · tal vez 17 · no 1</td>
+</tr>
+</tbody>
+</table>
+<p>Los resultados de la landing están en la <a href="#19-landing-page">sección 19</a> y los de la app en la <a href="#12-aplicacion-conectada">sección 12</a>. Solo cuentan a quien sí abrió cada una, porque el formulario dejaba contestar esas preguntas sin haberlas visto (un participante lo señaló en los comentarios).</p>
+<p><strong>Qué aprendimos:</strong></p>
+<ol>
+<li><strong>El precio es el problema.</strong> 40 de 47 dicen que pagarían, pero 32 de 47 ven caro el precio real. Solo 1 pagaría más de $4,000 por el kit y solo 5 pagarían $350–500 al mes. Entre los 15 que tienen un familiar que vive solo pasa lo mismo: 11 de 15 lo ven caro. → <a href="#14-costos-precio-y-viabilidad-financiera">Sección 14</a>.</li>
+<li><strong>El miedo es que falle, no la privacidad</strong> (33 contra 11). La landing y la app tienen que mostrar que el sensor sigue vivo (batería y conexión).</li>
+<li><strong>El modo silencioso no gana.</strong> Solo 9 de 47 lo prefieren. Confirma que el aviso debe ser configurable (<a href="#3-usuario-y-evidencia-de-campo">sección 3</a>); que el resumen diario sea la opción por defecto es <strong>HIPÓTESIS</strong>.</li>
+<li><strong>El bastón es el objeto más pedido</strong> (34 de 47) y el portavasos el menos (10). En los comentarios, alguien dice que no le quedó claro el del agua y que no sabe si su familiar cambiaría su sillón por uno nuevo.</li>
+<li><strong>Ideas de los comentarios:</strong> un sensor en la cama (<em>"algunos adultos mayores pasan mucho tiempo en su cama"</em>), conectarlo a un smartwatch o a una cámara, y que sirve cuando la persona mayor no quiere un cuidador.</li>
+</ol>
+<p><strong>Señal de negocio:</strong> pre-registros reales = <strong>0</strong> (el formulario de la landing se conectó el 25/11/2026; todavía no llega ninguno). Las 3 entrevistas de la semana 3 y la encuesta (29 de 47 dijeron que sí lo probarían) son opiniones, no compromisos.</p>
+<hr />
+<h2 id="19-landing-page">19. Landing page</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v3.0 · 24/11/2026 (origen: semana 8)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Una landing general y una página por objeto, con un solo CTA: "Aparta tu lugar en el piloto".</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/">Landing</a> · <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/sillon/">Sillón</a> · <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/baston/">Bastón</a> · <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/portavasos/">Portavasos</a> · <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">Excel, hoja Landing</a>.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>v1, un archivo sin formulario (semana 8). v2, con formulario, centrada en el sillón y con "sin wifi". v3, los tres productos, WiFi, USB-C y $3,990.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Conectar <code>FORM_ENDPOINT</code> y <code>GOATCOUNTER</code>, y poner el correo de contacto.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>URL:</strong> <code>https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/</code> (activa después del push).</p>
+<p><strong>Checklist:</strong> headline ✅ · visual (ilustración + teléfono "Sin avisos hoy") ✅ · beneficios ✅ · precio visible ✅ · un solo CTA ✅ · evidencia en la página ("3 de 3", "$450 a $700") ✅ · metadatos y Open Graph ✅ (imagen por página).</p>
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visitas</td>
+<td><strong>sin medir</strong> (GoatCounter sin configurar)</td>
+</tr>
+<tr>
+<td>Clics en el CTA</td>
+<td><strong>sin medir</strong></td>
+</tr>
+<tr>
+<td>Pre-registros</td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Prompt con el que se construyó:</strong> v1, Prompt 6 de la <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/">Actividad 8</a>. v3, en Claude (24/11/2026): <em>"necesito que cambies el landing de la carpeta que te mande y lo corrigas/adaptes a lo que hemos cambiado, incluye todos los productos"</em>. La IA comparó la landing con la app y la memoria del proyecto, y quitó lo que ya no era cierto ("sin wifi", base magnética, anillo de luz). Después el equipo corrigió el precio a $3,990.</p>
+<hr />
+<h2 id="20-pitch-y-demo">20. Pitch y demo</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.1 · 24/11/2026 (origen: semana 9)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>Una sola confesión en el pitch: "hoy el prototipo usa WiFi". Pedimos $15,000 y diez familias.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_guion_pitch_y_demo.pdf">Guion de pitch y demo (PDF)</a>, con la fuente de cada cifra.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>El guion ya usa $3,990, igual que la landing y el Excel.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Grabar el video del pitch y el video de respaldo de la demo; tres ensayos con cronómetro; llenar los corchetes del guion.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pitch de 3 min:</strong> 331 palabras (≈ 2:33). Video: <strong>PENDIENTE</strong>.</p>
+<p><img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/demo-7-min.jpg" alt="Los seis tramos de la demo de 7 minutos" style="max-width:560px;width:100%;border-radius:6px"></p>
+<table>
+<thead>
+<tr>
+<th>Tramo</th>
+<th>Plan B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contexto (0:00–0:45)</td>
+<td>Foto del objeto</td>
+</tr>
+<tr>
+<td>Camino principal (0:45–3:15)</td>
+<td>Video de 90 s</td>
+</tr>
+<tr>
+<td>Provocar el evento (3:15–4:45)</td>
+<td>Datos precargados y video</td>
+</tr>
+<tr>
+<td>Fallo manejado (4:45–5:45)</td>
+<td>Registro del servidor</td>
+</tr>
+<tr>
+<td>La compra (5:45–6:30)</td>
+<td>Captura de la landing</td>
+</tr>
+<tr>
+<td>Cierre (6:30–7:00)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Pregunta difícil</th>
+<th>Respuesta corta</th>
+<th>Dónde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¿Por qué venden el equipo $168 debajo del costo?</td>
+<td>La suscripción lo recupera en 3.8 meses; el precio no está validado</td>
+<td><a href="#14-costos-precio-y-viabilidad-financiera">§14</a></td>
+</tr>
+<tr>
+<td>¿Cuánto cuesta un cliente?</td>
+<td>$1,000, SUPUESTO; con $1,200 sigue en +$4,123</td>
+<td><a href="#15-go-to-market-y-economia-unitaria">§15</a></td>
+</tr>
+<tr>
+<td>¿Y si los clientes se van?</td>
+<td>Con 3 % al mes, −$2,013 a 24 meses; lo mide el piloto</td>
+<td><a href="#15-go-to-market-y-economia-unitaria">§15</a></td>
+</tr>
+<tr>
+<td>¿Cuándo funciona sin WiFi?</td>
+<td>El módulo celular es el 71 % del costo y no está integrado</td>
+<td><a href="#8-arquitectura-del-sistema">§8</a></td>
+</tr>
+<tr>
+<td>¿Qué funciona de verdad?</td>
+<td>Sensor, firmware y app; falta el flujo completo</td>
+<td><a href="#17-integracion-y-pruebas-del-sistema">§17</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="parte-v-cierre">Parte V. Cierre</h2>
+<h2 id="21-uso-de-ia-en-el-proyecto">21. Uso de IA en el proyecto</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.0 · 24/11/2026 (semanas 1–9)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>La IA propone y cuestiona; el equipo decide y verifica.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td>Cada actividad tiene los prompts y las respuestas completas.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>Del uso para generar ideas al uso para revisar contra datos reales.</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Medir el costo de la IA del producto con tokens reales.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Qué se pidió</th>
+<th>Qué respondió la IA</th>
+<th>Qué corrigió el equipo y por qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Cuestionar el Pain-Gain Map (Act. 2, P4)</td>
+<td>El dolor real es el miedo a "la llamada", no la caída</td>
+<td>Se cambió el problema y con él todo el producto</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Auditoría digital de los nombres (Act. 3, P4)</td>
+<td>SilencioActivo tiene un riesgo digital alto</td>
+<td>Se eligió DistanciaCero, aunque gustaba menos</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Matriz de Pugh (Act. 6, P5)</td>
+<td>Sillón +80: es el único donde cabe el hardware</td>
+<td>Se eligió el sillón; hoy, sin el celular, volvieron los tres</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>BOM (Act. 5 → Act. 7)</strong></td>
+<td><strong>Error de la IA:</strong> en la semana 5 estimó el módulo celular en ~$350–450 y el BOM en ~$800–1,100</td>
+<td>Al cotizar costó $2,100 y el BOM $2,970. Desde entonces solo usamos precios con fuente</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Checklist regulatorio (Act. 9, P4)</td>
+<td>El SIM7600E-H no trae las bandas LTE de Telcel ni AT&amp;T</td>
+<td>Se marcó el riesgo; el prototipo actual usa WiFi y el módulo celular queda para el producto</td>
+</tr>
+</tbody>
+</table>
+<p><strong>IA en el producto (hoy):</strong> la app decide por un <strong>umbral fijo</strong> de inactividad; todavía <strong>no</strong> hay un modelo. <strong>Diseño:</strong> un z-score contra su patrón por hora (estadístico, en la nube) y un modelo de lenguaje (Claude Haiku) que solo redacta el resumen semanal. Recibe el conteo de actividad por hora y devuelve un texto corto. Costo: ≈ $0.02 MXN por usuario al mes (<strong>estimado, no medido</strong>). Si falla, el resumen sale con una plantilla. Sin ella, un umbral igual para todos generaría falsas alarmas en quien duerme siesta y avisaría tarde a quien se levanta temprano (<strong>HIPÓTESIS</strong>).</p>
+<hr />
+<h2 id="22-reflexion-y-siguientes-pasos">22. Reflexión y siguientes pasos</h2>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Versión</strong></td>
+<td>v1.0 · 24/11/2026 (cierre del curso)</td>
+</tr>
+<tr>
+<td><strong>Decisión</strong></td>
+<td>El siguiente paso es el piloto, no más ingeniería.</td>
+</tr>
+<tr>
+<td><strong>Evidencia</strong></td>
+<td>Secciones 15, 17 y 18.</td>
+</tr>
+<tr>
+<td><strong>Qué cambió</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Qué falta</strong></td>
+<td>Los párrafos firmados de cada integrante.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aprendizaje más importante (un párrafo por integrante, firmado):</strong></p>
+<ul>
+<li><strong>Jesús:</strong> <em>PENDIENTE: escribir y firmar.</em> (En la Actividad 9 escribió: "prepararse para presentar es lo contrario de maquillar".)</li>
+<li><strong>Andrea:</strong> <em>PENDIENTE: escribir y firmar.</em></li>
+</ul>
+<p><strong>Qué haríamos distinto:</strong> sentarnos con una persona del segmento antes de la semana 5; cotizar primero la pieza más cara; comparar las bandas del módem con las redes de México antes de elegirlo.</p>
+<table>
+<thead>
+<tr>
+<th>Hipótesis crítica sin verificar</th>
+<th>Cómo se verificará</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alguien paga $3,990 por el equipo</td>
+<td>Pre-registros y cierre al final del piloto</td>
+</tr>
+<tr>
+<td>Churn ≤ 3 % al mes</td>
+<td>Piloto de 60 días</td>
+</tr>
+<tr>
+<td>El MPU6050 distingue "se sentó", "tomó el bastón" o "levantó la taza"</td>
+<td>T4 y T6 en los tres objetos</td>
+</tr>
+<tr>
+<td>Se instala sin ayuda en ≤ 10 min</td>
+<td>T3 con 5 usuarios</td>
+</tr>
+<tr>
+<td>El adulto mayor y el cuidador local aceptan</td>
+<td>Consentimiento escrito en el piloto</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Plan de 90 días:</strong> días 1–15, conectar el formulario, publicar la landing y hacer las 5 sesiones. Días 15–30, pedir $15,000 y fabricar 10 unidades. Días 30–90, piloto con 10 familias en Puebla y medir churn, instalación y pago.</p>
+<p><strong>Riesgos principales:</strong> nadie paga el equipo · el sensor confunde movimientos · el broker público expone datos · el módulo celular encarece el producto · el cuidador local veta la compra.</p>
+<hr />
+<h2 id="anexos">Anexos</h2>
+<h3 id="a-bom-completo-con-cotizaciones-y-proveedores">A. BOM completo con cotizaciones y proveedores</h3>
+<p>El detalle, con fórmulas, está en la hoja <strong>BOM_final</strong> del <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">Excel</a>.</p>
+<p><strong>Producto (el que usa el modelo financiero, con módulo celular)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Especificación</th>
+<th style="text-align: right;">Precio (MXN)</th>
+<th>Estado</th>
+<th>Proveedor / referencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Módulo celular</td>
+<td>SIM7600E-H, breakout 4G con antena</td>
+<td style="text-align: right;">2,100</td>
+<td>Cotizado</td>
+<td>4gltemall.com, US$129 (Actividad 7)</td>
+</tr>
+<tr>
+<td>Módulo celular (alternativa DFM)</td>
+<td>SIM7600E-H en formato LCC</td>
+<td style="text-align: right;">805</td>
+<td>"Desde" US$49.47, 6 en existencia</td>
+<td>LCSC C5338795, consultado 05/11/2026 (Actividad 8)</td>
+</tr>
+<tr>
+<td>Microcontrolador</td>
+<td>ESP32-S3 (8 MB de flash)</td>
+<td style="text-align: right;">120</td>
+<td>Estimado</td>
+<td>LCSC N8R8 "desde" US$3.48 (Actividad 8)</td>
+</tr>
+<tr>
+<td>Sensores</td>
+<td>MPU6050 + PIR HC-SR501 (sin PIR desde la semana 8)</td>
+<td style="text-align: right;">125</td>
+<td>Estimado</td>
+<td>Sin cotizar</td>
+</tr>
+<tr>
+<td>Batería y carga</td>
+<td>18650 + TP4056 (semana 7); LiPo Jauch LP103450JH 1.92 Ah (semana 8)</td>
+<td style="text-align: right;">175</td>
+<td>Estimado</td>
+<td>Sin cotizar</td>
+</tr>
+<tr>
+<td>PCB</td>
+<td>2 capas + ensamble</td>
+<td style="text-align: right;">250</td>
+<td>Estimado</td>
+<td>JLCPCB</td>
+</tr>
+<tr>
+<td>Carcasa</td>
+<td>Impresión 3D (PETG, 2 piezas en la semana 8)</td>
+<td style="text-align: right;">200</td>
+<td>Estimado</td>
+<td>Impresión propia</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td style="text-align: right;"><strong>2,970</strong></td>
+<td>1 de 6 líneas cotizada</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Prototipo que se demuestra (WiFi, sin PCB):</strong> ESP32-S3 Super Mini · MPU6050 (GY-521) · LiPo 3.7 V · jumpers · objeto anfitrión. <strong>Los precios pagados están por llenar</strong> en las celdas amarillas de la hoja BOM_final; no se inventó ninguno.</p>
+<h3 id="b-repositorio-readme-y-bitacoras">B. Repositorio, README y bitácoras</h3>
+<ul>
+<li><strong>Repositorio:</strong> <a href="https://github.com/jesushernandez2005/Proyecto4">github.com/jesushernandez2005/Proyecto4</a> (MkDocs Material, publicado con GitHub Actions).</li>
+<li><strong>App:</strong> <code>docs/app/index.html</code>. Firmware y simulador: <a href="#c-archivos-de-diseno-cad-esquematicos-y-firmware">Anexo C</a>.</li>
+</ul>
+<p><strong>Bitácora de entregables semanales</strong></p>
+<table>
+<thead>
+<tr>
+<th>Semana</th>
+<th>Entregable</th>
+<th>Fecha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://and070406.github.io/Proyecto4_andrea/semana1/">Actividad 1: SCAMPER</a></td>
+<td>agosto 2026</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://and070406.github.io/Proyecto4_andrea/semana2/">Actividad 2: búsqueda de oportunidad</a></td>
+<td>02/09/2026</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://and070406.github.io/Proyecto4_andrea/semana3/">Actividad 3: PI, marca y vigilancia</a></td>
+<td>09/09/2026</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://and070406.github.io/Proyecto4_andrea/semana4/">Actividad 4: mercado y propuesta de valor</a></td>
+<td>17/09/2026 (entrevistas: 18/09)</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://and070406.github.io/Proyecto4_andrea/semana5/">Actividad 5: PDS y arquitectura</a></td>
+<td>24/09/2026</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://and070406.github.io/Proyecto4_andrea/semana6/">Actividad 6: concepto de diseño</a></td>
+<td>01/10/2026</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://and070406.github.io/Proyecto4_andrea/semana7/">Actividad 7: viabilidad técnica y económica</a></td>
+<td>08/10/2026 (act. 22/10)</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://and070406.github.io/Proyecto4_andrea/semana8/">Actividad 8: prototipado y DFM</a></td>
+<td>05/11/2026</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="https://and070406.github.io/Proyecto4_andrea/semana9/">Actividad 9: integración, go-to-market y pitch</a></td>
+<td>06/11/2026</td>
+</tr>
+<tr>
+<td>Final</td>
+<td>App web, firmware y simulador</td>
+<td>23/11/2026</td>
+</tr>
+<tr>
+<td>Final</td>
+<td>Landing con los tres productos, Excel y esta página</td>
+<td>24/11/2026</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bitácora de commits (resumen):</strong> 30 commits entre el 21/08/2026 y el 06/11/2026. Los mensajes son genéricos ("actualiza", "aa"), así que no permiten seguir las sesiones de trabajo. <strong>Pendiente:</strong> desde ahora, un commit por sesión con un mensaje que diga qué cambió. Ejemplo: <code>landing: precio a $3,990 y tres productos</code>.</p>
+<h3 id="c-archivos-de-diseno-cad-esquematicos-y-firmware">C. Archivos de diseño: CAD, esquemáticos y firmware</h3>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/firmware/DistanciaCero_Sensor.ino">Firmware del sensor (<code>DistanciaCero_Sensor.ino</code>, v0.2-supermini)</a></td>
+<td>Se quitaron la red WiFi y la contraseña reales antes de publicarlo</td>
+</tr>
+<tr>
+<td><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/firmware/sim_dispositivo.py">Simulador del sensor (<code>sim_dispositivo.py</code>)</a></td>
+<td>Para probar el modo real de la app sin hardware</td>
+</tr>
+<tr>
+<td>STL de la carcasa (variantes A y B) y planos</td>
+<td>Entregados con la <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/">Actividad 8</a>; <strong>subir los STL al repositorio: PENDIENTE</strong></td>
+</tr>
+<tr>
+<td>PCB</td>
+<td>No aplica en el prototipo actual (sin PCB)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conexiones (esquema del prototipo):</strong></p>
+<table>
+<thead>
+<tr>
+<th>MPU6050 (GY-521)</th>
+<th>ESP32-S3 Super Mini</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VCC</td>
+<td>3V3</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>SDA</td>
+<td>GPIO 5</td>
+</tr>
+<tr>
+<td>SCL</td>
+<td>GPIO 6</td>
+</tr>
+<tr>
+<td>LiPo 3.7 V</td>
+<td>Pads B+ / B− (se carga por USB-C)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo reproducir una unidad:</strong></p>
+<ol>
+<li>En Arduino IDE instala el paquete <strong>esp32</strong> de Espressif y la biblioteca <strong>PubSubClient</strong>.</li>
+<li>Elige la placa <strong>ESP32S3 Dev Module</strong> con <strong>USB CDC On Boot: Enabled</strong>.</li>
+<li>Conecta el MPU6050 como en la tabla y suelda la LiPo a B+ / B−.</li>
+<li>En el <code>.ino</code> escribe tu red WiFi de 2.4 GHz y el <code>OBJETO</code> (<code>sillon</code>, <code>baston</code> o <code>portavasos</code>).</li>
+<li>Sube el código y abre el monitor serie a 115200: ahí aparece el código del sensor (por ejemplo, <code>DC-7F3A</code>).</li>
+<li>Escribe ese código en la <a href="https://jesushernandez2005.github.io/Proyecto4/app/">app</a> (Ajustes → Conexión al dispositivo).</li>
+<li>Calibra con <code>DEBUG_MOV = true</code> y ajusta <code>UMBRAL_GIRO_DPS</code> y <code>UMBRAL_ACC_G</code>.</li>
+</ol>
+<p><strong>Protocolo MQTT</strong> (base: <code>distanciacero/&lt;CÓDIGO&gt;/</code>)</p>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Quién publica</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>conexion</code> (retenido)</td>
+<td>ESP32</td>
+<td><code>{"estado":"online"}</code>; si se desconecta, el broker publica <code>"offline"</code></td>
+</tr>
+<tr>
+<td><code>estado</code> (retenido, cada 30 s)</td>
+<td>ESP32</td>
+<td>batería, señal, <code>inactivoSeg</code>, <code>umbralMin</code>, <code>alerta</code></td>
+</tr>
+<tr>
+<td><code>actividad</code></td>
+<td>ESP32</td>
+<td>un mensaje al inicio de cada episodio de movimiento</td>
+</tr>
+<tr>
+<td><code>cmd</code></td>
+<td>App</td>
+<td><code>umbral</code>, <code>reiniciar</code>, <code>identificar</code></td>
+</tr>
+<tr>
+<td><code>app</code></td>
+<td>App</td>
+<td>respuestas del cuidador, confirmaciones y botones del adulto mayor</td>
+</tr>
+</tbody>
+</table>
+<h3 id="d-datos-crudos-de-entrevistas-y-pruebas-de-usuario">D. Datos crudos de entrevistas y pruebas de usuario</h3>
+<ul>
+<li><a href="https://jesushernandez2005.github.io/Proyecto4/actividades/resultados_validacion_semana3.pdf">Resultados de validación, semana 3 (PDF)</a>: tres entrevistas con citas.</li>
+<li>Hoja <strong>Entrevistas</strong> del <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">Excel</a>.</li>
+<li><strong>Consentimiento de las entrevistas: PENDIENTE documentar</strong> (cómo se pidió y si se puede publicar el nombre de pila).</li>
+<li>Pruebas con usuarios: <strong>0 sesiones</strong> (protocolo y hoja en la <a href="https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/">Actividad 9</a>).</li>
+<li><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_presentacion_final.pptx">Presentación final (PPTX)</a> y <a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_guion_pitch_y_demo.pdf">guion de pitch y demo (PDF)</a>.</li>
+</ul>
+<h3 id="e-hojas-de-calculo-del-modelo-financiero">E. Hojas de cálculo del modelo financiero</h3>
+<p><a href="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx">DistanciaCero_costos_y_calculos.xlsx</a>, con las fórmulas visibles. Azul = dato capturado · negro = fórmula · verde = viene de otra hoja · amarillo = supuesto clave o celda por llenar.</p>
+<table>
+<thead>
+<tr>
+<th>Hoja</th>
+<th>Qué contiene</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resumen</td>
+<td>Indicadores para la presentación y qué es dato y qué es supuesto</td>
+</tr>
+<tr>
+<td><strong>Landing</strong></td>
+<td>Cada número de la landing con su fórmula y su fuente</td>
+</tr>
+<tr>
+<td>Supuestos</td>
+<td>Precio, CAC, comisiones, tasa y costo operativo</td>
+</tr>
+<tr>
+<td>Costos · BOM_final · DFM</td>
+<td>BOM del producto, BOM del prototipo (por llenar) y DFM antes y después</td>
+</tr>
+<tr>
+<td>Costos_DFS · Desarrollo · IA_costo</td>
+<td>Costos D/F/S, ciclos de aprendizaje y costo de la IA</td>
+</tr>
+<tr>
+<td>Precio_rango</td>
+<td>Cost-plus, value-based, piso y techo</td>
+</tr>
+<tr>
+<td>Economia_unitaria · Flujo_24m · Churn · Sensibilidad</td>
+<td>CAC, LTV, payback, flujo a 24 meses, VPN y escenarios</td>
+</tr>
+<tr>
+<td>Mercado · Entrevistas</td>
+<td>TAM, SAM y SOM; las tres entrevistas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="f-bibliografia-y-fuentes-de-datos">F. Bibliografía y fuentes de datos</h3>
+<ul>
+<li>INEGI, ENIGH 2024 (hogares, ingreso y gasto).</li>
+<li>INEGI, Comunicado 475/19, ENADID 2018 (1.7 millones de personas de 60+ que viven solas).</li>
+<li>Coneval 2020 (hogares unipersonales de 65+), citado en la Actividad 4.</li>
+<li>Giraldo-Rodríguez et al., <em>Revista de Saúde Pública</em>, 2013 (piloto de teleasistencia en CDMX).</li>
+<li>Banxico, tipo de cambio FIX del 09/10/2026 ($18.4163 por USD).</li>
+<li>seniorliving.org, precios de Medical Guardian, consultado el 25/08/2026; security.org, planes de Ring, consultado el 28/09/2026.</li>
+<li>LCSC: SIM7600E-H LCC (C5338795) y ESP32-S3-WROOM-1-N8R8, consultado el 05/11/2026.</li>
+<li>Documentación de Espressif sobre el consumo del ESP32-S3, consultada el 06/11/2026.</li>
+<li>IMPI (MARCanet, SIGA), LATIPAT y Lens.org; patente MX 351729 B.</li>
+<li>Ley General de Economía Circular (vigente desde el 20/01/2026); NOM-001-SCFI-2018; Ley Federal de Protección al Consumidor.</li>
+<li>Entrevistas propias de la semana 3 (n = 3).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tooltips"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>
