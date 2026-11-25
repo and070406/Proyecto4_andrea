@@ -53,7 +53,7 @@
 - **Versión y fecha:** v1 · Semana 1 → v9.1 · 24/11/2026
 - **Decisión:** el equipo se organiza en 4 roles de cierre: **H** hardware y firmware · **A** app y nube · **N** negocio, usuarios y landing · **D** documentación, pitch y demo. Las reglas de trabajo quedan firmadas en el acuerdo de colaboración.
 - **Evidencia:** acuerdo de colaboración firmado `[ENLACE: PDF escaneado del acuerdo]`; historial de commits del [repositorio](https://github.com/jesushernandez2005/proyecto4/commits/main) (Anexo B).
-- **Qué cambió:** las Semanas 2 a 6 las firmaron Jesús y Andrea; el equipo creció a 4 personas y en la Semana 9 pasó a roles con entregables por semana.
+- **Qué cambió:** las Semanas 2 a 6 las firmaron Jesús y Andrea y en la Semana 9 pasó a roles con entregables por semana.
 - **Qué falta:** el cuarto integrante, el rol de cada quien y los enlaces de "quién hizo qué".
 
 | Integrante | Rol | Aportaciones verificables |
