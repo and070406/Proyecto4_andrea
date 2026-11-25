@@ -1,1060 +1,456 @@
-# Semana 8
-## Prototipado y Diseño para Manufactura
+# Actividad 9 · Integración, Go-to-Market y Pitch
 
-**Tema:** DistanciaCero — Plan de prototipado (Pregunta → Prototipa → Evidencia), prototipo de negocio (landing page), prototipo de forma (carcasa en dos variantes, con planos y archivos STL), revisión DFM, efecto sobre el modelo financiero de la semana 7 y circularidad (Ley General de Economía Circular)
-**Fecha:** 05/11/2026
-**Blueprint:** Creación de valor
-**DVF:** 🔴 Deseable (sin evidencia de usuarios todavía; el hardware de $4,490 sigue por encima del rango que toleró el mercado en la semana 4) · 🟡 Factible con reservas (la forma cabe y se puede fabricar; la función —sensor sin PIR, batería de 15 días, radio celular propio— no se ha probado)
+**Proyecto:** DistanciaCero, "Reposabrazos Centinela" · **Materia:** Proyectos 4 · IBERO Puebla
+**Versión:** v9.1 · 24/11/2026 · **Base:** Actividad 9 del equipo (06/11/2026) y guía de la Semana 9 del profesor
 
----
-
-## 1. Objetivo de la actividad
-
-El prototipo no es el producto: es la pregunta más barata que el equipo le puede hacer al mundo real. Esta semana responde dos cosas que las semanas 5 a 7 dejaron abiertas. Primero, **¿qué conviene prototipar primero y cómo sabré si funcionó?** (plan de prototipado con el proceso de tres pasos de IDEO). Segundo, **¿cómo se rediseña el producto para poder fabricarlo, ensamblarlo y venderlo a un costo que cierre?** (DFM y DFA con el proceso de cinco pasos de Ulrich y Eppinger).
-
-La actividad avanza en seis frentes: **plan de prototipado** con mapa de supuestos, **prototipo de negocio** (una landing page con el precio real), **prototipo de forma** (modelo 3D de la carcasa en dos variantes, planos con cotas y archivos STL), **revisión DFM** con la plantilla de la clase, **efecto del DFM sobre el modelo de la semana 7** (VPN y recuperación) y **revisión de circularidad** según la Ley General de Economía Circular.
-
----
-
-## 2. Contexto del producto
-
-- **Concepto vigente:** Reposabrazos Centinela (semana 6): una placa delgada de ~90 × 60 mm que va bajo el cojín del sillón, detecta pasivamente la rutina de uso y avisa al hijo/a solo por excepción. El boceto técnico indicaba 90 × 60 × 15 mm, ABS con sobremoldeo de silicona, PCB de 70 × 45 mm y 2 tornillos Torx de seguridad.
-- **Lo que arrastraba de la semana 6:** la crítica del boceto ya había señalado que la batería 18650 (Ø18 × 65 mm) **no cabe** en 15 mm de grosor, que el PCB y la batería no caben lado a lado en 60 mm de ancho, y que los tornillos Torx estorban a quien abre el módulo cada 15-20 días. Quedó pendiente "resolver el volumen antes de CAD". Esta semana se resuelve.
-- **Lo que arrastraba de la semana 7:** BOM de $2,970 MXN por unidad (el módulo celular SIM7600E-H pesa 71 %), costo unitario de $4,158, precio de $4,490 + $449/mes, VPN a 24 meses de +$46,404 y recuperación en el mes 21. La Semana 7 dejó como pendiente decidir la ruta del módulo celular.
-- **Lo que cambió esta semana:** al intentar dibujar la carcasa con medidas reales descubrí que el diseño de la semana 6 no se podía construir tal cual. Ese hallazgo, y no una mejora cosmética, es el origen de las dos variantes de carcasa y de varios cambios del DFM.
-- **Qué verifiqué el 05/11/2026:** dimensiones de la batería plana, del módulo ESP32-S3 y del sensor PIR; precios "desde" de los dos módulos en LCSC; estructura de cuotas del ensamble de JLCPCB; y el estado de la Ley General de Economía Circular. Lo que no pude verificar está marcado con ⚠️.
+> **Cómo leer esta página.** Cada número lleva una etiqueta de evidencia:
+>
+> | Etiqueta | Significado |
+> |---|---|
+> | **MEDIDO** | Dato tomado por el equipo en laboratorio o campo, con su archivo de evidencia |
+> | **VERIFICADO** | Dato con fuente externa consultada (enlace y fecha) |
+> | **ESTIMADO** | Cálculo propio a partir de supuestos declarados |
+> | **SUPUESTO** | Valor elegido sin fuente; se debe medir o confirmar |
+> | **HIPÓTESIS** | Afirmación sobre usuarios o mercado que aún no tiene evidencia |
+> | **POR VERIFICAR** | Requisito legal o técnico que falta confirmar con la autoridad o el fabricante |
+> | **PENDIENTE** | Campo que el equipo llena cuando corra la prueba: `[MEDIR: …]` |
+>
+> **Estado real al 24/11/2026:** todavía no hay ninguna medición integrada. Toda la tabla de resultados está lista para llenarse; no hay ningún valor de laboratorio inventado.
 
 ---
 
-## 3. Desarrollo: mis prompts y las respuestas de la IA
+## 0. Las seis brechas de la Semana 9 y la decisión que tomamos con cada una
 
-Trabajé con una sola IA, **Claude** (con búsqueda web en los prompts 2, 3 y 4). Abajo está cada prompt y la respuesta completa. Las respuestas se despliegan con un clic.
-
-!!! note "Nota sobre las respuestas"
-    - **Fecha y autoría:** los seis prompts se redactaron y ejecutaron el 05/11/2026. Los prompts 1 y 2 siguen las plantillas de la clase (plan de prototipado y revisión DFM) con los datos de mi concepto; los prompts 3 a 6 los redacté para resolver lo que esas plantillas no cubrían.
-    - **Qué no hay todavía:** no hice pruebas con usuarios ni imprimí la carcasa. Las observaciones de los usuarios 1 a 3 y las pruebas de impresión están **pendientes y marcadas como tales**; no inventé resultados. Los tiempos de ensamble y varios precios son estimaciones marcadas con ⚠️.
-    - Las fuentes se nombran con sitio y fecha de consulta; no incluyo enlaces. Los archivos STL, el HTML de la landing y los planos se entregan junto con esta página.
-
-### Prompt 1 — Plan de prototipado: mapa de supuestos y plantilla
-
-**IA utilizada:** Claude — rol de coach de prototipado (IDEO: Pregunta → Prototipa → Evidencia).
-
-??? question "Mi prompt (clic para desplegar)"
-    ```text
-    Actúa como coach de prototipado con la metodología de IDEO
-    (Pregunta → Prototipa → Evidencia), con experiencia en productos
-    mecatrónicos (artefacto + app + web) para equipos universitarios.
-    Tu sesgo es hacia el prototipo más barato que responde una
-    pregunta: baja resolución antes que alta, algo que se pueda hacer
-    en un día o menos, y que capture comportamiento, no opiniones.
-    Cuando un supuesto sea el más riesgoso, lo dices aunque al equipo
-    le incomode.
-
-    Somos un equipo de ingeniería en México. Producto: DistanciaCero,
-    "Reposabrazos Centinela": una placa delgada bajo el cojín del
-    sillón que detecta pasivamente la rutina de un adulto mayor que
-    vive solo y avisa al hijo/a por excepción, con conexión celular
-    propia y una app con IA.
-
-    Lo que sabemos hoy:
-    - Semana 4: el mercado mostró tolerancia a un hardware de
-      ~$2,000-4,000 MXN y a una suscripción de $300-600 MXN/mes.
-    - Semana 5 (PDS): autonomía de 15 días, conexión celular directa.
-    - Semana 6: concepto de 90x60x15 mm; la batería 18650 no cabe en
-      15 mm y los tornillos Torx estorban al hijo/a.
-    - Semana 7: BOM $2,970; precio final $4,490 + $449/mes; VPN a
-      24 meses +$46,404; el módulo celular pesa 71% del BOM.
-    - Nunca hemos probado nada con usuarios reales ni construido
-      hardware funcional; solo renders y una maqueta de la app.
-
-    Tarea:
-    1. Lista los 6 supuestos más importantes del proyecto y clasifica
-       cada uno por riesgo, incertidumbre y controversia.
-    2. Elige el primero a prototipar y explica en dos líneas por qué
-       no es otro.
-    3. Llena la plantilla del plan de prototipado de la clase (supuesto,
-       pregunta precisa, tipo y resolución, qué construir, cómo capturar
-       evidencia, umbral de éxito).
-    4. Dime qué segundo prototipo conviene hacer en paralelo y cuál
-       queda para el siguiente ciclo.
-    5. Dame el protocolo de evidencia: cuántos usuarios, a quién, qué
-       observar, cómo registrarlo y qué preguntar si se atoran.
-    Marca como supuesto cualquier dato que yo no te haya dado.
-    ```
-
-??? example "Respuesta de Claude (clic para desplegar)"
-    **1. Los seis supuestos, clasificados**
-
-    | # | Supuesto | Riesgo si es falso | Incertidumbre | Controversia | Tipo de prototipo |
-    |:-:|---|---|---|---|---|
-    | S1 | Un hijo/a adulto pagará $4,490 de hardware + $449/mes | **Muy alto:** sin ingresos no hay negocio | **Muy alta:** el precio está *por encima* del rango que toleró el mercado en la semana 4 ($2,000-4,000) y no se ha probado | Alta: la semana 7 subió el precio de $3,990 a $4,490 | Negocio |
-    | S2 | El sensor detecta que alguien se sienta bajo un cojín, sin PIR | Muy alto: sin detección no hay producto | Muy alta: nunca se ha medido | Media | Función |
-    | S3 | La conexión celular funciona dentro de casa | Alto | Media (el riesgo de cobertura NB-IoT quedó pendiente desde la semana 5) | Baja | Función |
-    | S4 | La batería dura 15 días | Medio (se puede relajar la meta) | Alta: el consumo de 6-8 mA es una estimación | Media | Función |
-    | S5 | El hijo/a entiende la alerta por excepción sin instrucciones | Medio | Media | Media | Experiencia |
-    | S6 | La carcasa cabe y cierra sin herramientas | Bajo, pero bloquea el DFM | Baja si se calcula en CAD | Baja | Forma |
-
-    **2. Qué prototipar primero: S1 (negocio).** Es el único supuesto que, si resulta falso, hace irrelevante a todos los demás, y es el que menos has probado: el precio de $4,490 está arriba del rango tolerado en la semana 4. No es S2 (el sensor) porque exige hardware y varios días de trabajo, y la regla de la clase es "en un día o menos". S2 es el siguiente ciclo, no un ciclo descartado.
-
-    **3. Plantilla del plan de prototipado**
-
-    ```text
-    PLAN DE PROTOTIPADO
-    Equipo: DistanciaCero    Concepto: Reposabrazos Centinela
-
-    SUPUESTO A VALIDAR:
-    Un hijo/a adulto con un padre o madre mayor que vive solo está
-    dispuesto a pagar $4,490 de hardware + $449/mes (primer año $9,878).
-
-    PREGUNTA PRECISA:
-    ¿Puede un hijo/a adulto explicar con sus palabras qué hace el
-    producto y decidir si reserva, viendo el precio real, sin que
-    nadie le explique ni le justifique el precio?
-
-    TIPO DE PROTOTIPO:
-    [ ] Forma  [ ] Función  [ ] Experiencia  [X] Negocio
-    Resolución: [X] Baja  [ ] Alta
-    Por qué esta resolución: la pregunta es sobre mensaje y precio,
-    no sobre funcionamiento; construir hardware antes de saber si
-    alguien pagaría es el error que advierte la guía.
-
-    QUÉ VAN A CONSTRUIR:
-    Landing estática de una página: mensaje, tres pasos, precio real,
-    aclaración de lo que NO es, botón "Reservar mi lugar (sin pago)"
-    y aviso honesto de que es un experimento. No recopila datos.
-    Tiempo estimado (supuesto): 4-5 horas.
-
-    CÓMO VAN A CAPTURAR EVIDENCIA:
-    Sesión de 10 minutos por persona con la página en pantalla.
-    Comportamiento a observar: qué lee primero, si encuentra el
-    precio, si hace clic en reservar, qué pregunta ("¿es para
-    emergencias?", "¿cómo se cobra?"). Métrica: reservas/personas.
-
-    UMBRAL DE ÉXITO:
-    Si 2 de 3 personas del segmento (idealmente 3 de 5) hacen clic en
-    reservar y explican el producto en una frase, el supuesto queda
-    con evidencia preliminar. Si 2 o más dicen que no pagarían y
-    nombran un número, se revisa el precio con las sensibilidades de
-    la semana 7 antes de construir nada más.
-    ```
-
-    **4. Segundo prototipo en paralelo: forma.** Es barato (CAD en horas, impresión en el laboratorio), y la semana 6 dejó abierta justo esa pregunta: si lo que se dibujó cabe. Además es lo que hace posible el DFM de la parte B. **Queda para el siguiente ciclo:** el prototipo de función (ESP32 + acelerómetro bajo un cojín, medir si detecta sentarse y cuántos mA consume), que responde S2 y S4.
-
-    **5. Protocolo de evidencia**
-
-    - **Cuántos y a quién:** 3 como mínimo, 5 idealmente. Personas que tengan un familiar mayor que vive solo; no compañeros del equipo ni amigos que ya conozcan el proyecto.
-    - **Qué observar:** tiempo hasta el primer clic, qué sección leen primero, si mencionan el precio antes de que se les pregunte, si confunden el producto con una alerta médica, y qué hacen al ver el botón de reserva.
-    - **Cómo registrar:** hoja de observación (sección 4.2) con notas textuales; audio solo con permiso explícito.
-    - **Si se atoran:** una sola pregunta, "¿qué esperabas que pasara?". Al terminar, y no antes para no anclar la respuesta: "¿qué precio te parecería razonable?".
-    - **Variación (regla 3 de la clase):** después de la primera reacción, "¿y si el hardware costara $3,990?". Es el precio de la primera corrida de la semana 7, así que la respuesta se puede conectar con esas sensibilidades.
-
-    **Supuestos míos que debes confirmar:** el tiempo de 4-5 horas para la landing y que el segmento sean hijos/as adultos con un familiar mayor que vive solo (lo tomé de la propuesta de valor).
+| # | Brecha | Decisión del equipo | Dónde se cierra |
+|---|---|---|---|
+| B1 | El SIM7600**E-H** es la variante para Europa: no tiene las bandas **B2, B4 ni B28** que usan Telcel, AT&T y Movistar | Cambiar a **SIM7600SA-H** (variante para Latinoamérica) y repetir el DFM y el costo | §4, fila R2; Memoria §11 y §16 |
+| B2 | "No pedirle nada a la persona mayor" choca con su consentimiento para tratar sus datos | RR-02 se redefine como "sin acciones **recurrentes**". El consentimiento es **un solo acto, en la instalación**, firmado por la persona mayor, y ella puede pausar o retirar la placa cuando quiera | §4, fila R3; Memoria §7 y §16 |
+| B3 | Con la batería de 1.92 Ah, los 15 días de autonomía quedan en el límite (13.8 días si se reporta cada 15 min) | Reportar **cada 30 min y apagar el módem entre reportes** (escenario C: 24.2 días ESTIMADOS). La prueba T5 confirma o rechaza | §1.4 y T5 |
+| B4 | Un buen payback por cliente no cubre los $71,540 de desarrollo | Se declara la meta de recuperar el desarrollo: **≈ 14 clientes** con el costo actual o **≈ 10** con DFM, con 24 meses de vida y 3 % de cancelación | §3.4 |
+| B5 | El baseline de 10 a 14 días no cabe en las 2 semanas de cierre | La demo usa un **baseline precargado de 14 días simulados**, y el narrador **lo dice en voz alta**. RF-03 se prueba aparte con logs | §5.2, tramo 3 |
+| B6 | No hay evidencia real: pruebas integradas, consumo, tokens, sesiones con usuarios ni métricas de la landing | Cada vacío es una prueba con dueño y fecha (§7). En la memoria se marca como **PENDIENTE** hasta que exista el archivo | §1, §2, §3, §7 |
 
 ---
 
-### Prompt 2 — Revisión DFM con la plantilla de la clase
-
-**IA utilizada:** Claude con búsqueda web — rol de ingeniero de manufactura (DFM/DFA, proceso de cinco pasos de Ulrich y Eppinger).
-
-??? question "Mi prompt (clic para desplegar)"
-    ```text
-    Actúa como un ingeniero de manufactura con experiencia en
-    diseño para manufactura (DFM) y diseño para ensamble (DFA)
-    aplicados a productos electrónicos de consumo y productos
-    IoT en etapa de prototipo temprano. Tu metodología sigue el
-    proceso de Ulrich & Eppinger: estimar costos, reducir
-    componentes, disminuir ensamble, reducir soporte, y evaluar
-    efectos en otros factores. Tu sesgo es hacia soluciones
-    que funcionen con los recursos de un laboratorio universitario
-    y manufactura externa básica (JLCPCB PCBA, impresión 3D FDM).
-    Cuando un aspecto del diseño viola principios de DFM, lo
-    señalas directamente y propones la alternativa específica.
-    No eres genérico — tus observaciones son sobre el diseño
-    particular que se te describe.
-
-    Somos un equipo de ingeniería en México. Tenemos el concepto
-    de diseño seleccionado en semana 6 y el BOM preliminar de
-    semana 5. Necesitamos aplicar DFM antes de entrar a la
-    siguiente fase de prototipado.
-
-    NUESTRO CONCEPTO DE DISEÑO:
-    Nombre: Reposabrazos Centinela
-    Descripción del artefacto: placa delgada que va bajo el cojín de
-      un sillón, detecta pasivamente la rutina de uso (acelerómetro +
-      sensor de presencia) y tiene conexión celular propia (sin el
-      Wi-Fi del hogar). Boceto técnico de la semana 6: 90 x 60 x 15 mm,
-      radio de esquina 4 mm, ABS con sobremoldeo de silicona gris topo,
-      PCB interna de 70 x 45 mm, sin LED visible.
-    Método de instalación: se fija con velcro bajo el cojín; el hijo/a
-      lo vincula desde la app.
-    Carcasa: cuerpo y panel trasero de ABS impreso, capa de silicona
-      sobremoldeada en molde impreso, cierre con 2 tornillos Torx de
-      seguridad (5 piezas contando silicona y tornillos).
-    Componentes principales del BOM (semana 7, volumen 8-10):
-      - SIM7600E-H LTE Cat 4, módulo ya montado: US$129 → $2,100
-      - ESP32-S3, módulo con 8 MB de flash: $120 (estimado)
-      - Acelerómetro MPU6050 + sensor PIR HC-SR501: $125 (estimado)
-      - Batería 18650 de ~3,000 mAh + módulo de carga TP4056: $175
-        (estimado)
-      - PCB de 2 capas + ensamble JLCPCB: $250 (estimado)
-      - Carcasa ABS + silicona + consumibles: $200 (estimado)
-      Total $2,970; costo unitario del modelo $4,158 (BOM x 1.40).
-
-    PROCESO DE MANUFACTURA PLANEADO:
-    Carcasa: [X] Impresión 3D FDM  [ ] Mecanizado  [ ] Otro
-    PCB: [ ] JLCPCB solo PCB  [X] JLCPCB + PCBA  [ ] Laboratorio
-    Ensamble: [X] Manual en laboratorio  [ ] Externo
-
-    VOLUMEN OBJETIVO: 10 unidades para prueba de mercado.
-
-    Aplica el proceso DFM en 5 pasos y entrega:
-
-    PASO 1 — ESTIMACIÓN DE COSTOS:
-    Con el BOM proporcionado, estima el costo unitario de
-    manufactura a 10 unidades. Desglosa:
-    · Componentes electrónicos (BOM)
-    · PCB fabricación + ensamble (JLCPCB PCBA estimado)
-    · Carcasa (impresión 3D o proceso indicado)
-    · Ensamble manual (horas × costo/hora estimado)
-    · Gastos indirectos (15%)
-    · Costo unitario total
-
-    PASO 2 — REDUCIR COSTOS DE COMPONENTES:
-    Identifica los 3 componentes de mayor costo del BOM.
-    Para cada uno:
-    · ¿Hay alternativa estándar más económica con
-      especificaciones equivalentes?
-    · ¿Está disponible en la librería Basic de JLCPCB para PCBA?
-    · ¿Alguna decisión de diseño lo hace más caro de lo necesario?
-
-    PASO 3 — DISMINUIR COSTOS DE ENSAMBLE:
-    Evalúa la carcasa y el ensamble del producto:
-    · ¿Cuántas partes tiene la carcasa? ¿Se puede reducir?
-    · ¿El método de cierre requiere herramientas?
-    · ¿Hay piezas que requieren orientación manual?
-    · ¿Se pueden reemplazar tornillos por snap-fits o press-fits?
-    · Tiempo estimado de ensamble por unidad con el diseño actual
-    · Tiempo estimado con las mejoras propuestas
-
-    PASO 4 — REDUCIR SOPORTE DE PRODUCCIÓN:
-    ¿Hay componentes no estándar que complican el inventario?
-    ¿Hay pasos de ensamble que requieren habilidades especializadas?
-    ¿El diseño facilita el control de calidad?
-
-    PASO 5 — EFECTOS EN OTROS FACTORES:
-    ¿Alguna de las mejoras propuestas afecta negativamente
-    la calidad percibida, el tiempo al mercado, o la propuesta
-    de valor? Si sí, señalarlo explícitamente para que el
-    equipo evalúe el trade-off.
-
-    FORMATO DE SALIDA:
-    (el de la plantilla de la clase: costo actual, oportunidades de
-    reducción, ensamble, costo con mejoras, trade-offs y
-    compatibilidad con JLCPCB PCBA)
-
-    Verifica en fuentes reales los datos que uses y marca como
-    estimación todo lo que no pudiste verificar.
-    ```
-
-??? example "Respuesta de Claude (clic para desplegar)"
-    Consulté fuentes el 05/11/2026. Separo lo verificado de lo estimado. Antes de la revisión, un hallazgo que cambia el punto de partida: **el diseño de la semana 6 no se puede construir tal cual**. La batería 18650 (Ø18 × 65 mm) es más larga que la placa es gruesa; el PIR HC-SR501 mide unos 33 × 25 × 30 mm según la tabla de especificaciones de az-delivery.de, el doble del grosor de 15 mm; y el PCB de 70 × 45 mm más una batería no caben lado a lado en 60 mm. Por eso la revisión parte de **dos variantes de carcasa** (sección 4.3) y no del boceto original.
-
-    ```text
-    ════════════════════════════════════════════════════════
-    REVISIÓN DFM
-    Concepto: Reposabrazos Centinela · Volumen: 10 unidades
-    ════════════════════════════════════════════════════════
-
-    COSTO UNITARIO ESTIMADO (actual):
-    · BOM electrónico:          $2,520   (SIM 2,100 + ESP32 120
-                                           + sensores 125 + batería 175)
-    · PCB + PCBA:               $250
-    · Carcasa:                  $200
-    · Ensamble manual:          $66      (33 min × $120/h ⚠️)
-    · Gastos indirectos (15%):  $455
-    Total actual:               $3,491/unidad
-
-    ────────────────────────────────────────────────────────
-    OPORTUNIDADES DE REDUCCIÓN:
-
-    Componente 1 — SIM7600E-H en módulo ($2,100 = 71 % del BOM):
-    Problema: US$129 (precio especial; US$149 regular, 4gltemall.com,
-      22/10/2026) es el precio de un módulo ya montado: pagas una
-      placa con conectores y regulador que tu propio PCB ya incluiría.
-    Alternativa: el mismo SIM7600E-H en formato LCC (chip SMD de
-      30 × 30 mm) soldado en tu PCB. LCSC C5338795: "desde
-      US$49.47", 6 piezas en existencia, sin precio por tramo en
-      la página (05/11/2026).
-      ≈ $805 al tipo de cambio implícito del modelo, ≈ $911 al FIX.
-    Ahorro estimado: ≈ $1,295/unidad (modelo) o ≈ $1,465 (FIX).
-      ⚠️ El precio es "desde" y hay solo 6 piezas; cotizar 10.
-      ⚠️ Exige diseñar la sección de radio y la antena (ciclo de
-      RF que el equipo no ha hecho) y revisar la homologación.
-
-    Componente 2 — PCB + PCBA ($250, estimado):
-    Problema: el costo no está en el precio por tablero sino en las
-      cuotas por pedido. JLCPCB Economic PCBA (05/11/2026):
-      preparación US$8.18, plantilla US$1.53, soldadura manual
-      US$3.58 por pedido, US$3.07 por cada pieza "extendida" única
-      y US$0.0164 por unión manual. Con 8 piezas extendidas únicas
-      (supuesto) son ≈ US$37.85 por pedido, ≈ $70 por unidad a 10.
-    Alternativa: PCB de 2 capas, un solo lado SMT, sin pitch < 0.5 mm.
-      El MPU6050 en QFN (pitch 0.5 mm) rompe la regla de la clase de
-      pitch ≥ 0.8 mm: usarlo como módulo GY-521 con header de
-      2.54 mm, soldado a mano (5 uniones ≈ US$0.08 + la cuota de
-      US$3.58 del pedido).
-    Librería Basic: ⚠️ no verificada. Las páginas de LCSC no indican
-      Basic/Extended; asumo Extended para ESP32, módulo celular,
-      USB-C, portatarjeta SIM y JST.
-    Ahorro estimado: $0 asumido (no hay cotización de fabricación).
-
-    Componente 3 — Carcasa ABS + silicona ($200):
-    Problema: 5 piezas y dos pasos húmedos (sobremoldeo con curado
-      de ~24 h y lijado/pintura del ABS) para una pieza que va oculta
-      bajo un cojín; los Torx exigen herramienta.
-    Alternativa: 2 piezas en PETG con cierre snap-fit, sin soportes ni
-      post-proceso; tela adhesiva en la tapa para conservar el tacto
-      cálido (la iteración que la propia semana 6 recomendó: "imitar
-      la tela del sillón"); velcro. ≈ $70 (PETG ≈ 29-32 g ≈ $14,
-      tiempo de impresora ≈ $38, velcro $8, tela $10; todo ⚠️).
-    Ahorro estimado: $130/unidad.
-
-    Hallazgos fuera del top 3 (cambian el diseño, no solo el costo):
-    · Batería 18650 + TP4056 ($175): no cabe. Reemplazo: LiPo plana
-      Jauch LP103450JH de 1.92 Ah, 3.7 V, 52 × 34.5 × 10.8 mm
-      (Digi-Key, 05/11/2026). ⚠️ El precio no apareció en la página:
-      mantengo $175 sin ahorro.
-    · Sensor PIR HC-SR501: no cabe y un sensor óptico no ve a través
-      de un cojín. Se elimina; la línea baja de $125 a $60 (MPU6050 en
-      GY-521, ⚠️ estimado; ahorro ≈ $65). Hipótesis a validar con el
-      prototipo de función.
-
-    ────────────────────────────────────────────────────────
-    ENSAMBLE:
-    Diseño actual: 5 piezas · Tiempo: ~33 min/unidad ⚠️
-    Propuesta: 2 piezas + velcro · Tiempo: ~9 min/unidad ⚠️
-    Cambios recomendados:
-    · Eliminar el sobremoldeo de silicona (12 min de mano de obra y
-      24 h de curado).
-    · Eliminar los 2 Torx: tapa que se inserta desde arriba con
-      4 ganchos que se aseguran solos; se abre sin herramienta con
-      una uña en las muescas.
-    · Eliminar cables soldados: la batería se conecta por JST.
-    · El PCB solo entra en una posición (costillas o contorno del
-      piso y abertura del USB-C).
-
-    SOPORTE DE PRODUCCIÓN:
-    · Referencias que el equipo inventaría: de ~12 a 7 (las piezas
-      SMD las gestiona JLCPCB dentro del PCBA).
-    · Habilidad requerida: ya no hay colada de silicona ni soldadura
-      de cables; queda soldar 5 uniones del GY-521.
-    · Control de calidad: prueba funcional por USB-C (arranque y
-      lectura del acelerómetro) antes de cerrar la tapa.
-
-    ────────────────────────────────────────────────────────
-    COSTO UNITARIO ESTIMADO (con mejoras DFM):
-    · BOM electrónico:          $1,160   (SIM LCC 805 + ESP32 120
-                                           + GY-521 60 + LiPo 175)
-    · PCB + PCBA:               $250
-    · Carcasa:                  $70
-    · Ensamble manual:          $18      (9 min × $120/h ⚠️)
-    · Gastos indirectos (15%):  $225
-    Total con mejoras:          $1,723/unidad
-    Reducción: $1,769 (50.7 % de ahorro)
-
-    ────────────────────────────────────────────────────────
-    TRADE-OFFS A EVALUAR:
-    1. Autonomía: la LiPo de 1.92 Ah da ≈ 11.4 días con 7 mA
-       promedio (1,920 mAh ÷ 7 mA ÷ 24 h) contra los 15 días del
-       requisito RD-01; para 15 días el consumo medio tendría que
-       ser ≤ 5.33 mA. Hay que medirlo en el prototipo de función.
-    2. Módulo celular propio: ahorra $1,295 por unidad pero abre un
-       ciclo de aprendizaje de RF y de homologación que el
-       presupuesto de desarrollo de la semana 7 no incluye.
-    3. Sin silicona: se pierde el tacto suave del concepto; la tela
-       adhesiva lo compensa parcialmente y debe probarse con usuarios.
-    4. Sin PIR: si el acelerómetro solo no distingue "se sentó" de
-       "movieron el cojín", no hay detección; es una hipótesis.
-    5. Ganchos de PETG impresos en vertical: las capas quedan
-       perpendiculares al esfuerzo de flexión, que es la dirección
-       más débil en FDM; hay que probar 20 ciclos de apertura.
-
-    COMPATIBILIDAD CON JLCPCB PCBA: ⚠️
-    · ESP32-S3-WROOM-1 (LCSC C2913201, N8R8, "desde US$3.48",
-      9,101 en existencia): módulo con pads de 1.27 mm, compatible.
-    · SIM7600E-H LCC: ⚠️ confirmar que JLCPCB lo ensambla y que hay
-      existencias para 10 piezas (hoy 6).
-    · Piezas fuera de Basic: módulos, USB-C, portatarjeta, JST → cuota
-      de US$3.07 por pieza única (supuesto: todas Extended).
-    ════════════════════════════════════════════════════════
-    ```
-
-    **Fuentes (sitio y fecha de consulta, sin enlaces):** LCSC, páginas C5338795 (SIM7600E-H) y C2913201 (ESP32-S3-WROOM-1-N8R8), 05/11/2026 · Digi-Key UK, Jauch LP103450JH, 05/11/2026 · az-delivery.de, módulo HC-SR501, 05/11/2026 · JLCPCB, "pcb assembly price" y artículo de cotizaciones reales del 09/10/2026, consultados el 05/11/2026 · 4gltemall.com, 22/10/2026 (del BOM de la Semana 7).
-
-    **Lo que no pude verificar:** precio de la batería Jauch, si las piezas son Basic o Extended, precios por tramo de LCSC, el grosor de 2.9 mm del módulo celular LCC (lo usé en el modelo 3D; confirmar en el datasheet), todos los tiempos y el costo de la hora de trabajo, y el costo del filamento.
-
----
-
-### Prompt 3 — Diseño de la forma: carcasa, apilado y cierre
-
-**IA utilizada:** Claude con búsqueda web — rol de ingeniero de diseño mecánico para manufactura aditiva.
-
-??? question "Mi prompt (clic para desplegar)"
-    ```text
-    Actúa como ingeniero de diseño mecánico especializado en
-    carcasas para productos electrónicos fabricadas por impresión 3D
-    FDM, con experiencia en diseño para ensamble (snap-fits) y en
-    ajustar tolerancias de impresión.
-
-    Contexto: DistanciaCero, "Reposabrazos Centinela". El boceto de la
-    semana 6 es de 90 x 60 x 15 mm, pero al revisarlo vimos que la
-    batería 18650 (Ø18 x 65 mm) y el sensor PIR no caben, y que el PCB
-    de 70 x 45 mm más una batería no caben lado a lado en 60 mm.
-    Quiero resolver el volumen interno antes de imprimir nada.
-
-    Reglas que quiero respetar:
-    - Una sola pieza de carcasa en dos partes (base y tapa), cierre a
-      presión, sin tornillos ni herramientas, que se abra con la uña
-      pero que un adulto mayor no abra por accidente.
-    - Un solo material, impresión FDM sin soportes, paredes de al menos
-      1.2 mm (la clase pide no bajar de eso).
-    - Radio de esquina de 4 mm (del boceto) y apertura USB-C para
-      cargar.
-
-    Tarea:
-    1. Dime qué componentes reales voy a alojar y sus dimensiones;
-       verifica las que puedas en fuentes y marca las que no.
-    2. Propón dos variantes de carcasa (para poder compararlas con
-       usuarios) y calcula el apilado vertical de cada una.
-    3. Diseña el cierre snap-fit con cifras: tamaño del gancho,
-       holguras y la deformación que sufre al cerrar.
-    4. Dame las reglas de impresión que se aplican (orientación, qué
-       se imprime sin soportes, tolerancias) y los riesgos.
-    5. Dime qué cosas no puedo saber hasta imprimir y probar.
-    ```
-
-??? example "Respuesta de Claude (clic para desplegar)"
-    **1. Componentes que se alojan y sus dimensiones**
-
-    | Componente | Dimensiones (mm) | Estado del dato |
-    |---|---|---|
-    | Batería LiPo Jauch LP103450JH, 3.7 V, 1.92 Ah | 52.0 × 34.5 × 10.8 | ✅ Digi-Key UK, 05/11/2026. El número de parte indica protección (PCM + PTC); no pude leer sus detalles |
-    | ESP32-S3-WROOM-1 | 25.5 × 18.0 × 3.1 | ✅ LCSC (25.5 × 18) y listado de Maritex (3.1 de grosor) |
-    | SIM7600E-H en formato LCC | 30 × 30 × 2.9 | ⚠️ LCSC confirma 30 × 30 mm; el grosor de 2.9 mm es un dato de diseño que no pude confirmar en esta consulta |
-    | PCB | 70 × 45 (variante A) o 56 × 45 (B) × 1.6 | Decisión de diseño |
-    | Conector USB-C, portatarjeta nano-SIM, conector JST | 7.4 × 8.9 × 3.2 · 14 × 16 × 1.8 · 8 × 4.5 × 4.0 | ⚠️ Estimados; se confirman con la ficha de las piezas elegidas |
-    | Antena celular tipo FPC | reservo 26 × 9 en la cara interna de la tapa | ⚠️ Supuesto; depende de la antena que se elija |
-    | Sensor PIR HC-SR501 | 33 × 25 × 30 | ✅ az-delivery.de. **No cabe en ninguna variante; se elimina** |
-
-    **2. Dos variantes y su apilado vertical**
-
-    | | **Variante A "compacta"** | **Variante B "delgada"** |
-    |---|---|---|
-    | Exterior | 90 × 60 × 21 mm | 114 × 62 × 15 mm |
-    | Interior útil | 86.8 × 56.8 mm | 110.8 × 58.8 mm |
-    | Disposición | Batería **encima** del PCB (apilados) | Batería **al lado** del PCB |
-    | Ventaja | Misma huella que el boceto (90 × 60) | Mismo grosor que el boceto (15 mm) y más fácil de ensamblar |
-    | Costo | +6 mm de grosor: se puede notar bajo el cojín | +24 mm de largo y +2 de ancho |
-
-    Apilado vertical, de abajo hacia arriba:
-
-    - **A (21.0 mm):** piso 1.6 + costillas de apoyo 0.6 + PCB 1.6 + componente más alto (ESP32) 3.1 + holgura 0.7 + batería 10.8 + holgura 1.0 + tapa 1.6 = **21.0**. La holgura de 0.7 mm entre el ESP32 y la batería es la más justa del diseño.
-    - **B (15.0 mm):** piso 1.6 + holgura 0.4 + batería 10.8 + holgura 0.6 + tapa 1.6 = **15.0**. El PCB va al lado, así que sus componentes (el más alto, el JST, llega a 7.6 mm) quedan muy por debajo de la tapa.
-
-    Horizontal: en B la batería (−55 a −3 mm) y el PCB (−1 a 55 mm) dejan 2 mm entre sí y 0.4 mm contra cada pared; es ajustado pero cabe. En ambas, el USB-C sale por un extremo corto y el módulo ESP32 queda con la antena hacia el borde del PCB, sin cobre debajo.
-
-    **3. Cierre snap-fit (4 ganchos)**
-
-    - **Gancho:** voladizo de 6 mm de ancho × 1.2 mm de espesor × 8 mm de largo, en la tapa, a 0.2 mm de la pared de la base.
-    - **Barba:** 0.6 mm de saliente, con **rampa de entrada** de ~49° hacia el extremo libre y **cara de retención plana** del lado de la tapa. Entra en una ventana de 7 × 3 mm en la pared de la base.
-    - **Deformación al cerrar** (voladizo, ε = 3·t·y / 2·L²): 3 × 1.2 × 0.6 / (2 × 8²) = 0.0169, es decir **1.7 %**. ⚠️ Hay que compararla con el límite del filamento PETG usado; no lo tengo verificado.
-    - **Apertura:** dos muescas de 3 × 10 mm en los extremos cortos permiten meter la uña o una moneda y liberar los ganchos; no son evidentes a la vista (resuelve el problema 3 de la semana 6, tornillos que estorban).
-
-    **4. Reglas de impresión que se aplican**
-
-    | Regla (clase) | Cómo se cumple | Estado |
-    |---|---|---|
-    | Pared ≥ 1.2 mm | Paredes, piso y tapa de 1.6 mm; gancho de 1.2 mm | ✅ (el gancho está en el límite: 3 perímetros de 0.4 mm) |
-    | Sin voladizos > 45° | Base con el piso en la cama; tapa impresa boca abajo con los ganchos hacia arriba | ✅ salvo la cara de retención de la barba: voladizo plano de solo 0.6 mm |
-    | Sin soportes | Ventanas de 7 × 3 y abertura USB-C de 9.4 × 3.4 se resuelven con puentes cortos | ✅ ⚠️ confirmar en el laminador |
-    | Radio interno | Esquinas de 4 mm exterior / 2.4 mm interior | ✅ |
-    | Holguras | 0.2 mm entre gancho y pared; 0.25 mm a cada lado de la barba dentro de la ventana | ⚠️ depende de la impresora |
-
-    **Riesgos:** (a) los ganchos salen en vertical, así que las capas quedan perpendiculares a la flexión, que es la dirección más débil en FDM: puede romperse a los pocos ciclos; (b) la holgura de 0.7 mm en A deja poco margen si la impresora sobredimensiona; (c) el USB-C es la única abertura al exterior y queda sin sellado (no hay requisito de polvo o líquidos todavía).
-
-    **5. Qué no puedo saber hasta imprimir y probar:** si la tapa cierra con un solo movimiento y se abre con la uña sin romperse (20 ciclos), si el grosor de 21 mm de A se siente bajo un cojín de verdad, si el módulo ESP32 conserva buena señal con la tapa cerrada, y cuánto pesa y cuánto tarda cada juego de piezas.
-
-    **Archivos que generé con estas medidas:** modelo 3D de las dos variantes, archivos STL de base y tapa de cada una (tapa orientada para imprimirse), y los planos con cotas de la sección 4.3. Las dos mallas salen cerradas, sin aristas abiertas.
-
----
-
-### Prompt 4 — Circularidad y Ley General de Economía Circular
-
-**IA utilizada:** Claude con búsqueda web — rol de asesor de diseño de producto.
-
-??? question "Mi prompt (clic para desplegar)"
-    ```text
-    Actúa como asesor de diseño de producto con conocimiento de la
-    Ley General de Economía Circular de México y de diseño para
-    reparabilidad de electrónica.
-
-    Revisa el diseño de DistanciaCero (carcasa de 2 piezas de PETG con
-    cierre snap-fit, PCB con ESP32-S3 y módulo celular soldados,
-    acelerómetro en módulo con header, batería LiPo plana con
-    conector JST, firmware actualizable) con las cuatro preguntas de
-    circularidad de la clase:
-    1. ¿Los componentes son accesibles para reparación?
-    2. ¿Los módulos pueden reemplazarse de forma independiente?
-    3. ¿Los materiales son identificables para reciclaje?
-    4. ¿El producto puede actualizarse sin reemplazarse?
-
-    Para cada una dime el principio de la ley que aplica, si el
-    diseño actual cumple, y qué cambio concreto haría que cumpla.
-    Verifica el estado de la ley (fechas, a quién aplica la
-    responsabilidad extendida del productor, reglamento) en fuentes
-    reales y dime qué no pudiste confirmar.
-    ```
-
-??? example "Respuesta de Claude (clic para desplegar)"
-    **Estado de la ley (consultado el 05/11/2026)**
-
-    - La Ley General de Economía Circular se publicó en el Diario Oficial de la Federación el **19/01/2026** y entró en vigor el **20/01/2026** (resumen jurídico de Hogan Lovells, sitio hlc.com).
-    - El **diseño circular** obliga a los sectores productivos "cuando resulte ambiental, técnica y económicamente viable" y abarca reparabilidad, modularidad, vida útil y materiales reciclados (el resumen cita el artículo 36; la guía de la clase cita los artículos 3 y 4 para los principios).
-    - La **responsabilidad extendida del productor** (REP) no es automática: se activa por sector cuando SEMARNAT publique los acuerdos generales de implementación.
-    - **Reglamento:** el plazo legal era de 180 días y, según una nota de Expansión del 30/08/2026, **todavía no se había publicado**. Esa nota habla de llantas y plásticos y **no menciona electrónicos**.
-    - **No pude confirmar** si hubo novedades después del 30/08/2026 ni si los productos electrónicos o IoT ya tienen un acuerdo de REP. Hoy no hay una obligación sectorial específica para este producto que yo pueda citar.
-
-    **Las cuatro preguntas**
-
-    | Pregunta | Principio de la Ley | ¿Cumple hoy? | Cambio concreto |
-    |---|---|:--:|---|
-    | 1. ¿Componentes accesibles sin destruir la carcasa? | Reparabilidad | ✅ | Snap-fit sin pegamento ni tornillos; se abre con la uña en las muescas y se vuelve a cerrar |
-    | 2. ¿Módulos reemplazables por separado? | Modular | ⚠️ parcial | La batería sí (conector JST, sin adhesivo). El acelerómetro puede ir en un header hembra para cambiarlo. El ESP32 y el módulo celular van soldados al PCB: se reemplaza la tarjeta completa |
-    | 3. ¿Materiales identificables? | Ciclo de vida | ⚠️ | Base y tapa del **mismo material** (PETG) y marcado "PETG" en relieve de 0.4 mm en la cara interior. El código de reciclaje que corresponde al PETG no lo pude confirmar; la tela adhesiva y el velcro contaminan la pieza y deben poder retirarse |
-    | 4. ¿Se actualiza sin reemplazar? | Atemporal | ✅ ⚠️ | El ESP32-S3 permite actualizar el firmware por USB-C; la actualización remota por la red celular requiere reservar una partición en la memoria flash desde el diseño (pendiente) |
-
-    **Dos cosas que la guía no pregunta y conviene considerar:** la batería de litio es el residuo más delicado del producto, así que conviene que se pueda sacar sin herramientas ni adhesivo (el diseño lo cumple), y el hecho de que la REP todavía no aplique al sector no elimina el riesgo de rediseñar después: un producto que se abre sin destruirse hoy no tendrá que rehacerse cuando llegue el acuerdo.
-
----
-
-### Prompt 5 — Efecto del DFM sobre el modelo financiero de la semana 7
-
-**IA utilizada:** Claude — rol de analista financiero de producto de hardware (cálculos ejecutados en Python).
-
-??? question "Mi prompt (clic para desplegar)"
-    ```text
-    Actúa como analista financiero de producto de hardware. Toma el
-    modelo económico de la semana 7 de DistanciaCero sin cambiar
-    ningún supuesto salvo los del DFM y mide el efecto del rediseño.
-
-    Modelo de la semana 7: precio $4,490 de hardware + $449/mes,
-    costo unitario = BOM x 1.40 (15% de overhead + 25% de
-    contingencia), 10 unidades en el año 1, desarrollo de $71,540,
-    operación de $90.14 por suscriptor al mes, CAC de $1,000,
-    comisión de 3.6%, tasa de 15% anual, horizonte de 24 meses.
-    Resultado base: BOM $2,970; costo unitario $4,158; VPN a 12
-    meses -$68,041; VPN a 24 meses +$46,404; recuperación en el mes 21.
-
-    Cambios del DFM: módulo celular de $2,100 a $805 (SIM7600E-H en
-    LCC, precio "desde" de LCSC convertido a la tasa implícita del
-    modelo) y las demás líneas: sensores de $125 a $60, carcasa de
-    $200 a $70; batería, ESP32 y PCBA sin cambio.
-
-    Entrega:
-    1. BOM, costo unitario, VPN a 12 y 24 meses, flujo acumulado al
-       mes 24 y mes de recuperación para: modelo de la semana 7, tipo
-       de cambio real (FIX 18.4163) y FIX + 3% de cancelación mensual.
-    2. Qué parte del efecto viene solo del módulo celular.
-    3. Qué pasa si el chip cuesta el doble de lo cotizado, y si no se
-       logra el ahorro del módulo celular.
-    4. Cuánto gasto de desarrollo adicional (diseño de radio y
-       homologación, que el modelo no incluye) aguanta el cambio
-       antes de que el VPN a 24 meses vuelva al valor actual.
-    Ejecuta los cálculos en código y no redondees antes de comparar.
-    ```
-
-??? example "Respuesta de Claude (clic para desplegar)"
-    Los cálculos se corrieron en Python con el mismo modelo de la semana 7 (reproduce los valores base: VPN12 −$68,041, VPN24 +$46,404, recuperación en el mes 21, y con FIX + 3 % de cancelación −$15,459).
-
-    | Escenario | BOM | Costo unitario | VPN 12 m | VPN 24 m | Acumulado mes 24 | Recuperación |
-    |---|--:|--:|--:|--:|--:|:--:|
-    | **Modelo de la semana 7 · actual** | $2,970 | $4,158 | −$68,041 | $46,404 | $79,101 | mes 21 |
-    | Modelo · DFM solo módulo celular | $1,675 | $2,345 | −$51,597 | $209,026 | $278,404 | mes 16 |
-    | **Modelo · DFM completo** | $1,480 | $2,072 | −$49,120 | $233,520 | $308,423 | mes 15 |
-    | FIX · actual | $3,246 | $4,544 | −$71,543 | $11,773 | $36,658 | mes 23 |
-    | FIX · DFM solo módulo celular | $1,781 | $2,494 | −$52,940 | $195,745 | $262,127 | mes 16 |
-    | **FIX · DFM completo** | $1,586 | $2,221 | −$50,463 | $220,239 | $292,146 | mes 16 |
-    | FIX + cancelación 3 % · actual | $3,246 | $4,544 | −$72,582 | −$15,459 | $2,117 | mes 24 |
-    | FIX + cancelación 3 % · DFM solo módulo celular | $1,781 | $2,494 | −$53,979 | $168,513 | $227,586 | mes 16 |
-    | **FIX + cancelación 3 % · DFM completo** | $1,586 | $2,221 | −$51,503 | $193,007 | $257,605 | mes 16 |
-
-    **Lectura**
-
-    - **Qué parte viene del módulo celular:** de los $1,490 que baja el BOM, $1,295 (87 %) son del módulo celular. Solo con ese cambio el VPN a 24 meses pasa de +$46,404 a +$209,026.
-    - **Si el chip cuesta el doble de lo cotizado** (US$98.94 en lugar de US$49.47): BOM $2,286, costo unitario $3,200, VPN a 24 meses +$132,359, recuperación en el mes 18. Sigue siendo mejor que el diseño actual.
-    - **Si no se logra el ahorro del módulo celular** (se queda en $2,100) y solo se aplican los cambios de sensor y carcasa (−$195): BOM $2,775, costo unitario $3,885, VPN a 24 meses +$70,898, recuperación en el mes 20. Mejora poco; el resultado depende del módulo celular.
-    - **Cuánto desarrollo adicional aguanta:** el diseño de radio y la homologación no están en el presupuesto de $71,540. El VPN a 24 meses del diseño nuevo vuelve al valor actual (+$46,404) si ese trabajo cuesta **≈ $187,000 MXN** más, valor presente al mes 0. Es un umbral, no una estimación: no sé cuánto cuesta ese trabajo.
-    - **Qué no cambia:** a 12 meses el VPN sigue siendo negativo en todos los escenarios del rediseño (entre −$49,120 y −$53,979), porque el desarrollo de $71,540 pesa más que el margen de 10 unidades en el año 1. El rediseño mueve el VPN a 24 meses, no el de 12.
-    - **Precio mínimo viable de la regla del curso** (BOM ÷ 30 %): pasa de $9,900 a **$4,933**. El precio de $4,490 sigue ligeramente por debajo de esa regla, pero ya no a la mitad.
-
-    **Advertencia:** el modelo trata el ahorro como seguro. Los tres supuestos que lo sostienen (precio del chip a 10 piezas con solo 6 en existencia, sensores y carcasa estimados) siguen sin cotización.
-
----
-
-### Prompt 6 — Prototipo de negocio: landing page
-
-**IA utilizada:** Claude — rol de diseñador de landing pages para validar un producto.
-
-??? question "Mi prompt (clic para desplegar)"
-    ```text
-    Actúa como diseñador de landing pages para validar un producto
-    antes de construirlo (prototipo de negocio).
-
-    Escribe una página HTML estática, de un solo archivo, sin
-    recursos externos (sin fuentes, scripts ni imágenes remotas), que
-    funcione en celular y en computadora, para DistanciaCero,
-    "Reposabrazos Centinela".
-
-    Requisitos:
-    - Precio real y visible: $4,490 MXN de hardware + $449 MXN/mes.
-      Muestra también el total del primer año.
-    - Un botón de "Reservar mi lugar (sin pago)" que NO recopile datos
-      ni envíe nada: abre un mensaje que explica con claridad que es un
-      experimento de un proyecto universitario, que no se cobró nada y
-      que queremos saber su reacción al precio.
-    - Aviso permanente arriba de que el producto aún no está a la venta.
-    - Una sección "Qué es y qué no es": no es un dispositivo médico, ni
-      un detector de caídas, ni un servicio de emergencias.
-    - No prometas nada que el prototipo no haya demostrado (por ejemplo
-      la duración de la batería): si es una meta, dilo.
-    - Tono cálido, directo, sin lenguaje de miedo.
-    Usa colores cálidos que combinen con un sillón de tela taupe.
-    ```
-
-??? example "Respuesta de Claude (clic para desplegar)"
-    Entregué la página como un solo archivo HTML estático, sin recursos externos, que se entrega junto con esta actividad. El código completo está en la sección 4.2. Decisiones de diseño que tomé a partir de tus requisitos:
-
-    - **Aviso permanente arriba:** una franja que dice que el producto aún no está a la venta y que es un prototipo de validación.
-    - **Precio visible desde el inicio:** $4,490 de hardware + $449 al mes, con el total del primer año ($9,878) calculado en la misma tarjeta.
-    - **Botón "Reservar mi lugar (sin pago)":** no hay formulario ni envío de datos. Abre un cuadro de diálogo que explica que es un experimento de un proyecto universitario, que no se cobró nada y que queremos saber su reacción al precio.
-    - **"Qué es y qué no es":** no es un dispositivo médico, ni un detector de caídas, ni un servicio de emergencias.
-    - **Batería:** no afirmé que dure quince días. Lo dice como "meta de diseño, por validar", porque el modelo de la carcasa da 11.4 días con la batería elegida.
-    - **Imagen:** una sola, el render conceptual del sillón de la Semana 6, incrustada en el archivo (en la sección 4.2 aparece como marcador para no repetir 50 KB de texto).
-    - **Paleta cálida** (tonos arena y terracota) para combinar con un sillón taupe, y diseño que se adapta a celular.
-
-    Dos cosas que debes saber antes de usarla: (1) como no recopila nada, **la evidencia es la observación en persona**, no un conteo de clics; (2) no probé la página en un navegador real de celular, solo con capturas de pantalla simuladas.
-
----
-
----
-
-## 4. Entregable final — Semana 8
-
-### 4.1 Plan de prototipado
-
-El plan sigue la plantilla de la clase y está completo en el Prompt 1. Aquí queda el resumen, con el mapa de supuestos que lo justifica.
-
-<p style="text-align:center"><img src="../recursos/imgs/mapa-supuestos.jpeg" alt="Mapa de supuestos de DistanciaCero: riesgo contra incertidumbre" style="max-width:min(100%,820px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/mapa-supuestos.jpeg</code><br><em>Mapa de supuestos de DistanciaCero: riesgo contra incertidumbre</em></div></p>
-
-*Figura 1. Mapa de supuestos. S1 (que alguien pague $4,490 + $449/mes) es el de mayor riesgo y mayor incertidumbre, y el único que puede probarse en un día con baja resolución.*
-
-
-| Elemento del plan | Prototipo principal | Prototipo complementario |
+## 1. Plan de integración y pruebas por fronteras
+
+### 1.1 Mapa de fronteras (F1 a F4)
+
+```
+[MPU6050] --I²C--> [ESP32-S3: ventanas de 30 min + buffer en flash] --UART / AT--> [SIM7600SA-H]
+                                                                                     |
+                                                                   HTTPS POST (JSON, TLS)
+                                                                                     v
+   [Cloud Function] <--trigger-- [Firestore] <------------------------------------ (F2)
+         |  z-score por hora + Claude Haiku (resumen semanal)            (F3)
+         v
+   [FCM push] + [WhatsApp]  -->  [App React Native: Estado · Historial · Onboarding]   (F4)
+```
+
+| Frontera | De → a | Protocolo | Qué tiene que cumplir | Registro que la vigila |
+|---|---|---|---|---|
+| **F1** Sensado | MPU6050 → ESP32-S3 | I²C a 400 kHz e interrupción de movimiento | Distinguir sentarse y levantarse de golpes y vibraciones | Log serie con `ts, evento, ax, ay, az, umbral` |
+| **F2** Conectividad | ESP32-S3 → SIM7600 → red celular → Cloud Function | UART con comandos AT y HTTPS/TLS 1.2 | Reporte de extremo a extremo en ≤ 30 s (RD-03) y 0 reportes perdidos | Log de firmware con `AT+CREG?`, `AT+CSQ`, código HTTP, `VBAT` mínima y duración de la transmisión |
+| **F3** Modelo e IA | Firestore → z-score → API de Haiku | Llamada interna y HTTPS | Un hueco de señal **no** se lee como inactividad; el resumen siempre es válido | Colección `model_runs` con `inputs_hash, z, decision, latency_ms, tokens_in, tokens_out` |
+| **F4** Notificación | Backend → FCM, WhatsApp y app | FCM, WhatsApp Business y listener de Firestore | Estado correcto en la app en ≤ 10 min (RF-02) por ≥ 2 canales (RI-04) | Colección `notifications` con `t_decision, t_sent, t_delivered, canal, estado` |
+
+### 1.2 Dos fallos probables por frontera y la primera prueba para aislarlos
+
+| Frontera | Fallo probable | Síntoma | Primera prueba de diagnóstico (la más barata) |
+|---|---|---|---|
+| F1 | 1. El umbral no distingue sentarse de un golpe o de una mascota | Eventos falsos o eventos perdidos | En banco: 20 sentadas, 20 levantadas y 20 golpes con la mano sobre el cojín. Graficar \|a\| y contar aciertos |
+| F1 | 2. El ruido de la alimentación mientras el módem transmite crea lecturas falsas | Eventos fantasma que coinciden con cada transmisión | Comparar el log de eventos con las marcas de transmisión; repetir con el módem apagado |
+| F2 | 1. Caída de VBAT en la LiPo durante los picos del módem (hasta ~2 A según la hoja de datos, POR VERIFICAR para LTE) | Reinicio del ESP32 o del módem a la mitad del POST | Osciloscopio en VBAT durante el registro y la transmisión. Si baja de 3.4 V, agregar capacitores de baja ESR cerca del módulo |
+| F2 | 2. El módem no se registra en la red: banda equivocada (E-H) o antena | `+CREG: 0,2` o `0,3` permanentes y `AT+CSQ` = 99 | `AT+CPSI?` para ver banda y operador, en el mismo lugar con un teléfono de referencia |
+| F3 | 1. Un hueco de 3 o más reportes se interpreta como "no se sentó" y genera una **falsa alerta** | Alerta sin causa real | Simulación: borrar 3 ventanas de un día normal del dataset y revisar que el sistema dé "Sin reportar" y no "Alerta" |
+| F3 | 2. Haiku tarda, falla o devuelve un resumen con formato roto | Resumen vacío o JSON inválido | Validar la salida contra el esquema; forzar un timeout de 1 ms y comprobar que entra la plantilla de respaldo |
+| F4 | 1. La notificación FCM llega tarde o no llega (ahorro de batería de Android o token caducado) | `t_delivered − t_decision` > 10 min | Comparar las marcas de tiempo de `notifications` en 10 corridas; repetir con optimización de batería desactivada |
+| F4 | 2. La app muestra un dato viejo como si fuera actual (caché) | El estado dice "Todo bien" con el dispositivo apagado | Apagar el dispositivo y verificar que la app pase a **"Sin reportar desde HH:MM"** en ≤ 2 ventanas |
+
+### 1.3 Seis pruebas de sistema, de la más barata a la más cara
+
+| # | Prueba | Procedimiento | Métrica | Criterio de aprobación (PDS) | Evidencia que se guarda | Resultado |
+|---|---|---|---|---|---|---|
+| **T1** | Falla de canal y de la API de IA | a) Revocar el token FCM y provocar una alerta. b) Bloquear WhatsApp. c) Poner una API key inválida de Haiku | Canal que entrega; resumen que se genera | La alerta llega por el canal que queda **en ≤ 10 min** (RI-04, RF-02); con Haiku caído llega el **resumen de plantilla**; cero pantallas en blanco | Capturas de los dos canales y export de `notifications` | `[MEDIR]` |
+| **T2** | Desconexión y recuperación | Cortar la red celular 10 min (jaula de Faraday o antena desconectada) y restablecerla | Reportes perdidos; tiempo de recuperación | **0 reportes perdidos** (el buffer en flash los reenvía); primer reporte **≤ 60 s** después de volver la red; la app muestra "Sin reportar" y **no** una alerta | Log de firmware y conteo de documentos en Firestore | `[MEDIR]` |
+| **T3** | Instalación sin ayuda | Una persona sin experiencia instala la placa y vincula la app solo con el instructivo | Tiempo; ayudas necesarias | **≤ 10 min**, sin ayuda (RI-03) | Video cronometrado y hoja de observación | `[MEDIR]` |
+| **T4** | Latencia de extremo a extremo | 20 transmisiones normales y 10 anomalías inyectadas (ventana marcada como inactiva) | Tiempo de transmisión; tiempo de decisión a notificación | Transmisión **≤ 30 s en 20/20** (RD-03); decisión a notificación **≤ 10 min en 10/10** (RF-02) | CSV de marcas de tiempo; mediana y máximo | `[MEDIR]` |
+| **T5** | Autonomía | Medir la corriente de cada fase (shunt de 1 Ω y osciloscopio, o un medidor de µA), integrar un ciclo de 30 min y extrapolar; descarga real de 72 h | Corriente promedio (mA); días proyectados | **≤ 4.27 mA promedio**, que da **≥ 15 días** con 80 % útil de 1,920 mAh (RD-01) | Capturas del osciloscopio y hoja de cálculo | `[MEDIR]` |
+| **T6** | Operación continua de 48 h | Placa en un sillón real con baseline precargado y uso normal, con 2 cortes de red programados | Reinicios; reportes perdidos; disponibilidad del backend | **0 reinicios**, **0 reportes perdidos** y disponibilidad **≥ 99 %**, que equivale a ≤ 29 min sin servicio en 48 h (RD-04, solo indicativo) | Log completo y export del monitor de uptime | `[MEDIR]` |
+
+**Prueba aparte, sin hardware (RD-02):** dataset simulado de 14 días con **50 eventos: 25 normales y 25 anómalos**. El criterio es **falsos positivos < 5 % y falsos negativos < 2 %**. Resultado: `[MEDIR: FP = __ %, FN = __ %]`. Con 25 anómalos, un solo falso negativo ya es 4 %; por eso el criterio exige **0 FN** en este set. Esto se declara como límite de la muestra.
+
+**Por qué este orden.** T1 y T2 se corren en el escritorio en minutos y ya descartan los fallos de arquitectura, que son los más caros de corregir. T5 y T6 necesitan el sistema completo y días de reloj, así que van al final, pero **T6 debe arrancar a más tardar el día 7** de la ruta de cierre (§7).
+
+### 1.4 Autonomía: cálculo previo a la medición (ESTIMADO)
+
+Capacidad útil: 1,920 mAh × 80 % = **1,536 mAh**. Para durar 15 días (360 h): 1,536 ÷ 360 = **4.27 mA promedio máximo**.
+
+| Fase | Corriente | Duración por reporte | Origen |
+|---|---|---|---|
+| ESP32-S3 en sueño profundo | 0.007 mA | Continuo | Hoja de datos de Espressif (VERIFICADO por el equipo en la Semana 9) |
+| ESP32-S3 activo | ≈ 30 mA | 12 s | **SUPUESTO** |
+| Módem registrado en reposo | 2.3 mA | Continuo | **SUPUESTO** (con DRX) |
+| Módem transmitiendo | 150 mA | 10 s | **SUPUESTO** |
+| Módem apagado entre reportes | 0.05 mA, más 15 s de registro a 150 mA | Por reporte | **SUPUESTO** |
+| MPU6050 | 0.3 mA | Continuo | **SUPUESTO** (en modo de ciclo de bajo consumo puede ser menor) |
+
+| Escenario | Promedio | Días con 80 % útil | ¿Cumple RD-01? |
+|---|---|---|---|
+| A: reporte cada 15 min, módem en reposo | 4.65 mA | 13.8 | **No** |
+| B: reporte cada 30 min, módem en reposo | 3.63 mA | 17.6 | Sí, con poco margen |
+| **C: reporte cada 30 min, módem apagado** | **2.64 mA** | **24.2** | **Sí (decisión)** |
+| D: reporte cada 60 min, módem apagado | 1.50 mA | 42.7 | Sí |
+
+**Lo que este cálculo no incluye:** las veces que el ESP32 despierta por la interrupción del MPU6050 en cada movimiento, la autodescarga, la temperatura ni el envejecimiento de la celda. Por eso el escenario C es la **decisión de diseño** y T5 es la **evidencia**.
+
+**Efecto del escenario C en RF-02:** con ventanas de 30 min, la anomalía se puede **decidir** hasta 30 min después de que ocurre. RF-02 ("≤ 10 min") se mide desde que el backend tiene los datos que la confirman hasta que llega la notificación. La latencia total, de evento a aviso, puede llegar a ~40 min. Así se declara en la memoria, para no prometer "en tiempo real".
+
+### 1.5 Degradación ante fallas (cómo falla "con gracia")
+
+| Falla | Qué hace el sistema | Qué ve el hijo o hija |
 |---|---|---|
-| **Supuesto** | S1: un hijo/a adulto pagará $4,490 + $449/mes | S6: la carcasa cabe, cierra sin herramientas y se puede fabricar |
-| **Pregunta precisa** | ¿Puede un hijo/a adulto explicar con sus palabras qué hace el producto y decidir si reserva, viendo el precio real, sin que nadie se lo justifique? | ¿Caben PCB, módulo celular y batería plana en una placa que cierre sin herramientas y que el hijo/a pueda abrir sin romperla? |
-| **Tipo y resolución** | Negocio · baja | Forma · alta (digital) |
-| **Qué se construyó** | Landing page estática con el precio real | Modelo 3D de dos variantes, planos con cotas y archivos STL |
-| **Evidencia** | Sesión de 10 min con 3 a 5 personas del segmento; hoja de observación (4.2) | Apilado y holguras en el modelo; prueba de cierre y de 20 aperturas al imprimir |
-| **Umbral de éxito** | 2 de 3 personas reservan y explican el producto en una frase | La tapa cierra con un solo movimiento y se abre con la uña; 20 ciclos sin fisura |
-| **Estado** | Prototipo hecho; **sesiones pendientes** | Modelo hecho; **impresión y pruebas pendientes** |
+| Sin red celular | El firmware guarda cada ventana en un buffer circular en flash: 7 días × 48 ventanas × ~64 B ≈ 21 KB. Reintenta con espera creciente (30 s, 2 min, 10 min) y reenvía todo al volver | "Sin reportar desde HH:MM. No es una alerta: la placa no tiene señal." Nunca dice "Todo bien" con datos viejos |
+| Sin internet en la nube o Cloud Function caída | Los documentos se acumulan en Firestore y la función reprocesa en orden al volver (idempotente por `device_id + window_start`) | Igual que la fila anterior, después de 2 ventanas sin datos procesados |
+| Falla FCM | Se reintenta por WhatsApp; si falla también, se marca `pendiente` y se reintenta cada 5 min | Llega por el canal que funcione (RI-04) |
+| Falla de Haiku (timeout de 10 s, error o JSON inválido) | Se usa un **resumen de plantilla** con los mismos números ("Esta semana: 6 de 7 días con rutina normal…") | El resumen semanal llega igual, sin redacción natural. **La detección de alertas no depende de la IA** |
+| Batería baja (< 3.5 V) | Reporta cada 60 min y manda el aviso "Batería baja" | Un aviso con días estimados restantes. `[MEDIR: umbral real en T5]` |
 
-<p style="text-align:center"><img src="../recursos/imgs/plan-prototipado.jpeg" alt="Plan de prototipado con los tres pasos para el prototipo de negocio y el de forma" style="max-width:min(100%,860px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/plan-prototipado.jpeg</code><br><em>Plan de prototipado con los tres pasos para el prototipo de negocio y el de forma</em></div></p>
+---
 
-*Figura 2. El plan de prototipado: dos ciclos Pregunta → Prototipa → Evidencia. El de forma alimenta la revisión DFM.*
+## 2. Protocolo y plantilla de pruebas con usuarios (30 min)
 
+### 2.1 Participantes y ética
 
-### 4.2 Prototipo de negocio: la landing page
+| Sesión | Perfil | Origen | Consentimiento |
+|---|---|---|---|
+| S1, S2, S3 | Hija o hijo adulto (35 a 55 años) con un padre o madre de 65 o más que vive solo. **Segmento objetivo** | Referidos de las 3 entrevistas de la Semana 4 y red del equipo | Consentimiento verbal grabado o por escrito (Anexo D) |
+| S4, S5 | Estudiantes de otros equipos de Proyectos 4 | Intercambio de sesiones | Consentimiento verbal |
 
-La página es de un solo archivo HTML, sin recursos externos. Muestra el precio real, declara que es un experimento, y su botón de reserva abre un mensaje que explica de qué trata la prueba. **No recopila datos ni envía nada**: sirve para observar a una persona mientras la usa, no para contar clics a distancia. Para una prueba a distancia habría que añadir un formulario o un contador, y eso sí implica recoger datos.
+**Personas mayores:** no se hacen pruebas de uso con ellas, porque el producto no les pide nada. Si alguna participa, solo es para **explicarle el concepto y preguntarle si aceptaría la placa en su sillón**, con su consentimiento y sin recolectar datos de rutina. Esa respuesta es evidencia directa para la brecha B2.
 
-<p style="text-align:center"><img src="../recursos/imgs/landing-superior.jpeg" alt="Parte superior de la landing page de DistanciaCero" style="max-width:min(100%,860px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/landing-superior.jpeg</code><br><em>Parte superior de la landing page de DistanciaCero</em></div></p>
+### 2.2 Guion de 30 minutos
 
-*Figura 3. Landing page, parte superior: aviso de experimento, mensaje central y botón de reserva sin pago.*
+| Tiempo | Bloque | Qué hace el facilitador | Qué se registra |
+|---|---|---|---|
+| 0:00–3:00 | Introducción | Lee el guion fijo: "Probamos el producto, no a ti. Piensa en voz alta. No podemos ayudarte durante las tareas." Pide consentimiento para grabar | Hora, consentimiento sí o no |
+| 3:00–10:00 | **Tarea 1:** instalar y vincular | Le da la placa, el instructivo de una hoja y el teléfono con la app | Éxito sin ayuda, tiempo, errores, SEQ, cita |
+| 10:00–17:00 | **Tarea 2:** interpretar estados | Le muestra 3 pantallas en orden aleatorio: "Todo bien", "Alerta" y "Sin reportar" y le pregunta: "¿Qué harías ahora?" | ¿Distingue "Alerta" de "Sin reportar" en < 10 s (RI-01)? |
+| 17:00–23:00 | **Tarea 3:** encontrar el precio y apartar | Abre la landing: "¿Cuánto cuesta en el primer año? Si te interesa, apártalo." | Tiempo hasta el precio, si deja sus datos, cita |
+| 23:00–30:00 | Entrevista de cierre | Pregunta por comportamiento, no por opinión: "¿Qué usas hoy para saber cómo está tu mamá? ¿Cuánto te cuesta? ¿A quién más se lo recomendarías **ahora mismo**?" | Compromisos (§2.4) y citas |
 
+**SEQ** (Single Ease Question): al terminar cada tarea se pregunta "¿Qué tan fácil o difícil fue?" en una escala de 1 a 7, donde 7 es "muy fácil".
 
-<p style="text-align:center"><img src="../recursos/imgs/landing-completa.jpeg" alt="Landing page completa con pasos, precio y sección de lo que no es" style="max-width:min(100%,640px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/landing-completa.jpeg</code><br><em>Landing page completa con pasos, precio y sección de lo que no es</em></div></p>
+### 2.3 Hoja de observación (una por sesión)
 
-*Figura 4. Landing page completa: tres pasos, precio ($4,490 + $449/mes; primer año $9,878) y la sección "Qué es y qué no es".*
+| Sesión | Tarea | ¿Éxito sin ayuda? (S/N) | Tiempo (mm:ss) | Errores | SEQ (1–7) | Cita textual |
+|---|---|---|---|---|---|---|
+| S1 | T1 instalar | `[ ]` | `[ ]` | `[ ]` | `[ ]` | "`[ ]`" |
+| S1 | T2 estados | `[ ]` | `[ ]` | `[ ]` | `[ ]` | "`[ ]`" |
+| S1 | T3 precio | `[ ]` | `[ ]` | `[ ]` | `[ ]` | "`[ ]`" |
 
+**Síntesis por tarea** (se llena con las 5 sesiones):
 
-<p style="text-align:center"><img src="../recursos/imgs/landing-reservar.jpeg" alt="Mensaje que se abre al pulsar reservar" style="max-width:min(100%,640px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/landing-reservar.jpeg</code><br><em>Mensaje que se abre al pulsar reservar</em></div> <img src="../recursos/imgs/landing-celular.jpeg" alt="Landing page en pantalla de celular" style="max-width:min(100%,200px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/landing-celular.jpeg</code><br><em>Landing page en pantalla de celular</em></div></p>
+| Tarea | Éxito sin ayuda (n/5) | Tiempo mediano | SEQ promedio | Meta |
+|---|---|---|---|---|
+| T1 instalar | `[ ]` | `[ ]` | `[ ]` | ≥ 4/5 en ≤ 10 min (RI-03) |
+| T2 estados | `[ ]` | `[ ]` | `[ ]` | 5/5 distinguen "Alerta" de "Sin reportar" |
+| T3 precio | `[ ]` | `[ ]` | `[ ]` | ≥ 4/5 encuentran el precio en < 30 s |
 
-*Figura 5. A la izquierda, el mensaje que se abre al pulsar "Reservar mi lugar": explica que es un experimento, que no se cobró y qué queremos saber. A la derecha, la página en pantalla de celular.*
+**Hallazgos por severidad:**
 
-**Decisiones de diseño de la página que conviene defender:**
+| Severidad | Definición | Hallazgo | Usuarios (n/5) | Cita | Cambio propuesto | Hipótesis del cambio |
+|---|---|---|---|---|---|---|
+| **Crítico** | Impide terminar la tarea | `[ ]` | `[ ]` | "`[ ]`" | `[ ]` | `[ ]` |
+| **Mayor** | Termina con ayuda o con un error recuperable | `[ ]` | `[ ]` | "`[ ]`" | `[ ]` | `[ ]` |
+| **Menor** | Molestia sin consecuencia | `[ ]` | `[ ]` | "`[ ]`" | `[ ]` | `[ ]` |
 
-- **Honesta desde el primer vistazo.** El aviso permanente y el mensaje del botón evitan engañar a quien participa. El objetivo es medir la reacción al precio, no recolectar correos con una promesa falsa.
-- **La batería aparece como meta, no como hecho** ("meta de diseño: hasta dos semanas, por validar"), porque con la batería plana la cuenta da ≈ 11.4 días.
-- **Dice qué no es.** "No es un dispositivo médico, un detector de caídas ni un servicio de emergencias." Reduce la confusión que se vigila en la sesión.
+**Tres cambios de alto impacto y bajo esfuerzo:** `[ ]` · `[ ]` · `[ ]`
+**Límites de la muestra:** son 5 sesiones, 3 del segmento, en una sola ciudad, con un prototipo y no con el producto final. Sirven para encontrar problemas de uso, **no** para estimar la demanda.
 
-??? example "Código completo de la landing (clic para desplegar; la imagen incrustada se omite)"
-    ```html
-    <!doctype html>
-    <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>DistanciaCero · Reposabrazos Centinela</title>
-    <style>
-    :root{--bg:#f6f1ea;--ink:#2a2521;--mut:#6d645b;--card:#fffdf9;--line:#e4dccf;--acc:#b4532a;--acc2:#8f3f1d;--taupe:#8b7d70}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
-    .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-    header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
-    .logo{font-weight:700;letter-spacing:.2px;font-size:18px}.logo span{color:var(--acc)}
-    nav a{color:var(--mut);text-decoration:none;margin-left:22px;font-size:15px}
-    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:30px 0 64px}
-    h1{font-size:46px;line-height:1.1;margin:0 0 18px;letter-spacing:-.8px}
-    .lead{font-size:19px;color:var(--mut);margin:0 0 26px}
-    .btn{display:inline-block;background:var(--acc);color:#fff;border:0;border-radius:999px;padding:15px 28px;font-size:17px;font-weight:600;cursor:pointer;box-shadow:0 6px 18px rgba(180,83,42,.28)}
-    .btn:hover{background:var(--acc2)}.sub{display:block;margin-top:12px;color:var(--mut);font-size:14px}
-    .photo{border-radius:20px;overflow:hidden;box-shadow:0 18px 50px rgba(60,40,20,.18);background:#ddd}
-    .photo img{display:block;width:100%}
-    .cap{font-size:12.5px;color:var(--mut);margin-top:8px}
-    section{padding:54px 0;border-top:1px solid var(--line)}
-    h2{font-size:30px;margin:0 0 8px;letter-spacing:-.4px}.k{color:var(--acc);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:10px}
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:26px}
-    .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
-    .step b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#f0e3d6;color:var(--acc2);margin-bottom:12px}
-    .step h3{margin:0 0 6px;font-size:18px}.step p{margin:0;color:var(--mut);font-size:15.5px}
-    .price{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:26px}
-    .pc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
-    .pc .n{font-size:40px;font-weight:700;letter-spacing:-1px}.pc .n small{font-size:16px;font-weight:500;color:var(--mut)}
-    .pc ul{margin:14px 0 0;padding-left:20px;color:var(--mut);font-size:15.5px}
-    .total{margin-top:18px;background:#f0e3d6;border-radius:14px;padding:16px 22px;font-size:16px}
-    .not{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
-    .not div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px;font-size:15.5px;color:var(--mut)}
-    .not b{color:var(--ink)}
-    footer{padding:36px 0 60px;color:var(--mut);font-size:13.5px;border-top:1px solid var(--line)}
-    .banner{background:#2a2521;color:#f6f1ea;font-size:13.5px;text-align:center;padding:9px 16px}
-    dialog{border:0;border-radius:20px;max-width:520px;width:calc(100% - 32px);padding:30px;box-shadow:0 30px 80px rgba(0,0,0,.35);background:var(--card);color:var(--ink)}
-    dialog::backdrop{background:rgba(30,20,10,.55)}
-    dialog h3{margin:0 0 10px;font-size:23px}dialog p{margin:0 0 12px;color:var(--mut);font-size:16px}
-    dialog .row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-    .ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}.ghost:hover{background:#f6f1ea}
-    @media(max-width:820px){.hero,.steps,.price,.not{grid-template-columns:1fr}h1{font-size:36px}nav{display:none}}
-    </style></head><body>
-    <div class="banner">Prototipo de validación de un proyecto universitario (Universidad Iberoamericana Puebla). El producto aún no está a la venta.</div>
-    <div class="wrap">
-    <header><div class="logo">Distancia<span>Cero</span></div><nav><a href="#como">Cómo funciona</a><a href="#precio">Precio</a><a href="#limites">Qué no es</a></nav></header>
+### 2.4 Señal de negocio: compromiso real o cortesía
 
-    <div class="hero">
-     <div>
-      <h1>Saber que está bien, sin tener que llamar cada día.</h1>
-      <p class="lead">El Reposabrazos Centinela es una placa delgada que va bajo el cojín del sillón favorito de tu mamá o papá. Aprende su rutina y te avisa solo cuando algo cambia.</p>
-      <button class="btn" id="reservar">Reservar mi lugar (sin pago)</button>
-      <span class="sub">Sin pago hoy. Sin tarjeta. Te decimos de qué trata este experimento al hacer clic.</span>
-     </div>
-     <div><div class="photo"><img src="../recursos/imgs/render-placa-sillon.jpeg" alt="Render conceptual de la placa Reposabrazos Centinela sobre la base de un sillón, con el cojín levantado" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/render-placa-sillon.jpeg</code><br><em>Render conceptual de la placa Reposabrazos Centinela sobre la base de un sillón, con el cojín levantado</em></div></div>
-     <div class="cap">Render conceptual. El cojín se muestra levantado solo para que se vea la placa; en uso real queda oculta.</div></div>
-    </div>
-
-    <section id="como"><div class="k">Cómo funciona</div><h2>Tres pasos, ninguno para tu mamá o papá</h2>
-     <div class="steps">
-      <div class="step"><b>1</b><h3>Se coloca una vez</h3><p>La placa se fija con velcro bajo el cojín. No hay botones, pantalla ni cables que atender.</p></div>
-      <div class="step"><b>2</b><h3>Aprende su rutina</h3><p>Detecta cuándo y cuánto tiempo se sienta cada día. Con unos días de uso construye un patrón propio.</p></div>
-      <div class="step"><b>3</b><h3>Avisa por excepción</h3><p>Si la rutina cambia de forma notable, recibes un aviso en la app. Si todo va normal, no recibes nada.</p></div>
-     </div></section>
-
-    <section id="precio"><div class="k">Precio</div><h2>Un pago único y una mensualidad</h2>
-     <div class="price">
-      <div class="pc"><div class="k" style="margin:0 0 6px">La placa</div><div class="n">$4,490 <small>MXN, pago único</small></div>
-       <ul><li>Placa con conexión celular incluida</li><li>Batería recargable (meta de diseño: hasta dos semanas, por validar)</li><li>Instalación sin herramientas</li></ul></div>
-      <div class="pc"><div class="k" style="margin:0 0 6px">El plan</div><div class="n">$449 <small>MXN al mes</small></div>
-       <ul><li>App para quien cuida, con avisos por excepción</li><li>Conectividad celular de la placa</li><li>Cancelas cuando quieras</li></ul></div>
-     </div>
-     <div class="total"><b>Primer año:</b> $4,490 + 12 × $449 = <b>$9,878 MXN</b>. Después, $5,388 MXN al año.</div>
-    </section>
-
-    <section id="limites"><div class="k">Con claridad</div><h2>Qué es y qué no es</h2>
-     <div class="not">
-      <div><b>Sí es</b><br>Una forma de saber que la rutina sigue su curso, para quien vive lejos de un familiar mayor y no quiere llamar cada hora para comprobarlo.</div>
-      <div><b>No es</b><br>Un dispositivo médico, un detector de caídas ni un servicio de emergencias. No sustituye una alerta médica ni a un cuidador.</div>
-     </div></section>
-
-    <footer>DistanciaCero · Proyecto de la materia de Sistemas Embebidos, Universidad Iberoamericana Puebla. Esta página es un prototipo de negocio: sirve para medir si el mensaje y el precio resuenan. No recopila datos, no cobra y no envía nada a ningún servidor.</footer>
-    </div>
-
-    <dialog id="dlg"><h3>Gracias por el interés. Esto es un experimento.</h3>
-     <p>DistanciaCero todavía no vende nada: es un proyecto de clase y el producto está en etapa de prototipo. No se te cobró y no guardamos ningún dato tuyo.</p>
-     <p>Lo que sí necesitamos para aprender es tu reacción: ¿el mensaje se entiende? ¿El precio de <b>$4,490 + $449 al mes</b> te parece razonable, caro o barato, y por qué?</p>
-     <div class="row"><button class="btn" id="cerrar">Entendido</button><button class="btn ghost" id="cerrar2">Volver a la página</button></div>
-    </dialog>
-    <script>
-    var d=document.getElementById('dlg');
-    document.getElementById('reservar').addEventListener('click',function(){d.showModal()});
-    ['cerrar','cerrar2'].forEach(function(i){document.getElementById(i).addEventListener('click',function(){d.close()})});
-    </script>
-    </body></html>
-    ```
-
-**Protocolo de la sesión (10 minutos por persona)**
-
-1. Mostrar la página en una pantalla sin explicar nada. Pedir: "Dime en voz alta qué estás viendo y qué harías".
-2. Observar sin intervenir: qué lee primero, cuánto tarda en llegar al precio, si hace clic.
-3. Si se atora, una sola pregunta: "¿qué esperabas que pasara?".
-4. Al terminar: "¿Qué precio te parecería razonable?". Después: "¿Y si el hardware costara $3,990?".
-5. Registrar en la hoja de abajo, con las palabras textuales de la persona.
-
-**Hoja de observación (a llenar en las sesiones)**
-
-| Usuario | Perfil | Tiempo hasta el 1.er clic | Qué leyó primero | ¿Encontró el precio? | ¿Reservó? | Qué dijo del precio (textual) | Qué preguntó | Precio que propuso |
-|---|---|---|---|---|---|---|---|---|
-| 1 | *pendiente* | | | | | | | |
-| 2 | *pendiente* | | | | | | | |
-| 3 | *pendiente* | | | | | | | |
-
-!!! warning "Evidencia pendiente"
-    No hice las sesiones con usuarios. La hoja está vacía a propósito: no inventé observaciones. Sin ellas, el supuesto S1 sigue **sin validar** y el DVF de deseabilidad sigue en 🔴.
-
-### 4.3 Prototipo de forma: carcasa en dos variantes
-
-Modelé la carcasa en Blender con las medidas de los componentes reales (Prompt 3) y la dibujé en dos variantes para poder compararlas con usuarios. Las dos son de **dos piezas, un solo material (PETG) y cierre a presión**, sin tornillos.
-
-<p style="text-align:center"><img src="../recursos/imgs/variante-a-cerrada.jpeg" alt="Variante A cerrada" style="max-width:min(100%,720px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/variante-a-cerrada.jpeg</code><br><em>Variante A cerrada</em></div></p>
-
-*Figura 6. Variante A "compacta", 90 × 60 × 21 mm. Base oscura y tapa clara; se ven las ventanas de los ganchos y la abertura USB-C. Render del modelo 3D, no foto de una pieza impresa.*
-
-
-<p style="text-align:center"><img src="../recursos/imgs/variante-b-cerrada.jpeg" alt="Variante B cerrada" style="max-width:min(100%,720px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/variante-b-cerrada.jpeg</code><br><em>Variante B cerrada</em></div></p>
-
-*Figura 7. Variante B "delgada", 114 × 62 × 15 mm.*
-
-
-<p style="text-align:center"><img src="../recursos/imgs/variante-a-explosionada.jpeg" alt="Variante A en vista explosionada" style="max-width:min(100%,720px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/variante-a-explosionada.jpeg</code><br><em>Variante A en vista explosionada</em></div></p>
-
-*Figura 8. Variante A explosionada, de abajo hacia arriba: base con el PCB sobre costillas, batería LiPo plana encima, y tapa con la antena celular en su cara interior. Los componentes son bloques del tamaño real, no modelos detallados.*
-
-
-<p style="text-align:center"><img src="../recursos/imgs/variante-b-explosionada.jpeg" alt="Variante B en vista explosionada" style="max-width:min(100%,720px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/variante-b-explosionada.jpeg</code><br><em>Variante B en vista explosionada</em></div></p>
-
-*Figura 9. Variante B explosionada: la batería va al lado del PCB, por eso el grosor baja a 15 mm.*
-
-
-<p style="text-align:center"><img src="../recursos/imgs/variante-a-abierta.jpeg" alt="Variante A abierta" style="max-width:min(100%,720px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/variante-a-abierta.jpeg</code><br><em>Variante A abierta</em></div></p>
-
-*Figura 10. Variante A con la tapa retirada: la batería cubre parte del PCB; el módulo celular queda debajo.*
-
-
-<p style="text-align:center"><img src="../recursos/imgs/variante-b-abierta.jpeg" alt="Variante B abierta" style="max-width:min(100%,720px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/variante-b-abierta.jpeg</code><br><em>Variante B abierta</em></div></p>
-
-*Figura 11. Variante B con la tapa retirada: batería (izquierda) y PCB con ESP32-S3, módulo celular, USB-C y portatarjeta SIM (derecha). El cable rojo es la batería hacia el conector JST.*
-
-
-**Planos con cotas.** Cada plano muestra la vista superior, el corte longitudinal A-A, el corte B-B por los ganchos y el detalle del cierre a escala 4:1.
-
-<p style="text-align:center"><img src="../recursos/imgs/plano-variante-a.jpeg" alt="Plano técnico de la variante A" style="max-width:min(100%,1000px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/plano-variante-a.jpeg</code><br><em>Plano técnico de la variante A</em></div></p>
-
-*Figura 12. Plano de la variante A "compacta".*
-
-
-<p style="text-align:center"><img src="../recursos/imgs/plano-variante-b.jpeg" alt="Plano técnico de la variante B" style="max-width:min(100%,1000px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/plano-variante-b.jpeg</code><br><em>Plano técnico de la variante B</em></div></p>
-
-*Figura 13. Plano de la variante B "delgada".*
-
-
-**Comparación de las dos variantes**
-
-| | **A "compacta"** | **B "delgada"** |
+| Señal | Tipo | Cuenta como evidencia |
 |---|---|---|
-| Exterior (L × W × H) | 90 × 60 × 21 mm | 114 × 62 × 15 mm |
-| Disposición | batería sobre el PCB | batería al lado del PCB |
-| PCB | 70 × 45 mm | 56 × 45 mm |
-| Holgura más justa | 0.7 mm (ESP32 contra batería) | 0.4 mm (pared contra batería y contra PCB) |
-| Volumen de plástico (base + tapa) | 22.7 cm³ | 25.3 cm³ |
-| Masa estimada en PETG ⚠️ | ≈ 29 g | ≈ 32 g |
-| Pregunta que responde con usuarios | ¿Se nota el grosor de 21 mm bajo el cojín? | ¿Molesta una placa más larga y delgada? |
+| "Me encanta", "yo lo compraría", "está muy padre" | Opinión o cortesía | **No** |
+| Deja su nombre, correo y ciudad en el pre-registro de la landing | Compromiso de tiempo y datos | Sí, débil |
+| Nos presenta **en ese momento** a otro hijo o hija del segmento | Compromiso social | Sí, media |
+| Acepta una fecha para instalar la placa en casa de su papá o mamá (piloto) | Compromiso de acceso | **Sí, fuerte** |
+| Deja un anticipo reembolsable o firma una carta de intención con precio | Compromiso económico | **Sí, la más fuerte** |
 
-*La masa se calculó con una densidad de 1.27 g/cm³ (valor típico del PETG, no verificado para un filamento específico).*
+Resultado: `[ ] pre-registros · [ ] referidos · [ ] fechas de piloto · [ ] anticipos`, de 5 sesiones.
 
-**Archivos STL entregados** (orientados para imprimir; la tapa va boca abajo):
+---
 
-| Archivo | Volumen | Medidas | Aristas abiertas |
-|---|--:|---|:--:|
-| `A_base.stl` | 13,925 mm³ | 90.0 × 60.0 × 19.4 mm | 0 |
-| `A_tapa.stl` | 8,817 mm³ | 90.0 × 60.0 × 9.6 mm | 0 |
-| `B_base.stl` | 13,777 mm³ | 114.0 × 62.0 × 13.4 mm | 0 |
-| `B_tapa.stl` | 11,477 mm³ | 114.0 × 62.0 × 9.6 mm | 0 |
+## 3. Economía unitaria de lanzamiento y sensibilidad
 
-**Revisión previa a imprimir.** Al ubicar los componentes encontré un error mío: en la primera disposición el USB-C quedaba encima del módulo ESP32 y el portatarjeta sobre el mismo módulo. Reacomodé los componentes (la disposición final está en los planos) y verifiqué que ningún par de piezas se traslape en planta. Ese tipo de choque es justo lo que el prototipo de forma debe encontrar antes de gastar filamento. Después hice una segunda verificación automática, ahora en 3D, de las cajas de todas las piezas contra la batería, el PCB y las paredes: en la variante B no encontró choques, y en la A el conector JST de la batería se traslapaba 0.2 mm con la batería, así que lo moví 1 mm. Es una verificación de cajas envolventes, no de las formas reales.
+### 3.1 Insumos
 
-!!! warning "Lo que este prototipo todavía no demuestra"
-    Es un modelo digital. No imprimí ninguna pieza, no probé el cierre ni los 20 ciclos de apertura, y las cotas de los componentes marcadas con ⚠️ (módulo celular, USB-C, portatarjeta, antena) deben confirmarse con las fichas de las piezas elegidas. Que las mallas estén cerradas no garantiza que el laminador las imprima sin problemas.
+| Insumo | Valor | Estatus | Fuente o nota |
+|---|---|---|---|
+| Precio del hardware | $4,490 | **SUPUESTO**, decisión de precio | Semana 7. El rango tolerado según las entrevistas de la Semana 4 es **$2,000–$4,000 (HIPÓTESIS)** |
+| Suscripción | $449/mes | **SUPUESTO**; respaldo parcial en entrevistas | Mariana $450, Lupita ≈ $550–650 y Ricardo $600–700 "sin pensarlo" (Semana 4, n = 3) |
+| Costo operativo por suscriptor | $90.14/mes | **ESTIMADO** | SIM $50, nube $18, soporte $12, notificaciones $10, IA $0.14 |
+| Comisión de la pasarela de pago | 3.6 % = $16.16/mes | **SUPUESTO** | Tarifa típica de pasarela, POR VERIFICAR |
+| Costo del hardware | $4,158 actual / **$2,072 con DFM** | **ESTIMADO** | BOM × 1.40 (Semanas 7 y 8). Solo el módulo celular está cotizado |
+| CAC | $1,000 | **SUPUESTO** | 5 demos × 1.5 h × $80/h = $600, más $400 en anuncios |
+| Cancelación (churn) | 3 % mensual | **SUPUESTO** | Sin benchmark nacional |
+| Costo de desarrollo | $71,540 | **ESTIMADO** | 5 ciclos × $14,308 (Semana 7) |
+| Tokens de Haiku | `[MEDIR]` | **ESTIMADO** en §3.5 | `usage.input_tokens` y `output_tokens` de la API |
 
-### 4.4 Revisión DFM
+### 3.2 Cálculo (aritmética visible)
 
-La revisión completa, en el formato de la clase, está en el Prompt 2. Resumen del costo unitario a 10 unidades (MXN, tipo de cambio implícito del modelo):
+```
+Contribución mensual   = 449 − 90.14 − 16.16                     = $342.70
+Vida media             = 1 ÷ 0.03                                = 33.3 meses
+LTV                    = 342.70 × 33.3                           = $11,423
+Ingreso neto de HW     = 4,490 × (1 − 0.036)                     = $4,328.36
 
-| Concepto | Actual | Con mejoras DFM | Diferencia |
-|---|--:|--:|--:|
-| BOM electrónico | $2,520 | $1,160 | −$1,360 |
-| PCB + PCBA | $250 | $250 | $0 |
-| Carcasa | $200 | $70 | −$130 |
-| Ensamble manual ⚠️ | $66 (33 min) | $18 (9 min) | −$48 |
-| Gastos indirectos (15 %) | $455 | $225 | −$230 |
-| **Costo unitario** | **$3,491** | **$1,723** | **−$1,769 (−50.7 %)** |
+Caso (a) el cliente paga el hardware a $4,490:
+  Inversión por cliente = CAC + costo HW − ingreso neto HW = 1,000 + 4,158 − 4,328.36 = $830
+  LTV ÷ inversión       = 11,423 ÷ 830                             = 13.8
+  Payback               = 830 ÷ 342.70                             = 2.4 meses
 
-<p style="text-align:center"><img src="../recursos/imgs/bom-antes-despues.jpeg" alt="BOM por unidad antes y después del DFM" style="max-width:min(100%,820px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/bom-antes-despues.jpeg</code><br><em>BOM por unidad antes y después del DFM</em></div></p>
+Caso (b) hardware subsidiado (comodato):
+  Inversión             = 1,000 + 4,158                            = $5,158
+  LTV ÷ inversión       = 2.21      Payback = 15.1 meses
 
-*Figura 14. BOM por unidad: de $2,970 a $1,480. El módulo celular explica el 87 % del ahorro; la carcasa y el sensor, el resto.*
+Caso (b) con DFM:
+  Inversión             = 1,000 + 2,072                            = $3,072
+  LTV ÷ inversión       = 3.72      Payback = 9.0 meses
+```
 
+| Caso | Inversión por cliente | LTV ÷ inversión | Payback | ¿Pasa la regla práctica (≥ 3 y < 12 meses)? |
+|---|---|---|---|---|
+| (a) HW a $4,490, costo actual | $830 | **13.8** | **2.4 meses** | Sí, **pero depende de que alguien pague $4,490**, arriba del rango tolerado (HIPÓTESIS S1) |
+| (b) HW subsidiado, costo actual | $5,158 | 2.21 | 15.1 meses | **No** |
+| (b) HW subsidiado, con DFM | $3,072 | 3.72 | 9.0 meses | Sí |
 
-<p style="text-align:center"><img src="../recursos/imgs/ensamble-antes-despues.jpeg" alt="Ensamble por unidad antes y después del DFA" style="max-width:min(100%,860px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/ensamble-antes-despues.jpeg</code><br><em>Ensamble por unidad antes y después del DFA</em></div></p>
+### 3.3 Sensibilidad (±25 % por insumo, caso b con costo actual)
 
-*Figura 15. Ensamble por unidad: 5 piezas y ~33 minutos contra 2 piezas y ~9 minutos (⚠️ estimados; se cronometran con la primera unidad armada).*
+| Insumo movido | Valor | LTV ÷ inversión | Payback |
+|---|---|---|---|
+| Suscripción +25 % | $561 | 2.91 | 11.4 meses |
+| Suscripción −25 % | $337 | 1.52 | 22.0 meses |
+| Cancelación −25 % | 2.25 % | 2.95 | 15.1 meses |
+| Cancelación +25 % | 3.75 % | 1.77 | 15.1 meses |
+| CAC −25 % | $750 | 2.33 | 14.3 meses |
+| CAC +25 % | $1,250 | 2.11 | 15.8 meses |
+| Tokens de IA ×10 | IA = $1.40/mes | 2.21 (sin cambio apreciable) | 15.1 meses |
+| **Precios con IVA incluido** (ver §4, fila R8) | $449 → $387.07 neto | **1.81** | **18.4 meses** |
 
+**Lectura (máximo 8 líneas):**
+1. **Lo que más mueve el resultado es el precio de la suscripción**, y después la cancelación. El CAC y la IA casi no lo mueven.
+2. El caso (a) solo cumple porque el margen del hardware es casi cero. La pregunta que decide el negocio es **si alguien paga $4,490**, y hoy no hay evidencia de eso.
+3. **El IVA es un riesgo escondido.** Si $449 incluye IVA, la contribución baja a $280.77 y el caso (b) DFM queda en 3.05 y 10.9 meses: en el límite.
+4. El costo de la IA es irrelevante para la economía (< 0.1 % de la contribución). Se reporta para cumplir con la rúbrica, no porque sea una palanca.
 
-**Los cinco pasos del proceso en una tabla**
+### 3.4 Palancas con efecto numérico (caso b)
 
-| Paso | Hallazgo | Acción |
+| Palanca | Inversión | LTV ÷ inversión | Payback |
+|---|---|---|---|
+| 1. **DFM** (módulo LCC, carcasa PETG) | $3,072 | 3.72 | 9.0 meses |
+| 2. **Programa de referidos** (CAC $600) | $4,758 | 2.40 | 13.9 meses |
+| 3. **DFM + referidos + cancelación 2 %** | $2,672 | **6.41** | **7.8 meses** |
+| Alternativa: HW a $2,000 con costo DFM | $1,144 | 9.99 | 3.3 meses |
+
+**Recuperar el desarrollo ($71,540)** con 24 meses de vida y 3 % de cancelación:
+
+```
+Contribución esperada en 24 meses = 342.70 × (1 − 0.97²⁴) ÷ 0.03 = 342.70 × 17.29 = $5,924 por cliente
+Caso (a), costo actual: 5,924 − 830 = $5,094 por cliente  → 71,540 ÷ 5,094 = 14.0 → 15 clientes para cubrirlo completo
+Caso (a), con DFM:      5,924 + 1,256 = $7,180 por cliente → 71,540 ÷ 7,180 = 9.96 → 10 clientes
+```
+
+Con la meta de SOM de 850 familias, 15 clientes son el **1.8 %**. La meta es alcanzable si se cumple S1 (que alguien pague el precio).
+
+### 3.5 Costo real de la IA (Claude Haiku): ESTIMADO, por medir
+
+| Concepto | Valor | Estatus |
 |---|---|---|
-| 1. Estimar | El costo unitario real con ensamble e indirectos es $3,491, no solo el BOM | Usar este desglose como línea base |
-| 2. Reducir componentes | El módulo celular es 71 % del BOM y se compra montado | Usar el chip LCC en el PCB propio (−$1,295) |
-| 3. Disminuir ensamble | 5 piezas, herramienta y un paso húmedo de 24 h | 2 piezas a presión, sin herramientas (de ~33 a ~9 min) |
-| 4. Reducir soporte | ~12 referencias, soldadura de cables y colada de silicona | 7 referencias; solo 5 uniones manuales; prueba funcional por USB-C |
-| 5. Otros factores | Cada ahorro tiene un costo | Ver trade-offs abajo |
+| Uso | 1 resumen semanal por usuario. La detección **no** usa IA | Decisión de diseño |
+| Tokens por resumen | ~2,000 de entrada (instrucciones + 7 días de estadísticas agregadas) y ~300 de salida | **SUPUESTO** |
+| Precio de Haiku 5.5 | US$0.10 por millón de tokens de entrada y US$0.50 por millón de salida, para prompts < 100 K tokens | **VERIFICADO** con fuentes secundarias (nov 2026). Confirmar en la página oficial de precios de Anthropic |
+| Costo por resumen | 2,000 × 0.10/10⁶ + 300 × 0.50/10⁶ = **US$0.00035** | ESTIMADO |
+| Costo por usuario al mes | 0.00035 × 4.35 semanas = US$0.0015 ≈ **$0.03 MXN** (con 18.42 MXN/USD) | ESTIMADO. El modelo usa **$0.14 como cota alta** |
+| Cómo se mide | Registrar `usage.input_tokens` y `usage.output_tokens` de cada respuesta en `model_runs`, y reportar el promedio de 10 resúmenes | `[MEDIR]` |
 
-**Trade-offs que hay que decidir, no ignorar**
+---
 
-| Mejora | Qué se gana | Qué se arriesga |
+## 4. Checklist regulatorio y legal (México)
+
+> No somos abogados. Esta tabla organiza lo que hay que confirmar. El estatus **VERIFICADO** solo se usa cuando hay una fuente consultada con fecha.
+
+| # | Tema | ¿Aplica? | Qué exige | Trámite y emisor | Costo y tiempo | Estatus |
+|---|---|---|---|---|---|---|
+| R1 | **Homologación** de equipos con radio (módulo celular, y wifi/BLE del ESP32-S3 aunque no se use) | Sí | El equipo que se conecta a redes públicas debe estar homologado | Hasta 2025 era el IFT. Con la ley de telecomunicaciones de 2025 lo atiende la **CRT** (Comisión Reguladora de Telecomunicaciones) | Derechos en el art. 174-J de la Ley Federal de Derechos; monto y plazo sin confirmar | Alcance **VERIFICADO** (Semana 9). Trámite **POR VERIFICAR**: ¿basta un módulo certificado o se homologa el producto final? |
+| R2 | **Bandas LTE** del módulo | Sí | Operar en las bandas de Telcel y AT&T (B2, B4, B28) y de Movistar (B2) | Hoja de datos de SIMCom y operador | — | E-H **VERIFICADO incompatible**: B1/B3/B5/B7/B8/B20/B38/B40/B41. SA-H **VERIFICADO compatible** en la hoja de datos: B1/B2/B3/B4/B5/B7/B8/B28/B66. Precio y disponibilidad en LCC **POR VERIFICAR** |
+| R3 | **Datos personales** | Sí | Aviso de privacidad, consentimiento, derechos ARCO y medidas de seguridad. Si los datos revelan **salud**, son **sensibles** y piden consentimiento **expreso y por escrito** | LFPDPPP (publicada el 20/03/2025). La autoridad es la Secretaría Anticorrupción y Buen Gobierno (antes INAI) | Sin costo de trámite; requiere redactar el aviso | Ley **VERIFICADO** (fuente secundaria). **POR VERIFICAR**: si la rutina de uso del sillón cuenta como dato de salud. **Decisión:** tratarla como sensible por precaución |
+| R4 | **Transferencia internacional** (Firebase y la API de Anthropic, con servidores fuera de México) | Sí | Informarla en el aviso de privacidad | LFPDPPP | — | **POR VERIFICAR**. Minimizar: a Haiku solo se mandan estadísticas, sin nombres ni ubicación |
+| R5 | **No es un dispositivo médico** | Sí, como límite | Si se anuncia para monitorear la salud, podría caer en la regulación de dispositivos médicos | COFEPRIS | Un registro sanitario sería prohibitivo en esta etapa | **POR VERIFICAR**. Regla de mensaje: sin "detecta caídas", "salud" ni "emergencia médica"; decir "avisa si cambia la rutina" |
+| R6 | **Seguridad eléctrica** | Probable si se vende con cargador | Cumplir la NOM aplicable a equipo electrónico (NOM-001-SCFI-2018) | Laboratorio acreditado (p. ej. NYCE) | Sin cotizar | **POR VERIFICAR**. Opción: vender sin cargador y usar uno USB-C ya certificado |
+| R7 | **Baterías LiPo** | Sí | Celda con pruebas de seguridad (IEC 62133-2) y resumen de pruebas UN 38.3 para enviarla por paquetería | Proveedor de la celda y paquetería | Pedir los documentos al proveedor | **POR VERIFICAR**. Sin estos documentos, la paquetería puede rechazar el envío |
+| R8 | **Información comercial y precio** | Sí | Instructivo y garantía en español (NOM-024-SCFI aplicable a electrónicos) y **precio total con impuestos visible** | PROFECO, Ley Federal de Protección al Consumidor (LFPC) | — | **POR VERIFICAR**. Hoy el modelo usa precios **sin IVA**: la landing debe mostrar el total |
+| R9 | **Suscripción y cancelación** | Sí | Contrato o términos claros, forma de cancelar y garantía del hardware | PROFECO (contratos de adhesión, si aplica) | — | **POR VERIFICAR** |
+| R10 | **Licencias de software** | Sí | Revisar las de firmware (ESP-IDF o Arduino core, librería del módem), React Native, Expo y los SDK de Firebase | Repositorio de cada proyecto | $0 | **POR VERIFICAR**. Tabla de licencias en el Anexo B. Ojo con las LGPL del firmware si se distribuye el binario |
+| R11 | **Términos de la API de IA y de WhatsApp** | Sí | Términos comerciales de Anthropic; WhatsApp Business exige plantillas aprobadas para mensajes iniciados por la empresa | Anthropic y Meta (o Twilio) | Por mensaje en WhatsApp: **POR VERIFICAR** | **POR VERIFICAR** |
+| R12 | **Economía circular y residuos electrónicos** | Probable | Plan de manejo de residuos electrónicos y de baterías | Ley General de Economía Circular (publicada el 19/01/2026) y SEMARNAT | — | Ley **VERIFICADO** (fuente secundaria, 05/11/2026). Obligación concreta **POR VERIFICAR** |
+| R13 | **Marca** "DistanciaCero" | Sí | Búsqueda fonética y registro en las clases 9 y 42 | IMPI | Tarifa vigente del IMPI | **POR VERIFICAR** (la búsqueda no se ha corrido) |
+| R14 | Exportación | No en esta etapa | — | — | — | No aplica |
+
+**Lo que sí se puede hacer en un piloto de 5 a 10 unidades (sin venta):**
+- Unidades en comodato con familias conocidas, con **consentimiento firmado por la persona mayor y por el hijo o hija** y un aviso de privacidad simple.
+- Usar módulos que ya traigan certificación de origen y celdas con documentos UN 38.3, sin cobrar.
+- Datos mínimos: sin nombre de la persona mayor en el backend (se usa un alias), borrado al terminar el piloto.
+
+**Lo que se resuelve antes de vender a terceros:**
+- R1 (homologación ante la CRT), R2 (módulo SA-H), R3 y R4 (aviso de privacidad final y consentimiento por escrito), R5 (confirmar que no es dispositivo médico), R6 a R9 (NOM, precio con IVA, términos y garantía) y R13 (marca).
+
+---
+
+## 5. Pitch de 3 minutos, demo de 7 minutos y preguntas del jurado
+
+### 5.1 Guion del pitch (337 palabras, unas 2:36 a 130 palabras por minuto)
+
+| Parte | Tiempo | Tope | Palabras | Guion |
+|---|---|---|---|---|
+| 1. Persona y problema | 35 s | 76 | 63 | Mariana vive lejos de su mamá. En nuestra entrevista nos dijo que pagaría 450 pesos al mes, sin pensarlo, por algo que le quite el miedo a «la llamada». Su mamá vive sola. Hoy la única forma que tiene Mariana de saber si está bien es llamarle todos los días, y cuando su mamá no contesta, el miedo llega antes que la explicación. |
+| 2. Solución e IA con propósito | 35 s | 76 | 67 | DistanciaCero es una placa delgada que va debajo del cojín del sillón favorito de su mamá. No tiene botones, no usa wifi y ella no tiene que hacer nada en su día. Un acelerómetro registra cuándo se sienta y se levanta, la nube aprende su rutina hora por hora y, solo si algo se sale de lo normal, Mariana recibe un aviso. Si todo está bien: silencio. |
+| 3. Mercado y modelo | 35 s | 76 | 67 | Estimamos unas 94 mil personas mayores que viven solas y tienen un hijo o hija que podría pagar este servicio; nuestra meta para los dos primeros años es llegar a 850 familias. Cobramos 4,490 pesos por el equipo y 449 al mes. Cada suscripción deja 343 pesos de contribución mensual y, si el cliente paga el equipo, recuperamos lo que cuesta conseguirlo en menos de tres meses. |
+| 4. Tracción y validación | 35 s | 76 | 63 | ¿Qué tenemos hoy? Tres entrevistas con hijos e hijas: los tres aceptaron pagar una suscripción y pusieron precios entre 450 y 700 pesos al mes. Tenemos la placa, la app y el modelo de detección, y probamos el sistema completo con seis pruebas ligadas a nuestras especificaciones. Lo que todavía no tenemos son clientes: hoy publicamos la landing y medimos los primeros pre-registros. |
+| 5. Equipo | 15 s | 32 | 28 | Somos cuatro estudiantes de Ingeniería Mecatrónica de la IBERO Puebla. Diseñamos nosotros mismos el hardware, el firmware, la nube, la app y el modelo que aprende la rutina. |
+| 6. Petición y cierre | 25 s | 54 | 49 | Buscamos diez familias para un piloto de un mes en Puebla. Si tu mamá o tu papá vive solo, escanea el código y aparta tu lugar hoy. Porque saber que alguien que amas está bien no debería depender de que conteste el teléfono. Con DistanciaCero, el silencio significa tranquilidad. |
+
+**Respaldo de cada afirmación y lo que sigue PENDIENTE:**
+
+| # | Afirmación | Evidencia | Estatus |
+|---|---|---|---|
+| P1 | "Mariana vive lejos… pagaría 450 sin pensarlo" | Entrevista de la Semana 4 (precio "sin pensarlo": $450) | El precio está **VERIFICADO** (n = 1). "Vive lejos" y "le quite el miedo a la llamada" quedan **PENDIENTES**: confirmarlos con las notas de la entrevista o cambiarlos por su frase real |
+| P2 | "Ella no tiene que hacer nada en su día" | RR-02 redefinido (B2) | Cierto en la operación diaria; el consentimiento es un acto único en la instalación |
+| P3 | "La nube aprende su rutina" | Modelo z-score (RF-01) | **PENDIENTE** hasta que se mida RD-02 (FP y FN) |
+| P4 | "94 mil… 850 familias" | TAM y SOM de la Semana 4 | **SUPUESTO**: los filtros los propuso la IA; la disposición de pago (25 %) es el más frágil |
+| P5 | "343 pesos… menos de tres meses" | §3.2, caso (a) | **ESTIMADO**: depende de que paguen $4,490 |
+| P6 | "Probamos el sistema completo con seis pruebas" | T1–T6 | **PENDIENTE**: solo se dice si T1–T6 están corridas el día del pitch. Si no, se dice "estamos probando" |
+| P7 | "Hoy publicamos la landing y medimos pre-registros" | §6.2 | **PENDIENTE**: la landing aún no está publicada |
+| P8 | Equipo de cuatro | — | **PENDIENTE**: nombres y roles |
+| P9 | "Diez familias para un piloto" | — | Es la petición; nadie ha aceptado todavía |
+
+**Las 5 preguntas más difíciles del jurado** están en la §5.3: Q1, Q3, Q4, Q5 y Q7.
+
+### 5.2 Guion de la demo de 7 minutos, con Plan B por tramo
+
+**Atajos que se declaran en voz alta al empezar:** (1) intervalo de reporte comprimido a **10 s** en lugar de 30 min; (2) **baseline precargado** de 14 días simulados; (3) si no hay señal celular en el salón, se usa el **hotspot del teléfono** y se dice. El firmware de la demo se congela después del último ensayo; tiene que haber 3 ensayos completos y un video de respaldo grabado.
+
+| Tramo | Tiempo | Quién | Qué pasa | Lo que se dice | Plan B si falla |
+|---|---|---|---|---|---|
+| 1. Contexto | 0:00–0:45 | Narrador | Sillón real con la placa y el teléfono proyectado | "Esto es lo que vería Mariana. La placa ya está debajo del cojín." | Render del sillón y fotos del prototipo |
+| 2. Camino principal | 0:45–3:15 | Operador | Vincular la placa con la app (onboarding) → sentarse y levantarse 3 veces → llega "Todo bien" con el historial del día | "Reportamos cada 10 segundos solo para la demo; el producto reporta cada 30 minutos para durar más de 15 días con una carga." | Video de 90 s del mismo flujo (T3) y capturas |
+| 3. Evento provocado | 3:15–4:45 | Operador | Se simula "una mañana sin actividad": la ventana esperada no tiene eventos → z-score fuera de rango → push y WhatsApp en dos teléfonos | "**Aclaración honesta:** el sistema necesita de 10 a 14 días para aprender la rutina. Para hoy cargamos 14 días simulados. En el piloto aprende la rutina real." | Disparar la alerta desde el dataset precargado con un script; si tampoco funciona, video |
+| 4. Fallo manejado | 4:45–5:45 | Operador | Se desconecta la antena 20 s → la app dice "Sin reportar", **no** "Alerta" → se reconecta → llegan los reportes guardados | "Un hueco de señal no es una emergencia. No queremos que Mariana llame asustada por un problema de cobertura." | Video de T2 |
+| 5. Compra | 5:45–6:30 | Narrador | Código QR a la landing → precio visible → pre-registro en vivo de alguien del público | "El precio está a la vista y hay un solo botón." | Captura de la landing y del contador de pre-registros |
+| 6. Cierre | 6:30–7:00 | Narrador | Tabla de estado: qué funciona, qué falta, siguiente paso | "Funciona X y está medido Y. Falta Z. El siguiente paso es el piloto con diez familias." | — |
+
+### 5.3 Preguntas difíciles de evaluadores e inversionistas
+
+| # | Pregunta | Respuesta directa | Respaldo en la memoria |
+|---|---|---|---|
+| Q1 | ¿Por qué alguien pagaría $4,490 si en las entrevistas toleraban entre $2,000 y $4,000? | No lo sabemos todavía; es nuestra hipótesis más débil. Por eso tenemos un plan B: comodato, con 3.72 y 9 meses de payback si se aplica el DFM. El piloto mide cuál de los dos acepta la gente | §15, §14 |
+| Q2 | ¿Cuánto cuesta fabricar una unidad? | $4,158 con la BOM actual y $2,072 con DFM, los dos ESTIMADOS. Solo el módulo celular está cotizado | §11, Anexo A |
+| Q3 | ¿Funciona con las redes de México? | Con el módulo que teníamos no: el E-H es europeo. Cambiamos al SA-H, que en su hoja de datos sí tiene B2, B4 y B28. Falta probarlo con un SIM de Telcel | §16, R2; §17, F2 |
+| Q4 | ¿Quién autorizó medir la rutina de la persona mayor? | Ella misma, una sola vez, al instalarla, con un consentimiento escrito y simple. Puede pausarla o quitarla. No pedimos nada todos los días, pero sí su permiso | §16, R3; §7, RR-02 |
+| Q5 | ¿Cuántos clientes necesitan para no perder dinero? | Unos 15 para recuperar los $71,540 de desarrollo con el costo actual y unos 10 con DFM, con 24 meses de vida y 3 % de cancelación | §15 |
+| Q6 | ¿Por qué no usar un reloj con botón de pánico o una cámara? | El botón requiere que ella lo use y lo cargue, y la cámara invade. Nosotros eliminamos la interacción y no tomamos audio ni imagen (RR-03) | §4, §5 |
+| Q7 | ¿Dónde está la IA y por qué no basta un `if`? | La detección es estadística: un z-score contra la rutina de **cada persona** por hora, que un umbral fijo no capta. Claude Haiku solo redacta el resumen semanal y cuesta centavos. Si se cae, hay una plantilla | §21, §17 T1 |
+| Q8 | ¿Cuántas falsas alarmas da? | La meta es < 5 % de falsos positivos y < 2 % de falsos negativos. `[MEDIR en el dataset de 50 eventos]`. Un hueco de señal nunca se convierte en alerta | §7, RD-02; §17 |
+| Q9 | ¿Qué pasa si se acaba la batería? | La app avisa días antes. La meta es ≥ 15 días con una carga, y la estimación da 24 con reportes cada 30 min. `[MEDIR en T5]` | §17 T5 |
+| Q10 | ¿Quién es su competencia más peligrosa? | La llamada diaria, que cuesta cero. Competimos contra la culpa y el miedo, no contra otra app | §4 |
+
+---
+
+## 6. Prompts maestros de construcción
+
+### 6.1 App conectada: 6 prompts en orden, cada uno con criterio de aprobación
+
+> **Contexto común para pegar al inicio de cada prompt:**
+> "Proyecto DistanciaCero. Una placa bajo el cojín de un sillón (ESP32-S3 + MPU6050 + SIM7600SA-H) manda cada 30 min un JSON por HTTPS a una Cloud Function de Firebase. Firestore guarda los datos. Un modelo z-score por hora decide si hay anomalía. Una app React Native (Expo) para el hijo o hija muestra el estado y recibe avisos por FCM y WhatsApp. Reglas: sin lenguaje médico; un dato viejo **nunca** se muestra como actual; ninguna clave va en el código de la app; todo en español de México."
+
+**Prompt A1. Esquema de datos y contrato del dispositivo**
+"Define el esquema de Firestore para `devices`, `windows` (una por cada 30 min: `device_id`, `window_start` ISO, `sit_events`, `stand_events`, `active_seconds`, `vbat_mv`, `rssi`, `fw_version`, `seq`), `model_runs`, `alerts` y `notifications`. Escribe las reglas de seguridad de Firestore: el hijo o hija solo lee sus dispositivos y nadie escribe desde la app. Incluye un ejemplo del JSON que manda el ESP32 y la validación del lado del servidor."
+**Aprobado si:** un JSON válido se guarda y uno con campos faltantes recibe un 400; el emulador de reglas rechaza la lectura de un dispositivo ajeno.
+
+**Prompt A2. Cloud Function de ingesta, idempotente**
+"Escribe una Cloud Function HTTPS en Python que reciba el lote de ventanas del dispositivo (puede traer varias si estuvo sin señal), autentique con un token por dispositivo guardado en Secret Manager, inserte cada ventana con id `device_id + window_start` (idempotente) y responda con el último `seq` recibido."
+**Aprobado si:** mandar el mismo lote dos veces no duplica documentos, y un lote con 20 ventanas atrasadas se guarda completo en < 5 s.
+
+**Prompt A3. Detección z-score con hueco ≠ anomalía**
+"Escribe la función que corre al guardar una ventana: calcula el z-score de `active_seconds` contra el baseline de la misma hora (media y desviación de los últimos 14 días). Marca **anomalía** solo si hay datos y z < −2.5 en 2 ventanas seguidas de la franja habitual. Si **faltan** ventanas, marca **sin_reporte**, nunca anomalía. Durante los primeros 10 días (RF-03) no genera alertas. Incluye un script para cargar un baseline simulado de 14 días y pruebas unitarias."
+**Aprobado si:** en el dataset de 50 eventos, FP < 5 % y FN = 0 (RD-02), y borrar 3 ventanas da `sin_reporte`.
+
+**Prompt A4. Notificaciones con respaldo**
+"Al crear una `alert`, manda un push FCM y un mensaje de WhatsApp con plantilla aprobada (Twilio o Meta). Registra `t_decision`, `t_sent` y `t_delivered` por canal. Si FCM falla, reintenta por WhatsApp; si los dos fallan, reintenta cada 5 min durante una hora."
+**Aprobado si:** con el token FCM revocado, el aviso llega por WhatsApp en ≤ 10 min (T1, RI-04).
+
+**Prompt A5. App Expo: Estado, Historial y Onboarding**
+"Crea la app en React Native con Expo y tres pantallas. **Estado**, con 5 estados visuales: cargando, todo bien, alerta, sin reportar desde HH:MM y error, cada uno con un texto distinto y sin lenguaje médico. **Historial** de 30 días en caché con AsyncStorage, que se ve sin conexión y con la marca 'Actualizado hace X'. **Onboarding** en 4 pasos: crear cuenta, escanear el QR de la placa, nombrar a la persona con un alias y probar el aviso. Usa listeners de Firestore, no polling."
+**Aprobado si:** en modo avión se ve el historial con la marca de antigüedad; con el dispositivo apagado, el estado pasa a 'Sin reportar' y no a 'Todo bien'; una persona nueva completa el onboarding en ≤ 10 min (RI-03).
+
+**Prompt A6. Resumen semanal con Haiku y plantilla de respaldo**
+"Escribe una función programada (domingo a las 19:00, hora de CDMX) que arme las estadísticas de la semana, sin nombres ni ubicación, y llame a la API de Claude Haiku para redactar un resumen cálido de 3 frases en español, sin diagnósticos. Valida la salida contra un esquema JSON `{titulo, resumen, dias_normales}`. Si hay timeout (10 s), error o JSON inválido, usa una plantilla. Guarda `usage.input_tokens` y `usage.output_tokens` en `model_runs`."
+**Aprobado si:** con una API key inválida llega el resumen de plantilla, y el promedio de tokens de 10 corridas queda registrado (§3.5).
+
+### 6.2 Landing de lanzamiento (prompt para v0 o Framer)
+
+```
+Crea una landing de una sola página, primero para celular, en español de México, para "DistanciaCero".
+
+Secciones, en este orden:
+1. Headline: "Saber que tu mamá está bien, sin tener que llamarle."
+   Subheadline: "Una placa bajo el cojín de su sillón aprende su rutina y te avisa solo si algo cambia. Ella no tiene que hacer nada."
+2. Imagen principal: render del sillón con la placa (usa un placeholder con texto alternativo descriptivo).
+3. Tres beneficios con ícono: "Sin botones ni cargadores diarios para ella" · "Sin wifi: funciona con red celular" · "Silencio cuando todo está bien; aviso por app y WhatsApp cuando no".
+4. Cómo funciona en 3 pasos: la colocas · aprende 2 semanas · te avisa por excepción.
+5. Evidencia: bloque "Lo que nos dijeron 3 hijas e hijos" con un placeholder [CITA REAL PENDIENTE]. No inventes testimonios.
+6. Precio visible: "$4,490 equipo + $449/mes" con la leyenda [IVA: CONFIRMAR SI INCLUIDO] y "Cancela cuando quieras".
+7. Aviso fijo: "Producto en validación. El pre-registro no cobra nada."
+8. CTA ÚNICO, repetido arriba y abajo con el mismo texto: "Aparta tu lugar en el piloto". Abre un formulario con nombre, correo, ciudad y "¿quién vive solo?" (mamá, papá u otro), con una casilla de consentimiento que enlaza al aviso de privacidad.
+9. Pie de página: aviso de privacidad, contacto, "No es un dispositivo médico".
+
+Restricciones: no prometas duración de batería, detección de caídas ni uso médico. Contraste AA y botones de al menos 44 px.
+Metadatos: <title>DistanciaCero · Tranquilidad sin llamar</title>; meta description de ≤ 155 caracteres; Open Graph og:title, og:description, og:type=website, og:image de 1200×630 y og:url; Twitter card summary_large_image; favicon.
+Analítica: eventos "view", "click_cta" y "submit_preregistro", sin cookies de terceros.
+```
+
+**Métricas de la landing** (se llenan en la Memoria §19): visitas `[ ]` · clics en el CTA `[ ]` · pre-registros `[ ]` · conversión `[ ] %` · periodo `[ ]`.
+
+### 6.3 Cinco errores comunes del vibe coding con hardware y cómo evitarlos
+
+| # | Error | Cómo se evita |
 |---|---|---|
-| Módulo celular en chip LCC | −$1,295 por unidad | Ciclo de RF y homologación fuera del presupuesto de la semana 7; solo 6 piezas en existencia. Aguanta hasta ≈ $187,000 extra antes de perder frente al diseño actual |
-| Batería LiPo plana | Cabe en 10.8 mm | Autonomía ≈ 11.4 días contra los 15 del requisito RD-01 (máximo 5.33 mA promedio para cumplirlo) |
-| Sin silicona, con tela adhesiva | −12 min de mano de obra y −24 h de curado | Se pierde parte del tacto suave que definía el concepto |
-| Sin sensor PIR | −$65 y cabe en 15 mm | Si el acelerómetro solo no distingue "se sentó", no hay detección |
-| Ganchos de PETG | Sin tornillos ni herramientas | Resistencia a la fatiga en la dirección débil de FDM; probar 20 ciclos |
+| 1 | Pedirle a la IA "el firmware completo" y que invente pines, librerías o comandos AT que el módulo no tiene | Darle la hoja de datos y el pinout reales; probar cada comando AT a mano por serial antes de automatizarlo |
+| 2 | Probar la app solo con datos simulados y descubrir el formato real el día de la demo | Fijar el contrato JSON (A1) primero y usar el mismo JSON en el simulador y en el ESP32 |
+| 3 | Dejar claves de API en el código de la app o del firmware | Secret Manager en la nube; token por dispositivo; rotarlo si se filtra |
+| 4 | No contemplar la falta de señal: el código asume que siempre hay red | Buffer en flash, reintentos con espera creciente e idempotencia (A2), con la prueba T2 obligatoria |
+| 5 | Cambiar el firmware la noche anterior a la demo | Congelar el firmware después del último ensayo; solo correcciones críticas, con un commit etiquetado `demo-freeze` |
 
-**Compatibilidad con JLCPCB PCBA: ⚠️**
+---
 
-| Componente | Estado | Qué hacer |
-|---|:--:|---|
-| ESP32-S3-WROOM-1-N8R8 | ✅ | Módulo con pads de 1.27 mm, 9,101 en existencia en LCSC; asumo pieza Extended (US$3.07 por pedido) |
-| SIM7600E-H LCC | ⚠️ | Confirmar que JLCPCB lo ensambla y cotizar 10 piezas (hoy hay 6) |
-| USB-C, portatarjeta SIM, JST | ⚠️ | Elegir piezas con existencias en la librería; asumo Extended |
-| MPU6050 | ✅ | Módulo GY-521 soldado a mano (pitch 2.54 mm), no QFN de 0.5 mm |
-| PCB | ✅ | 2 capas, un solo lado SMT, sin BGA ni pitch < 0.5 mm |
+## 7. Ruta de cierre: dos semanas con responsables
 
-### 4.5 Efecto del DFM sobre el modelo financiero de la semana 7
+| Rol | Responsable | Semana A | Semana B |
+|---|---|---|---|
+| **H**: hardware y firmware | `[NOMBRE]` | Pedir el SIM7600SA-H o un módulo equivalente con bandas de México; firmware con buffer en flash; T1, T2 y T3 | T4, T5 y arranque de T6 (día 7 a más tardar); correcciones críticas; congelar el firmware |
+| **A**: app y nube | `[NOMBRE]` | Prompts A1 a A4 corriendo con datos simulados; dataset de RD-02 | A5 y A6; app conectada al dispositivo real; métricas de `notifications` |
+| **N**: negocio, usuarios y landing | `[NOMBRE]` | Landing publicada (§6.2); aviso de privacidad y consentimiento (R3); cotizaciones de R2, R7 y R11 | 5 sesiones con usuarios (§2) y su síntesis; métricas de la landing |
+| **D**: documentación, pitch y demo | `[NOMBRE]` | Memoria §1–§16 al día | Memoria §17–§22 y §0; 3 ensayos de la demo; video del pitch y video de respaldo; README y manual de usuario |
 
-<p style="text-align:center"><img src="../recursos/imgs/vpn-antes-despues.jpeg" alt="VPN a 24 meses antes y después del DFM en tres escenarios" style="max-width:min(100%,820px);height:auto;border:1px solid #ddd;border-radius:6px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div style="display:none;border:2px dashed #888;border-radius:6px;padding:1.5rem .6rem;text-align:center;font-size:.85rem">📷 Espacio para imagen<br>Guárdala como <code>docs/recursos/imgs/vpn-antes-despues.jpeg</code><br><em>VPN a 24 meses antes y después del DFM en tres escenarios</em></div></p>
+---
 
-*Figura 16. VPN a 24 meses y mes de recuperación (payback) en tres escenarios. El diseño con DFM cierra en los tres, incluido el que dejaba al diseño actual en negativo.*
-
-
-| Escenario | Actual: VPN 24 m / recuperación | Con DFM: VPN 24 m / recuperación |
-|---|---|---|
-| Modelo de la semana 7 | +$46,404 / mes 21 | **+$233,520 / mes 15** |
-| Tipo de cambio real (FIX) | +$11,773 / mes 23 | **+$220,239 / mes 16** |
-| FIX + 3 % de cancelación mensual | −$15,459 / mes 24 | **+$193,007 / mes 16** |
-
-El costo unitario del modelo baja de $4,158 a $2,072 (BOM × 1.40), el margen del hardware a $4,490 pasa de ≈ 7 % a ≈ 54 %, y el precio mínimo viable de la regla del curso (BOM ÷ 30 %) baja de $9,900 a $4,933. **Tres advertencias:** el VPN a 12 meses sigue negativo (−$49,120), el ahorro depende de un precio "desde" con 6 piezas en existencia, y el umbral de ≈ $187,000 de desarrollo adicional que aguanta el cambio no incluye todavía ninguna estimación real del trabajo de radio.
-
-### 4.6 Circularidad (Ley General de Economía Circular)
-
-La revisión completa está en el Prompt 4. Resumen contra las cuatro preguntas de la clase:
-
-| Pregunta | ¿Cumple hoy? | Qué lo hace cumplir |
-|---|:--:|---|
-| ¿Componentes accesibles sin destruir la carcasa? | ✅ | Snap-fit sin pegamento ni tornillos; muescas para abrir con la uña |
-| ¿Módulos reemplazables por separado? | ⚠️ parcial | Batería por conector JST; acelerómetro en header hembra; ESP32 y módulo celular soldados |
-| ¿Materiales identificables? | ⚠️ | Un solo plástico (PETG) con marcado en relieve; confirmar el código de reciclaje; separar tela y velcro |
-| ¿Se actualiza sin reemplazarse? | ✅ ⚠️ | Firmware por USB-C; la actualización remota exige reservar una partición de flash |
-
-**Estado de la ley:** vigente desde el 20/01/2026; la REP aplica por sector cuando SEMARNAT publique acuerdos; al 30/08/2026 el reglamento no estaba publicado y la nota consultada no mencionaba electrónicos. No hay hoy una obligación sectorial específica que pueda citar para este producto.
-
-### 4.7 BOM actualizado (tarea en casa)
-
-| Línea | Antes (semana 7) | Ahora | Estado del dato |
-|---|--:|--:|---|
-| Módulo celular | $2,100 (SIM7600E-H montado, US$129) | **$805** (SIM7600E-H LCC) | ⚠️ Precio "desde" US$49.47 en LCSC (05/11/2026), 6 en existencia, sin precio por tramo; convertido a la tasa implícita del modelo. Al FIX serían $911 |
-| ESP32-S3 | $120 | $120 | ⚠️ Estimado. LCSC N8R8 "desde" US$3.48 (≈ $64 al FIX): sin ahorro asumido |
-| Acelerómetro + PIR | $125 | **$60** (GY-521, sin PIR) | ⚠️ Estimado |
-| Batería + carga | $175 | $175 | ⚠️ Estimado; no vi el precio de la Jauch |
-| PCB + PCBA | $250 | $250 | ⚠️ Estimado; la estructura de cuotas sí está verificada |
-| Carcasa | $200 | **$70** | ⚠️ Estimado (PETG $14 + impresora $38 + velcro $8 + tela $10) |
-| **BOM por unidad** | **$2,970** | **$1,480** | Solo la línea del módulo celular tiene una fuente directa |
-| Costo unitario del modelo (× 1.40) | $4,158 | $2,072 | |
-
-### 4.8 Estado de la tarea en casa
-
-| Tarea | Estado |
-|---|---|
-| Construir el primer prototipo según el plan | ✅ Landing y modelo 3D listos · ⏳ **Pendiente imprimir** la carcasa (archivos STL listos) |
-| Probar con mínimo 3 usuarios del segmento | ⏳ **Pendiente.** Hoja de observación y protocolo listos; sin observaciones |
-| Aplicar mejoras DFM y actualizar el BOM | ✅ BOM y costo unitario nuevos (4.7), con las estimaciones marcadas |
-
-### 4.9 Defensa del plan (4 minutos)
-
-**Minuto 1: el supuesto más riesgoso.** "El supuesto que necesitamos validar primero es que un hijo o hija adulto pagará $4,490 de hardware más $449 al mes. Si resulta falso, el VPN de +$46,404 que calculamos en la semana 7 no se sostiene, porque no habría ventas. Además, ese precio está por encima del rango que el mercado toleró en la semana 4."
-
-**Minuto 2: el prototipo.** "Construimos una landing page, de baja resolución, con el precio real y un botón de reserva sin pago. La pregunta que responde es: ¿puede un hijo o hija adulto explicar qué hace el producto y decidir si reserva, sin que le justifiquemos el precio? En paralelo modelamos dos variantes de carcasa para ver si el producto cabe."
-
-**Minuto 3: la evidencia.** "Sabremos que funcionó cuando 2 de 3 personas del segmento, idealmente 3 de 5, hagan clic en reservar y expliquen el producto en una frase. Hoy tenemos la página y el protocolo; **todavía no tenemos las sesiones**."
-
-**Minuto 4: DFM, el cambio más importante.** "La revisión DFM nos dice que el componente de mayor costo es el módulo celular SIM7600E-H, $2,100, el 71 % del BOM. Si lo reemplazamos por el mismo chip en formato LCC sobre nuestro propio PCB, y aplicamos los cambios de carcasa y sensor, el costo unitario baja de $3,491 a $1,723 MXN. La condición es que ese ahorro exige diseñar la sección de radio, que no está en nuestro presupuesto."
-
-**Preguntas probables del instructor y mi respuesta**
+## 8. Preguntas de salida de la Semana 9
 
 | Pregunta | Respuesta |
 |---|---|
-| ¿Por qué ese supuesto y no otro más fundamental del negocio? | S2 (que el sensor detecte sentarse) es igual de fundamental, pero exige hardware y varios días. Si nadie paga el precio, S2 no importa; si el sensor falla, S1 tampoco. S1 se responde en un día y S2 es el siguiente ciclo |
-| Si el usuario no puede hacer la acción, ¿qué cambian: el diseño, el material o la instalación? | Si no explica el producto, cambio el mensaje de la página. Si no pagaría, reviso el precio con las sensibilidades de la semana 7. Si la tapa no abre o se rompe, cambio la geometría del gancho o la orientación de impresión, antes de cambiar de material |
-| ¿El prototipo es de baja resolución porque la pregunta lo permite o porque no hay tiempo? | El de negocio, porque la pregunta lo permite: trata de mensaje y precio. El de forma es de alta resolución digital porque necesita medidas exactas; lo que me falta es imprimirlo |
----
-
-## 5. Veredicto de la semana
-
-**QUEDA RESUELTO:** plan de prototipado con seis supuestos clasificados y el más riesgoso identificado (S1, el precio) · prototipo de negocio (landing con el precio real, protocolo de sesión y hoja de observación) · prototipo de forma en dos variantes, con modelo 3D, planos con cotas y cuatro archivos STL con malla cerrada · revisión DFM en el formato de cinco pasos de la clase · efecto del DFM sobre el modelo de la semana 7 con sensibilidades · revisión de circularidad frente a la Ley General de Economía Circular · BOM y costo unitario actualizados · guion de defensa de 4 minutos.
-
-| Dimensión | Estado | Por qué |
-|---|:--:|---|
-| Deseable | 🔴 | Ninguna persona del segmento ha visto la landing todavía. El hardware de $4,490 sigue por encima del rango que toleró el mercado en la semana 4 |
-| Factible | 🟡 | La carcasa cabe en el modelo, en dos variantes, y es imprimible en PETG sin soportes. No imprimí nada; la autonomía de 15 días no se cumple con la batería elegida (11.4 días con 7 mA promedio) |
-| Viable | 🟡 | Con el DFM completo el modelo da VPN a 24 meses de $233,520 (antes $46,404) y recuperación en el mes 15. Depende de dos cosas que no he verificado: el ahorro del módulo celular LCC (precio "desde", existencias de 6 piezas) y un costo de desarrollo de radio y homologación que el presupuesto de $71,540 no incluye (el modelo lo tolera hasta ≈ $187,000) |
-| Dato más débil | 🔴 | Cero sesiones con usuarios; ningún tiempo de ensamble medido; precio de la batería y espesor del módulo celular sin confirmar |
-
-**QUEDA PENDIENTE:**
-
-1. **Hacer las sesiones con 3 a 5 personas del segmento** y llenar la hoja de observación. Es lo que le da sentido a la landing; hoy solo existe el instrumento.
-2. **Imprimir las dos variantes** y probar el cierre, 20 aperturas, el ajuste de la batería y el cabeceo bajo el cojín.
-3. **Cotizar el módulo celular en formato LCC para 10 piezas** y confirmar su espesor, y cotizar el resto del BOM con proveedor (hoy son estimaciones ⚠️).
-4. **Decidir qué hacer con la autonomía:** una batería más grande en la variante B, un consumo promedio menor o relajar el requisito de 15 días.
-5. **Presupuestar el diseño de radio y la homologación** o decidir que la primera tanda use el módulo ya certificado.
-6. **Resolver el precio:** la landing usa $4,490 + $449/mes, el prototipo de Figma de la semana 6 mostraba $249/mes, y el rango tolerado en la semana 4 era menor.
-
----
-
-## 6. ¿Qué aprendí?
-
-Lo que más me quedó es que dibujar con medidas reales es una prueba de factibilidad más dura que cualquier revisión de ideas. El concepto de la semana 6 se veía razonable en el boceto y no se podía construir: la batería 18650 no cabía en 15 mm, el PIR medía el doble del grosor de la placa y el PCB con la batería no cabían lado a lado en 60 mm. Lo encontré al poner las cotas, no al discutirlo.
-
-También entendí la regla del plan de prototipado: el prototipo es la pregunta más barata, y por eso el primero que hice no fue la carcasa, sino una página con el precio. El supuesto más riesgoso del proyecto es que alguien pague $4,490 más $449 al mes, y eso se puede probar en un día sin tocar hardware. La carcasa responde otra pregunta (¿cabe y se puede fabricar?), que es el siguiente ciclo.
-
-El DFM me mostró que casi todo el ahorro está en un solo cambio. De los $1,490 que baja el BOM, el 87 % viene de cambiar el módulo celular por el mismo chip en formato LCC sobre mi propio PCB; el sensor, la carcasa y el ensamble suman poco. Pero ese ahorro tiene un costo escondido, el diseño de radio y la homologación, y por eso el análisis de sensibilidad importa más que el número del caso base.
-
-De la Ley General de Economía Circular aprendí qué no sé: el reglamento no está publicado y la Responsabilidad Extendida del Productor se aplica sector por sector, así que no puedo afirmar qué obligaciones tendría un producto electrónico. Lo que sí puedo hacer desde ahora es diseñar para desarmar: dos piezas de un solo material, cierre sin tornillos, batería reemplazable con conector.
-
-Por último, volví a ver lo útil que es separar lo verificado de lo estimado. Marqué con ⚠️ lo que no verifiqué (tiempos de ensamble, precio de la batería, espesor del módulo celular, tolerancia del PETG) y dejé vacía la hoja de observación en lugar de llenarla con lo que esperaría que dijeran los usuarios.
-
----
-
-## 7. Reflexión personal
-
-> Antes de esta semana yo entendía "prototipar" como construir una versión reducida del producto y dejar la carcasa para el final. El plan de prototipado me hizo ver que primero va la pregunta, y que la más riesgosa de nuestro proyecto no es técnica sino comercial: si alguien pagará $4,490 más $449 al mes. Por eso lo primero que armamos fue una landing con el precio real y una hoja de observación, no una caja impresa. Me incomoda reconocer que llevábamos cinco semanas de arquitectura, concepto y modelo financiero sin que una sola persona del segmento hubiera visto el producto; el instrumento ya existe, pero la evidencia todavía no, y prefiero decirlo así a presentar el plan como si ya la tuviéramos. También me sorprendió que el boceto de la semana 6 no se pudiera construir: al poner cotas reales, la batería 18650 no cabía en 15 mm y el PCB no cabía junto a ella en 60 mm. Es mejor descubrirlo en un modelo digital que después de imprimir o pedir componentes, y lo siguiente es hacer las sesiones con usuarios antes de invertir en cualquier otra pieza.
-
----
-
-## 8. Estado de la actividad
-
-⚠️ **Actividad completada con pendientes** — plan de prototipado, landing, modelo 3D en dos variantes con planos y STL, revisión DFM, efecto sobre el modelo financiero y circularidad terminados. **Pendientes:** sesiones con usuarios (la evidencia que valida o descarta el plan), impresión y prueba de la carcasa, cotización del módulo celular LCC y del resto del BOM, decisión sobre la autonomía, presupuesto de radio y homologación, y alineación del precio.
-
-**Tema:** Prototipado y Diseño para Manufactura (DFM)  
-**Evidencias:** Plan de prototipado con mapa de supuestos + landing page con protocolo y hoja de observación + carcasa en dos variantes (renders, planos con cotas, 4 archivos STL con malla cerrada) + revisión DFM en formato de clase con fuentes del 05/11/2026 + efecto en el VPN de la semana 7 con sensibilidades + revisión de circularidad (LGEC) + BOM actualizado + guion de defensa
+| ¿Cuál es la frontera más frágil y qué registro la vigila? | **F2** (módem, batería y red): por el cambio de módulo y la caída de VBAT. La vigila el log `VBAT_min, CREG, CSQ, http_code, tx_ms` en cada reporte |
+| ¿Cuánto valen el CAC, el LTV y la relación LTV ÷ inversión? | CAC $1,000 (SUPUESTO), LTV $11,423 (ESTIMADO); 13.8 si paga el hardware, 2.21 en comodato y 3.72 en comodato con DFM |
+| ¿Qué tema regulatorio puede impedir vender y qué fuente lo confirma? | La **homologación y las bandas (R1 y R2)**: la hoja de datos de SIMCom confirma que el E-H no cubre las bandas de México. Le sigue el **consentimiento (R3)**, por la LFPDPPP de 2025 |
+| ¿Qué evidencia respalda cada parte del pitch? | Tabla P1–P9 de la §5.1. Hoy solo el precio de P1 está VERIFICADO; P4 y P5 son SUPUESTO o ESTIMADO; P3, P6, P7 y P8 siguen PENDIENTES |
+| ¿Cuál es el camino principal de la demo y su Plan B? | Instalar → "Todo bien" → alerta provocada → corte de señal manejado → pre-registro. Cada tramo tiene un video de respaldo (§5.2) |
