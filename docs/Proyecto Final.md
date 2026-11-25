@@ -75,8 +75,6 @@
 |---|---|---|
 | Andrea Solano López | `[ROL]` | `[ ]` |
 | Jesús Hernández | `[ROL]` | `[ ]` |
-| `[NOMBRE]` | `[ROL]` | `[ ]` |
-| `[NOMBRE]` | `[ROL]` | `[ ]` |
 
 **Acuerdo de colaboración:** `[ENLACE: acuerdo firmado]` (horarios, canal de comunicación y regla de un commit por sesión).
 
