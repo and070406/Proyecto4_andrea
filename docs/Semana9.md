@@ -1,4 +1,5 @@
-# Actividad 9 · Integración, Go-to-Market y Pitch
+# Semana 9 
+## Integración, Go-to-Market y Pitch
 
 **Proyecto:** DistanciaCero, "Reposabrazos Centinela" · **Materia:** Proyectos 4 · IBERO Puebla
 **Versión:** v9.1 · 24/11/2026 · **Base:** Actividad 9 del equipo (06/11/2026) y guía de la Semana 9 del profesor
