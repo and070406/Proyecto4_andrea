@@ -1,612 +1,816 @@
-# DistanciaCero · Memoria del proyecto final
+# Proyecto final: DistanciaCero
 
-**Reposabrazos Centinela** · Proyectos 4 · Ingeniería Mecatrónica · IBERO Puebla
-**Versión de la página:** v9.1 · 24/11/2026 · *se actualiza cada semana; historial en el Anexo B*
+<div style="display:flex;align-items:center;gap:14px;margin:6px 0 18px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/DistanciaCero/logo/logo-simbolo.png" alt="Logotipo de DistanciaCero" style="height:52px;width:auto">
+<div><strong style="font-size:1.3rem">DistanciaCero</strong><br><span style="color:#555">Jesús León Hernández Martínez y Andrea Solano López · Proyectos 4 · IBERO Puebla · 2026</span></div>
+</div>
 
-> **Leyenda de evidencia:** **MEDIDO** (dato propio con archivo) · **VERIFICADO** (fuente externa con fecha) · **ESTIMADO** (cálculo con supuestos declarados) · **SUPUESTO** (sin fuente) · **HIPÓTESIS** (afirmación sobre usuarios o mercado sin evidencia) · **POR VERIFICAR** (falta confirmar con autoridad o fabricante) · `[MEDIR: …]` (campo que se llena al correr la prueba) · `[URL_PENDIENTE: …]` (enlace que todavía no existe).
->
-> **Plantilla de cada sección:** *Versión y fecha* · *Decisión* · *Evidencia* · *Qué cambió* · *Qué falta*. El detalle largo va en los Anexos A–F.
-
-**Mapa para inversionistas:**
-
-| Busca | Sección |
-|---|---|
-| Resumen | §0 |
-| Problema | §2 y §3 |
-| Solución | §5 y §9 |
-| Mercado | §4 |
-| Modelo de negocio | §13 |
-| Operación | §11 |
-| Finanzas | §14 y §15 |
-| Legal | §16 |
-| Tracción | §18 y §19 |
-| Equipo | §1 |
-| Riesgos | §22 |
-
----
- <p align="center"><img src="data:image/png;base64,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" alt="DistanciaCero. Cerca, sin invadir." width="220"></p>
-
-## 0. Resumen ejecutivo
-
-*Se redacta al final con lo que esté demostrado en §1–§22. Esta es la versión borrador de la Semana 9.*
-
-| Campo | Contenido |
-|---|---|
-| Nombre y logo | <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA5CAMAAACxmt3lAAAAwFBMVEXhcE1oWlq2bUibckj/fx/ikFP///8AAH8+UT8aQ0MA/wBmZjNrYES2kUjakUgAAADUh04SQDsQPjrUhk0JPDwAVVUSQDrgjVHThk3Sh03//wDThk3Uhk28fj3Thk3/qlX/AAARQDsRQDoRPjkRQDoRPzoAf3+weUrRf1ARPjkRQDuqVVXShkz/f38RPjoSRTZ/f38PPjp/fwAQPjoTQjlbWkKqqlUoRz0HKysTREDMmTPhi1H//38AfwB4ZUSMbEcxT5E3AAAAQHRSTlMSBAfqA/8BAuwTAQXdBwcA/Pz70AsD0P5uFgFPrwSOAwFulCtW0QLyDkqwAywCdBQCkwKwNeoD6Qf/BQsCAuzuDsRDUgAAA9hJREFUeNqVV4l22kAM3CRN71a21za+L44AIRACzdm0//9X1d5rgw3Ve8kjsTU7kkbSQqBtPvvZr5tdiLZsmslY/bfHSOuvAN+dNKFrW9hMnvmT0wD40qbm3p6HPxZG7fdCtBlMxOGeZ3l7DCpc+z0IFoBfS+6eMv7JFWTCxTCDGew1eXmuBNBk6hMAU1cdpmMQGArRXT7ja1VZlg+HAAFsFX3XNQm0UsGeLDdwy1+/6wIEUJvohZs3DdvlZAi7C8jTKIoljgbwmb8nAVjC1oux78Nms6+3goek8rIl1HFGTmQQCI9/IV/j/uHkK3RqY0JCb2YRkMpisJmKtPFfWxSNL2s+C9iHiebm/RH+jlPAY6UAZrDkAQr6u+eO8hFivJQPvb8KYBRBLgECfoIsQDg5UmoEbNwOAIuilAyCqUqgG26OigVJCA7eLwPgpDyTxGcEFP9xX+O++0vRYVcWQsz0QBgBJdlFf9fCRorsxgBkd7cMYKGl2wwMjgDGUhA3IyuI3wjQaPEPzB2GsD5AoHGSED9URV4PBMBr0Ugx3ViVyMlYZ2CQAIeQ4+ZJA9AfQGrZte7ylP+7TINdzBTIVjGo4RSFgCecIeggCiA71UZ71PSpGKB+4W/rIOgbCWVuvZMpYBw+8bnzElKFsCJT1aznAKCt8cTGL3QSyFROsfBMAOxNfDPShTQMvpznzrRyASst51YOkofzQO4h1lmUVWCdmHzDZ4/nACQ2QKNGOe6NOD6PQQJvVAPUchy6uzmmlkZwn/wfAyVP16XXbNYVZ0Rh5SAjvtqocuDqaTlgt5BqLbN5wBeg0XcqpuWA5bYOxNS3G8RZ2bvvmD1AZpQI/rTTYZiYYUEk1dwcRvReNU2OiRxMw6OJgM5xLygKVwdLo4fAQ0zNUQSnwERstidrYq8GiplDYc1luRu99qzDedubyNLU0KGvFVFLg6fBWhrz6jjCK5gMomZKomYdR/huEpnlx/JQoYqp09oLeml0askQ8upAAFVK7fVayjuSr+5YrmPlYYUB251VfYCf2cg6AjebuaU1Qo+fLQQnusQLWX6XVFWV3N+iNl4tf9zOiKjviWL1ea1Esu62J8Tcpi9Wa+uqu2B9Ge4L+xAsR7SK3+YkjtOi5e7IrjUAM/AXNX47uMzaCIwIZb6jjn/ZvWyL3XwB8SHCoRWqyK3rfsBudThuslPuI5qryUcOxfIRLLEftWtqRgY52m7Qznc3JVibjzAAwIbePOp1T+9ZnMMA7AYYF/To6Xlbnz0A+L2CCaeLkUUldHqM9A8eppP5Ki0yyizLipTJsttg/wClqwJgDjuCcwAAAABJRU5ErkJggg==" alt="" width="32" style="vertical-align:middle"> **DistanciaCero** · lema: *"Cerca, sin invadir."* |
-| Propuesta de valor (≤ 25 palabras) | *"Para hijos lejos de su padre o madre mayor: la certeza diaria de que todo está bien, sin preguntar y sin que ella haga nada."* (25 palabras) |
-| Imagen del producto | `[IMAGEN: render del sillón con la placa; Actividad 6, Prompt 7]` |
-| Mercado alcanzable | SOM: **850 familias** en los años 1–2 (**SUPUESTO**, §4) |
-| Precio | **$4,490** el equipo + **$449/mes** (IVA por confirmar, §16 R8) |
-| Economía unitaria | Contribución de **$342.70/mes**; LTV ÷ inversión de **13.8** (paga el hardware) o **3.72** (comodato con DFM), **ESTIMADO** (§15) |
-| Enlaces | [App (prototipo)](https://jesushernandez2005.github.io/Proyecto4/app/) · Landing `[URL_PENDIENTE: https://jesushernandez2005.github.io/Proyecto4/landing/]` · [Repositorio](https://github.com/jesushernandez2005/proyecto4) · Video del pitch `[URL_PENDIENTE]` · Demo de respaldo `[URL_PENDIENTE]` |
-| Estado honesto (1 línea) | **Diseño completo y documentado. Integración y pruebas con usuarios en curso: todavía no hay mediciones del sistema completo ni clientes.** `[ACTUALIZAR al cierre]` |
-
-- **Versión y fecha:** v9.1 · 24/11/2026 (borrador; la versión final se cierra en la Semana B)
-- **Decisión:** presentar DistanciaCero como un **servicio de tranquilidad por excepción** para hijos e hijas de personas mayores que viven solas: hardware de $4,490 más suscripción de $449 al mes, validado primero con un piloto de 10 familias.
-- **Evidencia:** 3 entrevistas con disposición de pago entre $450 y $700 al mes (§3); economía unitaria ESTIMADA (§15); pruebas T1–T6 `[PENDIENTES]` (§17).
-- **Qué cambió:** el módulo pasa a SIM7600SA-H (bandas de México), el reporte pasa a cada 30 min (autonomía) y el consentimiento queda como un acto único (Semana 9).
-- **Qué falta:** sistema integrado medido, 5 sesiones con usuarios, landing publicada.
-
----
-
-# Parte I · Oportunidad y mercado
-S
-## 1. Equipo
-
-- **Versión y fecha:** v1 · Semana 1 → v9.1 · 24/11/2026
-- **Decisión:** el equipo se organiza en 4 roles de cierre: **H** hardware y firmware · **A** app y nube · **N** negocio, usuarios y landing · **D** documentación, pitch y demo. Las reglas de trabajo quedan firmadas en el acuerdo de colaboración.
-- **Evidencia:** acuerdo de colaboración firmado 
-[Acuerdo de colaboración (PDF)](recursos/archivos/Acuerdo_de_colaboracion.pdf")`; historial de commits del [repositorio](https://github.com/jesushernandez2005/proyecto4/commits/main) (Anexo B).
-- **Qué cambió:** las Semanas 2 a 6 las firmaron Jesús y Andrea y en la Semana 9 pasó a roles con entregables por semana.
-- **Qué falta:** el rol de cada quien y los enlaces de "quién hizo qué".
-
-| Integrante | Rol | Aportaciones verificables |
-|---|---|---|
-| Jesús León Hernández Martínez | `[ROL]` | Autor del sitio con las Actividades 1–9; coautor de la app web ([/app/](https://jesushernandez2005.github.io/Proyecto4/app/)) |
-| Andrea Solano López | `[ROL]` | Coautora (con Jesús) de la matriz de selección (Semana 2), el PDS (Semana 5), los conceptos (Semana 6) y la app web |
-
-**Acuerdo de colaboración:** documento Word con roles, reuniones, reglas del repositorio, uso de IA, decisiones, conflictos y firmas → [ENLACE](https://iberopuebla-my.sharepoint.com/:w:/r/personal/200759_iberopuebla_mx/Documents/Acuerdo_de_colaboracion_DistanciaCero.docx?d=wdcb74f8283d441acbadc58c29ca22a3f&csf=1&web=1&e=UWMnA4).
-
-## 2. Problema y oportunidad
-
-- **Versión y fecha:** v1 · Semana 2 (02/09/2026) → v9.1 · 24/11/2026
-- **Decisión:** atacar el **miedo a "la llamada"** de los hijos e hijas, no el riesgo médico de la persona mayor. El valor es la **certeza sin fricción**.
-- **Evidencia:** [Actividad 2](https://and070406.github.io/Proyecto4_andrea/semana2/): 10 prompts (Perplexity y Claude), Pain-Gain en dos versiones, filtro DVN y matriz de selección; 3 entrevistas (§3).
-- **Qué cambió:** el dolor principal pasó de "la caída" (v1 del Pain-Gain) a "el miedo a la llamada" (v2). En la Semana 4 el problema se precisó otra vez: no depende de la **distancia**, sino de que **no haya una red humana local**.
-- **Qué falta:** medir la frecuencia del dolor (llamadas al día, minutos) en las sesiones de la §18.
-
-**Oportunidad en una oración (Semana 2):** *"Existe una oportunidad para el hijo o hija que vive lejos de un padre mayor que vive solo, que necesita una señal diaria y confiable de que su papá o mamá está bien y activo, sin tener que preguntar, llamar ni sentirse culpable, porque actualmente la única forma de saberlo es interrumpir su día para llamar, pedirle el favor a alguien más, o vivir con la incertidumbre hasta que algo sale mal."*
-
-| Pain-Gain (v2) | Contenido | Intensidad o importancia |
-|---|---|---|
-| ⭐ D1 | El miedo a "la llamada": la incertidumbre permanente de cuándo llegará la mala noticia | Alta |
-| D2 | No hay un sistema económico y no invasivo que avise si algo pasó | Alta |
-| D3 | No saber si su papá o mamá está bien durante el día | Alta |
-| D4 | Culpa por haber normalizado la distancia en la comunicación diaria | Media |
-| D5 | Depender de un vecino o familiar para "checar" | Media |
-| ⭐ G1 | Confirmación diaria de que su familiar está bien y activo | Alta |
-| G2 | Dejar de sentir culpa y ansiedad por no estar presente | Alta |
-| G4 | Recuperar atención mental para su propia vida | Media |
-| G5 | Evidencia que se puede compartir con hermanos | Baja o media |
-
-| Etapa | Alternativas | Resultado |
-|---|---|---|
-| Oportunidades de la Semana 2 | Prevención de caídas, sarcopenia, osteoartrosis de rodilla, ejercicio en enfermedades crónicas | Se descartaron como producto; la raíz común es la falta de una señal diaria (insight) |
-| Conceptos (filtro DVN) | A "Gemelo de rutina" ✅✅⚠️ · **B "El Seguro que se Olvida que Existe" ✅✅ (1 ⚠️)** · C "El Seguro que Paga Otro" (B2B2C) ✅ (2 ⚠️/❌) | Se eligió B; C se descartó porque el ciclo de venta a aseguradoras (12–24 meses) no cabe en el semestre |
-| Matriz de selección | Pasión ✅ · Habilidad: parcial (riesgo: conectividad celular) · Mercado: 5 de 5 señales | 3/3, sigue adelante |
-
-## 3. Usuario y evidencia de campo
-
-- **Versión y fecha:** v1 · Semana 3 (09/09/2026) → v2 · Semana 4 (17/09/2026) → v9.1 · 24/11/2026
-- **Decisión:** el comprador es el **hijo o hija de 35 a 55 años**, pero no es un solo segmento: son **tres perfiles** según si hay una red humana local. El usuario pasivo es su papá o mamá de 65 años o más que vive solo.
-- **Evidencia:** 3 entrevistas con citas textuales ([Actividad 4](https://and070406.github.io/Proyecto4_andrea/semana4/), sección de metodología); hipótesis H1, H2 y H3.
-- **Qué cambió:** la capa psicográfica pasó de HIPÓTESIS a **CONFIRMADA CON MATIZ**. Apareció un tercer actor con poder de veto: **el cuidador local** (Sonia, la hermana de Ricardo).
-- **Qué falta:** entrevistar a personas mayores sobre su aceptación (S2), llegar a ≥ 5 entrevistas y registrar el consentimiento de las entrevistas en el Anexo D.
-
-| | Mariana, 42 | Lupita, 37 | Ricardo, 51 |
-|---|---|---|---|
-| Dónde vive | Puebla capital, misma ciudad que su mamá | Chicago, EE. UU.; su mamá (66) vive sola en Puebla | CDMX; su papá (68) vive en Veracruz |
-| Perfil | Cuidadora local | Cuidadora en la diáspora | Cuidador con apoyo local (su hermana Sonia) |
-| Contacto habitual | Llama todos los días, de 7 a 7:30 pm | Videollamada diaria de 20 a 40 min | Llama martes y viernes |
-| Historial con tecnología | Nunca ha usado apps ni dispositivos | Probó y **abandonó** un botón SOS | Nunca ha pagado monitoreo |
-| Precio "sin pensarlo" | $450/mes | US$30–35/mes (≈ $550–650) | $600–700/mes |
-| Cita | "Si tarda mucho en contestar sí ya se me acelera el corazón, aunque luego resulte que nomás estaba regando las plantas." | "Vivir en otro país te pone en un estado de alerta constante." | "El silencio no me pondría nervioso, al contrario, creo que lo preferiría." |
-
-| Hipótesis | Resultado |
-|---|---|
-| H1 Dolor: se preocupan fuera de las llamadas | ✓ **Confirmada con matiz**: depende de la red local, no de los kilómetros |
-| H2 Solución: silencio o confirmación diaria | ⚠ **Depende del perfil**: Lupita pide "algo activo, algo que confirme"; Ricardo prefiere el silencio. El modo de aviso debe ser **configurable** |
-| H3 Pago | ✓ **Confirmada**: las tres cifras caen dentro o arriba del rango de $300–600 |
-
-**Hallazgos que no esperábamos:**
-1. La autonomía de la persona mayor pesa más que la ansiedad del hijo; Mariana teme que su mamá se sienta vigilada.
-2. "Sin wifi" se valida con una frustración real: Mariana tuvo que configurar el router de su mamá a distancia.
-3. "Cero acción" se valida con un fracaso ajeno: la mamá de Lupita "nunca se acordaba de traerlo puesto".
-4. Un aviso sin alguien cerca que pueda responder genera más ansiedad (Lupita).
-5. Ricardo pagaría "para aliviarle la vida a mi hermana".
-6. El riesgo puede ser humano: sin el acuerdo de Sonia, Ricardo no lo instalaría.
-
-| Capa del segmento | Estatus |
-|---|---|
-| Demográfica: hijos de 35–55 con padre o madre de 65+ que vive solo (ENIGH 2024, INEGI) | **VERIFICADO** para la persona mayor |
-| Conductual: llamada casi diaria; 1 de 3 ya abandonó un botón SOS | n = 3 |
-| Psicográfica: alerta constante si no hay red local | **CONFIRMADA CON MATIZ** (n = 3) |
-| Económica: $450–700/mes; quien decide no siempre es quien paga | n = 3 |
-
-**Hipótesis críticas pendientes:**
-- **S1:** alguien paga $4,490 por el hardware.
-- **S2:** la persona mayor (y el cuidador local) acepta la placa.
-- **S3:** la rutina del sillón basta para detectar un cambio relevante.
-
-## 4. Mercado y competencia
-
-- **Versión y fecha:** v4 · Semana 4 → v9.1 · 24/11/2026
-- **Decisión:** posicionarse como el único **pasivo, sin wifi y con objeto cotidiano**, frente a botones de pánico, cámaras y la llamada diaria.
-- **Evidencia:** TAM, SAM y SOM sobre ENIGH 2024 (38.8 M hogares) y lista de competidores con precios (Anexo F).
-- **Qué cambió:** se identificó a la **llamada diaria** (costo cero) como el sustituto más peligroso.
-- **Qué falta:** reemplazar los filtros que propuso la IA (10.9 %, 17.5 %, 85 %, 60 % y 25 %) por fuentes; la disposición de pago (25 %) es el filtro más frágil.
-
-| Nivel | Universo | Valor anual | Estatus |
-|---|---|---|---|
-| TAM | 94,350 personas | $509.5 M | **SUPUESTO** (filtros sin fuente) |
-| SAM | 17,832 personas | $96.3 M | **SUPUESTO** |
-| SOM (años 1–2) | 850 familias | $4.59 M | **SUPUESTO** |
-
-| Tipo | Competidor | Precio | Fuente o estatus |
-|---|---|---|---|
-| Directo | Estoy Bien | $299/mes | Semana 4 `[ENLACE]` |
-| Directo | Cuida Más | $800–928/mes, con call center | Semana 4 `[ENLACE]` |
-| Directo | Care 60+ | Desde $6,588/año | Semana 4 `[ENLACE]` |
-| Indirecto | Life360, Family Link, sensores wifi DIY | — | Sin precio |
-| Sustituto | Llamada diaria y red informal | $0 | **El más peligroso** |
-| Sustituto | Cuidador por horas | $9,000–27,000/mes | Semana 4 |
-
-**Lienzo estratégico (4 acciones):**
-- **Eliminar:** la interacción de la persona mayor.
-- **Reducir:** el call center.
-- **Incrementar:** el silencio cuando todo está bien.
-- **Crear:** rutina aprendida en un objeto cotidiano, sin wifi.
-
-`[IMAGEN: mapa de posicionamiento]`
-
-## 5. Propuesta de valor y oferta
-
-- **Versión y fecha:** v3 · Semana 4 → v9.1 · 24/11/2026
-- **Decisión:** *"Para hijos que viven lejos de su padre o madre mayor, DistanciaCero reemplaza el miedo a 'la llamada' por la certeza diaria de que todo está bien, sin preguntar y sin culpa."*
-- **Evidencia:** 3 entrevistas (§3); evaluación IDEO: Insightful ✅, Unique ✅, Targeted ✅ con matiz ([Actividad 4](https://and070406.github.io/Proyecto4_andrea/semana4/)).
-- **Qué cambió:** de la v1 (segmento definido por la distancia) a la v3 (red local), con variantes por perfil.
-- **Qué falta:** probar el mensaje en la landing (§19): ¿lo explican con sus palabras en < 30 s?
-
-| Elemento | Contenido |
-|---|---|
-| Oferta técnica | Placa de ~114 × 62 × 15 mm bajo el cojín, LTE sin wifi, avisos por excepción por app y WhatsApp, resumen semanal |
-| Nivel de la pirámide de Bain | **Funcional** hoy (reduce ansiedad, ahorra tiempo); la meta es **Emocional** (tranquilidad). El nivel Transformador se descartó por prematuro |
-| Error principal de la v1 | Definir el segmento por la distancia y no por la red humana local |
-
-| Variante por perfil (Semana 4) | Mensaje |
-|---|---|
-| Sin red local (tipo Lupita) | "Para quienes viven lejos y no tienen quién revise a su mamá o papá, DistanciaCero avisa apenas algo cambia, sin depender de que alguien más esté cerca para reaccionar." |
-| Con red local fuerte (tipo Ricardo) | "Para quienes ya tienen quién cuide de cerca a su padre o madre, DistanciaCero le quita a esa persona la carga de estar siempre pendiente, sin reemplazarla." |
-| Local, sin red delegada (tipo Mariana) | "Para quienes viven cerca pero no pueden estar ahí todo el día, DistanciaCero confirma que todo está bien sin pedirle nada a su mamá o papá: ni una app, ni un botón, ni acordarse de nada." |
-
-## 6. Propiedad intelectual, marca y vigilancia
-
-- **Versión y fecha:** v1 · Semana 3 → v9.1 · 24/11/2026
-- **Decisión:** usar la marca **DistanciaCero** (ganó frente a SilencioActivo) con registro en las clases 9 y 42, y el dominio distanciacero.mx.
-- **Evidencia:** análisis de la patente MX 351729 B (detección de caídas en piso): veredicto **"fuera"**, solo con la reivindicación 1.
-- **Qué cambió:** se agregó una variante de handle por la colisión con una banda argentina llamada "Distancia Cero".
-- **Qué falta:** la búsqueda fonética en MARCANET, porque **no se ha corrido**. La libertad de operación es "alta", pero sobre una búsqueda parcial: falta la ruta IMPI → LATIPAT → Lens.org con 3 a 5 patentes y los códigos IPC G08B21/04xx y A61B5/1118.
-
-| Tema | Estatus |
-|---|---|
-| Búsqueda fonética IMPI, clases 9 y 42 | **POR VERIFICAR** |
-| Libertad de operación | Alta, con **búsqueda parcial** |
-| Dominio | `[POR VERIFICAR: disponibilidad y compra]` |
-| Estrategia de protección | Marca y secreto industrial (parámetros del modelo); patente no prioritaria por ahora |
-
----
-
-# Parte II · Producto
-
-## 7. Especificación de producto (PDS)
-
-- **Versión y fecha:** v1 · Semana 5 → v9.1 · 24/11/2026
-- **Decisión:** 16 requisitos en 4 categorías, cada uno con su prueba. En la Semana 9 se ajustan RD-01 (batería), RR-02 (consentimiento) y la interpretación de RF-02.
-- **Evidencia:** tabla del PDS (Semana 5); pruebas en la §17.
-- **Qué cambió:**
-  - RD-01: la batería pasa de una 18650 a una LiPo plana de 1.92 Ah.
-  - RR-02: dice "sin acciones **recurrentes**"; el consentimiento único está permitido.
-  - RF-02: se mide desde que el backend decide; con ventanas de 30 min, la latencia de evento a aviso puede llegar a ~40 min.
-- **Qué falta:** ningún requisito está **MEDIDO** todavía.
-
-| ID | Requisito | Meta | Verificación | Estatus |
-|---|---|---|---|---|
-| RF-01 | Detectar desviaciones de la rutina individual | Alerta solo ante desviación propia | Dataset de 14 días | `[PENDIENTE]` |
-| RF-02 | Silencio si todo es normal y aviso tras la decisión | ≤ 10 min | T4, 10 corridas | `[PENDIENTE]` |
-| RF-03 | Baseline sin alertas | 10–14 días | Logs | `[PENDIENTE]`; en la demo es precargado |
-| RF-04 | Historial de 30 días sin conexión | 30 días en caché | Modo avión | `[PENDIENTE]` |
-| RD-01 | Autonomía | ≥ 15 días | T5 | ESTIMADO en 24.2 días (escenario C) · `[MEDIR]` |
-| RD-02 | Error del algoritmo | FP < 5 %, FN < 2 % | 50 eventos | `[MEDIR]` |
-| RD-03 | Transmisión | ≤ 30 s | T4, 20 envíos | `[MEDIR]` |
-| RD-04 | Disponibilidad del backend | ≥ 99 % | Uptime (T6) | `[MEDIR]` |
-| RI-01 | Estado entendible | < 10 s | §18, tarea 2 | `[MEDIR]` |
-| RI-02 | Solo red celular, con TLS | TLS | Inspección | `[PENDIENTE]` |
-| RI-03 | Onboarding sin la persona mayor | ≤ 10 min | T3 y §18 | `[MEDIR]` |
-| RI-04 | Dos canales de aviso | ≥ 2 | T1 | `[MEDIR]` |
-| RR-01 | Costo recurrente | $300–600/mes | Modelo | Cumple ($449) |
-| RR-02 | Sin acciones **recurrentes** de la persona mayor | 0 | Revisión de diseño | Cumple en diseño; consentimiento único en la instalación |
-| RR-03 | Sin audio ni video | 0 campos | Auditoría del esquema | Cumple en diseño (A1) |
-| RR-04 | PCB fabricable en JLCPCB | Sin BGA ni pitch < 0.5 mm | DRC | **POR VERIFICAR** con el módulo LCC |
-
-## 8. Arquitectura del sistema
-
-- **Versión y fecha:** v1 · Semana 5 → v9.1 · 24/11/2026
-- **Decisión:** arquitectura **híbrida**. El edge agrega los datos y los guarda si no hay señal; la nube aprende la rutina y decide; HTTPS en lugar de MQTT para ahorrar batería.
-- **Evidencia:** diagrama anotado `[IMAGEN: diagrama v9]`; justificación de la Semana 5.
-- **Qué cambió respecto a la Semana 5:** se eliminó el PIR (no cabía y no detecta a través del cojín), el módulo pasa del E-H al SA-H, la batería de la 18650 a la LiPo de 1.92 Ah, y el periodo de reporte de 15–30 min a 30 min.
-- **Qué falta:** confirmar la detección solo con el acelerómetro (HIPÓTESIS S3, prueba F1).
-
-| Tramo | Protocolo | Decisión |
-|---|---|---|
-| MPU6050 → ESP32-S3 | I²C e interrupción de movimiento | El ESP32 duerme y despierta con cada movimiento |
-| ESP32-S3 → SIM7600SA-H | UART y comandos AT | Módem apagado entre reportes |
-| Dispositivo → Firebase | HTTPS POST con JSON sobre TLS, cada 30 min | Ingesta idempotente con buffer en flash |
-| Firestore → Cloud Function | Trigger al escribir | z-score por hora; un hueco es "sin reporte" |
-| Nube → app | Listener de Firestore, FCM y WhatsApp | Dos canales |
-| Nube → Claude Haiku | HTTPS | Solo el resumen semanal; hay plantilla si falla |
-
-## 9. Diseño del producto
-
-- **Versión y fecha:** v1 · Semana 6 → v9.1 · 24/11/2026
-- **Decisión:** se eligió el **Reposabrazos Centinela**: una placa bajo el cojín, sin LED ni botones.
-- **Evidencia:** matriz de Pugh con deseabilidad 50 % y factibilidad 50 %, con el bastón como referencia: **Sillón +80**, Posavasos +50.
-- **Qué cambió:** de 90 × 60 × 15 mm en ABS con silicona (Semana 6) a carcasa de PETG en 2 piezas con snap-fit, en dos variantes (Semana 8).
-- **Qué falta:** prototipo impreso y prueba de cierre de 20 ciclos; confirmar si el producto supone un solo sillón de uso constante (HIPÓTESIS).
-
-| Elemento | Contenido |
-|---|---|
-| Principio rector | "Silencio = tranquilidad". Además: affordances, contour bias, constraints y consistencia |
-| Tabla morfológica | 7 parámetros × 3 variantes ([Actividad 6](https://and070406.github.io/Proyecto4_andrea/semana6/)) |
-| Tres conceptos | Bastón Centinela · **Reposabrazos Centinela** · Posavasos Guardián. Los otros dos siguen vivos como **landings de lista de espera** para medir qué objeto prefieren las familias (§19) |
-| Render y boceto con cotas | `[IMAGEN: render, Actividad 6 Prompt 7]` · `[IMAGEN: boceto con cotas, Actividad 6]` · planos y STL en la [Actividad 8](https://and070406.github.io/Proyecto4_andrea/semana8/) |
-
-## 10. Prototipos y evidencia
-
-- **Versión y fecha:** v1 · Semana 8 → v9.1 · 24/11/2026
-- **Decisión:** cada prototipo responde **una** pregunta; el prototipo de función (sensado) tiene la prioridad más alta.
-- **Evidencia:** carcasa en 3D con 4 archivos STL ([Actividad 8](https://and070406.github.io/Proyecto4_andrea/semana8/)), app en Figma Make (Semana 6), [app web](https://jesushernandez2005.github.io/Proyecto4/app/) (23/11) y landings (24/11).
-- **Qué cambió:** el primer acomodo de la carcasa chocaba (el USB-C quedaba sobre el ESP32); se reacomodaron los componentes.
-- **Qué falta:** el prototipo de función, el impreso de la carcasa y la hoja de observación de la landing (está vacía).
-
-| Prototipo | Pregunta | Tipo | Qué se construyó | Evidencia | Aprendizaje → cambio |
-|---|---|---|---|---|---|
-| Landing estática | ¿El hijo o hija explica el producto y decide con el precio? | Negocio, baja | HTML de un archivo | **PENDIENTE** (hoja vacía) | — |
-| Carcasa en 2 variantes | ¿Caben el PCB, el módulo y la batería en una placa que cierra sin herramientas? | Forma, alta (digital) | Blender, planos y 4 STL | Modelo 3D | Se reacomodaron componentes; el JST se movió 1 mm |
-| App en Figma Make | ¿Los estados se entienden? | Interfaz, media | Pantallas con datos de ejemplo | [Actividad 6](https://and070406.github.io/Proyecto4_andrea/semana6/), Prompt 8 | Se agregaron el círculo de cuidado y la vista para el cuidador local |
-| App web (23/11/2026) | ¿El flujo completo (onboarding → estado → alerta → pausa) se entiende y se conecta a un dispositivo? | Interfaz y función, media | HTML de un archivo con modo demo y modo "dispositivo real" por MQTT | [Prototipo](https://jesushernandez2005.github.io/Proyecto4/app/) | Se agregó "Sin conexión" distinto de "Alerta"; el modo de aviso es configurable (H2) |
-| Landings (24/11/2026) | ¿Cuál de los tres objetos piden más las familias? | Negocio, media | 3 landings con formulario que guarda el campo `producto` | `[URL_PENDIENTE]` · `[MEDIR: registros por producto]` | — |
-| **Función (sensado)** | ¿El acelerómetro bajo el cojín distingue sentarse de un golpe? | Función, alta | `[POR CONSTRUIR]` | `[MEDIR: F1]` | — |
-
-`[IMAGEN: línea de tiempo con fotos]`
-
-## 11. Manufactura, DFM y circularidad
-
-- **Versión y fecha:** v1 · Semana 5 → v3 · Semana 8 → v9.1 · 24/11/2026
-- **Decisión:** módulo celular en formato **LCC soldado al PCB propio** y carcasa PETG de 2 piezas; volumen de **10 unidades** para el piloto.
-- **Evidencia:** costo unitario de $4,158 → **$2,072** con DFM (BOM × 1.40); el módulo explica el 87 % del ahorro.
-- **Qué cambió:** el **E-H se reemplaza por el SA-H** (Semana 9), así que la línea del módulo y el ahorro DFM quedan **POR RECOTIZAR**.
-- **Qué falta:** cotizar el SA-H en LCC; cotizar las 5 líneas que siguen estimadas; tiempo de ensamble medido.
-
-| Componente | Especificación | Precio unitario | Proveedor | Lead time | Estatus |
-|---|---|---|---|---|---|
-| Módulo celular | Antes SIM7600E-H LCC ($805) → ahora **SIM7600SA-H LCC** | `[COTIZAR]` | `[ ]` | `[ ]` | **POR VERIFICAR** |
-| ESP32-S3 | Módulo, 8 MB flash | ~$120 | `[ ]` | `[ ]` | ESTIMADO |
-| MPU6050 (GY-521) | Acelerómetro y giroscopio | ~$60 | `[ ]` | `[ ]` | ESTIMADO |
-| LiPo 1.92 Ah | 52 × 34.5 × 10.8 mm, con documentos UN 38.3 | `[ ]` | `[ ]` | `[ ]` | ESTIMADO |
-| PCB + PCBA | 2 capas | ~$250 | JLCPCB | `[ ]` | ESTIMADO |
-| Carcasa | PETG, 2 piezas, FDM | ~$70 | Propia | — | ESTIMADO |
-
-**Proceso de manufactura:** PCB y PCBA en JLCPCB → carcasa impresa en FDM → ensamble manual (~9 min por unidad, ESTIMADO) → prueba de humo con reporte al backend.
-
-**Circularidad (4 preguntas):**
-
-| Pregunta | Respuesta | Estatus |
-|---|---|---|
-| ¿Los componentes son accesibles? | Snap-fit sin pegamento ni tornillos | Cumple |
-| ¿Los módulos se reemplazan? | Batería con JST y sensor en header; ESP32 y módem soldados | Parcial |
-| ¿Los materiales se identifican? | PETG con marcado en relieve; falta el código de reciclaje | Parcial |
-| ¿Se actualiza sin reemplazarse? | Por USB-C; falta la actualización remota (partición OTA) | Parcial |
-
-**Cómo reproducir una unidad:** `[ENLACE: Anexo C, paso a paso]`.
-
-## 12. App conectada
-
-- **Versión y fecha:** v1 · Semana 6 (Figma Make) → v2 · 23/11/2026 (app web) → v9.1 · 24/11/2026
-- **Decisión:** app web de un solo archivo con **modo demo** y **modo dispositivo real**. Muestra estados claros sin lenguaje médico y separa "Sin conexión" de "Alerta".
-- **Evidencia:** [prototipo publicado](https://jesushernandez2005.github.io/Proyecto4/app/), código en [`docs/app/index.html`](https://github.com/jesushernandez2005/proyecto4/blob/main/docs/app/index.html).
-- **Qué cambió:** de pantallas estáticas en Figma Make a una app que funciona en el navegador, guarda su estado y recibe datos del dispositivo por MQTT.
-- **Qué falta:**
-  - **Decidir el protocolo.** La app usa MQTT en un broker público (`broker.hivemq.com`), pero la §8 dice HTTPS → Firestore → FCM. O se documenta MQTT como decisión de la demo, o se migra a Firestore.
-  - **La vista del adulto mayor** ("Estoy bien", "Llámame", "Necesito ayuda") choca con RR-02 y con R5. Hay que presentarla como opcional o quitarla.
-  - **Fuente de las alertas.** En modo real la alerta usa un umbral fijo de 4 h; hay que conectarla al z-score de la nube o declararlo.
-  - Capturas de los 5 estados y README.
-
-| Elemento | Contenido |
-|---|---|
-| Flujo de usuario | Onboarding en 5 pasos (tu nombre y a quién cuidas → ¿alguien lo visita seguido? → objeto: sillón, bastón o portavasos → escanear el código del sensor → probar la detección) → Inicio → Alerta → acción (llamar, avisar al contacto local, marcar falsa alarma) |
-| Estados | Todo bien · Más tranquilo de lo usual · No detectamos actividad · Perdimos contacto con el sensor · Avisos en pausa · Esperando al sensor |
-| Configuración | Modo de aviso (solo excepción o con confirmación diaria), umbral, horario de no molestar, resumen semanal, círculo de cuidado con roles, pausa con motivo (viaje, hospitalización, visita, cambio de mueble) |
-| Protocolo y datos | Modo real: MQTT sobre WebSocket con temas `distanciacero/<id>/…`; estado guardado en `localStorage`; exporta el historial en JSON |
-| Cuenta | Plan Tranquilidad $449/mes ("precio del modelo de negocio, sin IVA; datos de pago de ejemplo") |
-| Capturas | `[IMAGEN ×5: estados]` |
-| Cómo correrla | Abrir [https://jesushernandez2005.github.io/Proyecto4/app/](https://jesushernandez2005.github.io/Proyecto4/app/) en el celular; para el modo real: Ajustes → Conexión → broker MQTT |
-| Repositorio | [jesushernandez2005/proyecto4](https://github.com/jesushernandez2005/proyecto4) · commits: `[ ]` |
-| Limitaciones conocidas | Broker público sin autenticación (solo para la demo); datos solo en el navegador; las notificaciones dependen del permiso del navegador; sin WhatsApp real |
-
-
----
-
-# Parte III · Negocio
-
-## 13. Business Blueprint
-
-- **Versión y fecha:** v1 · Semana 7 → v9.1 · 24/11/2026
-- **Decisión:** **hardware de venta única más suscripción mensual**; comodato como plan B si el precio del hardware no se acepta.
-- **Evidencia:** benchmarks de Medical Guardian, Ring y CarePredict (Semana 7).
-- **Qué cambió:** se agregó el escenario de comodato con DFM (Semana 9).
-- **Qué falta:** las 8 cajas no quedaron documentadas en la Semana 7; la tabla siguiente es el borrador que hay que validar.
-
-| Caja | Contenido | Sección |
-|---|---|---|
-| Cliente | Hijo o hija de 35 a 55 años sin red local | §3 |
-| Propuesta de valor | Certeza diaria sin preguntar | §5 |
-| Canales | Landing, referidos y comunidades de cuidadores | §15 |
-| Relación | Aviso por excepción y resumen semanal | §12 |
-| Ingresos | $4,490 + $449/mes | §14 |
-| Recursos clave | Hardware, modelo de rutina y datos | §8, §11 |
-| Actividades clave | Fabricación, instalación guiada y soporte | §11 |
-| Costos | BOM, SIM, nube, soporte y CAC | §14 |
-
-| Benchmark | Modelo | Precio | Fuente |
-|---|---|---|---|
-| Medical Guardian | Equipo + cuota (mínimo 3 meses) | US$149.95–199.95 + US$31.95–49.95/mes | seniorliving.org, 25/08/2026 |
-| Ring | Hardware + planes en capas | US$4.99, 9.99 y 19.99/mes | security.org, 28/09/2026 |
-| CarePredict | Hardware + servicio (B2B) | Sin precio público | Comunicado del 30/03/2022 |
-
-## 14. Costos, precio y viabilidad financiera
-
-- **Versión y fecha:** v1 · Semana 7 → v9.1 · 24/11/2026
-- **Decisión:** $4,490 + $449/mes; desarrollo estimado en **5 ciclos ($71,540)**; tasa de descuento del 15 % anual.
-- **Evidencia:** modelo financiero en el Anexo E (fórmulas visibles).
-- **Qué cambió:** el costo unitario estimado bajó de $4,158 a $2,072 (DFM); el costo de la IA bajó a ~$0.03 por usuario al mes (Haiku 5.5, ESTIMADO).
-- **Qué falta:** el precio basado en valor; el costo **medido** de la IA; si los precios incluyen IVA (§16, R8); el VPN con el módulo SA-H.
-
-| Concepto | Valor | Estatus |
-|---|---|---|
-| Costo de desarrollo (mínimo / promedio / máximo) | $42,924 / **$71,540** / $114,464 (3, 5 y 8 ciclos de $14,308) | ESTIMADO |
-| Cost-plus del 40 % | $5,821 por el hardware | ESTIMADO |
-| Precio basado en valor | `[PENDIENTE]`; las entrevistas sugieren $450–700/mes | HIPÓTESIS |
-| Equilibrio del desarrollo | 9.7 unidades (24 meses, sin cancelación) · ≈ 15 unidades (24 meses, 3 % de cancelación) | ESTIMADO |
-| Flujo a 12 meses | −$67,499; pico de −$73,001 en el mes 6; recuperación en el mes 21 | ESTIMADO |
-| VPN (15 % anual) | 12 meses: −$68,041 · **24 meses: +$46,404** · con tipo de cambio FIX y 3 % de cancelación: −$15,459 | ESTIMADO |
-| Costo de la IA por usuario al mes | ~$0.03 (cota usada en el modelo: $0.14) | ESTIMADO · `[MEDIR]` |
-
-**Tablas CREAR y DISTRIBUIR:** 17 costos clasificados, 5 de ellos determinantes (D) → Anexo E.
-
-## 15. Go-to-market y economía unitaria
-
-- **Versión y fecha:** v1 · Semana 9 · 24/11/2026
-- **Decisión:** cliente #1 = hijo o hija sin red local, en Puebla y CDMX. Canal: landing + referidos. Primer paso: **piloto de 10 familias en comodato**.
-- **Evidencia:** Actividad 9, §3 (aritmética completa).
-- **Qué cambió:** se agregaron el análisis de sensibilidad, el efecto del IVA y la meta de clientes para recuperar el desarrollo.
-- **Qué falta:** el CAC y la cancelación reales (son SUPUESTOS); medir la conversión de la landing.
-
-| Métrica | Valor | Estatus |
-|---|---|---|
-| CAC | $1,000 | SUPUESTO |
-| Contribución mensual | $342.70 | ESTIMADO |
-| Cancelación / vida media | 3 % / 33.3 meses | SUPUESTO |
-| LTV | $11,423 | ESTIMADO |
-| LTV ÷ inversión · payback | **13.8 · 2.4 meses** (paga el HW) · 2.21 · 15.1 (comodato) · **3.72 · 9.0** (comodato con DFM) | ESTIMADO |
-| Lo que más mueve el resultado (±25 %) | **Precio de la suscripción** y, en segundo lugar, la cancelación | ESTIMADO |
-| Clientes para recuperar los $71,540 | ≈ 15 (costo actual) · ≈ 10 (DFM) | ESTIMADO |
-
-**Plan del piloto:** 10 familias · 4 semanas · comodato · consentimiento firmado. **Éxito si:** ≥ 6 de 10 aceptan pagar $449/mes al terminar, o ≥ 3 aceptan comprar el equipo. `[FECHAS]`
-
-## 16. Regulación y legal
-
-- **Versión y fecha:** v1 · Semana 9 · 24/11/2026
-- **Decisión:** piloto de ≤ 10 unidades **sin venta** mientras se resuelven la homologación, la privacidad y las NOM. El producto se comunica como "**no es un dispositivo médico**".
-- **Evidencia:** checklist de 14 temas con fuentes (Actividad 9, §4).
-- **Qué cambió:** se descubrió que el **E-H no cubre las bandas de México** y que la rutina podría contar como un **dato sensible**.
-- **Qué falta:** todos los puntos **POR VERIFICAR**, en particular R1 (CRT), R3 (consentimiento por escrito), R7 (UN 38.3) y R8 (precio con IVA).
-
-| Tema | Estatus | Tema | Estatus |
-|---|---|---|---|
-| R1 Homologación (CRT) | POR VERIFICAR | R8 Precio con IVA (LFPC) | POR VERIFICAR |
-| R2 Bandas (SA-H) | **VERIFICADO** en la hoja de datos | R9 Términos de la suscripción | POR VERIFICAR |
-| R3 Datos personales (LFPDPPP 2025) | Ley VERIFICADA; alcance POR VERIFICAR | R10 Licencias de software | POR VERIFICAR |
-| R4 Transferencia internacional | POR VERIFICAR | R11 Términos de Anthropic y WhatsApp | POR VERIFICAR |
-| R5 No es dispositivo médico (COFEPRIS) | POR VERIFICAR | R12 Economía circular | Ley VERIFICADA; obligación POR VERIFICAR |
-| R6 NOM-001-SCFI | POR VERIFICAR | R13 Marca IMPI | POR VERIFICAR |
-| R7 Batería (IEC 62133-2, UN 38.3) | POR VERIFICAR | R14 Exportación | No aplica |
-
-**Aviso de privacidad y consentimiento:** `[ENLACE: aviso de privacidad]` · `[ENLACE: formato de consentimiento de la persona mayor]`.
-
----
-
-# Parte IV · Validación y lanzamiento
-
-## 17. Integración y pruebas del sistema
-
-- **Versión y fecha:** v1 · Semana 9 · 24/11/2026
-- **Decisión:** 4 fronteras con registros y 6 pruebas ordenadas de la más barata a la más cara; RD-02 se prueba aparte con un dataset.
-- **Evidencia:** `[PENDIENTE: CSV y videos de T1–T6 en el Anexo D]`.
-- **Qué cambió:** se agregaron la degradación sin red y sin IA y la regla "hueco ≠ anomalía".
-- **Qué falta:** **todas las mediciones**. La frontera más frágil es la **F2** (módem, batería y red).
-
-| Prueba | Criterio | Resultado | Evidencia |
-|---|---|---|---|
-| T1 Falla de canal y de IA | Aviso por el otro canal en ≤ 10 min; plantilla si falla Haiku | `[MEDIR]` | `[ ]` |
-| T2 Desconexión de 10 min | 0 reportes perdidos; recuperación en ≤ 60 s | `[MEDIR]` | `[ ]` |
-| T3 Instalación sin ayuda | ≤ 10 min | `[MEDIR]` | `[ ]` |
-| T4 Latencia | ≤ 30 s (20/20) · ≤ 10 min (10/10) | `[MEDIR]` | `[ ]` |
-| T5 Autonomía | ≤ 4.27 mA, que da ≥ 15 días | `[MEDIR]` (ESTIMADO: 2.64 mA, 24.2 días) | `[ ]` |
-| T6 Operación de 48 h | 0 reinicios, 0 reportes perdidos, ≥ 99 % de disponibilidad | `[MEDIR]` | `[ ]` |
-| RD-02 (dataset) | FP < 5 %, FN = 0 de 25 | `[MEDIR]` | `[ ]` |
-
-**Bugs y diagnóstico:** `[tabla: síntoma → hipótesis → prueba → causa → corrección → commit]`
-**Problemas conocidos:** `[ ]`
-**Lista "listo para la demo":** ☐ T1–T6 aprobadas · ☐ firmware congelado (`demo-freeze`) · ☐ 3 ensayos · ☐ video de respaldo · ☐ hotspot de reserva · ☐ baseline precargado documentado
-
-## 18. Pruebas con usuarios
-
-- **Versión y fecha:** v1 · Semana 9 · 24/11/2026
-- **Decisión:** 5 sesiones de 30 min (3 del segmento y 2 de otros equipos) con 3 tareas: instalar, interpretar estados y encontrar el precio. A las personas mayores solo se les consulta la aceptación.
-- **Evidencia:** protocolo y hoja de observación (Actividad 9, §2); datos crudos en el Anexo D.
-- **Qué cambió:** la señal de negocio se separa en opinión y compromiso (pre-registro < referido < fecha de piloto < anticipo).
-- **Qué falta:** **correr las 5 sesiones**.
-
-| Tarea | Éxito sin ayuda (n/5) | Tiempo mediano | SEQ promedio |
-|---|---|---|---|
-| Instalar y vincular | `[ ]` | `[ ]` | `[ ]` |
-| Interpretar estados | `[ ]` | `[ ]` | `[ ]` |
-| Encontrar el precio y apartar | `[ ]` | `[ ]` | `[ ]` |
-
-**Hallazgos** (crítico, mayor y menor, con n y cita): `[ ]`
-**Cambios realizados:** `[ ]`
-**Señal de negocio:** `[ ] pre-registros · [ ] referidos · [ ] fechas de piloto · [ ] anticipos`
-
-## 19. Landing de lanzamiento
-
-- **Versión y fecha:** v1 · Semana 8 (HTML estático) → v2 · 24/11/2026
-- **Decisión:** **3 landings** con el mismo diseño. El **sillón** usa un CTA único ("Aparta tu lugar en el piloto"); el **bastón** y el **portavasos** usan "Únete a la lista de espera" y se presentan como conceptos en validación. Las tres mandan el campo `producto` para comparar la demanda.
-- **Evidencia:** código en `docs/landing/` (Anexo B); prompt de construcción (Actividad 9, §6.2).
-- **Qué cambió:** se agregaron el aviso de privacidad, la leyenda "no es un dispositivo médico", la analítica sin cookies y la imagen para redes (1200×630). No hay testimonios inventados: se usan los datos reales de las 3 entrevistas.
-- **Qué falta:** publicarlas; conectar el formulario (`FORM_ENDPOINT`), el correo y GoatCounter; decidir el precio con IVA; medir.
-
-| Elemento obligatorio | Sillón (principal) |
-|---|---|
-| URL publicada | `[URL_PENDIENTE: https://jesushernandez2005.github.io/Proyecto4/landing/]` |
-| Headline | "Saber que tu mamá está bien, sin tener que llamarle." |
-| Imagen | Ilustración del sillón con la placa y un teléfono que dice "Sin avisos hoy" |
-| Beneficios (3) | Ella no hace nada · Funciona sin wifi · Te avisa solo cuando importa |
-| Precio visible | $4,490 + $449/mes; $9,878 el primer año (más IVA, POR VERIFICAR) |
-| CTA único | "Aparta tu lugar en el piloto" |
-| Metadatos y Open Graph | `<title>`, description de 145 caracteres, og:title, og:description, og:image de 1200×630, og:url, Twitter card |
-| Métricas | Visitas `[ ]` · clics en el CTA `[ ]` · pre-registros `[ ]` · conversión `[ ] %` · periodo `[ ]` |
-| Prompt utilizado | Actividad 9, §6.2 |
-
-| Landing de concepto | URL | Registros |
-|---|---|---|
-| Bastón | `[URL_PENDIENTE: https://jesushernandez2005.github.io/Proyecto4/landing/baston/]` | `[MEDIR]` |
-| Portavasos | `[URL_PENDIENTE: https://jesushernandez2005.github.io/Proyecto4/landing/portavasos/]` | `[MEDIR]` |
-
-## 20. Pitch y demo
-
-- **Versión y fecha:** v1 · Semana 9 · 24/11/2026
-- **Decisión:** pitch de **335 palabras (~2:35)** que abre con la cita real de Mariana y cierra con "el silencio significa tranquilidad"; demo en 6 tramos con Plan B, declarando el **baseline precargado**.
-- **Evidencia:** guiones completos (Actividad 9, §5).
-- **Qué cambió:** la apertura usa la cita textual de Mariana (antes decía, por error, que vivía lejos de su mamá: vive en la misma ciudad). Las afirmaciones sin evidencia se marcaron P1–P9 y el tramo de tracción dice con honestidad "todavía no tenemos clientes".
-- **Qué falta:** el video del pitch, 3 ensayos de la demo y el video de respaldo.
+Esta página es la memoria del proyecto final. Cada sección sigue la misma plantilla (**versión y fecha · decisión · evidencia · qué cambió · qué falta**). Lo que no tiene evidencia dice **HIPÓTESIS**; cada número tiene fuente o dice **SUPUESTO**. El detalle vive en las [actividades semanales](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-01/) y en los [anexos](#anexos).
 
 | Entregable | Enlace |
 |---|---|
-| Video del pitch (3 min) | `[URL_PENDIENTE]` |
-| Guion del pitch | Actividad 9, §5.1 |
-| Guion de la demo (7 min) con Plan B | Actividad 9, §5.2 |
-| Video de respaldo de la demo | `[URL_PENDIENTE]` |
-| Preguntas difíciles (Q1–Q10) | Actividad 9, §5.3 |
+| Landing (los tres productos) | [landing/](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/) |
+| App de la familia (demo y dispositivo real) | [jesushernandez2005.github.io/Proyecto4/app/](https://jesushernandez2005.github.io/Proyecto4/app/) |
+| Excel de costos y cálculos (fórmulas visibles) | [DistanciaCero_costos_y_calculos.xlsx](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx) |
+| Repositorio | [github.com/jesushernandez2005/Proyecto4](https://github.com/jesushernandez2005/Proyecto4) |
+| Guion de pitch y demo | [PDF](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_guion_pitch_y_demo.pdf) |
+| Anexos A–F | [anexos.md](#anexos) |
 
 ---
 
-# Parte V · Cierre
+## 0. Resumen ejecutivo
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.0 · 24/11/2026 (se escribe al final, regla 7) |
+| **Decisión** | Lanzar un piloto de 10 familias en Puebla con los tres objetos (sillón, bastón y portavasos) y un prototipo WiFi. |
+| **Evidencia** | Secciones 3, 4, 14 y 15; [Excel](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx), hojas Resumen y Landing. |
+| **Qué cambió** | Hardware: sin PCB y sin módulo celular en el prototipo. Pasamos de un objeto a tres. Precio del equipo: $3,990. |
+| **Qué falta** | Videos del pitch y de la demo; probar el flujo completo; sesiones con usuarios. |
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:10px 0">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/render-sillon.jpg" alt="Render del sensor bajo el cojín de un sillón" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/render-baston.jpg" alt="Render del bastón con sensor" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/render-portavasos.jpg" alt="Render del portavasos con sensor" style="width:100%;border-radius:6px">
+</div>
+*Renders conceptuales de la semana 6, no fotos del prototipo.*
+
+**Propuesta de valor (23 palabras):** DistanciaCero le da al hijo que vive lejos la certeza diaria de que su mamá o papá está bien, sin preguntar, sin culpa.
+
+| Mercado alcanzable (SOM) | Precio | Economía unitaria |
+|---|---|---|
+| **850 familias** en años 1–2 · $4.59 M MXN al año ([sección 4](#4-mercado-y-competencia)) | **$3,990** el equipo + **$449** al mes | **$343** de contribución al mes; se recupera la inversión por familia ($1,312) en **3.8 meses** (CAC de $1,000: SUPUESTO) |
+
+**Enlaces:** [repositorio](https://github.com/jesushernandez2005/Proyecto4) · [landing](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/) · video del pitch: **PENDIENTE** · video de respaldo de la demo: **PENDIENTE**.
+
+**Estado en una oración:** el sensor ya leyó movimiento real, la app está publicada y la landing está lista para publicarse, pero todavía no hemos probado el flujo completo de punta a punta ni lo ha usado ninguna familia.
+
+---
+
+## Parte I. Oportunidad y mercado
+
+## 1. Equipo
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.0 · 24/11/2026 (origen: semana 1) |
+| **Decisión** | Dos integrantes; el operador de la demo es Jesús (hardware) y la narradora, Andrea (sugerencia del guion). |
+| **Evidencia** | [Actividad 2, matriz de selección](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-02/); [guion](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_guion_pitch_y_demo.pdf). |
+| **Qué cambió** | La ruta de la semana 9 pedía cuatro roles; somos dos, así que cada quien lleva dos. |
+| **Qué falta** | Acuerdo de colaboración firmado y roles confirmados. |
+
+| Integrante | Rol | Área de interés | Quién hizo qué |
+|---|---|---|---|
+| Jesús León Hernández Martínez | **PENDIENTE** (el guion sugiere: operador de la demo, hardware) | Sistemas embebidos, electrónica, programación | **PENDIENTE** |
+| Andrea Solano López | **PENDIENTE** (el guion sugiere: narradora) | **PENDIENTE** | **PENDIENTE** |
+
+Lo único documentado del reparto es la frase del guion: "entre los dos hicimos el circuito, las entrevistas y el modelo financiero".
+
+**Acuerdo de colaboración:** **PENDIENTE.** Debe decir cómo se deciden las cosas, cómo se reparte el trabajo y qué pasa si alguien no entrega. **Razón del equipo:** nuestros abuelos, que han ido perdiendo movilidad al envejecer (Actividad 2).
+
+---
+
+## 2. Problema y oportunidad
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.0 · 24/11/2026 (origen: semana 2) |
+| **Decisión** | El dolor principal no es "la caída": es **el miedo constante a "la llamada"**. |
+| **Evidencia** | [Pain-Gain Map y reporte de oportunidad (Actividad 2)](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-02/); [PDF del Pain-Gain](https://jesushernandez2005.github.io/Proyecto4/actividades/PAIN-GAIN_Chuy.pdf); [reporte](https://jesushernandez2005.github.io/Proyecto4/actividades/REPORTE_DE_OPORTUNIDAD.pdf). |
+| **Qué cambió** | Al cuestionar el primer mapa con la IA, el dolor pasó de "no hay quién avise de una caída" a "no saber si está bien entre llamadas". |
+| **Qué falta** | Medir con más de tres personas si el patrón se sostiene. |
+
+**Cruce más poderoso del Pain-Gain Map:** dolor D1, el miedo a "la llamada" × ganancia G1, confirmación diaria de que está bien y activo.
+
+**La oportunidad en una oración:** existe una oportunidad para el hijo o hija que vive lejos de un padre mayor que vive solo, que necesita una señal diaria y confiable de que está bien, sin preguntar, llamar ni sentirse culpable.
+
+| Criterio de selección | Concepto elegido: "El Seguro que se Olvida que Existe" |
+|---|---|
+| Pasión | Sí: la razón son nuestros abuelos |
+| Habilidad | Parcial: lo más riesgoso era la conectividad celular |
+| Mercado | 5 de 5 señales de deseabilidad |
+
+**Alternativas descartadas:** sarcopenia, osteoartrosis de rodilla y ejercicio en enfermedades crónicas (menor claridad del comprador), y el pago vía aseguradoras (inviable en el plazo de 6 meses).
+
+**Evidencia de deseabilidad:** ya se paga por soluciones imperfectas (Estoy Bien, $299–399 al mes); el IMSS atiende más de 250,000 lesiones por caídas de adultos mayores al año; las familias ya inventan *workarounds* (mensajes diarios, vecinos que revisan, cámaras). Las fuentes están en la Actividad 2.
+
+---
+
+## 3. Usuario y evidencia de campo
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.0 · 24/11/2026 (origen: semanas 3 y 4) |
+| **Decisión** | No es un segmento: son **tres perfiles** según si existe una red humana cerca del adulto mayor. El modo de aviso debe ser configurable. |
+| **Evidencia** | [Resultados de validación, semana 3 (PDF)](https://jesushernandez2005.github.io/Proyecto4/actividades/resultados_validacion_semana3.pdf); [Actividad 4, sección 5](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-04/); [Excel, hoja Entrevistas](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx). |
+| **Qué cambió** | La app pregunta "¿Alguien más lo visita seguido?" y con eso ajusta el aviso: solo excepción, o excepción más confirmación diaria. |
+| **Qué falta** | Más entrevistas, separando familias con red local y sin ella. |
+
+**Tres entrevistas (citas textuales):**
+
+- Mariana, 42, Puebla: *"Si tarda mucho en contestar sí ya se me acelera el corazón."*
+- Lupita, 37, Chicago: *"Vivir en otro país te pone en un estado de alerta constante."*
+- Ricardo, 51, CDMX: *"El silencio no me pondría nervioso… ya confío en el sistema humano que tengo con Sonia."*
+
+| Hipótesis | Resultado |
+|---|---|
+| H1. Se preocupan seguido, fuera de las llamadas | **Confirmada con matiz:** depende de si hay alguien cerca, no de la distancia |
+| H2. Prefieren el silencio a una confirmación diaria | **Ajustada:** depende del perfil; debe ser configurable |
+| H3. Pagarían $300–600 al mes | **Confirmada:** $450 a $700 al mes, sin pensarlo |
+
+**Segmento en cuatro capas:** *Demográfica:* 1.7 millones de personas de 60+ viven solas en México (**VERIFICADO**, INEGI, ENADID 2018); hijo o hija de 35–55 años (**HIPÓTESIS**). *Conductual:* llamada casi diaria; 1 de 3 ya abandonó un botón SOS (**VERIFICADO**, n = 3). *Psicográfica:* alerta constante cuando no hay red local (**VERIFICADO**, n = 3). *Económica:* $450–700 al mes (**VERIFICADO**, n = 3); quién paga entre hermanos (**HIPÓTESIS**).
+
+**Hipótesis críticas pendientes:** cómo avisar cuando no hay quien llegue rápido; cómo obtener el consentimiento del adulto mayor sin que se sienta vigilado; y el del cuidador local, que puede vetar la compra.
+
+---
+
+## 4. Mercado y competencia
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.0 · 24/11/2026 (origen: semana 4) |
+| **Decisión** | Empezar con venta directa en CDMX, Guadalajara, Monterrey y Puebla. El competidor más peligroso es **llamar + la red informal**, no otra app. |
+| **Evidencia** | [Actividad 4, prompts 2–5](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-04/); [Excel, hoja Mercado](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx). |
+| **Qué cambió** | Las entrevistas sumaron un actor de decisión: el cuidador local, que puede bloquear la compra. |
+| **Qué falta** | Validar los porcentajes de filtro, que son supuestos del equipo. |
+
+| Paso | Valor | Fuente |
+|---|--:|---|
+| Hogares en México | 38.8 M | ENIGH 2024 |
+| × con integrante de 65+ (10.9 %) × unipersonales (17.5 %) | 740,000 | ENIGH 2024; Coneval 2020 |
+| × con hijo vivo (85 %) × hijo lejos (60 %) × dispuesto a pagar (25 %) | **94,350 (TAM)** · $509.5 M/año | **SUPUESTOS** del equipo |
+| × 4 zonas metropolitanas (45 %) × canal digital (60 %) × deciles 6–10 (70 %) | **17,832 (SAM)** · $96.3 M/año | ENIGH 2024 + **SUPUESTOS** |
+| Meta de años 1–2 | **850 (SOM)** · $4.59 M/año | Plan de go-to-market (Actividad 4) |
+
+**Competencia.** *Directos:* Estoy Bien ($299/mes), Cuida Más ($800–928/mes), Care 60+ (desde $6,588/año). *Indirectos:* Life360, Google Family Link, sensores y cámaras DIY. *Sustitutos:* llamadas diarias + red informal (**el más peligroso**: cuesta $0 y ya está en la rutina), cuidador por horas.
+
+<svg viewBox="0 0 420 250" width="100%" style="max-width:520px" role="img" aria-label="Mapa de posicionamiento">
+<rect x="50" y="10" width="350" height="200" fill="#F5F6F2" stroke="#ccc"/>
+<line x1="50" y1="110" x2="400" y2="110" stroke="#ddd"/><line x1="225" y1="10" x2="225" y2="210" stroke="#ddd"/>
+<text x="225" y="240" font-size="11" text-anchor="middle" fill="#333">← exige que el adulto mayor haga algo · no le exige nada →</text>
+<text x="18" y="110" font-size="11" fill="#333" transform="rotate(-90 18 110)" text-anchor="middle">interrumpe al hijo · silencio →</text>
+<circle cx="120" cy="150" r="6" fill="#888"/><text x="128" y="154" font-size="11">Estoy Bien</text>
+<circle cx="225" cy="150" r="6" fill="#888"/><text x="233" y="154" font-size="11">Cuida Más</text>
+<circle cx="155" cy="168" r="6" fill="#888"/><text x="163" y="182" font-size="11">Sensores DIY</text>
+<circle cx="295" cy="122" r="6" fill="#C7922F"/><text x="303" y="126" font-size="11">Llamadas + red</text>
+<circle cx="380" cy="32" r="8" fill="#3E7C5B"/><text x="372" y="56" font-size="12" font-weight="bold" text-anchor="end">DistanciaCero</text>
+</svg>
+
+*Posiciones tomadas del lienzo estratégico de la Actividad 4 (puntuaciones de 1 a 5).*
+
+**Cuatro acciones.** *Eliminar:* que el adulto mayor tenga que hacer algo. *Reducir:* el call center 24/7. *Incrementar:* el silencio cuando todo va bien. *Crear:* detección de su rutina y un sensor dentro de un objeto que ya usa.
+
+---
+
+## 5. Propuesta de valor y oferta
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.0 · 24/11/2026 (origen: semana 4) |
+| **Decisión** | Hablar del miedo que se quita, no del aparato. |
+| **Evidencia** | [Actividad 4, Prompt 6](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-04/). |
+| **Qué cambió** | La versión 3 de la Actividad 4 tenía 31 palabras; se recortó a 23 para cumplir el máximo de 25. |
+| **Qué falta** | Probar los tres mensajes por perfil con usuarios. |
+
+| Propuesta de valor (≤ 25 palabras) | Oferta técnica |
+|---|---|
+| DistanciaCero le da al hijo que vive lejos la certeza diaria de que su mamá o papá está bien, sin preguntar, sin culpa. | Un sensor de movimiento (ESP32-S3 + MPU6050) dentro de un sillón, bastón o portavasos, más una app que avisa solo si su rutina cambia. $3,990 + $449/mes. |
+
+**Pirámide de Bain:** hoy es *funcional* (detecta y avisa); el mensaje sube a *emocional* (quita el miedo a "la llamada"). Subir a *transformador* sería prematuro sin evidencia.
+
+**Insightful ✅** da una señal entre llamadas que nadie más da · **Unique ✅** sensor integrado en un objeto que ya usa · **Targeted ✅ con matiz** hace falta un mensaje por perfil (con red local, sin red local, local).
+
+**Error de la primera versión:** describía qué hace el objeto, no qué deja de sentir el hijo.
+
+---
+
+## 6. Propiedad intelectual, marca y vigilancia
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.0 · 24/11/2026 (origen: semana 3) |
+| **Decisión** | Nombre **DistanciaCero** (sobre SilencioActivo). FTO **alta**. |
+| **Evidencia** | [Actividad 3](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-03/); [presentación de nombre y FTO (PDF)](https://jesushernandez2005.github.io/Proyecto4/actividades/distanciacero_fto.pdf). |
+| **Qué cambió** | El nombre que sonaba mejor (SilencioActivo) tenía más riesgo digital. |
+| **Qué falta** | **La búsqueda fonética en el IMPI no se ha hecho.** Analizar 3–5 patentes más. |
+
+- **Búsqueda fonética en IMPI:** **PENDIENTE** en marcanet.impi.gob.mx. Riesgo digital: **medio** (el .com está estacionado y hay una banda con @distancia.cero).
+- **Vigilancia:** IMPI/SIGA → LATIPAT → Lens.org, con los códigos IPC G08B21/0423 (desviación de un patrón) y G08B21/0461 (sensor en un objeto no portado).
+- **Patente más cercana:** MX 351729 B (piso con sensores de presión). **Fuera:** ningún elemento coincide con nuestra arquitectura.
+- **Ajuste:** no hizo falta (FTO alta).
+- **Estrategia de protección:** registrar la marca en el IMPI, clases 9 y 42 (Actividad 3, **pendiente**). Propuesta por decidir: proteger el firmware y la app como derechos de autor, y no buscar patente hasta tener un método de detección propio.
+
+---
+
+## Parte II. Producto
+
+## 7. Especificación del producto (PDS)
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.1 · 24/11/2026 (origen: semanas 5 y 9) |
+| **Decisión** | Mantener los 16 requisitos y marcar con honestidad cuáles **no cumple** el prototipo WiFi. |
+| **Evidencia** | [Actividad 5, sección 12](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-05/); [firmware](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/firmware/DistanciaCero_Sensor.ino); [app](https://jesushernandez2005.github.io/Proyecto4/app/). |
+| **Qué cambió** | El prototipo usa WiFi (incumple RI-02) y no tiene PCB (RR-04 no aplica). |
+| **Qué falta** | Correr las pruebas T1–T6 (sección 17) para pasar de "pendiente" a "cumple" o "no cumple". |
+
+| ID | Requisito | Verificación | Estado |
+|---|---|---|---|
+| RF-01 | Alertar solo ante desviación de **su** patrón | 14 días simulados + eventos inyectados | ❌ Hoy es un umbral fijo de inactividad (4 h) |
+| RF-02 | Silencio en rutina normal; aviso ≤ 10 min | 10 corridas, T4 | ⏳ |
+| RF-03 | 10–14 días de aprendizaje sin alertas | Registros del servidor | ❌ No implementado |
+| RF-04 | Historial de 30 días sin conexión | Modo avión | ❌ La app guarda los últimos 40 eventos |
+| RD-01 | ≥ 15 días sin recargar | Medición, T5 | ❌ Probable: el WiFi siempre encendido gasta mucho |
+| RD-02 | Falsos positivos < 5 %, falsos negativos < 2 % | 50 eventos simulados | ⏳ |
+| RD-03 | Reporte en ≤ 30 s | 20 transmisiones | ⏳ El firmware publica estado cada 30 s |
+| RD-04 | Servidor disponible ≥ 99 % | Monitoreo | ⏳ Broker público, sin garantía |
+| RI-01 | Estado claro en < 10 s, sin lenguaje clínico | Prueba con usuario | ⏳ |
+| RI-02 | Solo celular, cifrado | Prueba sin WiFi | ❌ El prototipo usa WiFi |
+| RI-03 | Instalación guiada ≤ 10 min | Cronómetro, T3 | ⏳ |
+| RI-04 | Alerta por dos canales | Simular falla, T1 | ⚠️ Parcial: app + ntfy opcional; sin WhatsApp |
+| RR-01 | ≤ $600 al mes | Modelo de precios | ✅ $449 |
+| RR-02 | Ninguna acción del adulto mayor | Revisión de diseño | ✅ En diseño; la recarga la hace la familia |
+| RR-03 | Sin audio ni video | Esquema de datos | ✅ El JSON solo lleva movimiento, batería y señal |
+| RR-04 | PCB apta para JLCPCB | DRC | — No aplica al prototipo (sin PCB) |
+
+**First-iteration product:** un objeto (sillón, bastón o portavasos) con ESP32-S3 Super Mini + MPU6050 + LiPo que publica su actividad por MQTT, y una app web que avisa a la familia si pasa más tiempo del umbral sin movimiento. Sin módulo celular y sin aprendizaje de rutina.
+
+---
+
+## 8. Arquitectura del sistema
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v2.0 · 24/11/2026 (origen: semana 5) |
+| **Decisión** | **Híbrida:** el ESP32 detecta el movimiento y cuenta la inactividad (edge); la app decide el estado y lo comparte con el círculo. |
+| **Evidencia** | [Firmware](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/firmware/DistanciaCero_Sensor.ino); [protocolo MQTT en anexos](#c-archivos-de-diseno-cad-esquematicos-y-firmware); [Actividad 9, fronteras](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/). |
+| **Qué cambió** | Ver la tabla de abajo. |
+| **Qué falta** | Un servidor propio: hoy, si nadie tiene la app abierta, solo avisa el ESP32 (por ntfy). |
+
+<svg viewBox="0 0 760 170" width="100%" role="img" aria-label="Diagrama de bloques">
+<g font-size="12" font-family="sans-serif">
+<rect x="5" y="40" width="150" height="80" rx="8" fill="#FFF7E6" stroke="#C7922F"/><text x="80" y="62" text-anchor="middle" font-weight="bold">Objeto</text><text x="80" y="80" text-anchor="middle">MPU6050 → ESP32-S3</text><text x="80" y="96" text-anchor="middle">LiPo 3.7 V · 50 Hz</text><text x="80" y="112" text-anchor="middle" font-size="10">I²C (GPIO 5/6)</text>
+<rect x="215" y="40" width="150" height="80" rx="8" fill="#EEF3F8" stroke="#21303B"/><text x="290" y="62" text-anchor="middle" font-weight="bold">Broker MQTT</text><text x="290" y="80" text-anchor="middle">HiveMQ público</text><text x="290" y="96" text-anchor="middle" font-size="10">distanciacero/&lt;ID&gt;/…</text>
+<rect x="425" y="40" width="150" height="80" rx="8" fill="#E3EDE6" stroke="#3E7C5B"/><text x="500" y="62" text-anchor="middle" font-weight="bold">App web</text><text x="500" y="80" text-anchor="middle">estado: normal /</text><text x="500" y="96" text-anchor="middle">atención / crítico</text>
+<rect x="625" y="20" width="130" height="50" rx="8" fill="#fff" stroke="#999"/><text x="690" y="42" text-anchor="middle">Hijo/a</text><text x="690" y="58" text-anchor="middle" font-size="10">y cuidador local</text>
+<rect x="625" y="95" width="130" height="50" rx="8" fill="#fff" stroke="#999"/><text x="690" y="117" text-anchor="middle">Adulto mayor</text><text x="690" y="133" text-anchor="middle" font-size="10">3 botones (opcional)</text>
+<line x1="155" y1="80" x2="215" y2="80" stroke="#333" marker-end="url(#a)"/><text x="185" y="72" text-anchor="middle" font-size="10">WiFi · MQTT</text><text x="185" y="98" text-anchor="middle" font-size="10">cada 30 s</text>
+<line x1="365" y1="80" x2="425" y2="80" stroke="#333" marker-end="url(#a)"/><text x="395" y="72" text-anchor="middle" font-size="10">WSS</text>
+<line x1="575" y1="65" x2="625" y2="48" stroke="#333" marker-end="url(#a)"/><line x1="625" y1="118" x2="575" y2="98" stroke="#333" marker-end="url(#a)"/>
+<path d="M80 120 C 80 165, 690 165, 690 147" fill="none" stroke="#999" stroke-dasharray="4 3"/><text x="380" y="164" text-anchor="middle" font-size="10">HTTPS → ntfy (push opcional, sin app abierta)</text>
+</g>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#333"/></marker></defs>
+</svg>
+
+**Por qué híbrida.** (1) El movimiento se detecta a 50 Hz en el ESP32 y solo se envía un resumen, así que viaja poco dato. (2) El ESP32 puede avisar por su cuenta (ntfy) aunque nadie tenga la app abierta. (3) La app comparte el estado y las respuestas entre familiar, cuidador y adulto mayor. **Consecuencia:** sin un servidor propio no se detecta que el sensor dejó de reportar si nadie tiene la app abierta.
+
+**Protocolos.** *I²C:* el MPU6050 lo trae y bastan dos cables. *MQTT:* mensajes chicos y "última voluntad", que avisa sola cuando el sensor se desconecta. *WebSocket seguro (wss):* el navegador no abre MQTT directo. *HTTPS a ntfy:* push gratis sin publicar una app en tiendas.
+
+| | Semana 5 | Versión final (noviembre) |
+|---|---|---|
+| Red | Celular (SIM7600E-H), sin WiFi | WiFi 2.4 GHz (hotspot en la demo) |
+| Sensores | MPU6050 + PIR | MPU6050 |
+| Nube | HTTPS POST → Firebase + Cloud Function | Broker MQTT público |
+| Detección | z-score contra su patrón por hora | Umbral de inactividad ajustable (4 h o 3 h) |
+| Avisos | Push (FCM) + WhatsApp | En la app + ntfy opcional |
+| Electrónica | PCB 70 × 45 mm, JLCPCB | ESP32-S3 Super Mini con jumpers, sin PCB |
+
+---
+
+## 9. Diseño del producto
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.1 · 24/11/2026 (origen: semana 6) |
+| **Decisión** | El sillón ganó la Matriz de Pugh; hoy se ofrecen **los tres objetos**. |
+| **Evidencia** | [Actividad 6: tabla morfológica, conceptos, Pugh y boceto](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-06/); [Actividad 8: planos con cotas](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/). |
+| **Qué cambió** | El sillón ganó porque era el único donde cabían el SIM7600 y la 18650. Sin esas piezas, ese criterio (tamaño, 10 %) ya no descarta al bastón ni al portavasos. |
+| **Qué falta** | Fotos del prototipo en los tres objetos; repetir la matriz con el hardware nuevo. |
+
+**Principios aplicados y dónde se ven:** *affordances* (el portavasos invita a poner la taza) · *constraints* (el velcro solo cabe en una posición) · *contour bias* (sin aristas, radio de 4 mm) · *consistencia* (el acabado imita la tapicería) · *confirmación* (un LED solo durante la instalación) · *costo-beneficio* (sin LED permanente, para que no se note).
+
+| Matriz de Pugh (deseabilidad 50 %, factibilidad 50 %) | Bastón (datum) | **Sillón** | Portavasos |
+|---|:--:|:--:|:--:|
+| Puntuación ponderada | 0 | **+80** | +50 |
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/plano-variante-a.jpg" alt="Plano con cotas de la carcasa variante A" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/carcasa-a-explosionada.jpg" alt="Carcasa variante A en vista explosionada" style="width:100%;border-radius:6px">
+</div>
+*Boceto técnico con cotas (variante A, 90 × 60 × 21 mm, PETG) y vista explosionada. Modelo 3D, no pieza impresa.*
+
+**Evolución:** boceto de 90 × 60 × 15 mm (semana 6) → la 18650 no cabía → carcasa de dos piezas en PETG, variantes A y B (semana 8) → prototipo con ESP32-S3 Super Mini y jumpers dentro de los tres objetos (noviembre).
+
+---
+
+## 10. Prototipos y evidencia
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.1 · 24/11/2026 (origen: semana 8) |
+| **Decisión** | Lo primero que se probó fue el precio (una landing), no la carcasa. |
+| **Evidencia** | [Actividad 8, plan de prototipado](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/); [presentación final](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_presentacion_final.pptx) (diapositiva "Qué funciona hoy"). |
+| **Qué cambió** | El precio de la landing bajó de $4,490 a $3,990, igual que el modelo financiero. |
+| **Qué falta** | Imprimir la carcasa; sesiones con usuarios; **fotos reales** de cada prototipo. |
+
+| Prototipo | Pregunta | Tipo · resolución | Qué se construyó | Evidencia | Aprendizaje → cambio |
+|---|---|---|---|---|---|
+| Landing (semana 8 → hoy) | ¿Alguien reserva viendo el precio real? | Negocio · baja | Landing de 4 páginas | **0 sesiones** | Hay que conectar el formulario para medir |
+| Carcasa A/B | ¿Cabe y cierra sin herramientas? | Forma · alta (digital) | Modelo 3D, planos y 4 STL | Mallas cerradas; **sin imprimir** | La 18650 no cabía → LiPo plana |
+| Circuito | ¿El MPU6050 lee movimiento real? | Funcional · media | ESP32 + MPU6050 por USB | \|a\| = 1.00 g en reposo | Sí lee; falta probar el aviso |
+| App web | ¿Se entiende el estado y el aviso? | Interacción · alta | 16 pantallas, modo demo y modo real | Publicada en este sitio | Del Figma Make a una app real |
+| Tres objetos | ¿Funciona en sillón, bastón y portavasos? | Integración · alta | Super Mini + MPU6050 + LiPo con jumpers | **PENDIENTE** | — |
+
+**Línea de tiempo:** semana 6, renders y app en Figma · semana 8, landing y carcasa · semana 9, plan de pruebas · 23/11, app web, firmware y simulador · 24/11, landing con los tres productos. **Fotos: PENDIENTE.**
+
+---
+
+## 11. Manufactura, DFM y circularidad
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.1 · 24/11/2026 (origen: semanas 5, 7 y 8) |
+| **Decisión** | 10 unidades el año 1 (impresión 3D en PETG + ensamble manual) y 100 el año 2. |
+| **Evidencia** | [Excel: hojas BOM_final, DFM y Costos](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx); [Actividad 8, DFM y circularidad](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/). |
+| **Qué cambió** | El prototipo no lleva PCB ni módulo celular; su BOM se registra aparte del BOM del modelo. |
+| **Qué falta** | Llenar el precio real del prototipo (hoja BOM_final, celdas amarillas) y cotizar el resto del BOM. |
+
+| BOM del modelo (por unidad) | Precio | Estado |
+|---|--:|---|
+| Módulo celular SIM7600E-H | $2,100 | Cotizado (US$129) |
+| ESP32-S3 · MPU6050 + PIR · batería · PCB · carcasa | $870 | Estimados |
+| **BOM** → **costo unitario** (+ 15 % overhead + 25 % contingencia) | **$2,970 → $4,158** | |
+
+**DFM (Actividad 8):** costo unitario de **$3,491 → $1,723** (−50.7 %), casi todo por usar el chip celular LCC sobre un PCB propio. ⚠️ El ensamble no está cronometrado.
+
+**Circularidad:** ¿se abre sin destruirla? ✅ cierre a presión · ¿módulos reemplazables? ⚠️ la batería sí (JST), el ESP32 no · ¿materiales identificables? ⚠️ un solo plástico, falta el código de reciclaje · ¿se actualiza sin reemplazarse? ✅ firmware por USB-C.
+
+**Reproducir una unidad:** ver [Anexo C](#c-archivos-de-diseno-cad-esquematicos-y-firmware).
+
+---
+
+## 12. Aplicación conectada
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v2.0 · 24/11/2026 (origen: semanas 6 y 9) |
+| **Decisión** | App web de un solo archivo, abierta por link y sin tienda de apps, con modo **Demo** y modo **Dispositivo real** (MQTT). |
+| **Evidencia** | [App publicada](https://jesushernandez2005.github.io/Proyecto4/app/); [código en el repositorio](https://github.com/jesushernandez2005/Proyecto4/tree/main/docs/app); [Actividad 6, wireframes](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-06/). |
+| **Qué cambió** | Del prototipo de Figma Make con datos de ejemplo a una app que escucha al ESP32. |
+| **Qué falta** | Servidor propio con usuario y contraseña; historial de 30 días; WhatsApp. |
+
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/app-onboarding-qr.jpg" alt="Onboarding: escanear el código y elegir el objeto" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/app-normal.jpg" alt="Estado normal" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/app-alerta.jpg" alt="Alerta activa" style="width:100%;border-radius:6px">
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/app-circulo.jpg" alt="Círculo de cuidado" style="width:100%;border-radius:6px">
+</div>
+
+**Flujo:** 5 pasos de bienvenida (quién eres → ¿alguien lo visita? → código del sensor y objeto → detección → consentimiento) → inicio → alerta → "Ya lo revisé".
+
+**Estados:** *cargando* "Esperando al sensor" · *normal* "Todo bien" · *atención* "Un día más tranquilo" · *crítico/alerta* · *sin conexión* "Perdimos contacto con el sensor" (sin señal por más de 3 min) · *error* "No se pudo conectar con el servidor MQTT" · *pausa* "Avisos en pausa".
+
+**Conexión:** MQTT en `distanciacero/<CÓDIGO>/estado` (retenido, cada 30 s). Formato: `{"id","obj","fw","bat","rssi","inactivoSeg","huboActividad","umbralMin","alerta","sensor","t"}`.
+
+**Cómo ejecutarla:** abrir la URL; para probar sin hardware, `python sim_dispositivo.py --id DC-SIM1` ([simulador](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/firmware/sim_dispositivo.py)).
+
+**Limitaciones:** el broker público lo puede leer cualquiera que conozca el código; si nadie tiene la app abierta, el estado no se calcula; teléfonos, tarjeta y correo de la app son ficticios. **Los commits del repositorio no siguen las sesiones de trabajo** (mensajes como "actualiza"; ver [Anexo B](#b-repositorio-readme-y-bitacoras)).
+
+---
+
+## Parte III. Negocio
+
+## 13. Modelo de negocio (Business Blueprint)
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.0 · 24/11/2026 (origen: semanas 4 y 7) |
+| **Decisión** | Equipo + suscripción mensual. El equipo se vende $168 por debajo de su costo y lo recupera la suscripción. |
+| **Evidencia** | [Actividad 7, benchmarking](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-07/); [Excel, hojas Resumen y Economia_unitaria](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx). |
+| **Qué cambió** | El precio del equipo bajó de $4,490 (Actividad 7) a $3,990 (modelo final). |
+| **Qué falta** | Validar que alguien paga el equipo. |
+
+| Caja | Contenido | Sustento |
+|---|---|---|
+| Clientes | Hijo/a de 35–55 años que vive lejos de su mamá o papá de 65+ | [§3](#3-usuario-y-evidencia-de-campo) |
+| Oferta | Sensor en sillón, bastón o portavasos + app | [§7](#7-especificacion-del-producto-pds) |
+| Modelo de ingresos y precio | $3,990 + $449/mes | [§14](#14-costos-precio-y-viabilidad-financiera) |
+| Canales | Meta y Google Ads; piloto en Puebla | [§15](#15-go-to-market-y-economia-unitaria) |
+| Propuesta de valor | Certeza diaria, sin preguntar, sin culpa | [§5](#5-propuesta-de-valor-y-oferta) |
+| Costos | $4,158 por equipo; $90.14 al mes por suscriptor | [§14](#14-costos-precio-y-viabilidad-financiera) |
+| Socios | Proveedores (LCSC, JLCPCB, MercadoLibre); broker y notificaciones | [§11](#11-manufactura-dfm-y-circularidad) |
+| Equipo y recursos | Dos integrantes, hardware y firmware propios | [§1](#1-equipo) |
+
+**Benchmarking:** Medical Guardian (equipo US$149.95–199.95 + US$31.95–49.95/mes) · Ring (hardware + planes de US$4.99–19.99/mes) · CarePredict (hardware + servicio, pagado por agencias públicas). Los tres cobran equipo + cuota.
+
+**Desafío de diseño:** si el equipo se tuviera que regalar, el modelo no cierra con el costo actual.
+
+---
+
+## 14. Costos, precio y viabilidad financiera
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.1 · 24/11/2026 (origen: semana 7) |
+| **Decisión** | $3,990 por el equipo (por debajo del piso de $4,158) y $449/mes (59 % del camino entre el piso y el techo). |
+| **Evidencia** | [Excel](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx): Costos_DFS, IA_costo, Desarrollo, Precio_rango, Flujo_24m, Resumen. |
+| **Qué cambió** | Se unificó el precio en la landing, el Excel y la presentación. |
+| **Qué falta** | **Medir el costo de la IA con tokens reales**; cotizar 5 de las 6 líneas del BOM. |
+
+| Indicador | Valor | Hoja |
+|---|---|---|
+| Costos D / F / S | 17 costos: 5 D, 6 F, 6 S | Costos_DFS |
+| Costo de la IA por usuario | ≈ $0.02/mes (Haiku 5.5); el modelo usa $0.14 como cota. **No medido** | IA_costo |
+| Desarrollo (3 / 5 / 8 ciclos) | $42,921 / **$71,536** / $114,457 | Desarrollo |
+| Precio cost-plus del equipo (+40 %) | $5,821 | Precio_rango |
+| Equipo: piso (costo) / techo (semana 4, HIPÓTESIS) | $4,158 / $4,000 → hay que subsidiar | Precio_rango |
+| Suscripción: piso / techo (lo más alto que dijeron) | $93.51 / $700 | Precio_rango |
+| Punto de equilibrio del desarrollo | 25.5 familias (si se quedan 12 meses) · 10.3 (24 meses) | Economia_unitaria |
+| Flujo acumulado a 12 meses | −$72,319 | Flujo_24m |
+| VPN a 12 / 24 meses (15 % anual) | −$72,414 / **+$3,175** | Resumen |
+
+**Tasa del 15 %:** la que fija la guía de la Actividad 7 para un proyecto en etapa temprana. **Lectura:** el VPN a 24 meses es casi cero y el modelo no incluye *churn*.
+
+---
+
+## 15. Go-to-market y economía unitaria
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.1 · 24/11/2026 (origen: semana 9) |
+| **Decisión** | Empezar con un piloto sin costo de 10 familias en Puebla (unos 60 días) para medir *churn*, instalación y disposición a pagar el equipo. |
+| **Evidencia** | [Actividad 9, sección 4.3](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/); [Excel, hojas Economia_unitaria, Churn y Sensibilidad](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx). |
+| **Qué cambió** | Con $3,990 el payback pasa de 2.4 a 3.8 meses. |
+| **Qué falta** | Medir CAC y *churn*; conectar el formulario de la landing. |
+
+**Cliente número 1 (HIPÓTESIS, n = 1):** hija o hijo que vive fuera de Puebla, con su mamá o papá de 65+ que vive solo en Puebla y sin un cuidador que pase a diario (perfil de Lupita).
+
+**Canales:** venta directa con Meta y Google Ads segmentados a hijos de 35–55 años (Actividad 4), más la landing con pre-registro. Se eligen porque el comprador está en línea y lejos del adulto mayor.
+
+| Métrica | Valor | Estado |
+|---|--:|---|
+| CAC | $1,000 | **SUPUESTO** (5 demos × 1.5 h × $80 + $400 en anuncios) |
+| Churn mensual | 0 % en el caso base; 3 %, 5 % y 8 % en escenarios | **SUPUESTO** |
+| Contribución mensual | $342.70 | Cálculo |
+| Inversión por familia | $1,311.64 | Cálculo (CAC + pérdida del equipo) |
+| Payback | **3.8 meses** | Cálculo |
+| LTV (churn 3 %) · LTV ÷ inversión | $11,423 · **8.7×** | Cálculo con SUPUESTO; con churn de 10 % baja a 2.6× |
+
+**Palancas (acumulado a 24 meses):** base +$26,123 · suscripción de $549 → +$94,181 · equipo de $4,990 → +$132,163 · CAC de $1,200 → +$4,123 · churn de 3 % → −$2,013 · churn de 8 % → −$38,739.
+
+---
+
+## 16. Regulación y aspectos legales
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.1 · 24/11/2026 (origen: semanas 8 y 9) |
+| **Decisión** | No vender a terceros hasta resolver los temas POR VERIFICAR. El piloto es sin costo y con consentimiento escrito. |
+| **Evidencia** | [Actividad 9, checklist regulatorio (Prompt 4)](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/); aviso de privacidad en la [landing](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/). |
+| **Qué cambió** | El prototipo WiFi con un broker público añade un riesgo de datos. |
+| **Qué falta** | Confirmar con la CRT o un organismo de certificación; términos de uso de la app. |
+
+| Tema | Estatus |
+|---|---|
+| Radio y homologación | VERIFICADO el alcance; **POR VERIFICAR** el trámite. La ESP32-S3 Super Mini puede no tener certificación |
+| Datos personales (ley de 2025) | VERIFICADO en fuente secundaria; **POR VERIFICAR** cómo da su consentimiento la persona monitoreada |
+| Seguridad y etiquetado (NOM-001-SCFI-2018) | VERIFICADO el alcance general en fuente secundaria; **POR VERIFICAR** si aplica |
+| Baterías LiPo | **POR VERIFICAR** (no se consultaron fuentes) |
+| Licencias de software y del modelo de IA | **POR VERIFICAR** (bibliotecas de Arduino, MQTT.js, términos de la API de Claude) |
+| Términos de venta (LFPC, precio con IVA) | **POR VERIFICAR**; el Excel ya calcula $4,628.40 con IVA |
+| Economía circular | VERIFICADO en fuente secundaria: ley vigente desde el 20/01/2026, sin reglamento |
+| Exportación | No aplica |
+
+**Aviso de privacidad:** la landing tiene uno simplificado y la app una pantalla "Qué ve y qué NO ve". **Términos de la app: PENDIENTE.**
+
+**Antes de vender a un tercero:** broker propio con usuario y contraseña · consentimiento del adulto mayor (y del cuidador local) · homologación · precio con IVA · términos de servicio.
+
+---
+
+## Parte IV. Validación y lanzamiento
+
+## 17. Integración y pruebas del sistema
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.1 · 24/11/2026 (origen: semana 9) |
+| **Decisión** | Cada frontera guarda un registro para que una falla en la demo se pueda diagnosticar. |
+| **Evidencia** | [Actividad 9, sección 4.1](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/); monitor serie del firmware; simulador. |
+| **Qué cambió** | Las fronteras se redefinieron para la arquitectura WiFi + MQTT. |
+| **Qué falta** | Correr T1–T6 y subir los registros. |
+
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/fronteras.jpg" alt="Las cuatro fronteras de la semana 9" style="max-width:560px;width:100%;border-radius:6px">
+
+*Fronteras de la semana 9 (versión celular). Abajo, la versión actual.*
+
+| Frontera | Registro | Estado |
+|---|---|---|
+| F1 · MPU6050 → ESP32 (I²C) | Monitor serie (`DEBUG_MOV`) | ✅ Lee \|a\| = 1.00 g en reposo |
+| F2 · ESP32 → broker (WiFi/MQTT) | Monitor serie + LED de estado | ⏳ Firmware escrito; sin registro |
+| F3 · Broker → app (WSS) | Pantalla Conexión + historial | ⏳ Se puede probar con el simulador; **sin registro guardado** |
+| F4 · App → persona | Historial de eventos | ⏳ |
+
+| Prueba | Aprobado si | Estado |
+|---|---|---|
+| T1 · Falla de un canal | Llega por el otro | ⏳ |
+| T2 · Desconexión 10 min | La app dice "sin conexión" y no da el dato viejo por actual | ⏳ Implementado en la app; sin prueba |
+| T3 · Instalación sin ayuda | ≤ 10 min | ⏳ |
+| T4 · Latencia | Aviso ≤ 10 min en 10 corridas | ⏳ |
+| T5 · Autonomía | ≥ 15 días | ⏳ |
+| T6 · 48 h continuas | Sin reinicios | ⏳ |
+
+**Fallas documentadas:** (1) **F3**: el visor de Claude bloquea conexiones externas, así que el modo real solo funciona desde GitHub Pages (se encontró al probar la app). (2) **F2**: la red de la universidad pide usuario y contraseña, y el ESP32 no se conecta; se usa el hotspot del celular (README). (3) **F2, versión celular**: el SIM7600E-H no trae las bandas LTE de México (se encontró al llenar el checklist regulatorio). (4) **Diseño**: el USB-C chocaba con el ESP32 en el modelo 3D (revisión en planta).
+
+**Todavía no funciona:** aprendizaje de rutina, historial de 30 días, WhatsApp, servidor propio. Falta tiempo y un backend.
+
+**Checklist de "listo":** hardware sin laptop ⏳ · app desplegada ✅ · landing publicada ⏳ (al hacer push de esta carpeta) · flujo completo sin intervención ⏳
+
+---
+
+## 18. Pruebas con usuarios
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.1 · 25/11/2026 (origen: semana 9) |
+| **Decisión** | Probar con hijos e hijas adultos, no con personas mayores. Se graba solo con consentimiento. |
+| **Evidencia** | [Actividad 9, sección 4.2 (protocolo y hoja)](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/); [encuesta en línea, 47 respuestas (Google Sheets)](https://docs.google.com/spreadsheets/d/1eeBf3EU33XPdDGuRwuHZk6xZu-9kGYs7PMgu7OJc9qk/edit?usp=sharing). |
+| **Qué cambió** | Se hizo una encuesta en línea (25/11/2026, n = 47) sobre el producto, el precio, la landing y la app. Las sesiones moderadas **siguen sin hacerse.** |
+| **Qué falta** | Las 5 sesiones (3 del segmento y 2 de otros equipos); repetir la encuesta solo con hijos de 35–55 años que tengan un papá o mamá que vive solo. |
+
+**Protocolo de 30 min:** guion fijo (0–3) · T1, instalar y vincular (3–10) · T2, interpretar una alerta (10–20) · T3, encontrar el precio y pre-registrarse en la landing (20–25) · entrevista de cierre (25–30).
+
+| Usuario | T1 sin ayuda · tiempo · SEQ | T2 sin ayuda · SEQ | T3 pre-registro | Cita | Hallazgo y severidad |
+|---|---|---|---|---|---|
+| 1–3 (segmento) | pendiente | pendiente | pendiente | — | — |
+| 4–5 (otro equipo) | pendiente | pendiente | pendiente | — | — |
+
+### Encuesta en línea (25/11/2026, n = 47)
+
+Google Forms anónimo con 33 preguntas de opción múltiple y un comentario opcional, en seis bloques: perfil, producto, precio, landing, app y cierre. [Respuestas completas](https://docs.google.com/spreadsheets/d/1eeBf3EU33XPdDGuRwuHZk6xZu-9kGYs7PMgu7OJc9qk/edit?usp=sharing).
+
+**Quién respondió:** 27 de 47 tienen menos de 25 años y solo 7 tienen entre 35 y 55 (el segmento). 15 tienen un familiar de 65+ que vive solo y 16 viven en otra ciudad o en otro país. **La muestra no es el segmento:** sirve para encontrar problemas, no para validar la demanda.
+
+| Pregunta | Resultado (de 47) |
+|---|---|
+| Preocupación por una caída (1–5) | **4.38** en promedio; 29 eligieron 5 |
+| Qué usan hoy para saber que está bien | Solo llamadas o mensajes 36 · cuidador o vecino 7 · otro 3 · cámaras 1 |
+| ¿Se entendió la descripción? | Muy claro 30 · más o menos 13 · poco claro 3 · no 1 |
+| Utilidad de la idea (1–5) | **4.53** en promedio |
+| Objeto más útil (varias respuestas) | Bastón **34** · sillón 24 · portavasos 10 · ninguno 6 |
+| Cómo recibir los avisos | Resumen diario 15 · elegir el modo 15 · solo si algo está mal 9 · avisos frecuentes 8 |
+| Lo que más preocupa (varias respuestas) | **Que falle o no avise 33** · precio 17 · batería 15 · que el familiar no lo use 15 · privacidad 11 · instalación 10 · nada 3 |
+| ¿Qué tan invasivo es? | Nada 17 · poco 26 · algo 4 · muy 0 |
+| ¿Lo aceptaría el familiar? | Sí 15 · probablemente 21 · no estoy seguro 11 |
+| ¿Pagarías? | Sí 20 · probablemente 20 · no estoy seguro 6 · no 1 |
+| $3,990 + $449/mes | Justo 15 · **un poco caro 26** · muy caro 6 |
+| Kit, pago único | < $2,000: 14 · $2,000–3,000: 17 · $3,000–4,000: 15 · $4,000–5,000: 1 |
+| Mensualidad | < $200: **22** · $200–350: 13 · $350–500: 5 · no pagaría: 7 |
+| Forma de pago | Pago único sin mensualidad 17 · kit + mensualidad 13 · anual con descuento 11 · kit rentado 6 |
+| Recomendación (0–10) | **8.15** en promedio · NPS **+38** (24 promotores, 17 pasivos, 6 detractores) |
+| ¿Lo probarías cuando esté listo? | Sí 29 · tal vez 17 · no 1 |
+
+Los resultados de la landing están en la [sección 19](#19-landing-page) y los de la app en la [sección 12](#12-aplicacion-conectada). Solo cuentan a quien sí abrió cada una, porque el formulario dejaba contestar esas preguntas sin haberlas visto (un participante lo señaló en los comentarios).
+
+**Qué aprendimos:**
+
+1. **El precio es el problema.** 40 de 47 dicen que pagarían, pero 32 de 47 ven caro el precio real. Solo 1 pagaría más de $4,000 por el kit y solo 5 pagarían $350–500 al mes. Entre los 15 que tienen un familiar que vive solo pasa lo mismo: 11 de 15 lo ven caro. → [Sección 14](#14-costos-precio-y-viabilidad-financiera).
+2. **El miedo es que falle, no la privacidad** (33 contra 11). La landing y la app tienen que mostrar que el sensor sigue vivo (batería y conexión).
+3. **El modo silencioso no gana.** Solo 9 de 47 lo prefieren. Confirma que el aviso debe ser configurable ([sección 3](#3-usuario-y-evidencia-de-campo)); que el resumen diario sea la opción por defecto es **HIPÓTESIS**.
+4. **El bastón es el objeto más pedido** (34 de 47) y el portavasos el menos (10). En los comentarios, alguien dice que no le quedó claro el del agua y que no sabe si su familiar cambiaría su sillón por uno nuevo.
+5. **Ideas de los comentarios:** un sensor en la cama (*"algunos adultos mayores pasan mucho tiempo en su cama"*), conectarlo a un smartwatch o a una cámara, y que sirve cuando la persona mayor no quiere un cuidador.
+
+**Señal de negocio:** pre-registros reales = **0** (el formulario de la landing se conectó el 25/11/2026; todavía no llega ninguno). Las 3 entrevistas de la semana 3 y la encuesta (29 de 47 dijeron que sí lo probarían) son opiniones, no compromisos.
+
+---
+
+## 19. Landing page
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v3.0 · 24/11/2026 (origen: semana 8) |
+| **Decisión** | Una landing general y una página por objeto, con un solo CTA: "Aparta tu lugar en el piloto". |
+| **Evidencia** | [Landing](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/) · [Sillón](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/sillon/) · [Bastón](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/baston/) · [Portavasos](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/portavasos/) · [Excel, hoja Landing](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx). |
+| **Qué cambió** | v1, un archivo sin formulario (semana 8). v2, con formulario, centrada en el sillón y con "sin wifi". v3, los tres productos, WiFi, USB-C y $3,990. |
+| **Qué falta** | Conectar `FORM_ENDPOINT` y `GOATCOUNTER`, y poner el correo de contacto. |
+
+**URL:** `https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/landing/` (activa después del push).
+
+**Checklist:** headline ✅ · visual (ilustración + teléfono "Sin avisos hoy") ✅ · beneficios ✅ · precio visible ✅ · un solo CTA ✅ · evidencia en la página ("3 de 3", "$450 a $700") ✅ · metadatos y Open Graph ✅ (imagen por página).
+
+| Métrica | Valor |
+|---|---|
+| Visitas | **sin medir** (GoatCounter sin configurar) |
+| Clics en el CTA | **sin medir** |
+| Pre-registros | **0** |
+
+**Prompt con el que se construyó:** v1, Prompt 6 de la [Actividad 8](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/). v3, en Claude (24/11/2026): *"necesito que cambies el landing de la carpeta que te mande y lo corrigas/adaptes a lo que hemos cambiado, incluye todos los productos"*. La IA comparó la landing con la app y la memoria del proyecto, y quitó lo que ya no era cierto ("sin wifi", base magnética, anillo de luz). Después el equipo corrigió el precio a $3,990.
+
+---
+
+## 20. Pitch y demo
+
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.1 · 24/11/2026 (origen: semana 9) |
+| **Decisión** | Una sola confesión en el pitch: "hoy el prototipo usa WiFi". Pedimos $15,000 y diez familias. |
+| **Evidencia** | [Guion de pitch y demo (PDF)](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_guion_pitch_y_demo.pdf), con la fuente de cada cifra. |
+| **Qué cambió** | El guion ya usa $3,990, igual que la landing y el Excel. |
+| **Qué falta** | Grabar el video del pitch y el video de respaldo de la demo; tres ensayos con cronómetro; llenar los corchetes del guion. |
+
+**Pitch de 3 min:** 331 palabras (≈ 2:33). Video: **PENDIENTE**.
+
+<img src="https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/img/demo-7-min.jpg" alt="Los seis tramos de la demo de 7 minutos" style="max-width:560px;width:100%;border-radius:6px">
+
+| Tramo | Plan B |
+|---|---|
+| Contexto (0:00–0:45) | Foto del objeto |
+| Camino principal (0:45–3:15) | Video de 90 s |
+| Provocar el evento (3:15–4:45) | Datos precargados y video |
+| Fallo manejado (4:45–5:45) | Registro del servidor |
+| La compra (5:45–6:30) | Captura de la landing |
+| Cierre (6:30–7:00) | — |
+
+| Pregunta difícil | Respuesta corta | Dónde |
+|---|---|---|
+| ¿Por qué venden el equipo $168 debajo del costo? | La suscripción lo recupera en 3.8 meses; el precio no está validado | [§14](#14-costos-precio-y-viabilidad-financiera) |
+| ¿Cuánto cuesta un cliente? | $1,000, SUPUESTO; con $1,200 sigue en +$4,123 | [§15](#15-go-to-market-y-economia-unitaria) |
+| ¿Y si los clientes se van? | Con 3 % al mes, −$2,013 a 24 meses; lo mide el piloto | [§15](#15-go-to-market-y-economia-unitaria) |
+| ¿Cuándo funciona sin WiFi? | El módulo celular es el 71 % del costo y no está integrado | [§8](#8-arquitectura-del-sistema) |
+| ¿Qué funciona de verdad? | Sensor, firmware y app; falta el flujo completo | [§17](#17-integracion-y-pruebas-del-sistema) |
+
+---
+
+## Parte V. Cierre
 
 ## 21. Uso de IA en el proyecto
 
-- **Versión y fecha:** v1 · Semana 9 · 24/11/2026
-- **Decisión:** en el producto, la IA estadística (z-score por persona y por hora) **decide**, y Claude Haiku **solo redacta** el resumen semanal. Si la IA falla, hay plantilla y las alertas no dependen de ella.
-- **Evidencia:** costo ESTIMADO de ~$0.03 por usuario al mes; `[MEDIR: tokens promedio de 10 resúmenes]`.
-- **Qué cambió:** se registran los tokens de cada llamada en `model_runs`.
-- **Qué falta:** medir FP y FN, medir los tokens y documentar el error de la IA en el proceso.
+| Campo | Contenido |
+|---|---|
+| **Versión** | v1.0 · 24/11/2026 (semanas 1–9) |
+| **Decisión** | La IA propone y cuestiona; el equipo decide y verifica. |
+| **Evidencia** | Cada actividad tiene los prompts y las respuestas completas. |
+| **Qué cambió** | Del uso para generar ideas al uso para revisar contra datos reales. |
+| **Qué falta** | Medir el costo de la IA del producto con tokens reales. |
 
-**IA en el proceso: 5 prompts que cambiaron el proyecto**
-
-| # | Qué se pidió | Qué respondió la IA | Qué corrigió el equipo |
+| # | Qué se pidió | Qué respondió la IA | Qué corrigió el equipo y por qué |
 |---|---|---|---|
-| 1 | "Rompe el consenso y encuentra el problema oculto" (Semana 2, Prompt 2, Claude) | Las 4 oportunidades de deporte comparten un cuello de botella: la adherencia, y debajo, la falta de una señal diaria | El proyecto dejó el deporte y pasó al miedo a "la llamada" |
-| 2 | Filtro DVN de 3 conceptos (Semana 2, Prompt 8) | Recomendó "El Seguro que se Olvida que Existe" y descartar el B2B2C por el ciclo de venta | Se eligió B; el riesgo de "¿sigue funcionando?" se resolvió después con el estado "Sin conexión" |
-| 3 | Estimar el TAM (Semana 4) | Propuso filtros sin fuente (10.9 %, 17.5 %, 85 %, 60 %, 25 %) | **Error de la IA:** presentó supuestos como datos. Se marcaron como SUPUESTO; las entrevistas solo respaldan la disposición de pago (n = 3) |
-| 4 | Revisar DFM (Semana 8) | Propuso el módulo en LCC soldado | Ahorro estimado de $1,295 por unidad; después se vio que la variante E-H no sirve en México |
-| 5 | Checklist regulatorio y autonomía (Semana 9) | Comparó bandas (el E-H no cubre B2/B4/B28) y calculó 13.8 días con reporte cada 15 min | Cambio al SA-H y reporte cada 30 min con el módem apagado |
+| 1 | Cuestionar el Pain-Gain Map (Act. 2, P4) | El dolor real es el miedo a "la llamada", no la caída | Se cambió el problema y con él todo el producto |
+| 2 | Auditoría digital de los nombres (Act. 3, P4) | SilencioActivo tiene un riesgo digital alto | Se eligió DistanciaCero, aunque gustaba menos |
+| 3 | Matriz de Pugh (Act. 6, P5) | Sillón +80: es el único donde cabe el hardware | Se eligió el sillón; hoy, sin el celular, volvieron los tres |
+| 4 | **BOM (Act. 5 → Act. 7)** | **Error de la IA:** en la semana 5 estimó el módulo celular en ~$350–450 y el BOM en ~$800–1,100 | Al cotizar costó $2,100 y el BOM $2,970. Desde entonces solo usamos precios con fuente |
+| 5 | Checklist regulatorio (Act. 9, P4) | El SIM7600E-H no trae las bandas LTE de Telcel ni AT&T | Se marcó el riesgo; el prototipo actual usa WiFi y el módulo celular queda para el producto |
 
-**IA en el producto**
+**IA en el producto (hoy):** la app decide por un **umbral fijo** de inactividad; todavía **no** hay un modelo. **Diseño:** un z-score contra su patrón por hora (estadístico, en la nube) y un modelo de lenguaje (Claude Haiku) que solo redacta el resumen semanal. Recibe el conteo de actividad por hora y devuelve un texto corto. Costo: ≈ $0.02 MXN por usuario al mes (**estimado, no medido**). Si falla, el resumen sale con una plantilla. Sin ella, un umbral igual para todos generaría falsas alarmas en quien duerme siesta y avisaría tarde a quien se levanta temprano (**HIPÓTESIS**).
 
-| Qué hace | Dónde corre | Entrada | Salida | Costo por usuario | Si falla | ¿Por qué sería peor sin IA? |
-|---|---|---|---|---|---|---|
-| z-score por hora contra la rutina propia | Cloud Function | Ventanas de 30 min | anomalía / normal / sin reporte | ≈ $0 | Si hay hueco, sale "sin reporte" y no alerta | Un umbral fijo daría falsas alarmas a quien es menos activo y no vería cambios en quien es muy activo |
-| Resumen semanal (Claude Haiku) | API de Anthropic | Estadísticas sin datos personales | 3 frases en JSON | ~$0.03/mes (ESTIMADO) | Plantilla | La plantilla funciona, pero se lee fría; es un valor emocional, no crítico |
+---
 
 ## 22. Reflexión y siguientes pasos
 
-- **Versión y fecha:** v1 · Semana 9 · 24/11/2026
-- **Decisión:** el siguiente paso es un **piloto de 90 días con 10 familias**, que solo arranca con el módulo SA-H y el consentimiento firmado.
-- **Evidencia:** §15–§17.
-- **Qué cambió:** se pasó de "construir el sistema completo" a "probar primero las tres hipótesis que deciden el negocio".
-- **Qué falta:** el aprendizaje firmado por cada integrante.
-
-| Integrante | Aprendizaje clave (un párrafo) | Firma |
-|---|---|---|
-| Jesús León Hernández Martínez | `[ ]` | `[ ]` |
-| Andrea Solano López | `[ ]` | `[ ]` |
-
-
-**Qué haríamos diferente:** `[ ]`
-
-| Hipótesis sin verificar | Cómo se prueba |
+| Campo | Contenido |
 |---|---|
-| S1: alguien paga $4,490 | Anticipo reembolsable en la landing o en el piloto |
-| S2: la persona mayor acepta la placa | Consentimiento en las instalaciones del piloto (tasa de aceptación) |
-| S3: el sillón basta para detectar el cambio | RD-02 con datos reales del piloto |
+| **Versión** | v1.0 · 24/11/2026 (cierre del curso) |
+| **Decisión** | El siguiente paso es el piloto, no más ingeniería. |
+| **Evidencia** | Secciones 15, 17 y 18. |
+| **Qué cambió** | — |
+| **Qué falta** | Los párrafos firmados de cada integrante. |
 
-| Plan de 90 días | Acción |
-|---|---|
-| Días 1–30 | SA-H, 10 unidades, aviso de privacidad, CRT |
-| Días 31–60 | Piloto en comodato |
-| Días 61–90 | Conversión a pago, decisión de precio y búsqueda de fondos (convocatoria `[ ]`) |
+**Aprendizaje más importante (un párrafo por integrante, firmado):**
 
-| Riesgo principal | Mitigación |
+- **Jesús:** *PENDIENTE: escribir y firmar.* (En la Actividad 9 escribió: "prepararse para presentar es lo contrario de maquillar".)
+- **Andrea:** *PENDIENTE: escribir y firmar.*
+
+**Qué haríamos distinto:** sentarnos con una persona del segmento antes de la semana 5; cotizar primero la pieza más cara; comparar las bandas del módem con las redes de México antes de elegirlo.
+
+| Hipótesis crítica sin verificar | Cómo se verificará |
 |---|---|
-| Nadie paga el precio | Comodato con DFM |
-| Homologación del producto | Módulo certificado y consulta a la CRT |
-| Rechazo de la persona mayor o del cuidador local | Consentimiento de ambos y opción de pausa (§3, hallazgo 6) |
-| Autonomía | Reporte cada 30 min o cada 60 min |
+| Alguien paga $3,990 por el equipo | Pre-registros y cierre al final del piloto |
+| Churn ≤ 3 % al mes | Piloto de 60 días |
+| El MPU6050 distingue "se sentó", "tomó el bastón" o "levantó la taza" | T4 y T6 en los tres objetos |
+| Se instala sin ayuda en ≤ 10 min | T3 con 5 usuarios |
+| El adulto mayor y el cuidador local aceptan | Consentimiento escrito en el piloto |
+
+**Plan de 90 días:** días 1–15, conectar el formulario, publicar la landing y hacer las 5 sesiones. Días 15–30, pedir $15,000 y fabricar 10 unidades. Días 30–90, piloto con 10 familias en Puebla y medir churn, instalación y pago.
+
+**Riesgos principales:** nadie paga el equipo · el sensor confunde movimientos · el broker público expone datos · el módulo celular encarece el producto · el cuidador local veta la compra.
 
 ---
 
 ## Anexos
 
-| Anexo | Contenido | Enlace |
+### A. BOM completo con cotizaciones y proveedores
+
+El detalle, con fórmulas, está en la hoja **BOM_final** del [Excel](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx).
+
+**Producto (el que usa el modelo financiero, con módulo celular)**
+
+| Componente | Especificación | Precio (MXN) | Estado | Proveedor / referencia |
+|---|---|--:|---|---|
+| Módulo celular | SIM7600E-H, breakout 4G con antena | 2,100 | Cotizado | 4gltemall.com, US$129 (Actividad 7) |
+| Módulo celular (alternativa DFM) | SIM7600E-H en formato LCC | 805 | "Desde" US$49.47, 6 en existencia | LCSC C5338795, consultado 05/11/2026 (Actividad 8) |
+| Microcontrolador | ESP32-S3 (8 MB de flash) | 120 | Estimado | LCSC N8R8 "desde" US$3.48 (Actividad 8) |
+| Sensores | MPU6050 + PIR HC-SR501 (sin PIR desde la semana 8) | 125 | Estimado | Sin cotizar |
+| Batería y carga | 18650 + TP4056 (semana 7); LiPo Jauch LP103450JH 1.92 Ah (semana 8) | 175 | Estimado | Sin cotizar |
+| PCB | 2 capas + ensamble | 250 | Estimado | JLCPCB |
+| Carcasa | Impresión 3D (PETG, 2 piezas en la semana 8) | 200 | Estimado | Impresión propia |
+| **Total** | | **2,970** | 1 de 6 líneas cotizada | |
+
+**Prototipo que se demuestra (WiFi, sin PCB):** ESP32-S3 Super Mini · MPU6050 (GY-521) · LiPo 3.7 V · jumpers · objeto anfitrión. **Los precios pagados están por llenar** en las celdas amarillas de la hoja BOM_final; no se inventó ninguno.
+
+### B. Repositorio, README y bitácoras
+
+- **Repositorio:** [github.com/jesushernandez2005/Proyecto4](https://github.com/jesushernandez2005/Proyecto4) (MkDocs Material, publicado con GitHub Actions).
+- **App:** `docs/app/index.html`. Firmware y simulador: [Anexo C](#c-archivos-de-diseno-cad-esquematicos-y-firmware).
+
+**Bitácora de entregables semanales**
+
+| Semana | Entregable | Fecha |
 |---|---|---|
-| **A** | BOM completa con cotizaciones (proveedor, fecha y captura) | `[URL_PENDIENTE: hoja BOM]` |
-| **B** | Repositorio, README, bitácora de commits y entregables por semana; tabla de licencias (R10); acuerdo de colaboración | [github.com/jesushernandez2005/proyecto4](https://github.com/jesushernandez2005/proyecto4) · README `[PENDIENTE]` |
-| **C** | Archivos de diseño: CAD y STL de la carcasa, esquemático y PCB, firmware | `[URL_PENDIENTE: carpeta]` |
-| **D** | Datos crudos de entrevistas, sesiones y pruebas T1–T6 (con consentimiento; anonimizados) | `[URL_PENDIENTE: carpeta]` |
-| **E** | Modelo financiero con fórmulas visibles (CREAR/DISTRIBUIR, flujo, VPN, economía unitaria y sensibilidad) | `[URL_PENDIENTE: hoja]` |
-| **F** | Bibliografía y fuentes (INEGI, ENIGH 2024, hojas de datos de SIMCom y Espressif, LFPDPPP 2025, LFPC, Ley General de Economía Circular, precios de Anthropic y benchmarks) | `[URL_PENDIENTE]` |
+| 1 | [Actividad 1: SCAMPER](https://and070406.github.io/Proyecto4_andrea/semana1/) | agosto 2026 |
+| 2 | [Actividad 2: búsqueda de oportunidad](https://and070406.github.io/Proyecto4_andrea/semana2/) | 02/09/2026 |
+| 3 | [Actividad 3: PI, marca y vigilancia](https://and070406.github.io/Proyecto4_andrea/semana3/) | 09/09/2026 |
+| 4 | [Actividad 4: mercado y propuesta de valor](https://and070406.github.io/Proyecto4_andrea/semana4/) | 17/09/2026 (entrevistas: 18/09) |
+| 5 | [Actividad 5: PDS y arquitectura](https://and070406.github.io/Proyecto4_andrea/semana5/) | 24/09/2026 |
+| 6 | [Actividad 6: concepto de diseño](https://and070406.github.io/Proyecto4_andrea/semana6/) | 01/10/2026 |
+| 7 | [Actividad 7: viabilidad técnica y económica](https://and070406.github.io/Proyecto4_andrea/semana7/) | 08/10/2026 (act. 22/10) |
+| 8 | [Actividad 8: prototipado y DFM](https://and070406.github.io/Proyecto4_andrea/semana8/) | 05/11/2026 |
+| 9 | [Actividad 9: integración, go-to-market y pitch](https://and070406.github.io/Proyecto4_andrea/semana9/) | 06/11/2026 |
+| Final | App web, firmware y simulador | 23/11/2026 |
+| Final | Landing con los tres productos, Excel y esta página | 24/11/2026 |
 
-**Historial de versiones:**
+**Bitácora de commits (resumen):** 30 commits entre el 21/08/2026 y el 06/11/2026. Los mensajes son genéricos ("actualiza", "aa"), así que no permiten seguir las sesiones de trabajo. **Pendiente:** desde ahora, un commit por sesión con un mensaje que diga qué cambió. Ejemplo: `landing: precio a $3,990 y tres productos`.
 
-| Versión | Semana | Fecha | Secciones actualizadas |
-|---|---|---|---|
-| v1 | 1 | `[ ]` | 1 |
-| v2 | 2 | 02/09/2026 | 2 |
-| v3 | 3 | 09/09/2026 | 3 (entrevistas), 6 |
-| v4 | 4 | 17/09/2026 | 3 (segmento), 4, 5 |
-| v5 | 5 | 24/09/2026 | 7, 8, 11 (BOM preliminar) |
-| v6 | 6 | 01/10/2026 | 9, 12 (wireframes) |
-| v7 | 7 | 08/10/2026 | 13, 14, 11 (BOM cotizada) |
-| v8 | 8 | 05/11/2026 | 10, 11 (DFM y circularidad) |
-| v9 | 9 | 06/11/2026 | 15–20 (Actividad 9) |
-| v9.1 | 9 | 24/11/2026 | Memoria consolidada; 1–3, 12, 19 y 21 con datos reales |
-| v10 | Final | `[ ]` | 0, 12, 17, 18, 19, 21, 22 y Anexos |
+### C. Archivos de diseño: CAD, esquemáticos y firmware
+
+| Archivo | Estado |
+|---|---|
+| [Firmware del sensor (`DistanciaCero_Sensor.ino`, v0.2-supermini)](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/firmware/DistanciaCero_Sensor.ino) | Se quitaron la red WiFi y la contraseña reales antes de publicarlo |
+| [Simulador del sensor (`sim_dispositivo.py`)](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/firmware/sim_dispositivo.py) | Para probar el modo real de la app sin hardware |
+| STL de la carcasa (variantes A y B) y planos | Entregados con la [Actividad 8](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-08/); **subir los STL al repositorio: PENDIENTE** |
+| PCB | No aplica en el prototipo actual (sin PCB) |
+
+**Conexiones (esquema del prototipo):**
+
+| MPU6050 (GY-521) | ESP32-S3 Super Mini |
+|---|---|
+| VCC | 3V3 |
+| GND | GND |
+| SDA | GPIO 5 |
+| SCL | GPIO 6 |
+| LiPo 3.7 V | Pads B+ / B− (se carga por USB-C) |
+
+**Cómo reproducir una unidad:**
+
+1. En Arduino IDE instala el paquete **esp32** de Espressif y la biblioteca **PubSubClient**.
+2. Elige la placa **ESP32S3 Dev Module** con **USB CDC On Boot: Enabled**.
+3. Conecta el MPU6050 como en la tabla y suelda la LiPo a B+ / B−.
+4. En el `.ino` escribe tu red WiFi de 2.4 GHz y el `OBJETO` (`sillon`, `baston` o `portavasos`).
+5. Sube el código y abre el monitor serie a 115200: ahí aparece el código del sensor (por ejemplo, `DC-7F3A`).
+6. Escribe ese código en la [app](https://jesushernandez2005.github.io/Proyecto4/app/) (Ajustes → Conexión al dispositivo).
+7. Calibra con `DEBUG_MOV = true` y ajusta `UMBRAL_GIRO_DPS` y `UMBRAL_ACC_G`.
+
+**Protocolo MQTT** (base: `distanciacero/<CÓDIGO>/`)
+
+| Tema | Quién publica | Contenido |
+|---|---|---|
+| `conexion` (retenido) | ESP32 | `{"estado":"online"}`; si se desconecta, el broker publica `"offline"` |
+| `estado` (retenido, cada 30 s) | ESP32 | batería, señal, `inactivoSeg`, `umbralMin`, `alerta` |
+| `actividad` | ESP32 | un mensaje al inicio de cada episodio de movimiento |
+| `cmd` | App | `umbral`, `reiniciar`, `identificar` |
+| `app` | App | respuestas del cuidador, confirmaciones y botones del adulto mayor |
+
+### D. Datos crudos de entrevistas y pruebas de usuario
+
+- [Resultados de validación, semana 3 (PDF)](https://jesushernandez2005.github.io/Proyecto4/actividades/resultados_validacion_semana3.pdf): tres entrevistas con citas.
+- Hoja **Entrevistas** del [Excel](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx).
+- **Consentimiento de las entrevistas: PENDIENTE documentar** (cómo se pidió y si se puede publicar el nombre de pila).
+- Pruebas con usuarios: **0 sesiones** (protocolo y hoja en la [Actividad 9](https://jesushernandez2005.github.io/Proyecto4/actividades/actividad-09/)).
+- [Presentación final (PPTX)](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_presentacion_final.pptx) y [guion de pitch y demo (PDF)](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/anexos/DistanciaCero_guion_pitch_y_demo.pdf).
+
+### E. Hojas de cálculo del modelo financiero
+
+[DistanciaCero_costos_y_calculos.xlsx](https://jesushernandez2005.github.io/Proyecto4/proyecto-final-distanciacero/DistanciaCero_costos_y_calculos.xlsx), con las fórmulas visibles. Azul = dato capturado · negro = fórmula · verde = viene de otra hoja · amarillo = supuesto clave o celda por llenar.
+
+| Hoja | Qué contiene |
+|---|---|
+| Resumen | Indicadores para la presentación y qué es dato y qué es supuesto |
+| **Landing** | Cada número de la landing con su fórmula y su fuente |
+| Supuestos | Precio, CAC, comisiones, tasa y costo operativo |
+| Costos · BOM_final · DFM | BOM del producto, BOM del prototipo (por llenar) y DFM antes y después |
+| Costos_DFS · Desarrollo · IA_costo | Costos D/F/S, ciclos de aprendizaje y costo de la IA |
+| Precio_rango | Cost-plus, value-based, piso y techo |
+| Economia_unitaria · Flujo_24m · Churn · Sensibilidad | CAC, LTV, payback, flujo a 24 meses, VPN y escenarios |
+| Mercado · Entrevistas | TAM, SAM y SOM; las tres entrevistas |
+
+### F. Bibliografía y fuentes de datos
+
+- INEGI, ENIGH 2024 (hogares, ingreso y gasto).
+- INEGI, Comunicado 475/19, ENADID 2018 (1.7 millones de personas de 60+ que viven solas).
+- Coneval 2020 (hogares unipersonales de 65+), citado en la Actividad 4.
+- Giraldo-Rodríguez et al., *Revista de Saúde Pública*, 2013 (piloto de teleasistencia en CDMX).
+- Banxico, tipo de cambio FIX del 09/10/2026 ($18.4163 por USD).
+- seniorliving.org, precios de Medical Guardian, consultado el 25/08/2026; security.org, planes de Ring, consultado el 28/09/2026.
+- LCSC: SIM7600E-H LCC (C5338795) y ESP32-S3-WROOM-1-N8R8, consultado el 05/11/2026.
+- Documentación de Espressif sobre el consumo del ESP32-S3, consultada el 06/11/2026.
+- IMPI (MARCanet, SIGA), LATIPAT y Lens.org; patente MX 351729 B.
+- Ley General de Economía Circular (vigente desde el 20/01/2026); NOM-001-SCFI-2018; Ley Federal de Protección al Consumidor.
+- Entrevistas propias de la semana 3 (n = 3).
