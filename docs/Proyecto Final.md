@@ -73,7 +73,7 @@
 
 | Integrante | Rol | Aportaciones verificables (enlaces a commits o entregables) |
 |---|---|---|
-| Mauro David Sánchez Arenas | `[ROL]` | `[ ]` |
+| Andrea Solano López | `[ROL]` | `[ ]` |
 | Jesús Hernández | `[ROL]` | `[ ]` |
 | `[NOMBRE]` | `[ROL]` | `[ ]` |
 | `[NOMBRE]` | `[ROL]` | `[ ]` |
