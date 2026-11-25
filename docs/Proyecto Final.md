@@ -45,17 +45,18 @@
 - **Decisión:** presentar DistanciaCero como un **servicio de tranquilidad por excepción** para hijos e hijas de personas mayores que viven solas: hardware de $4,490 más suscripción de $449 al mes, validado primero con un piloto de 10 familias.
 - **Evidencia:** 3 entrevistas con disposición de pago entre $450 y $700 al mes (§3); economía unitaria ESTIMADA (§15); pruebas T1–T6 `[PENDIENTES]` (§17).
 - **Qué cambió:** el módulo pasa a SIM7600SA-H (bandas de México), el reporte pasa a cada 30 min (autonomía) y el consentimiento queda como un acto único (Semana 9).
-- **Qué falta:** sistema integrado medido, 5 sesiones con usuarios, landing publicada y video del pitch.
+- **Qué falta:** sistema integrado medido, 5 sesiones con usuarios, landing publicada.
 
 ---
 
 # Parte I · Oportunidad y mercado
-
+S
 ## 1. Equipo
 
 - **Versión y fecha:** v1 · Semana 1 → v9.1 · 24/11/2026
 - **Decisión:** el equipo se organiza en 4 roles de cierre: **H** hardware y firmware · **A** app y nube · **N** negocio, usuarios y landing · **D** documentación, pitch y demo. Las reglas de trabajo quedan firmadas en el acuerdo de colaboración.
-- **Evidencia:** acuerdo de colaboración firmado `[ENLACE: PDF escaneado del acuerdo]`; historial de commits del [repositorio](https://github.com/jesushernandez2005/proyecto4/commits/main) (Anexo B).
+- **Evidencia:** acuerdo de colaboración firmado 
+[Acuerdo de colaboración (PDF)](recursos/archivos/Acuerdo_de_colaboracion.pdf")`; historial de commits del [repositorio](https://github.com/jesushernandez2005/proyecto4/commits/main) (Anexo B).
 - **Qué cambió:** las Semanas 2 a 6 las firmaron Jesús y Andrea y en la Semana 9 pasó a roles con entregables por semana.
 - **Qué falta:** el rol de cada quien y los enlaces de "quién hizo qué".
 
